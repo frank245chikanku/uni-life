@@ -6,18 +6,22 @@ import career from "../../assets/career-path.png";
 import criticism from "../../assets/criticism.png";
 import presentation from "../../assets/presentation.png";
 import leader from "../../assets/leadership.png";
+import { Link } from "react-router-dom";
 
 const Categories = () => {
   return (
     <section className="w-full flex flex-col min-h-screen justify-center items-center p-6">
       <p className="font-bold text-[50px] text-gray-200">Categories</p>
       <div className="w-full grid md:grid-cols-4 grid-cols-1 gap-4 mt-16">
-        <div className="w-full shadow shadow-gray-600 bg-[#71c1fa] cursor-pointer hover:shadow-slate-900 hover:shadow-md p-4 rounded-sm flex flex-col justify-center items-center">
+        <Link
+          to={"/academics"}
+          className="w-full shadow shadow-gray-600 bg-[#71c1fa] cursor-pointer hover:shadow-slate-900 hover:shadow-md p-4 rounded-sm flex flex-col justify-center items-center"
+        >
           <img className="h-20 w-20" src={academic} alt="academic" />
           <p className="mt-4 font-bold text-slate-900 text-lg text-center">
             Academic Integrity
           </p>
-        </div>
+        </Link>
         <div className="w-full shadow shadow-gray-600 bg-[#8122cf] cursor-pointer hover:shadow-slate-900 hover:shadow-md p-4 rounded-sm flex flex-col justify-center items-center">
           <img className="h-20 w-20" src={peer} alt="peer" />
           <p className="mt-4 font-bold text-slate-200 text-lg text-center">

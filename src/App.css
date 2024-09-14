@@ -22,3 +22,13 @@ html {
     background-clip: text;
     text-fill-color: transparent;
 }
+
+.custom-menu .ant-menu-item:hover,
+.custom-menu .ant-menu-submenu-title:hover {
+    @apply bg-gradient-to-br from-[#00a6ff] to-red-500 text-white;
+}
+
+.custom-menu .ant-menu-item a:hover,
+.custom-menu .ant-menu-submenu-title a:hover {
+    @apply text-white;
+}
