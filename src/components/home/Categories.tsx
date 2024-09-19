@@ -42,12 +42,16 @@ const Categories = () => {
           </p>
         </Link>
 
+<Link
+to={"/financial"}>
         <div className="w-full shadow shadow-gray-600 bg-[#fecf48] cursor-pointer hover:shadow-slate-900 hover:shadow-md p-4 rounded-sm flex flex-col justify-center items-center">
           <img className="h-20 w-20" src={financial} alt="financial" />
           <p className="mt-4 font-bold text-slate-900 text-lg text-center">
             Financial Strain
           </p>
         </div>
+        </Link>
+        
 
         <div className="w-full shadow shadow-gray-600 bg-[#353568] cursor-pointer hover:shadow-slate-900 hover:shadow-md p-4 rounded-sm flex flex-col justify-center items-center">
           <img className="h-20 w-20" src={career} alt="career" />

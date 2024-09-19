@@ -16,7 +16,7 @@ import Phase3 from "./components/academic/Phase3";
 import Phase4 from "./components/academic/Phase4";
 import Phase5 from "./components/academic/Phase5";
 
-
+// Peer components
 import PeerChapter1 from "./components/peer/Chapter1";
 import PeerContent from "./components/peer/Content";
 import PeerIntroduction from "./components/peer/Introduction";
@@ -25,7 +25,7 @@ import PeerPhase3 from "./components/peer/Phase3";
 import PeerPhase4 from "./components/peer/Phase4";
 import PeerPhase5 from "./components/peer/Phase5";
 
-
+// Social components
 import SocialChapter1 from "./components/social/Chapter1";
 import SocialContent from "./components/social/Content";
 import SocialIntroduction from "./components/social/Introduction";
@@ -34,17 +34,25 @@ import SocialPhase3 from "./components/social/Phase3";
 import SocialPhase4 from "./components/social/Phase4";
 import SocialPhase5 from "./components/social/Phase5";
 
+// Financial components
+import FinancialChapter1 from "./components/financial/Chapter1";
+import FinancialContent from "./components/financial/Content";
+import FinancialIntroduction from "./components/financial/Introduction";
+import FinancialPhase2 from "./components/financial/Phase2";
+import FinancialPhase3 from "./components/financial/Phase3";
+import FinancialPhase4 from "./components/financial/Phase4";
+import FinancialPhase5 from "./components/financial/Phase5";
+
 function App() {
   return (
     <Routes>
-      
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/chat" element={<Chat />} />
       <Route path="/login" element={<Signup />} />
       <Route path="/register" element={<Register />} />
 
-      
+      {/* Academic Routes */}
       <Route
         path="/academics"
         element={
@@ -160,7 +168,7 @@ function App() {
         }
       />
 
-    
+      {/* Social Routes */}
       <Route
         path="/social"
         element={
@@ -214,6 +222,64 @@ function App() {
         element={
           <Layout>
             <SocialPhase5 />
+          </Layout>
+        }
+      />
+
+      {/* Financial Routes */}
+      <Route
+        path="/financial"
+        element={
+          <Layout>
+            <FinancialContent />
+          </Layout>
+        }
+      />
+      <Route
+        path="/financial/chapter1"
+        element={
+          <Layout>
+            <FinancialIntroduction />
+          </Layout>
+        }
+      />
+      <Route
+        path="/financial/chapter1/sub1"
+        element={
+          <Layout>
+            <FinancialChapter1 />
+          </Layout>
+        }
+      />
+      <Route
+        path="/financial/chapter1/sub2"
+        element={
+          <Layout>
+            <FinancialPhase2 />
+          </Layout>
+        }
+      />
+      <Route
+        path="/financial/chapter1/sub3"
+        element={
+          <Layout>
+            <FinancialPhase3 />
+          </Layout>
+        }
+      />
+      <Route
+        path="/financial/chapter1/sub4"
+        element={
+          <Layout>
+            <FinancialPhase4 />
+          </Layout>
+        }
+      />
+      <Route
+        path="/financial/chapter1/sub5"
+        element={
+          <Layout>
+            <FinancialPhase5 />
           </Layout>
         }
       />
