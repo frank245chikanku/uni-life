@@ -7,7 +7,7 @@ import About from "./pages/About";
 import Chat from "./pages/Chat";
 import Layout from "./components/Layout";
 
-// Academic components
+
 import Chapter1 from "./components/academic/Chapter1";
 import Content from "./components/academic/Content";
 import Introduction from "./components/academic/Introduction";
@@ -16,7 +16,7 @@ import Phase3 from "./components/academic/Phase3";
 import Phase4 from "./components/academic/Phase4";
 import Phase5 from "./components/academic/Phase5";
 
-// Peer components
+
 import PeerChapter1 from "./components/peer/Chapter1";
 import PeerContent from "./components/peer/Content";
 import PeerIntroduction from "./components/peer/Introduction";
@@ -25,7 +25,7 @@ import PeerPhase3 from "./components/peer/Phase3";
 import PeerPhase4 from "./components/peer/Phase4";
 import PeerPhase5 from "./components/peer/Phase5";
 
-// Social components
+
 import SocialChapter1 from "./components/social/Chapter1";
 import SocialContent from "./components/social/Content";
 import SocialIntroduction from "./components/social/Introduction";
@@ -34,7 +34,7 @@ import SocialPhase3 from "./components/social/Phase3";
 import SocialPhase4 from "./components/social/Phase4";
 import SocialPhase5 from "./components/social/Phase5";
 
-// Financial components
+
 import FinancialChapter1 from "./components/financial/Chapter1";
 import FinancialContent from "./components/financial/Content";
 import FinancialIntroduction from "./components/financial/Introduction";
@@ -42,6 +42,24 @@ import FinancialPhase2 from "./components/financial/Phase2";
 import FinancialPhase3 from "./components/financial/Phase3";
 import FinancialPhase4 from "./components/financial/Phase4";
 import FinancialPhase5 from "./components/financial/Phase5";
+
+
+import CareerChapter1 from "./components/career/Chapter1";
+import CareerContent from "./components/career/Content";
+import CareerIntroduction from "./components/career/Introduction";
+import CareerPhase2 from "./components/career/Phase2";
+import CareerPhase3 from "./components/career/Phase3";
+import CareerPhase4 from "./components/career/Phase4";
+import CareerPhase5 from "./components/career/Phase5";
+
+
+import DiscriminationContent from "./components/discrimination/Content";
+import DiscriminationIntroduction from "./components/discrimination/Introduction";
+import DiscriminationChapter1 from "./components/discrimination/Chapter1";
+import DiscriminationPhase2 from "./components/discrimination/Phase2";
+import DiscriminationPhase3 from "./components/discrimination/Phase3";
+import DiscriminationPhase4 from "./components/discrimination/Phase4";
+import DiscriminationPhase5 from "./components/discrimination/Phase5";
 
 function App() {
   return (
@@ -52,7 +70,7 @@ function App() {
       <Route path="/login" element={<Signup />} />
       <Route path="/register" element={<Register />} />
 
-      {/* Academic Routes */}
+      
       <Route
         path="/academics"
         element={
@@ -110,7 +128,7 @@ function App() {
         }
       />
 
-      {/* Peer Routes */}
+      
       <Route
         path="/peer"
         element={
@@ -168,7 +186,7 @@ function App() {
         }
       />
 
-      {/* Social Routes */}
+      
       <Route
         path="/social"
         element={
@@ -226,7 +244,7 @@ function App() {
         }
       />
 
-      {/* Financial Routes */}
+      
       <Route
         path="/financial"
         element={
@@ -280,6 +298,122 @@ function App() {
         element={
           <Layout>
             <FinancialPhase5 />
+          </Layout>
+        }
+      />
+
+      
+      <Route
+        path="/career"
+        element={
+          <Layout>
+            <CareerContent />
+          </Layout>
+        }
+      />
+      <Route
+        path="/career/chapter1"
+        element={
+          <Layout>
+            <CareerIntroduction />
+          </Layout>
+        }
+      />
+      <Route
+        path="/career/chapter1/sub1"
+        element={
+          <Layout>
+            <CareerChapter1 />
+          </Layout>
+        }
+      />
+      <Route
+        path="/career/chapter1/sub2"
+        element={
+          <Layout>
+            <CareerPhase2 />
+          </Layout>
+        }
+      />
+      <Route
+        path="/career/chapter1/sub3"
+        element={
+          <Layout>
+            <CareerPhase3 />
+          </Layout>
+        }
+      />
+      <Route
+        path="/career/chapter1/sub4"
+        element={
+          <Layout>
+            <CareerPhase4 />
+          </Layout>
+        }
+      />
+      <Route
+        path="/career/chapter1/sub5"
+        element={
+          <Layout>
+            <CareerPhase5 />
+          </Layout>
+        }
+      />
+
+      
+      <Route
+        path="/discrimination"
+        element={
+          <Layout>
+            <DiscriminationContent />
+          </Layout>
+        }
+      />
+      <Route
+        path="/discrimination/chapter1"
+        element={
+          <Layout>
+            <DiscriminationIntroduction />
+          </Layout>
+        }
+      />
+      <Route
+        path="/discrimination/chapter1/sub1"
+        element={
+          <Layout>
+            <DiscriminationChapter1 />
+          </Layout>
+        }
+      />
+      <Route
+        path="/discrimination/chapter1/sub2"
+        element={
+          <Layout>
+            <DiscriminationPhase2 />
+          </Layout>
+        }
+      />
+      <Route
+        path="/discrimination/chapter1/sub3"
+        element={
+          <Layout>
+            <DiscriminationPhase3 />
+          </Layout>
+        }
+      />
+      <Route
+        path="/discrimination/chapter1/sub4"
+        element={
+          <Layout>
+            <DiscriminationPhase4 />
+          </Layout>
+        }
+      />
+      <Route
+        path="/discrimination/chapter1/sub5"
+        element={
+          <Layout>
+            <DiscriminationPhase5 />
           </Layout>
         }
       />
