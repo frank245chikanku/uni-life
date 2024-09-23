@@ -61,6 +61,26 @@ import DiscriminationPhase3 from "./components/discrimination/Phase3";
 import DiscriminationPhase4 from "./components/discrimination/Phase4";
 import DiscriminationPhase5 from "./components/discrimination/Phase5";
 
+
+import EntrepreneurshipContent from "./components/entrepreneurship/Content";
+import EntrepreneurshipChapter1 from "./components/entrepreneurship/Chapter1";
+import EntrepreneurshipIntroduction from "./components/entrepreneurship/Introduction";
+import EntrepreneurshipPhase2 from "./components/entrepreneurship/Phase2";
+import EntrepreneurshipPhase3 from "./components/entrepreneurship/Phase3";
+import EntrepreneurshipPhase4 from "./components/entrepreneurship/Phase4";
+import EntrepreneurshipPhase5 from "./components/entrepreneurship/Phase5";
+
+
+// Adjustment Components
+import AdjustmentContent from "./components/adjustment/Content";
+import AdjustmentChapter1 from "./components/adjustment/Chapter1";
+import AdjustmentIntroduction from "./components/adjustment/Introduction";
+import AdjustmentPhase2 from "./components/adjustment/Phase2";
+import AdjustmentPhase3 from "./components/adjustment/Phase3";
+import AdjustmentPhase4 from "./components/adjustment/Phase4";
+import AdjustmentPhase5 from "./components/adjustment/Phase5";
+
+
 function App() {
   return (
     <Routes>
@@ -417,6 +437,123 @@ function App() {
           </Layout>
         }
       />
+
+
+      <Route
+        path="/entrepreneurship"
+        element={
+          <Layout>
+            <EntrepreneurshipContent />
+          </Layout>
+        }
+      />
+      <Route
+        path="/entrepreneurship/chapter1"
+        element={
+          <Layout>
+            <EntrepreneurshipIntroduction />
+          </Layout>
+        }
+      />
+      <Route
+        path="/entrepreneurship/chapter1/sub1"
+        element={
+          <Layout>
+            <EntrepreneurshipChapter1 />
+          </Layout>
+        }
+      />
+      <Route
+        path="/entrepreneurship/chapter1/sub2"
+        element={
+          <Layout>
+            <EntrepreneurshipPhase2 />
+          </Layout>
+        }
+      />
+      <Route
+        path="/entrepreneurship/chapter1/sub3"
+        element={
+          <Layout>
+            <EntrepreneurshipPhase3 />
+          </Layout>
+        }
+      />
+      <Route
+        path="/entrepreneurship/chapter1/sub4"
+        element={
+          <Layout>
+            <EntrepreneurshipPhase4 />
+          </Layout>
+        }
+      />
+      <Route
+        path="/entrepreneurship/chapter1/sub5"
+        element={
+          <Layout>
+            <EntrepreneurshipPhase5 />
+          </Layout>
+        }
+      />
+
+    <Route
+        path="/adjustment"
+        element={
+          <Layout>
+            <AdjustmentContent />
+          </Layout>
+        }
+      />
+      <Route
+        path="/adjustment/chapter1"
+        element={
+          <Layout>
+            <AdjustmentIntroduction />
+          </Layout>
+        }
+      />
+      <Route
+        path="/adjustment/chapter1/sub1"
+        element={
+          <Layout>
+            <AdjustmentChapter1 />
+          </Layout>
+        }
+      />
+      <Route
+        path="/adjustment/chapter1/sub2"
+        element={
+          <Layout>
+            <AdjustmentPhase2 />
+          </Layout>
+        }
+      />
+      <Route
+        path="/adjustment/chapter1/sub3"
+        element={
+          <Layout>
+            <AdjustmentPhase3 />
+          </Layout>
+        }
+      />
+      <Route
+        path="/adjustment/chapter1/sub4"
+        element={
+          <Layout>
+            <AdjustmentPhase4 />
+          </Layout>
+        }
+      />
+      <Route
+        path="/adjustment/chapter1/sub5"
+        element={
+          <Layout>
+            <AdjustmentPhase5 />
+          </Layout>
+        }
+      />
+
+
     </Routes>
   );
 }

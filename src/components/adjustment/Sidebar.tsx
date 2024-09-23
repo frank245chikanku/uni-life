@@ -21,11 +21,11 @@ const items: MenuItem[] = [
         key: "sub1",
         label: "Introduction",
         children: [
-          { key: "1", label: <Link to="/chapter1/sub1"> Understanding Academic Integrity</Link> },
-          { key: "2", label: <Link to="/chapter1/sub2">Implementing Best Practices</Link> },
-          { key: "3", label: <Link to="/chapter1/sub3">Addressing Violations</Link> },
-          { key: "4", label: <Link to="/chapter1/sub4">Promoting a Culture of Integrity</Link> },
-          { key: "5", label: <Link to="/chapter1/sub5">Continuous Improvement</Link> },
+          { key: "1", label: <Link to="/chapter1/sub1">Phase 1</Link> },
+          { key: "2", label: <Link to="/chapter1/sub2">Phase 2</Link> },
+          { key: "3", label: <Link to="/chapter1/sub3">Phase 3</Link> },
+          { key: "4", label: <Link to="/chapter1/sub4">Phase 4</Link> },
+          { key: "5", label: <Link to="/chapter1/sub5">Phase 5</Link> },
         ],
       },
     ],
@@ -64,7 +64,7 @@ const Sidebar: React.FC = () => {
   return (
     <Menu
       onClick={onClick}
-      style={{ width: 384 }}
+      style={{ width: 256 }}
       defaultSelectedKeys={["1"]}
       defaultOpenKeys={["chapter1"]}
       mode="inline"

@@ -66,19 +66,19 @@ const Categories = () => {
           </p>
         </Link>
 
-        <div className="w-full shadow shadow-gray-600 bg-[#da3163] cursor-pointer hover:shadow-slate-900 hover:shadow-md p-4 rounded-sm flex flex-col justify-center items-center">
+        <Link to={"/entrepreneurship"}className="w-full shadow shadow-gray-600 bg-[#da3163] cursor-pointer hover:shadow-slate-900 hover:shadow-md p-4 rounded-sm flex flex-col justify-center items-center">
           <img className="h-20 w-20" src={presentation} alt="presentation" />
           <p className="mt-4 font-bold text-slate-200 text-lg text-center">
             Entrepreneurship Uncertainty
           </p>
-        </div>
+        </Link>
 
-        <div className="w-full shadow shadow-gray-600 bg-[#1e993d] cursor-pointer hover:shadow-slate-900 hover:shadow-md p-4 rounded-sm flex flex-col justify-center items-center">
+        <Link to={"/adjustment"}className="w-full shadow shadow-gray-600 bg-[#1e993d] cursor-pointer hover:shadow-slate-900 hover:shadow-md p-4 rounded-sm flex flex-col justify-center items-center">
           <img className="h-20 w-20" src={leader} alt="leader" />
           <p className="mt-4 font-bold text-slate-200 text-lg text-center">
             Adjustment to Independence
           </p>
-        </div>
+        </Link>
       </div>
     </section>
   );
