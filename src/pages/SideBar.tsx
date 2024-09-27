@@ -12,7 +12,7 @@ type MenuItem = Required<MenuProps>["items"][number];
 
 const items: MenuItem[] = [
   {
-    key: "/peer/chapter1",
+    key: "chapter1",
     label: <Link to="/peer/chapter1">Chapter 1</Link>,
     icon: <MailOutlined />,
     children: [

@@ -10,22 +10,40 @@ import { Link } from "react-router-dom";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
-
 const items: MenuItem[] = [
   {
-    key: "chapter1",
-    label: <Link to="/chapter1">Chapter 1</Link>,
+    key: "academics/chapter1",
+    label: <Link to="/academics/chapter1">Chapter 1</Link>,
     icon: <MailOutlined />,
     children: [
       {
         key: "sub1",
         label: "Introduction",
         children: [
-          { key: "1", label: <Link to="/chapter1/sub1"> Understanding Academic Integrity</Link> },
-          { key: "2", label: <Link to="/chapter1/sub2">Implementing Best Practices</Link> },
-          { key: "3", label: <Link to="/chapter1/sub3">Addressing Violations</Link> },
-          { key: "4", label: <Link to="/chapter1/sub4">Promoting a Culture of Integrity</Link> },
-          { key: "5", label: <Link to="/chapter1/sub5">Continuous Improvement</Link> },
+          {
+            key: "1",
+            label: (
+              <Link to="/chapter1/sub1"> Understanding Academic Integrity</Link>
+            ),
+          },
+          {
+            key: "2",
+            label: <Link to="/chapter1/sub2">Implementing Best Practices</Link>,
+          },
+          {
+            key: "3",
+            label: <Link to="/chapter1/sub3">Addressing Violations</Link>,
+          },
+          {
+            key: "4",
+            label: (
+              <Link to="/chapter1/sub4">Promoting a Culture of Integrity</Link>
+            ),
+          },
+          {
+            key: "5",
+            label: <Link to="/chapter1/sub5">Continuous Improvement</Link>,
+          },
         ],
       },
     ],
