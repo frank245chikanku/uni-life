@@ -10,22 +10,21 @@ import { Link } from "react-router-dom";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
-
 const items: MenuItem[] = [
   {
     key: "chapter1",
-    label: <Link to="/chapter1">Chapter 1</Link>,
+    label: <Link to="/social/chapter1">Chapter 1</Link>,
     icon: <MailOutlined />,
     children: [
       {
         key: "sub1",
         label: "Introduction",
         children: [
-          { key: "1", label: <Link to="/chapter1/sub1">Phase 1</Link> },
-          { key: "2", label: <Link to="/chapter1/sub2">Phase 2</Link> },
-          { key: "3", label: <Link to="/chapter1/sub3">Phase 3</Link> },
-          { key: "4", label: <Link to="/chapter1/sub4">Phase 4</Link> },
-          { key: "5", label: <Link to="/chapter1/sub5">Phase 5</Link> },
+          { key: "1", label: <Link to="/social/chapter1/sub1">Phase 1</Link> },
+          { key: "2", label: <Link to="/social/chapter1/sub2">Phase 2</Link> },
+          { key: "3", label: <Link to="/social/chapter1/sub3">Phase 3</Link> },
+          { key: "4", label: <Link to="/social/chapter1/sub4">Phase 4</Link> },
+          { key: "5", label: <Link to="/social/chapter1/sub5">Phase 5</Link> },
         ],
       },
     ],

@@ -6,10 +6,11 @@ export type ChapterData = {
 
 export type CategoryData = {
   [key: string]: {
-    [key: string]: ChapterData; // e.g., { phase1: { title: string; content: string[]; }; }
+    [key: string]: ChapterData; 
+    
   };
 };
 
 export type DataStructure = {
-  [key: string]: CategoryData; // e.g., { academics: {}, peer: {} }
+  [key: string]: CategoryData; 
 };

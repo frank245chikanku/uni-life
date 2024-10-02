@@ -23,7 +23,7 @@ const items: MenuItem[] = [
           {
             key: "1",
             label: (
-              <Link to="/chapter1/sub1"> Understanding Academic Integrity</Link>
+              <Link to="/chapter1/sub1">Understanding Academic Integrity</Link>
             ),
           },
           {
@@ -49,32 +49,32 @@ const items: MenuItem[] = [
     ],
   },
   {
-    key: "chapter2",
-    label: <Link to="/chapter2">Chapter 2</Link>,
+    key: "academics/chapter2",
+    label: <Link to="/academics/chapter2">Chapter 2</Link>,
     icon: <AppstoreOutlined />,
     children: [
-      { key: "6", label: <Link to="/chapter2/sub1">Phase 1</Link> },
-      { key: "7", label: <Link to="/chapter2/sub1">Phase 2</Link> },
-      { key: "8", label: <Link to="/chapter2/sub1">Phase 3</Link> },
-      { key: "9", label: <Link to="/chapter2/sub1">Phase 4</Link> },
-      { key: "10", label: <Link to="/chapter2/sub1">Phase 5</Link> },
+      { key: "6", label: <Link to="/academics/chapter2/sub1">Phase 1</Link> },
+      { key: "7", label: <Link to="/academics/chapter2/sub2">Phase 2</Link> },
+      { key: "8", label: <Link to="/academics/chapter2/sub3">Phase 3</Link> },
+      { key: "9", label: <Link to="/academics/chapter2/sub4">Phase 4</Link> },
+      { key: "10", label: <Link to="/academics/chapter2/sub5">Phase 5</Link> },
     ],
   },
   {
-    key: "chapter3",
-    label: <Link to="/chapter3">Chapter 3</Link>,
+    key: "academics/chapter3",
+    label: <Link to="/academics/chapter3">Chapter 3</Link>,
     icon: <SettingOutlined />,
     children: [
-      { key: "11", label: <Link to="/chapter2/sub1">Phase 1</Link> },
-      { key: "12", label: <Link to="/chapter2/sub1">Phase 2</Link> },
-      { key: "13", label: <Link to="/chapter2/sub1">Phase 3</Link> },
-      { key: "14", label: <Link to="/chapter2/sub1">Phase 4</Link> },
-      { key: "15", label: <Link to="/chapter2/sub1">Phase 5</Link> },
+      { key: "11", label: <Link to="/academics/chapter3/sub1">Phase 1</Link> },
+      { key: "12", label: <Link to="/academics/chapter3/sub2">Phase 2</Link> },
+      { key: "13", label: <Link to="/academics/chapter3/sub3">Phase 3</Link> },
+      { key: "14", label: <Link to="/academics/chapter3/sub4">Phase 4</Link> },
+      { key: "15", label: <Link to="/academics/chapter3/sub5">Phase 5</Link> },
     ],
   },
 ];
 
-const Sidebar: React.FC = () => {
+const AcademicsSidebar: React.FC = () => {
   const onClick: MenuProps["onClick"] = (e) => {
     console.log("click ", e);
   };
@@ -84,7 +84,7 @@ const Sidebar: React.FC = () => {
       onClick={onClick}
       style={{ width: 384 }}
       defaultSelectedKeys={["1"]}
-      defaultOpenKeys={["chapter1"]}
+      defaultOpenKeys={["academics/chapter1"]}
       mode="inline"
       items={items}
       className="text-lg custom-menu group"
@@ -92,4 +92,4 @@ const Sidebar: React.FC = () => {
   );
 };
 
-export default Sidebar;
+export default AcademicsSidebar;

@@ -19,7 +19,7 @@ const Navbar = () => {
           to="/register"
           className="p-3 bg-gradient-to-br from-[#00a6ff] to-red-500 rounded-full"
         >
-          Sign In
+          Sign Up
         </Link>
         <Link to="/login" className="p-3 shadow shadow-blue-200 rounded-full">
           Log In

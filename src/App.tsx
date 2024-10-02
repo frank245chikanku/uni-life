@@ -63,7 +63,6 @@ import EntrepreneurshipPhase3 from "./components/entrepreneurship/Phase3";
 import EntrepreneurshipPhase4 from "./components/entrepreneurship/Phase4";
 import EntrepreneurshipPhase5 from "./components/entrepreneurship/Phase5";
 
-// Adjustment Components
 import AdjustmentContent from "./components/adjustment/Content";
 import AdjustmentChapter1 from "./components/adjustment/Chapter1";
 import AdjustmentIntroduction from "./components/adjustment/Introduction";
@@ -73,7 +72,6 @@ import AdjustmentPhase4 from "./components/adjustment/Phase4";
 import AdjustmentPhase5 from "./components/adjustment/Phase5";
 import Chapter2 from "./components/discrimination/Chapter2";
 import Chapter3 from "./components/discrimination/Chapter3";
-import Chapter from "./chapters/Chpater";
 import Phase11 from "./components/peer/Chapter1";
 import AdjustmentChapter from "./components/adjustment/Chapter1";
 import CareerChapter from "./components/career/Chapter1";
@@ -107,11 +105,118 @@ function App() {
           </Layout>
         }
       />
+
       <Route
         path="/academic/chapter1"
         element={
           <Layout>
             <Chapter1 />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/academics/chapter2"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/academics/chapter3"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/academics/chapter2/sub1"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/academics/chapter2/sub2"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+      <Route
+        path="/academics/chapter2/sub3"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+      <Route
+        path="/academics/chapter2/sub4"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/academics/chapter2/sub5"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/academics/chapter3/sub1"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/academics/chapter3/sub2"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/academics/chapter3/sub3"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/academics/chapter3/sub4"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/academics/chapter3/sub5"
+        element={
+          <Layout>
+            <Introduction />
           </Layout>
         }
       />
