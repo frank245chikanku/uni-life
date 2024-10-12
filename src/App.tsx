@@ -72,13 +72,11 @@ import AdjustmentPhase4 from "./components/adjustment/Phase4";
 import AdjustmentPhase5 from "./components/adjustment/Phase5";
 import Chapter2 from "./components/discrimination/Chapter2";
 import Chapter3 from "./components/discrimination/Chapter3";
-import Phase11 from "./components/peer/Chapter1";
 import AdjustmentChapter from "./components/adjustment/Chapter1";
 import CareerChapter from "./components/career/Chapter1";
 import DiscrimnationChapter from "./components/discrimination/Chapter1";
 import EntreprenuersChapter from "./components/entrepreneurship/Chapter1";
 import FinancailChapter from "./components//financial/Chapter1";
-import SocialChapter from "./components/social/Chapter1";
 
 function App() {
   return (
@@ -213,7 +211,24 @@ function App() {
       />
 
       <Route
-        path="/academics/chapter3/sub5"
+        path="/academics/chapter3/sub5"   
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />     
+
+      <Route
+        path="/peer"
+        element={
+          <Layout>
+            <Content />
+          </Layout>
+        }
+      />
+      <Route
+        path="/peer/chapter1"
         element={
           <Layout>
             <Introduction />
@@ -225,7 +240,121 @@ function App() {
         path="/peer/chapter1"
         element={
           <Layout>
-            <Phase11 />
+            <Chapter1 />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/peer/chapter2"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/peer/chapter3"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/peer/chapter2/sub1"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/peer/chapter2/sub2"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+      <Route
+        path="/peer/chapter2/sub3"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+      <Route
+        path="/peer/chapter2/sub4"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/peer/chapter2/sub5"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/peer/chapter3/sub1"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/peer/chapter3/sub2"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/peer/chapter3/sub3"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/peer/chapter3/sub4"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/peer/chapter3/sub5"   
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+      <Route
+        path="/social/chapter1"
+        element={
+          <Layout>
+            <Introduction />
           </Layout>
         }
       />
@@ -234,7 +363,113 @@ function App() {
         path="/social/chapter1"
         element={
           <Layout>
-            <SocialChapter />
+            <Chapter1 />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/social/chapter2"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/social/chapter3"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/social/chapter2/sub1"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/social/chapter2/sub2"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+      <Route
+        path="/social/chapter2/sub3"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+      <Route
+        path="/social/chapter2/sub4"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/social/chapter2/sub5"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/social/chapter3/sub1"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/social/chapter3/sub2"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/social/chapter3/sub3"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/social/chapter3/sub4"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/social/chapter3/sub5"
+        element={
+          <Layout>
+            <Introduction />
           </Layout>
         }
       />
@@ -521,11 +756,11 @@ function App() {
         }
       />
 
-      <Route
+    <Route
         path="/career"
         element={
           <Layout>
-            <CareerContent />
+            <Content />
           </Layout>
         }
       />
@@ -533,104 +768,219 @@ function App() {
         path="/career/chapter1"
         element={
           <Layout>
-            <CareerIntroduction />
-          </Layout>
-        }
-      />
-      <Route
-        path="/career/chapter1/sub1"
-        element={
-          <Layout>
-            <CareerChapter1 />
-          </Layout>
-        }
-      />
-      <Route
-        path="/career/chapter1/sub2"
-        element={
-          <Layout>
-            <CareerPhase2 />
-          </Layout>
-        }
-      />
-      <Route
-        path="/career/chapter1/sub3"
-        element={
-          <Layout>
-            <CareerPhase3 />
-          </Layout>
-        }
-      />
-      <Route
-        path="/career/chapter1/sub4"
-        element={
-          <Layout>
-            <CareerPhase4 />
-          </Layout>
-        }
-      />
-      <Route
-        path="/career/chapter1/sub5"
-        element={
-          <Layout>
-            <CareerPhase5 />
+            <Introduction />
           </Layout>
         }
       />
 
       <Route
-        path="/discrimination"
+        path="/career/chapter1"
         element={
           <Layout>
-            <DiscriminationContent />
+            <Chapter1 />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/career/chapter2"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/career/chapter3"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/career/chapter2/sub1"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/career/chapter2/sub2"
+        element={
+          <Layout>
+            <Introduction />
           </Layout>
         }
       />
       <Route
-        path="/discrimination/chapter1"
+        path="/career/chapter2/sub3"
         element={
           <Layout>
-            <DiscriminationIntroduction />
+            <Introduction />
           </Layout>
         }
       />
       <Route
-        path="/discrimination/chapter1/sub1"
+        path="/career/chapter2/sub4"
         element={
           <Layout>
-            <DiscriminationChapter1 />
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/career/chapter2/sub5"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/career/chapter3/sub1"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/career/chapter3/sub2"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/career/chapter3/sub3"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/career/chapter3/sub4"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/career/chapter3/sub5"   
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/discrimination/chapter3"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/discrimination/chapter2/sub1"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/discrimination/chapter2/sub2"
+        element={
+          <Layout>
+            <Introduction />
           </Layout>
         }
       />
       <Route
-        path="/discrimination/chapter1/sub2"
+        path="/discrimination/chapter2/sub3"
         element={
           <Layout>
-            <DiscriminationPhase2 />
+            <Introduction />
           </Layout>
         }
       />
       <Route
-        path="/discrimination/chapter1/sub3"
+        path="/discrimination/chapter2/sub4"
         element={
           <Layout>
-            <DiscriminationPhase3 />
+            <Introduction />
           </Layout>
         }
       />
+
       <Route
-        path="/discrimination/chapter1/sub4"
+        path="/discrimination/chapter2/sub5"
         element={
           <Layout>
-            <DiscriminationPhase4 />
+            <Introduction />
           </Layout>
         }
       />
+
       <Route
-        path="/discrimination/chapter1/sub5"
+        path="/discrimination/chapter3/sub1"
         element={
           <Layout>
-            <DiscriminationPhase5 />
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/discrimination/chapter3/sub2"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/discrimination/chapter3/sub3"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/discrimination/chapter3/sub4"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/discrimination/chapter3/sub5"   
+        element={
+          <Layout>
+            <Introduction />
           </Layout>
         }
       />
@@ -693,59 +1043,100 @@ function App() {
       />
 
       <Route
-        path="/adjustment"
+        path="/adjustment/chapter3"
         element={
           <Layout>
-            <AdjustmentContent />
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/adjustment/chapter2/sub1"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/adjustment/chapter2/sub2"
+        element={
+          <Layout>
+            <Introduction />
           </Layout>
         }
       />
       <Route
-        path="/adjustment/chapter1"
+        path="/adjustment/chapter2/sub3"
         element={
           <Layout>
-            <AdjustmentIntroduction />
+            <Introduction />
           </Layout>
         }
       />
       <Route
-        path="/adjustment/chapter1/sub1"
+        path="/adjustment/chapter2/sub4"
         element={
           <Layout>
-            <AdjustmentChapter1 />
+            <Introduction />
           </Layout>
         }
       />
+
       <Route
-        path="/adjustment/chapter1/sub2"
+        path="/adjustment/chapter2/sub5"
         element={
           <Layout>
-            <AdjustmentPhase2 />
+            <Introduction />
           </Layout>
         }
       />
+
       <Route
-        path="/adjustment/chapter1/sub3"
+        path="/adjustment/chapter3/sub1"
         element={
           <Layout>
-            <AdjustmentPhase3 />
+            <Introduction />
           </Layout>
         }
       />
+
       <Route
-        path="/adjustment/chapter1/sub4"
+        path="/adjustment/chapter3/sub2"
         element={
           <Layout>
-            <AdjustmentPhase4 />
+            <Introduction />
           </Layout>
         }
       />
+
       <Route
-        path="/adjustment/chapter1/sub5"
+        path="/adjustment/chapter3/sub3"
         element={
           <Layout>
-            <AdjustmentPhase5 />
+            <Introduction />
           </Layout>
+        }
+      />
+
+      <Route
+        path="/adjustment/chapter3/sub4"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/adjustment/chapter3/sub5"   
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        
         }
       />
     </Routes>

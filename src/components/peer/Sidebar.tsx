@@ -1,5 +1,9 @@
 import React from "react";
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from "@ant-design/icons";
+import {
+  AppstoreOutlined,
+  MailOutlined,
+  SettingOutlined,
+} from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Menu } from "antd";
 import { Link } from "react-router-dom";
@@ -18,23 +22,27 @@ const items: MenuItem[] = [
         children: [
           {
             key: "1",
-            label: <Link to="/peer/chapter1/sub1">Understanding Peer Pressure</Link>,
+            label: (
+              <Link to="/chapter1/sub1">Understanding Peer Pressure</Link>
+            ),
           },
           {
             key: "2",
-            label: <Link to="/peer/chapter1/sub2">Who Are Your Peers?</Link>,
+            label: <Link to="/chapter1/sub2">Who Are Your Peers </Link>,
           },
           {
             key: "3",
-            label: <Link to="/peer/chapter1/sub3">Groupthink and Conformity</Link>,
+            label: <Link to="/chapter1/sub3">Groupthink and Comformity</Link>,
           },
           {
             key: "4",
-            label: <Link to="/peer/chapter1/sub4">Communication and Assertiveness</Link>,
+            label: (
+              <Link to="/chapter1/sub4">Communication and Assertiveness</Link>
+            ),
           },
           {
             key: "5",
-            label: <Link to="/peer/chapter1/sub5">Refusing Pressure Tactfully</Link>,
+            label: <Link to="/chapter1/sub5">Refusing Pressure Tactfully</Link>,
           },
         ],
       },
