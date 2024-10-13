@@ -105,7 +105,7 @@ function App() {
       />
 
       <Route
-        path="/academic/chapter1"
+        path="/academics/chapter1"
         element={
           <Layout>
             <Chapter1 />
@@ -699,11 +699,11 @@ function App() {
         }
       />
 
-      <Route
+<Route
         path="/financial"
         element={
           <Layout>
-            <FinancialContent />
+            <Content />
           </Layout>
         }
       />
@@ -711,47 +711,122 @@ function App() {
         path="/financial/chapter1"
         element={
           <Layout>
-            <FinancialIntroduction />
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/financial/chapter1"
+        element={
+          <Layout>
+            <Chapter1 />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/financial/chapter2"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/financial/chapter3"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/financial/chapter2/sub1"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/financial/chapter2/sub2"
+        element={
+          <Layout>
+            <Introduction />
           </Layout>
         }
       />
       <Route
-        path="/financial/chapter1/sub1"
+        path="/financial/chapter2/sub3"
         element={
           <Layout>
-            <FinancialChapter1 />
+            <Introduction />
           </Layout>
         }
       />
       <Route
-        path="/financial/chapter1/sub2"
+        path="/financial/chapter2/sub4"
         element={
           <Layout>
-            <FinancialPhase2 />
+            <Introduction />
           </Layout>
         }
       />
+
       <Route
-        path="/financial/chapter1/sub3"
+        path="/financial/chapter2/sub5"
         element={
           <Layout>
-            <FinancialPhase3 />
+            <Introduction />
           </Layout>
         }
       />
+
       <Route
-        path="/financial/chapter1/sub4"
+        path="/financial/chapter3/sub1"
         element={
           <Layout>
-            <FinancialPhase4 />
+            <Introduction />
           </Layout>
         }
       />
+
       <Route
-        path="/financial/chapter1/sub5"
+        path="/financial/chapter3/sub2"
         element={
           <Layout>
-            <FinancialPhase5 />
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/financial/chapter3/sub3"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/financial/chapter3/sub4"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/financial/chapter3/sub5"   
+        element={
+          <Layout>
+            <Introduction />
           </Layout>
         }
       />
@@ -985,11 +1060,11 @@ function App() {
         }
       />
 
-      <Route
+<Route
         path="/entrepreneurship"
         element={
           <Layout>
-            <EntrepreneurshipContent />
+            <Content />
           </Layout>
         }
       />
@@ -997,47 +1072,122 @@ function App() {
         path="/entrepreneurship/chapter1"
         element={
           <Layout>
-            <EntrepreneurshipIntroduction />
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/entrepreneurship/chapter1"
+        element={
+          <Layout>
+            <Chapter1 />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/entrepreneurship/chapter2"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/entrepreneurship/chapter3"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/entrepreneurship/chapter2/sub1"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/entrepreneurship/chapter2/sub2"
+        element={
+          <Layout>
+            <Introduction />
           </Layout>
         }
       />
       <Route
-        path="/entrepreneurship/chapter1/sub1"
+        path="/entrepreneurship/chapter2/sub3"
         element={
           <Layout>
-            <EntrepreneurshipChapter1 />
+            <Introduction />
           </Layout>
         }
       />
       <Route
-        path="/entrepreneurship/chapter1/sub2"
+        path="/entrepreneurship/chapter2/sub4"
         element={
           <Layout>
-            <EntrepreneurshipPhase2 />
+            <Introduction />
           </Layout>
         }
       />
+
       <Route
-        path="/entrepreneurship/chapter1/sub3"
+        path="/entrepreneurship/chapter2/sub5"
         element={
           <Layout>
-            <EntrepreneurshipPhase3 />
+            <Introduction />
           </Layout>
         }
       />
+
       <Route
-        path="/entrepreneurship/chapter1/sub4"
+        path="/entrepreneurship/chapter3/sub1"
         element={
           <Layout>
-            <EntrepreneurshipPhase4 />
+            <Introduction />
           </Layout>
         }
       />
+
       <Route
-        path="/entrepreneurship/chapter1/sub5"
+        path="/entrepreneurship/chapter3/sub2"
         element={
           <Layout>
-            <EntrepreneurshipPhase5 />
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/entrepreneurship/chapter3/sub3"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/entrepreneurship/chapter3/sub4"
+        element={
+          <Layout>
+            <Introduction />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/entrepreneurship/chapter3/sub5"   
+        element={
+          <Layout>
+            <Introduction />
           </Layout>
         }
       />
