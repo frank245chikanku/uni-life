@@ -28,7 +28,8 @@ const Phase2: React.FC = () => {
       <p>
         While explanations about the problem of plagiarism and models of good practice can be accessed on websites and through class activities, without the impetus of assessment, students would be unlikely to use these sources. In fact, for most people, the need to
         acknowledge sources only happens when they make texts for assessment because this is when
-        they have an audience. Students are alert to assessment, and feedback from assessment is a.
+        they have an audience. 
+        Students are alert to assessment, and feedback from assessment is a critical motivator for their engagement with academic integrity practices. This external pressure encourages them to understand the importance of acknowledging sources and adhering to ethical standards, as they recognize that doing so not only impacts their grades but also contributes to their growth as responsible learners and professionals
       </p>
     </div>
   );
