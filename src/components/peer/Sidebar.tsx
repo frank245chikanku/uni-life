@@ -53,11 +53,11 @@ const items: MenuItem[] = [
     label: <Link to="/peer/chapter2">Chapter 2</Link>,
     icon: <AppstoreOutlined />,
     children: [
-      { key: "6", label: <Link to="/peer/chapter2/sub1">Phase 1</Link> },
-      { key: "7", label: <Link to="/peer/chapter2/sub2">Phase 2</Link> },
-      { key: "8", label: <Link to="/peer/chapter2/sub3">Phase 3</Link> },
-      { key: "9", label: <Link to="/peer/chapter2/sub4">Phase 4</Link> },
-      { key: "10", label: <Link to="/peer/chapter2/sub5">Phase 5</Link> },
+      { key: "6", label: <Link to="/peer/chapter2/sub1">Understanding Assertiveness</Link> },
+      { key: "7", label: <Link to="/peer/chapter2/sub2">Active Listening Skills</Link> },
+      { key: "8", label: <Link to="/peer/chapter2/sub3">The Pressure to Conform</Link> },
+      { key: "9", label: <Link to="/peer/chapter2/sub4">Encouraging Diverse Opinions</Link> },
+      { key: "10", label: <Link to="/peer/chapter2/sub5">How to Say No</Link> },
     ],
   },
   {
@@ -65,11 +65,11 @@ const items: MenuItem[] = [
     label: <Link to="/peer/chapter3">Chapter 3</Link>,
     icon: <SettingOutlined />,
     children: [
-      { key: "11", label: <Link to="/peer/chapter3/sub1">Phase 1</Link> },
-      { key: "12", label: <Link to="/peer/chapter3/sub2">Phase 2</Link> },
-      { key: "13", label: <Link to="/peer/chapter3/sub3">Phase 3</Link> },
-      { key: "14", label: <Link to="/peer/chapter3/sub4">Phase 4</Link> },
-      { key: "15", label: <Link to="/peer/chapter3/sub5">Phase 5</Link> },
+      { key: "11", label: <Link to="/peer/chapter3/sub1">Finding Your Voice</Link> },
+      { key: "12", label: <Link to="/peer/chapter3/sub2">The Pull of the Crowd</Link> },
+      { key: "13", label: <Link to="/peer/chapter3/sub3">Mapping Your Social Circle</Link> },
+      { key: "14", label: <Link to="/peer/chapter3/sub4">Crafting Your No</Link> },
+      { key: "15", label: <Link to="/peer/chapter3/sub5">The Influence Spectrum</Link> },
     ],
   },
 ];

@@ -53,11 +53,11 @@ const items: MenuItem[] = [
     label: <Link to="/academics/chapter2">Chapter 2</Link>,
     icon: <AppstoreOutlined />,
     children: [
-      { key: "6", label: <Link to="/academics/chapter2/sub1">Phase 1</Link> },
-      { key: "7", label: <Link to="/academics/chapter2/sub2">Phase 2</Link> },
-      { key: "8", label: <Link to="/academics/chapter2/sub3">Phase 3</Link> },
-      { key: "9", label: <Link to="/academics/chapter2/sub4">Phase 4</Link> },
-      { key: "10", label: <Link to="/academics/chapter2/sub5">Phase 5</Link> },
+      { key: "6", label: <Link to="/academics/chapter2/sub1">Common Misunderstandings</Link> },
+      { key: "7", label: <Link to="/academics/chapter2/sub2">The Role of Faculty</Link> },
+      { key: "8", label: <Link to="/academics/chapter2/sub3">Student Responsibilities</Link> },
+      { key: "9", label: <Link to="/academics/chapter2/sub4">Talking About Integrity</Link> },
+      { key: "10", label: <Link to="/academics/chapter2/sub5">Understanding Plagiarism</Link> },
     ],
   },
   {
@@ -65,11 +65,11 @@ const items: MenuItem[] = [
     label: <Link to="/academics/chapter3">Chapter 3</Link>,
     icon: <SettingOutlined />,
     children: [
-      { key: "11", label: <Link to="/academics/chapter3/sub1">Phase 1</Link> },
-      { key: "12", label: <Link to="/academics/chapter3/sub2">Phase 2</Link> },
-      { key: "13", label: <Link to="/academics/chapter3/sub3">Phase 3</Link> },
-      { key: "14", label: <Link to="/academics/chapter3/sub4">Phase 4</Link> },
-      { key: "15", label: <Link to="/academics/chapter3/sub5">Phase 5</Link> },
+      { key: "11", label: <Link to="/academics/chapter3/sub1">Creating Integrity Pledges</Link> },
+      { key: "12", label: <Link to="/academics/chapter3/sub2">Setting the Right Tone</Link> },
+      { key: "13", label: <Link to="/academics/chapter3/sub3">Everyone's Involved</Link> },
+      { key: "14", label: <Link to="/academics/chapter3/sub4">Check-Ins for Integrity</Link> },
+      { key: "15", label: <Link to="/academics/chapter3/sub5">Acting on Feedback</Link> },
     ],
   },
 ];
