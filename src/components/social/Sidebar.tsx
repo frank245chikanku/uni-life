@@ -23,26 +23,26 @@ const items: MenuItem[] = [
           {
             key: "1",
             label: (
-              <Link to="/chapter1/sub1">Understanding social </Link>
+              <Link to="/chapter1/sub1">Understanding Social Responsibility</Link>
             ),
           },
           {
             key: "2",
-            label: <Link to="/chapter1/sub2">Implementing Best Practices</Link>,
+            label: <Link to="/chapter1/sub2">The Role of Individuals</Link>,
           },
           {
             key: "3",
-            label: <Link to="/chapter1/sub3">Addressing Violations</Link>,
+            label: <Link to="/chapter1/sub3">Corporate Social Responsibility</Link>,
           },
           {
             key: "4",
             label: (
-              <Link to="/chapter1/sub4">Promoting a Culture of Integrity</Link>
+              <Link to="/chapter1/sub4"> Community Engagement</Link>
             ),
           },
           {
             key: "5",
-            label: <Link to="/chapter1/sub5">Continuous Improvement</Link>,
+            label: <Link to="/chapter1/sub5">Ethical Consumerism</Link>,
           },
         ],
       },
@@ -53,11 +53,11 @@ const items: MenuItem[] = [
     label: <Link to="/social/chapter2">Chapter 2</Link>,
     icon: <AppstoreOutlined />,
     children: [
-      { key: "6", label: <Link to="/social/chapter2/sub1">Phase 1</Link> },
-      { key: "7", label: <Link to="/social/chapter2/sub2">Phase 2</Link> },
-      { key: "8", label: <Link to="/social/chapter2/sub3">Phase 3</Link> },
-      { key: "9", label: <Link to="/social/chapter2/sub4">Phase 4</Link> },
-      { key: "10", label: <Link to="/social/chapter2/sub5">Phase 5</Link> },
+      { key: "6", label: <Link to="/social/chapter2/sub1">Global Citizenship</Link> },
+      { key: "7", label: <Link to="/social/chapter2/sub2">Philanthropy</Link> },
+      { key: "8", label: <Link to="/social/chapter2/sub3">Digital Responsibility</Link> },
+      { key: "9", label: <Link to="/social/chapter2/sub4">Cultural Awareness</Link> },
+      { key: "10", label: <Link to="/social/chapter2/sub5">Addressing Inequality</Link> },
     ],
   },
   {
@@ -65,11 +65,11 @@ const items: MenuItem[] = [
     label: <Link to="/social/chapter3">Chapter 3</Link>,
     icon: <SettingOutlined />,
     children: [
-      { key: "11", label: <Link to="/social/chapter3/sub1">Phase 1</Link> },
-      { key: "12", label: <Link to="/social/chapter3/sub2">Phase 2</Link> },
-      { key: "13", label: <Link to="/social/chapter3/sub3">Phase 3</Link> },
-      { key: "14", label: <Link to="/social/chapter3/sub4">Phase 4</Link> },
-      { key: "15", label: <Link to="/social/chapter3/sub5">Phase 5</Link> },
+      { key: "11", label: <Link to="/social/chapter3/sub1">Listening Circles</Link> },
+      { key: "12", label: <Link to="/social/chapter3/sub2">Finding Meaning in Service</Link> },
+      { key: "13", label: <Link to="/social/chapter3/sub3">Order and Chaos</Link> },
+      { key: "14", label: <Link to="/social/chapter3/sub4">The Value of Truth</Link> },
+      { key: "15", label: <Link to="/social/chapter3/sub5">Finding Your Place in the Community</Link> },
     ],
   },
 ];

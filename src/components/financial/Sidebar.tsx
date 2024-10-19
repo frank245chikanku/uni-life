@@ -23,26 +23,26 @@ const items: MenuItem[] = [
           {
             key: "1",
             label: (
-              <Link to="/chapter1/sub1">Phase 1</Link>
+              <Link to="/chapter1/sub1">The Importance of Saving </Link>
             ),
           },
           {
             key: "2",
-            label: <Link to="/chapter1/sub2">Phase 2</Link>,
+            label: <Link to="/chapter1/sub2">Living Below Your Means</Link>,
           },
           {
             key: "3",
-            label: <Link to="/chapter1/sub3">Phase 3</Link>,
+            label: <Link to="/chapter1/sub3">Avoiding Debt</Link>,
           },
           {
             key: "4",
             label: (
-              <Link to="/chapter1/sub4">Phase 4</Link>
+              <Link to="/chapter1/sub4">Diversifying Income Streams</Link>
             ),
           },
           {
             key: "5",
-            label: <Link to="/chapter1/sub5">Phase 5</Link>,
+            label: <Link to="/chapter1/sub5">Understanding Risks</Link>,
           },
         ],
       },
@@ -53,11 +53,11 @@ const items: MenuItem[] = [
     label: <Link to="/finacial/chapter2">Chapter 2</Link>,
     icon: <AppstoreOutlined />,
     children: [
-      { key: "6", label: <Link to="/financial/chapter2/sub1">Phase 1</Link> },
-      { key: "7", label: <Link to="/financial/chapter2/sub2">Phase 2</Link> },
-      { key: "8", label: <Link to="/financial/chapter2/sub3">Phase 3</Link> },
-      { key: "9", label: <Link to="/financial/chapter2/sub4">Phase 4</Link> },
-      { key: "10", label: <Link to="/financial/chapter2/sub5">Phase 5</Link> },
+      { key: "6", label: <Link to="/financial/chapter2/sub1">Financial Literacy</Link> },
+      { key: "7", label: <Link to="/financial/chapter2/sub2">Tracking Your Expenses</Link> },
+      { key: "8", label: <Link to="/financial/chapter2/sub3">Creating a Financial Safety Net</Link> },
+      { key: "9", label: <Link to="/financial/chapter2/sub4">Assessing Your Financial Values</Link> },
+      { key: "10", label: <Link to="/financial/chapter2/sub5">The Benefits of Minimalism</Link> },
     ],
   },
   {
@@ -65,11 +65,11 @@ const items: MenuItem[] = [
     label: <Link to="/financial/chapter3">Chapter 3</Link>,
     icon: <SettingOutlined />,
     children: [
-      { key: "11", label: <Link to="/financial/chapter3/sub1">Phase 1</Link> },
-      { key: "12", label: <Link to="/financial/chapter3/sub2">Phase 2</Link> },
-      { key: "13", label: <Link to="/financial/chapter3/sub3">Phase 3</Link> },
-      { key: "14", label: <Link to="/financial/chapter3/sub4">Phase 4</Link> },
-      { key: "15", label: <Link to="/financial/chapter3/sub5">Phase 5</Link> },
+      { key: "11", label: <Link to="/financial/chapter3/sub1">Navigating Financial Failure</Link> },
+      { key: "12", label: <Link to="/financial/chapter3/sub2">The Importance of Accountability</Link> },
+      { key: "13", label: <Link to="/financial/chapter3/sub3">Confronting Your Financial Fears</Link> },
+      { key: "14", label: <Link to="/financial/chapter3/sub4">The Ripple Effect of Financial Decisions</Link> },
+      { key: "15", label: <Link to="/financial/chapter3/sub5">The Art of Delayed Gratification</Link> },
     ],
   },
 ];
