@@ -23,26 +23,26 @@ const items: MenuItem[] = [
           {
             key: "1",
             label: (
-              <Link to="/chapter1/sub1">Phase 1</Link>
+              <Link to="/chapter1/sub1">understanding Career uncertainty</Link>
             ),
           },
           {
             key: "2",
-            label: <Link to="/chapter1/sub2">Phase 2</Link>,
+            label: <Link to="/chapter1/sub2">Start with What You Know</Link>,
           },
           {
             key: "3",
-            label: <Link to="/chapter1/sub3">Phase 3</Link>,
+            label: <Link to="/chapter1/sub3">Define Your Values</Link>,
           },
           {
             key: "4",
             label: (
-              <Link to="/chapter1/sub4">phase 4</Link>
+              <Link to="/chapter1/sub4">Accept Responsibility</Link>
             ),
           },
           {
             key: "5",
-            label: <Link to="/chapter1/sub5">phase 5</Link>,
+            label: <Link to="/chapter1/sub5">Build Competence</Link>,
           },
         ],
       },
@@ -53,11 +53,11 @@ const items: MenuItem[] = [
     label: <Link to="/career/chapter2">Chapter 2</Link>,
     icon: <AppstoreOutlined />,
     children: [
-      { key: "6", label: <Link to="/career/chapter2/sub1">Phase 1</Link> },
-      { key: "7", label: <Link to="/career/chapter2/sub2">Phase 2</Link> },
-      { key: "8", label: <Link to="/career/chapter2/sub3">Phase 3</Link> },
-      { key: "9", label: <Link to="/career/chapter2/sub4">Phase 4</Link> },
-      { key: "10", label: <Link to="/career/chapter2/sub5">Phase 5</Link> },
+      { key: "6", label: <Link to="/career/chapter2/sub1">Embrace Failure as Growth</Link> },
+      { key: "7", label: <Link to="/career/chapter2/sub2">Set Small Goals</Link> },
+      { key: "8", label: <Link to="/career/chapter2/sub3">Align Career with Character</Link> },
+      { key: "9", label: <Link to="/career/chapter2/sub4">Know When to Pivot</Link> },
+      { key: "10", label: <Link to="/career/chapter2/sub5">The Importance of Networking</Link> },
     ],
   },
   {
@@ -65,11 +65,11 @@ const items: MenuItem[] = [
     label: <Link to="/career/chapter3">Chapter 3</Link>,
     icon: <SettingOutlined />,
     children: [
-      { key: "11", label: <Link to="/career/chapter3/sub1">Phase 1</Link> },
-      { key: "12", label: <Link to="/career/chapter3/sub2">Phase 2</Link> },
-      { key: "13", label: <Link to="/career/chapter3/sub3">Phase 3</Link> },
-      { key: "14", label: <Link to="/career/chapter3/sub4">Phase 4</Link> },
-      { key: "15", label: <Link to="/career/chapter3/sub5">Phase 5</Link> },
+      { key: "11", label: <Link to="/career/chapter3/sub1">Stay Grounded in Reality</Link> },
+      { key: "12", label: <Link to="/career/chapter3/sub2">Find Mentors, Not Idols</Link> },
+      { key: "13", label: <Link to="/career/chapter3/sub3">Resist Cynicism</Link> },
+      { key: "14", label: <Link to="/career/chapter3/sub4">Focus on Long-Term Vision</Link> },
+      { key: "15", label: <Link to="/career/chapter3/sub5">Define Your Legacy</Link> },
     ],
   },
 ];

@@ -23,26 +23,26 @@ const items: MenuItem[] = [
           {
             key: "1",
             label: (
-              <Link to="/chapter1/sub1">Phase 1</Link>
+              <Link to="/chapter1/sub1">Understanding discrimination and bias</Link>
             ),
           },
           {
             key: "2",
-            label: <Link to="/chapter1/sub2">Phase 2</Link>,
+            label: <Link to="/chapter1/sub2">Recognize the Reality of Bias</Link>,
           },
           {
             key: "3",
-            label: <Link to="/chapter1/sub3">Phase 3</Link>,
+            label: <Link to="/chapter1/sub3">Confront Injustice with Truth</Link>,
           },
           {
             key: "4",
             label: (
-              <Link to="/chapter1/sub4">phase 4</Link>
+              <Link to="/chapter1/sub4">Cultivate Resilience</Link>
             ),
           },
           {
             key: "5",
-            label: <Link to="/chapter1/sub5">phase 5</Link>,
+            label: <Link to="/chapter1/sub5">Challenge Bias in Yourself</Link>,
           },
         ],
       },
@@ -53,11 +53,11 @@ const items: MenuItem[] = [
     label: <Link to="/career/chapter2">Chapter 2</Link>,
     icon: <AppstoreOutlined />,
     children: [
-      { key: "6", label: <Link to="/discrimination/chapter2/sub1">Phase 1</Link> },
-      { key: "7", label: <Link to="/discrimination/chapter2/sub2">Phase 2</Link> },
-      { key: "8", label: <Link to="/discrimination/chapter2/sub3">Phase 3</Link> },
-      { key: "9", label: <Link to="/discrimination/chapter2/sub4">Phase 4</Link> },
-      { key: "10", label: <Link to="/discrimination/chapter2/sub5">Phase 5</Link> },
+      { key: "6", label: <Link to="/discrimination/chapter2/sub1">Challenge the System, Not Individuals</Link> },
+      { key: "7", label: <Link to="/discrimination/chapter2/sub2">Pursue Justice, Not Revenge</Link> },
+      { key: "8", label: <Link to="/discrimination/chapter2/sub3">Recognize Subtle Biases</Link> },
+      { key: "9", label: <Link to="/discrimination/chapter2/sub4">Develop Emotional Intelligence</Link> },
+      { key: "10", label: <Link to="/discrimination/chapter2/sub5">Stay Curious, Not Defensive</Link> },
     ],
   },
   {
@@ -65,11 +65,11 @@ const items: MenuItem[] = [
     label: <Link to="/discrimination/chapter3">Chapter 3</Link>,
     icon: <SettingOutlined />,
     children: [
-      { key: "11", label: <Link to="/discrimination/chapter3/sub1">Phase 1</Link> },
-      { key: "12", label: <Link to="/discrimination/chapter3/sub2">Phase 2</Link> },
-      { key: "13", label: <Link to="/discrimination/chapter3/sub3">Phase 3</Link> },
-      { key: "14", label: <Link to="/discrimination/chapter3/sub4">Phase 4</Link> },
-      { key: "15", label: <Link to="/discrimination/chapter3/sub5">Phase 5</Link> },
+      { key: "11", label: <Link to="/discrimination/chapter3/sub1">Challenge Assumptions</Link> },
+      { key: "12", label: <Link to="/discrimination/chapter3/sub2">Don’t Internalize Negativity</Link> },
+      { key: "13", label: <Link to="/discrimination/chapter3/sub3">Encourage Open Dialogue</Link> },
+      { key: "14", label: <Link to="/discrimination/chapter3/sub4">Practice Humility</Link> },
+      { key: "15", label: <Link to="/discrimination/chapter3/sub5">Stay Grounded in Facts</Link> },
     ],
   },
 ];

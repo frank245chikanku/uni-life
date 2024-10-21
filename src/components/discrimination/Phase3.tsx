@@ -3,10 +3,9 @@ import React from "react";
 const Phase3: React.FC = () => {
   return (
     <div>
-      <h2>Phase 3: Addressing Violations</h2>
+      <h2>Phase 3:Confront Injustice with Truth</h2>
       <p>
-        This phase covers how to address and handle instances of academic
-        dishonesty, including reporting procedures and disciplinary actions.
+        
       </p>
     </div>
   );
