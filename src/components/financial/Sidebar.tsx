@@ -12,8 +12,8 @@ type MenuItem = Required<MenuProps>["items"][number];
 
 const items: MenuItem[] = [
   {
-    key: "financial/chapter1",
-    label: <Link to="/financial/chapter1">Chapter 1</Link>,
+    key: "/financial",
+    label: <Link to="/financial">Chapter 1</Link>,
     icon: <MailOutlined />,
     children: [
       {
@@ -23,33 +23,33 @@ const items: MenuItem[] = [
           {
             key: "1",
             label: (
-              <Link to="/chapter1/sub1">The Importance of Saving </Link>
+              <Link to="/financial/chapter1">The Importance of Saving </Link>
             ),
           },
           {
             key: "2",
-            label: <Link to="/chapter1/sub2">Living Below Your Means</Link>,
+            label: <Link to="/financial/chapter1/sub2">Living Below Your Means</Link>,
           },
           {
             key: "3",
-            label: <Link to="/chapter1/sub3">Avoiding Debt</Link>,
+            label: <Link to="/financial/chapter1/sub3">Avoiding Debt</Link>,
           },
           {
             key: "4",
             label: (
-              <Link to="/chapter1/sub4">Diversifying Income Streams</Link>
+              <Link to="/financial/chapter1/sub4">Diversifying Income Streams</Link>
             ),
           },
           {
             key: "5",
-            label: <Link to="/chapter1/sub5">Understanding Risks</Link>,
+            label: <Link to="/financial/chapter1/sub5">Understanding Risks</Link>,
           },
         ],
       },
     ],
   },
   {
-    key: "financial/chapter2",
+    key: "/financial/chapter2",
     label: <Link to="/finacial/chapter2">Chapter 2</Link>,
     icon: <AppstoreOutlined />,
     children: [

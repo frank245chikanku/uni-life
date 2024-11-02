@@ -5,9 +5,15 @@ const Phase5: React.FC = () => {
     <div>
       <h2>Phase 5: Refusing Pressure Tactfully </h2>
       <p>
-        Focus on the importance of continuously improving and adapting practices
-        related to academic integrity to address new challenges and
-        technologies.
+      One of the most effective ways to deal with peer pressure or influence is to set clear boundaries. 
+      This involves establishing your own values, beliefs, and goals.
+      Let your friends know these principles about you. For example, if you do not drink alcohol or use drugs, make your stand clear to your peers.
+      Similarly, if you are busy with academic work, don’t give in when they convince you to engage in frivolous stuff.
+
+       Setting clear boundaries can help you focus. If you focus, you can easily achieve your goals.
+        And some cases you need to be odd to be able to achieve these goals.
+        Another effective strategy for dealing with peer pressure or influence is to find like-minded peers. Just look for friends who share your values, beliefs, and goals. Only like-minded peers can create a supportive environment you need to excel. 
+        Get people who will support you.
       </p>
     </div>
   );

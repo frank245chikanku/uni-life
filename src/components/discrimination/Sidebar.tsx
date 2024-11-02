@@ -12,8 +12,8 @@ type MenuItem = Required<MenuProps>["items"][number];
 
 const items: MenuItem[] = [
   {
-    key: "discrimination/chapter1",
-    label: <Link to="/discrimination/chapter1">Chapter 1</Link>,
+    key: "/discrimination",
+    label: <Link to="/discrimination">Chapter 1</Link>,
     icon: <MailOutlined />,
     children: [
       {
@@ -23,26 +23,26 @@ const items: MenuItem[] = [
           {
             key: "1",
             label: (
-              <Link to="/chapter1/sub1">Understanding discrimination and bias</Link>
+              <Link to="/discrimination/chapter1">Understanding discrimination and bias</Link>
             ),
           },
           {
             key: "2",
-            label: <Link to="/chapter1/sub2">Recognize the Reality of Bias</Link>,
+            label: <Link to="/discrimination/chapter1/sub2">Recognize the Reality of Bias</Link>,
           },
           {
             key: "3",
-            label: <Link to="/chapter1/sub3">Confront Injustice with Truth</Link>,
+            label: <Link to="/discrimination/chapter1/sub3">Confront Injustice with Truth</Link>,
           },
           {
             key: "4",
             label: (
-              <Link to="/chapter1/sub4">Cultivate Resilience</Link>
+              <Link to="/discrimination/chapter1/sub4">Cultivate Resilience</Link>
             ),
           },
           {
             key: "5",
-            label: <Link to="/chapter1/sub5">Challenge Bias in Yourself</Link>,
+            label: <Link to="/discrimination/chapter1/sub5">Challenge Bias in Yourself</Link>,
           },
         ],
       },

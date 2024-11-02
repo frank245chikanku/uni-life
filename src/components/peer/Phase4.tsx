@@ -5,8 +5,12 @@ const Phase4: React.FC = () => {
     <div>
       <h2>Phase 4:Communication and Assertiveness</h2>
       <p>
-        Strategies for fostering a culture of academic integrity within academic
-        institutions, including educational programs and support systems.
+      Assertiveness is an important skill for dealing with peer pressure or influence. It involves expressing your opinions and standing up for your beliefs in a respectful and confident manner. When you face peer pressure, assertiveness can help you say no. It also helps you maintain your boundaries without damaging your relationships with your peers.
+
+     How do you become assertive? Well, it involves being clear and direct in your communication. Use “I” statements instead of “you” statements. 
+     Stay calm and composed in the face of pressure. For example, instead of saying “You’re pressuring me to drink alcohol,” you could say “I don’t feel comfortable drinking alcohol,
+     so I’m going to pass.” By using “I” statements, you are taking ownership of your feelings and decisions. Invariably,
+      this makes it easier for your peers to understand and respect your boundaries.
       </p>
     </div>
   );

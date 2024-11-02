@@ -12,8 +12,8 @@ type MenuItem = Required<MenuProps>["items"][number];
 
 const items: MenuItem[] = [
   {
-    key: "social/chapter1",
-    label: <Link to="/social/chapter1">Chapter 1</Link>,
+    key: "/social",
+    label: <Link to="/social">Chapter 1</Link>,
     icon: <MailOutlined />,
     children: [
       {
@@ -23,26 +23,26 @@ const items: MenuItem[] = [
           {
             key: "1",
             label: (
-              <Link to="/chapter1/sub1">Understanding Social Responsibility</Link>
+              <Link to="/social/chapter1">Understanding Social Responsibility</Link>
             ),
           },
           {
             key: "2",
-            label: <Link to="/chapter1/sub2">The Role of Individuals</Link>,
+            label: <Link to="/social/chapter1/sub2">The Role of Individuals</Link>,
           },
           {
             key: "3",
-            label: <Link to="/chapter1/sub3">Corporate Social Responsibility</Link>,
+            label: <Link to="/social/chapter1/sub3">Corporate Social Responsibility</Link>,
           },
           {
             key: "4",
             label: (
-              <Link to="/chapter1/sub4"> Community Engagement</Link>
+              <Link to="/social/chapter1/sub4"> Community Engagement</Link>
             ),
           },
           {
             key: "5",
-            label: <Link to="/chapter1/sub5">Ethical Consumerism</Link>,
+            label: <Link to="/social/chapter1/sub5">Ethical Consumerism</Link>,
           },
         ],
       },

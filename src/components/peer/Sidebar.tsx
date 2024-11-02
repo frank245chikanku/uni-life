@@ -12,8 +12,8 @@ type MenuItem = Required<MenuProps>["items"][number];
 
 const items: MenuItem[] = [
   {
-    key: "peer/chapter1",
-    label: <Link to="/peer/chapter1">Chapter 1</Link>,
+    key: "peer",
+    label: <Link to="/peer">Chapter 1</Link>,
     icon: <MailOutlined />,
     children: [
       {
@@ -23,26 +23,26 @@ const items: MenuItem[] = [
           {
             key: "1",
             label: (
-              <Link to="/chapter1/sub1">Understanding Peer Pressure</Link>
+              <Link to="/peer/chapter1">Understanding Peer Pressure</Link>
             ),
           },
           {
             key: "2",
-            label: <Link to="/chapter1/sub2">Who Are Your Peers </Link>,
+            label: <Link to="/peer/chapter1/sub2">Who Are Your Peers </Link>,
           },
           {
             key: "3",
-            label: <Link to="/chapter1/sub3">Groupthink and Comformity</Link>,
+            label: <Link to="/peer/chapter1/sub3">Groupthink and Comformity</Link>,
           },
           {
             key: "4",
             label: (
-              <Link to="/chapter1/sub4">Communication and Assertiveness</Link>
+              <Link to="/peer/chapter1/sub4">Communication and Assertiveness</Link>
             ),
           },
           {
             key: "5",
-            label: <Link to="/chapter1/sub5">Refusing Pressure Tactfully</Link>,
+            label: <Link to="/peer/chapter1/sub5">Refusing Pressure Tactfully</Link>,
           },
         ],
       },

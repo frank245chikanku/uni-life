@@ -3,7 +3,7 @@ import React from "react";
 const Phase4: React.FC = () => {
   return (
     <div>
-      <h2>Phase 4:Stepping Into Independence</h2>
+      <h2>Phase 4:Stepping Into adjusctment</h2>
       <p>
         
       </p>

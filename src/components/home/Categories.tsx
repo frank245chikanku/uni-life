@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 const categoryData = [
   {
-    to: "/academics/chapter1",
+    to: "/academics",
     imgSrc: academic,
     altText: "academic",
     label: "Academic Integrity",
@@ -18,7 +18,7 @@ const categoryData = [
     textColor: "text-slate-900",
   },
   {
-    to: "/peer/chapter1",
+    to: "/peer",
     imgSrc: peer,
     altText: "peer",
     label: "Peer Pressure",
@@ -26,7 +26,7 @@ const categoryData = [
     textColor: "text-slate-200",
   },
   {
-    to: "/social/chapter1",
+    to: "/social",
     imgSrc: responsibility,
     altText: "responsibility",
     label: "Social Responsibility",
@@ -34,7 +34,7 @@ const categoryData = [
     textColor: "text-[#0101cf]",
   },
   {
-    to: "/financial/chapter1",
+    to: "/financial",
     imgSrc: financial,
     altText: "financial",
     label: "Financial Strain",
@@ -42,7 +42,7 @@ const categoryData = [
     textColor: "text-slate-900",
   },
   {
-    to: "/career/chapter1",
+    to: "/career",
     imgSrc: career,
     altText: "career",
     label: "Career Uncertainty",
@@ -50,7 +50,7 @@ const categoryData = [
     textColor: "text-slate-200",
   },
   {
-    to: "/discrimination/chapter1",
+    to: "/discrimination",
     imgSrc: criticism,
     altText: "criticism",
     label: "Discrimination & Bias",
@@ -58,7 +58,7 @@ const categoryData = [
     textColor: "text-slate-900",
   },
   {
-    to: "/entrepreneurship/chapter1",
+    to: "/entrepreneurship",
     imgSrc: presentation,
     altText: "presentation",
     label: "Entrepreneurship Uncertainty",
@@ -66,10 +66,10 @@ const categoryData = [
     textColor: "text-slate-200",
   },
   {
-    to: "/adjustment/chapter1",
+    to: "/adjustment",
     imgSrc: leader,
     altText: "leader",
-    label: "Adjustment to Independence",
+    label: "Adjustment to adjusctment",
     bgColor: "bg-green-600",
     textColor: "text-slate-200",
   },

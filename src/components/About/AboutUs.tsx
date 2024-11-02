@@ -29,7 +29,7 @@ const AboutUs = () => {
             navigate complex ethical issues such as Academic integrity, Peer
             pressure, Social responsibility, Financial strain, Career
             uncertainty, Discrimination & bias, entrepreneurship uncertainty
-            Adjustment to independence.
+            Adjustment to adjusctment.
           </p>
           <p className="text-start text-lg mt-8">
             Uni Life Guide offers a robust framework for ethical

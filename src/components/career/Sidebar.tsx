@@ -12,8 +12,8 @@ type MenuItem = Required<MenuProps>["items"][number];
 
 const items: MenuItem[] = [
   {
-    key: "career/chapter1",
-    label: <Link to="/career/chapter1">Chapter 1</Link>,
+    key: "/career",
+    label: <Link to="/career">Chapter 1</Link>,
     icon: <MailOutlined />,
     children: [
       {
@@ -23,26 +23,26 @@ const items: MenuItem[] = [
           {
             key: "1",
             label: (
-              <Link to="/chapter1/sub1">understanding Career uncertainty</Link>
+              <Link to="/career/chapter1">understanding Career uncertainty</Link>
             ),
           },
           {
             key: "2",
-            label: <Link to="/chapter1/sub2">Start with What You Know</Link>,
+            label: <Link to="/career/chapter1/sub2">Start with What You Know</Link>,
           },
           {
             key: "3",
-            label: <Link to="/chapter1/sub3">Define Your Values</Link>,
+            label: <Link to="/career/chapter1/sub3">Define Your Values</Link>,
           },
           {
             key: "4",
             label: (
-              <Link to="/chapter1/sub4">Accept Responsibility</Link>
+              <Link to="/career/chapter1/sub4">Accept Responsibility</Link>
             ),
           },
           {
             key: "5",
-            label: <Link to="/chapter1/sub5">Build Competence</Link>,
+            label: <Link to="/career/chapter1/sub5">Build Competence</Link>,
           },
         ],
       },

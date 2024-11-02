@@ -12,8 +12,8 @@ type MenuItem = Required<MenuProps>["items"][number];
 
 const items: MenuItem[] = [
   {
-    key: "academics/chapter1",
-    label: <Link to="/academics/chapter1">Chapter 1</Link>,
+    key: "academics",
+    label: <Link to="/academics">Chapter 1</Link>,
     icon: <MailOutlined />,
     children: [
       {
@@ -23,26 +23,26 @@ const items: MenuItem[] = [
           {
             key: "1",
             label: (
-              <Link to="/chapter1/sub1">Understanding Academic Integrity</Link>
+              <Link to="/academics/chapter1">Understanding Academic Integrity</Link>
             ),
           },
           {
             key: "2",
-            label: <Link to="/chapter1/sub2">Implementing Best Practices</Link>,
+            label: <Link to="/academics/chapter1/sub2">Implementing Best Practices</Link>,
           },
           {
             key: "3",
-            label: <Link to="/chapter1/sub3">Addressing Violations</Link>,
+            label: <Link to="/academics/chapter1/sub3">Addressing Violations</Link>,
           },
           {
             key: "4",
             label: (
-              <Link to="/chapter1/sub4">Promoting a Culture of Integrity</Link>
+              <Link to="/academics/chapter1/sub4">Promoting a Culture of Integrity</Link>
             ),
           },
           {
             key: "5",
-            label: <Link to="/chapter1/sub5">Continuous Improvement</Link>,
+            label: <Link to="/academics/chapter1/sub5">Continuous Improvement</Link>,
           },
         ],
       },

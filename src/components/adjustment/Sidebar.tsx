@@ -12,8 +12,8 @@ type MenuItem = Required<MenuProps>["items"][number];
 
 const items: MenuItem[] = [
   {
-    key: "adjustment/chapter1",
-    label: <Link to="/adjustment/chapter1">Chapter 1</Link>,
+    key: "/adjustment",
+    label: <Link to="/adjustment">Chapter 1</Link>,
     icon: <MailOutlined />,
     children: [
       {
@@ -23,26 +23,26 @@ const items: MenuItem[] = [
           {
             key: "1",
             label: (
-              <Link to="/chapter1/sub1">What Independence Means</Link>
+              <Link to="/adjustment/chapter1">What adjusctment Means</Link>
             ),
           },
           {
             key: "2",
-            label: <Link to="/chapter1/sub2">Building Your Confidence</Link>,
+            label: <Link to="/adjustment/chapter1/sub2">Building Your Confidence</Link>,
           },
           {
             key: "3",
-            label: <Link to="/chapter1/sub3">Goal-Setting Made Easy</Link>,
+            label: <Link to="/adjustment/chapter1/sub3">Goal-Setting Made Easy</Link>,
           },
           {
             key: "4",
             label: (
-              <Link to="/chapter1/sub4">Stepping Into Independence</Link>
+              <Link to="/adjustment/chapter1/sub4">Stepping Into adjusctment</Link>
             ),
           },
           {
             key: "5",
-            label: <Link to="/chapter1/sub5">Crafting Your Own Path</Link>,
+            label: <Link to="/adjustment/chapter1/sub5">Crafting Your Own Path</Link>,
           },
         ],
       },
