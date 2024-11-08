@@ -7,7 +7,7 @@ import Chat from "./pages/Chat";
 import Home from "./pages/Home";
 import Layout from "./components/Layout";
 import Chapter1 from "./components/academic/Chapter1";
-import Introduction from "./components/academic/Introduction"
+import Introduction from "./components/academic/Introduction"  
 import Phase2 from "./components/academic/Phase2";
 import Phase3 from "./components/academic/Phase3";
 import Phase4 from "./components/academic/Phase4";
