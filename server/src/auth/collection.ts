@@ -56,6 +56,8 @@ export class AuthCollection {
         try {
             const data = new LoginDto(req.body);
 
+            console.log(req.body)
+
             const errors = await validate(data);
 
             if (errors.length > 0) {

@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Register from "./components/Register";
-import Signup from "./components/Signup";
+import Signin from "./components/Signin";
 import About from "./pages/About";
 import Chat from "./pages/Chat";
 import Home from "./pages/Home";
@@ -64,6 +64,7 @@ import EntrepreneurshipPhase2 from "./components/entrepreneurship/Phase2"
 import EntrepreneurshipPhase3 from "./components/entrepreneurship/Phase3"
 import EntrepreneurshipPhase4 from "./components/entrepreneurship/Phase4"
 import EntrepreneurshipPhase5 from "./components/entrepreneurship/Phase5"
+import Chapter3 from "./components/academic/Chpater3";
 
 const App: React.FC = () => {
   return (
@@ -71,7 +72,7 @@ const App: React.FC = () => {
     <Route path="/" element={<Home />} />
     <Route path="/about" element={<About />} />
     <Route path="/chat" element={<Chat />} />
-    <Route path="/login" element={<Signup />} />
+    <Route path="/login" element={<Signin />} />
     <Route path="/register" element={<Register />} />
 
   
@@ -219,14 +220,14 @@ const App: React.FC = () => {
     <Route path="/academics/chapter1/sub4" element={<Layout><Phase4/></Layout>} />
     <Route path="/academics/chapter1/sub5" element={<Layout><Phase5/></Layout>} />
 
-    <Route path="/academics/chapter2" element={<Layout><Introduction /></Layout>} />
-    <Route path="/academics/chapter2" element={<Layout><Chapter1/></Layout>} />
-    <Route path="/academics/chapter2/sub2" element={<Layout><Phase2/></Layout>} />
-    <Route path="/academics/chapter3/sub3" element={<Layout><Phase3/></Layout>} />
-    <Route path="/academics/chapter4/sub4" element={<Layout><Phase4/></Layout>} />
-    <Route path="/academics/chapter5/sub5" element={<Layout><Phase5/></Layout>} />
+    <Route path="/academics/chapter2/sub1" element={<Layout><Introduction /></Layout>} />
+    <Route path="/academics/chapter2/sub2" element={<Layout><Chapter1/></Layout>} />
+    <Route path="/academics/chapter2/sub3" element={<Layout><Phase2/></Layout>} />
+    <Route path="/academics/chapter3/sub4" element={<Layout><Phase3/></Layout>} />
+    <Route path="/academics/chapter4/sub5" element={<Layout><Phase4/></Layout>} />
+    <Route path="/academics/chapter5/sub6" element={<Layout><Phase5/></Layout>} />
 
-    <Route path="/academics/chapter3" element={<Layout><Introduction /></Layout>} />
+    <Route path="/academics/chapter3/sub1" element={<Layout><Chapter3 /></Layout>} />
     <Route path="/academics/chapter3" element={<Layout><Chapter1/></Layout>} />
     <Route path="/academics/chapter3/sub2" element={<Layout><Phase2/></Layout>} />
     <Route path="/academics/chapter3/sub3" element={<Layout><Phase3/></Layout>} />

@@ -87,7 +87,7 @@ const EntrepreneurshipSidebar: React.FC = () => {
       defaultOpenKeys={["entrepreneurship/chapter1"]}
       mode="inline"
       items={items}
-      className="text-lg custom-menu bg-gradient-to-br from-[#00a6ff] to-red-500"
+       className="text-lg custom-menu group"
     />
   );
 };
