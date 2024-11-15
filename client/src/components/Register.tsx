@@ -10,13 +10,13 @@ const Register = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-   // Handle input change
-   const handleChange = (e) => {
+   
+   const handleChange = (e: { target: { name: any; value: any; }; }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Handle form submission
-  const handleSubmit = async (e) => {
+  
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     setLoading(true);
     setError("");

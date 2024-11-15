@@ -23,26 +23,26 @@ const items: MenuItem[] = [
           {
             key: "1",
             label: (
-              <Link to="/financial/chapter1">The Importance of Saving </Link>
+              <Link to="/financial/chapter1">Understanding financial strain</Link>
             ),
           },
           {
             key: "2",
-            label: <Link to="/financial/chapter1/sub2">Living Below Your Means</Link>,
+            label: <Link to="/financial/chapter1/sub2">Importance of Saving</Link>,
           },
           {
             key: "3",
-            label: <Link to="/financial/chapter1/sub3">Avoiding Debt</Link>,
+            label: <Link to="/financial/chapter1/sub3">Living Below Your Means</Link>,
           },
           {
             key: "4",
             label: (
-              <Link to="/financial/chapter1/sub4">Diversifying Income Streams</Link>
+              <Link to="/financial/chapter1/sub4">Avoiding Debt</Link>
             ),
           },
           {
             key: "5",
-            label: <Link to="/financial/chapter1/sub5">Understanding Risks</Link>,
+            label: <Link to="/financial/chapter1/sub5">Diversifying Income Streams</Link>,
           },
         ],
       },

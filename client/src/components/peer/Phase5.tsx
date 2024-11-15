@@ -1,22 +1,23 @@
 import React from "react";
 
-const Phase5: React.FC = () => {
+const Phase4: React.FC = () => {
   return (
-    <div>
-      <h2>Phase 5: Refusing Pressure Tactfully </h2>
-      <p>
-      One of the most effective ways to deal with peer pressure or influence is to set clear boundaries. 
-      This involves establishing your own values, beliefs, and goals.
-      Let your friends know these principles about you. For example, if you do not drink alcohol or use drugs, make your stand clear to your peers.
-      Similarly, if you are busy with academic work, don’t give in when they convince you to engage in frivolous stuff.
+    <div
+      className="py-8 px-8 max-w-4xl mx-auto rounded-lg shadow-lg"
+      style={{ backgroundColor: "#d2548e", color: "white" }}
+    >
+      <h2 className="font-bold text-3xl mb-6 text-center">
+        Phase 5: Refusing Pressure Tactfully
+      </h2>
+      <p className="text-lg leading-relaxed mb-4">
+      Often, "just saying no" isn't enough, and young people must look inward at self-confidence and personal convictions to make good choices.
+      </p>
 
-       Setting clear boundaries can help you focus. If you focus, you can easily achieve your goals.
-        And some cases you need to be odd to be able to achieve these goals.
-        Another effective strategy for dealing with peer pressure or influence is to find like-minded peers. Just look for friends who share your values, beliefs, and goals. Only like-minded peers can create a supportive environment you need to excel. 
-        Get people who will support you.
+      <p className="text-lg leading-relaxed">
+        
       </p>
     </div>
   );
 };
 
-export default Phase5;
+export default Phase4;

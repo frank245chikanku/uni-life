@@ -20,12 +20,12 @@ import PeerPhase3 from "./components/peer/Phase3"
 import PeerPhase4 from "./components/peer/Phase4"
 import PeerPhase5 from "./components/peer/Phase5"
 
-import SocialIntroduction from "./components/peer/Introduction"
-import SocialChapter1 from "./components/peer/Chapter1"
-import SocialPhase2 from "./components/peer/Phase2"
-import SocialPhase3 from "./components/peer/Phase3"
-import SocialPhase4 from "./components/peer/Phase4"
-import SocialPhase5 from "./components/peer/Phase5"
+import SocialIntroduction from "./components/social/Introduction"
+import SocialChapter1 from "./components/social/Chapter1"
+import SocialPhase2 from "./components/social/Phase2"
+import SocialPhase3 from "./components/social/Phase3"
+import SocialPhase4 from "./components/social/Phase4"
+import SocialPhase5 from "./components/social/Phase5"
 
 
 import FinancialIntroduction from "./components/financial/Introduction"
@@ -77,7 +77,7 @@ const App: React.FC = () => {
 
   
     <Route path="/entrepreneurship" element={<Layout><EntrepreneurshipIntroduction /></Layout>} />
-    <Route path="/entrepreneurship/chapter1" element={<Layout><EntrepreneurshipChapter1/></Layout>} />
+    <Route path="/entrepreneurship/chapter1/sub1" element={<Layout><EntrepreneurshipChapter1/></Layout>} />
     <Route path="/entrepreneurship/chapter1/sub2" element={<Layout><EntrepreneurshipPhase2/></Layout>} />
     <Route path="/entrepreneurship/chapter1/sub3" element={<Layout><EntrepreneurshipPhase3/></Layout>} />
     <Route path="/entrepreneurship/chapter1/sub4" element={<Layout><EntrepreneurshipPhase4/></Layout>} />
@@ -192,18 +192,18 @@ const App: React.FC = () => {
 
     
     <Route path="/social" element={<Layout><SocialIntroduction /></Layout>} />
-    <Route path="/social/chapter1" element={<Layout><SocialChapter1/></Layout>} />
-    <Route path="/social/chapter1/sub2" element={<Layout><SocialPhase2/></Layout>} />
-    <Route path="/social/chapter1/sub3" element={<Layout><SocialPhase3/></Layout>} />
-    <Route path="/social/chapter1/sub4" element={<Layout><SocialPhase4/></Layout>} />
-    <Route path="/social/chapter1/sub5" element={<Layout><SocialPhase5/></Layout>} />
+    <Route path="/social/chapter1" element={<Layout><SocialChapter1 /></Layout>} />
+    <Route path="/social/chapter1/sub2" element={<Layout><SocialPhase2 /></Layout>} />
+    <Route path="/social/chapter1/sub3" element={<Layout><SocialPhase3 /></Layout>} />
+    <Route path="/social/chapter1/sub4" element={<Layout><SocialPhase4 /></Layout>} />
+    <Route path="/social/chapter1/sub5" element={<Layout><SocialPhase5 /></Layout>} />
 
     <Route path="/social/chapter2" element={<Layout><SocialIntroduction /></Layout>} />
     <Route path="/social/chapter2" element={<Layout><SocialChapter1/></Layout>} />
     <Route path="/social/chapter2/sub2" element={<Layout><SocialPhase2/></Layout>} />
     <Route path="/social/chapter3/sub3" element={<Layout><SocialPhase3/></Layout>} />
-    <Route path="/social/chapter4/sub4" element={<Layout><PeerPhase4/></Layout>} />
-    <Route path="/social/chapter5/sub5" element={<Layout><PeerPhase5/></Layout>} />
+    <Route path="/social/chapter4/sub4" element={<Layout><SocialPhase4/></Layout>} />
+    <Route path="/social/chapter5/sub5" element={<Layout><SocialPhase5/></Layout>} />
 
     <Route path="/social/chapter3" element={<Layout><SocialIntroduction /></Layout>} />
     <Route path="/social/chapter3" element={<Layout><SocialChapter1/></Layout>} />

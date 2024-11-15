@@ -14,13 +14,13 @@ const Signin = () => {
   const [,authState] = useRecoilState(isAuthenticatedAtom)
   const [,user] = useRecoilState(userDetailsAtom)
 
-  // Handle input change
-  const handleChange = (e) => {
+
+  const handleChange = (e: { target: { name: any; value: any; }; }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Handle form submission
-  const handleSubmit = async (e) => {
+  
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     setLoading(true);
     setError("");
@@ -28,7 +28,7 @@ const Signin = () => {
     try {
       const response = await axios.post(`${ENDPOINT}/api/auth/signin`, formData);
       if (response.status === 200) {
-        // Redirect to home page or dashboard after successful login
+        
         console.log(response.data)
         authState(true);
         user(response.data)
