@@ -43,7 +43,7 @@ import AdjustmentPhase4 from"./components/adjustment/Phase4"
 import AdjustmentPhase5 from"./components/adjustment/Phase5"
 
 
-import CareerIntroduction from "./components/career/Content"
+import CareerIntroduction from "./components/career/Introduction"
 import CareerChapter1 from "./components/career/Chapter1"
 import CareerPhase2 from "./components/career/Phase2"
 import CareerPhase3 from "./components/career/Phase3"

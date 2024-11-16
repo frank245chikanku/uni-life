@@ -7,8 +7,8 @@ const Hero = () => {
       <div className="w-full grid grid-cols-2 gap-4 justify-center items-center">
         <div className="w-full flex flex-col">
           <p className="text-[50px] max-w-96 font-bold">
-            Get started to adjust with university{" "}
-            <span className="gradient-text text-[50px] font-bold">life</span>.
+            <span className="animated-text">Get started to adjust with university </span>
+            <span className="gradient-text text-[50px] font-bold animated-life">life</span>.
           </p>
           <div className="mt-8">
             <Link
