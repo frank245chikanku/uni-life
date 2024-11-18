@@ -51,8 +51,8 @@ import CareerPhase4 from "./components/career/Phase4"
 import CareerPhase5 from "./components/career/Phase5"
 
 
-import DiscriminationChapter1 from "./components/discrimination/Chapter1"
 import DiscriminationIntroduction from "./components/discrimination/Introduction"
+import DiscriminationChapter1 from "./components/discrimination/Chapter1"
 import DiscriminationPhase2 from "./components/discrimination/Phase2"
 import DiscriminationPhase3 from "./components/discrimination/Phase3"
 import DiscriminationPhase4 from "./components/discrimination/Phase4"
@@ -98,7 +98,7 @@ const App: React.FC = () => {
     <Route path="/entrepreneurship/chapter3/sub5" element={<Layout><EntrepreneurshipPhase5/></Layout>} />
 
 
-<Route path="/discrimination" element={<Layout><FinancialIntroduction /></Layout>} />
+<Route path="/discrimination" element={<Layout><DiscriminationIntroduction /></Layout>} />
     <Route path="/discrimination/chapter1" element={<Layout><DiscriminationChapter1/></Layout>} />
     <Route path="/discrimination/chapter1/sub2" element={<Layout><DiscriminationPhase2/></Layout>} />
     <Route path="/discrimination/chapter1/sub3" element={<Layout><DiscriminationPhase3/></Layout>} />

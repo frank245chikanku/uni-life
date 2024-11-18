@@ -23,7 +23,7 @@ const items: MenuItem[] = [
           {
             key: "1",
             label: (
-              <Link to="/adjustment/chapter1">What adjusctment Means</Link>
+              <Link to="/adjustment/chapter1">What adjustment Means</Link>
             ),
           },
           {
@@ -37,7 +37,7 @@ const items: MenuItem[] = [
           {
             key: "4",
             label: (
-              <Link to="/adjustment/chapter1/sub4">Stepping Into adjusctment</Link>
+              <Link to="/adjustment/chapter1/sub4">Stepping Into adjustment</Link>
             ),
           },
           {
