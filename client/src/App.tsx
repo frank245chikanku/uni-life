@@ -13,12 +13,38 @@ import Phase3 from "./components/academic/Phase3";
 import Phase4 from "./components/academic/Phase4";
 import Phase5 from "./components/academic/Phase5";
 
+import Chapter3 from "./components/academic/chapter/Chapter3";
+import Chapter2 from "./components/academic/chapter/Chapter2";
+
+import AcademicPhase2 from "./components/academic/chapter/phase2"
+import AcademicPhase3 from  "./components/academic/chapter/phase3"
+import AcademicPhase4 from   "./components/academic/chapter/phase4"
+import Academicphase5 from   "./components/academic/chapter/phase5"
+import Academicphase6 from   "./components/academic/chapter/phase6" 
+
+import AcademicPhase7 from "./components/academic/chapter/phase7"
+import AcademicPhase8 from  "./components/academic/chapter/phase8"
+import AcademicPhase9 from   "./components/academic/chapter/phase9"
+
+
 import PeerIntroduction from "./components/peer/Introduction"
 import PeerChapter1 from "./components/peer/Chapter1"
 import PeerPhase2 from "./components/peer/Phase2"
 import PeerPhase3 from "./components/peer/Phase3"
 import PeerPhase4 from "./components/peer/Phase4"
 import PeerPhase5 from "./components/peer/Phase5"
+
+import PEERChapter2 from "./components/peer/chapter/PEERChapter2";
+import PEERphase2 from "./components/peer/chapter/phase2"
+import PEERphase3 from "./components/peer/chapter/phase3"
+import PEERphase4 from "./components/peer/chapter/phase4"
+import PEERphase5 from "./components/peer/chapter/phase5"
+
+
+
+
+
+
 
 import SocialIntroduction from "./components/social/Introduction"
 import SocialChapter1 from "./components/social/Chapter1"
@@ -64,7 +90,7 @@ import EntrepreneurshipPhase2 from "./components/entrepreneurship/Phase2"
 import EntrepreneurshipPhase3 from "./components/entrepreneurship/Phase3"
 import EntrepreneurshipPhase4 from "./components/entrepreneurship/Phase4"
 import EntrepreneurshipPhase5 from "./components/entrepreneurship/Phase5"
-import Chapter3 from "./components/academic/Chpater3";
+
 
 const App: React.FC = () => {
   return (
@@ -220,19 +246,20 @@ const App: React.FC = () => {
     <Route path="/academics/chapter1/sub4" element={<Layout><Phase4/></Layout>} />
     <Route path="/academics/chapter1/sub5" element={<Layout><Phase5/></Layout>} />
 
-    <Route path="/academics/chapter2/sub1" element={<Layout><Introduction /></Layout>} />
-    <Route path="/academics/chapter2/sub2" element={<Layout><Chapter1/></Layout>} />
-    <Route path="/academics/chapter2/sub3" element={<Layout><Phase2/></Layout>} />
-    <Route path="/academics/chapter3/sub4" element={<Layout><Phase3/></Layout>} />
-    <Route path="/academics/chapter4/sub5" element={<Layout><Phase4/></Layout>} />
-    <Route path="/academics/chapter5/sub6" element={<Layout><Phase5/></Layout>} />
-
+<Route path="/academics/chapter2" element={<Layout><Chapter2 /></Layout>} />
+    <Route path="/academics/chapter2/sub1" element={<Layout><Chapter2 /></Layout>} />
+    <Route path="/academics/chapter2/sub2" element={<Layout><AcademicPhase2/></Layout>} />
+    <Route path="/academics/chapter2/sub3" element={<Layout><AcademicPhase3/></Layout>} />
+    <Route path="/academics/chapter2/sub4" element={<Layout><AcademicPhase4/></Layout>} />
+    <Route path="/academics/chapter2/sub5" element={<Layout><Academicphase5/></Layout>} />
+    
+    <Route path="/academics/chapter3" element={<Layout><Chapter3 /></Layout>} />
     <Route path="/academics/chapter3/sub1" element={<Layout><Chapter3 /></Layout>} />
-    <Route path="/academics/chapter3" element={<Layout><Chapter1/></Layout>} />
-    <Route path="/academics/chapter3/sub2" element={<Layout><Phase2/></Layout>} />
-    <Route path="/academics/chapter3/sub3" element={<Layout><Phase3/></Layout>} />
-    <Route path="/academics/chapter3/sub4" element={<Layout><Phase4/></Layout>} />
-    <Route path="/academics/chapter3/sub5" element={<Layout><Phase5/></Layout>} />
+    <Route path="/academics/chapter3/sub2" element={<Layout><Academicphase6/></Layout>} />
+    <Route path="/academics/chapter3/sub3" element={<Layout><AcademicPhase7/></Layout>} />
+    <Route path="/academics/chapter3/sub4" element={<Layout><AcademicPhase8/></Layout>} />
+    <Route path="/academics/chapter3/sub5" element={<Layout><AcademicPhase9/></Layout>} />
+    
 
     
     <Route path="/peer" element={<Layout><PeerIntroduction /></Layout>} />
@@ -242,12 +269,12 @@ const App: React.FC = () => {
     <Route path="/peer/chapter1/sub4" element={<Layout><PeerPhase4/></Layout>} />
     <Route path="/peer/chapter1/sub5" element={<Layout><PeerPhase5/></Layout>} />
 
-    <Route path="/peer/chapter2" element={<Layout><PeerIntroduction /></Layout>} />
-    <Route path="/peer/chapter2" element={<Layout><PeerChapter1/></Layout>} />
-    <Route path="/peer/chapter2/sub2" element={<Layout><PeerPhase2/></Layout>} />
-    <Route path="/peer/chapter3/sub3" element={<Layout><PeerPhase3/></Layout>} />
-    <Route path="/peer/chapter4/sub4" element={<Layout><PeerPhase4/></Layout>} />
-    <Route path="/peer/chapter5/sub5" element={<Layout><PeerPhase5/></Layout>} />
+    <Route path="/peer/chapter2" element={<Layout><PEERChapter2 /></Layout>} />
+    <Route path="/peer/chapter2/sub1" element={<Layout><PEERChapter2/></Layout>} />
+    <Route path="/peer/chapter2/sub2" element={<Layout><PEERphase2/></Layout>} />
+    <Route path="/peer/chapter2/sub3" element={<Layout><PEERphase3/></Layout>} />
+    <Route path="/peer/chapter2/sub4" element={<Layout><PEERphase4/></Layout>} />
+    <Route path="/peer/chapter2/sub5" element={<Layout><PEERphase5/></Layout>} />
 
     <Route path="/peer/chapter3" element={<Layout><PeerIntroduction /></Layout>} />
     <Route path="/peer/chapter3" element={<Layout><PeerChapter1/></Layout>} />
@@ -256,7 +283,7 @@ const App: React.FC = () => {
     <Route path="/peer/chapter3/sub4" element={<Layout><PeerPhase4/></Layout>} />
     <Route path="/peer/chapter3/sub5" element={<Layout><PeerPhase5/></Layout>} />
 
-    </Routes>
+    </Routes> 
   );
 };
 
