@@ -241,9 +241,9 @@ const App: React.FC = () => {
     <Route path="/financial/chapter2" element={<Layout><FINANCIALChapter2 /></Layout>} />
     <Route path="/financial/chapter2/sub1" element={<Layout><FINANCIALChapter2/></Layout>} />
     <Route path="/financial/chapter2/sub2" element={<Layout><FINANCIALPhase2/></Layout>} />
-    <Route path="/financial/chapter3/sub3" element={<Layout><FINANCIALPhase3/></Layout>} />
-    <Route path="/financial/chapter4/sub4" element={<Layout><FINANCIALPhase4/></Layout>} />
-    <Route path="/financial/chapter5/sub5" element={<Layout><FINANCIALPhase5/></Layout>} />
+    <Route path="/financial/chapter2/sub3" element={<Layout><FINANCIALPhase3/></Layout>} />
+    <Route path="/financial/chapter2/sub4" element={<Layout><FINANCIALPhase4/></Layout>} />
+    <Route path="/financial/chapter2/sub5" element={<Layout><FINANCIALPhase5/></Layout>} />
 
     <Route path="/financial/chapter3" element={<Layout><FINANCIALChapter3 /></Layout>} />
     <Route path="/financial/chapter3/sub1" element={<Layout><FINANCIALChapter3/></Layout>} />
