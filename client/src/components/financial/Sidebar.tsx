@@ -50,7 +50,7 @@ const items: MenuItem[] = [
   },
   {
     key: "/financial/chapter2",
-    label: <Link to="/finacial/chapter2">Chapter 2</Link>,
+    label: <Link to="/financial/chapter2">Chapter 2</Link>,
     icon: <AppstoreOutlined />,
     children: [
       { key: "6", label: <Link to="/financial/chapter2/sub1">Financial Literacy</Link> },

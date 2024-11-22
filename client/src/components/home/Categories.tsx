@@ -69,7 +69,7 @@ const categoryData = [
     to: "/adjustment",
     imgSrc: leader,
     altText: "leader",
-    label: "Adjustment to adjusctment",
+    label: "Adjustment to Independence",
     bgColor: "bg-green-600",
     textColor: "text-slate-200",
   },
