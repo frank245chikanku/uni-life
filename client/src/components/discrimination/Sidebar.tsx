@@ -50,7 +50,7 @@ const items: MenuItem[] = [
   },
   {
     key: "discrimination/chapter2",
-    label: <Link to="/career/chapter2">Chapter 2</Link>,
+    label: <Link to="/discrimination/chapter2">Chapter 2</Link>,
     icon: <AppstoreOutlined />,
     children: [
       { key: "6", label: <Link to="/discrimination/chapter2/sub1">Challenge the System, Not Individuals</Link> },

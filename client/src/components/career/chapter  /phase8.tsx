@@ -1,9 +1,23 @@
-import React from 'react'
+import React from 'react';
 
-const Phase8 = () => {
+const Phase8: React.FC = () => {
   return (
-    <div>Focus on Long-Term Vision</div>
-  )
-}
+    <div
+      className="py-8 px-8 max-w-4xl mx-auto rounded-lg shadow-lg"
+      style={{ backgroundColor: '#936a8c', color: 'white' }}
+    >
+      <h1 className="font-bold text-3xl mb-6 text-center">Focus on Long-Term Vision</h1>
+      <p className="text-lg leading-relaxed">
+        The importance of focusing on a long-term vision, particularly for students navigating their education and early career stages. It is crucial for individuals to avoid getting caught up in the immediate gratification of short-term successes or distractions, as these can cloud their sense of purpose. Instead, one should set clear, meaningful goals and maintain a vision for the future that aligns with personal values and aspirations.
+      </p>
+      <p className="text-lg leading-relaxed mt-4">
+        For students, this means looking beyond the challenges of exams or assignments and envisioning how their education can contribute to their broader life goals. By focusing on long-term vision, students are more likely to make decisions that align with their deeper sense of meaning, enabling them to overcome temporary setbacks and stay motivated through the inevitable struggles of academic and professional life. 
+      </p>
+      <p className="text-lg leading-relaxed mt-4">
+        Peterson reminds us that true fulfillment often comes from the pursuit of something greater than ourselves, and by keeping this vision in mind, students can cultivate resilience and make choices that lead to lasting success and personal growth.
+      </p>
+    </div>
+  );
+};
 
-export default Phase8
+export default Phase8;

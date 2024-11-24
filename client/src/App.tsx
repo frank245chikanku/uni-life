@@ -161,11 +161,6 @@ import ENTREPRENEURSHIPPhase8  from  "./components/entrepreneurship/chapter/phas
 import ENTREPRENEURSHIPPhase9  from  "./components/entrepreneurship/chapter/phase9"
 
 
-
-
-
-
-
 import DiscriminationIntroduction from "./components/discrimination/Introduction"
 import DiscriminationChapter1 from "./components/discrimination/Chapter1"
 import DiscriminationPhase2 from "./components/discrimination/Phase2"
@@ -224,28 +219,6 @@ const App: React.FC = () => {
     <Route path="/entrepreneurship/chapter3/sub3" element={<Layout><ENTREPRENEURSHIPPhase7/></Layout>} />
     <Route path="/entrepreneurship/chapter3/sub4" element={<Layout><ENTREPRENEURSHIPPhase8/></Layout>} />
     <Route path="/entrepreneurship/chapter3/sub5" element={<Layout><ENTREPRENEURSHIPPhase9/></Layout>} />
-
-
-<Route path="/discrimination" element={<Layout><DiscriminationIntroduction /></Layout>} />
-    <Route path="/discrimination/chapter1" element={<Layout><DiscriminationChapter1/></Layout>} />
-    <Route path="/discrimination/chapter1/sub2" element={<Layout><DiscriminationPhase2/></Layout>} />
-    <Route path="/discrimination/chapter1/sub3" element={<Layout><DiscriminationPhase3/></Layout>} />
-    <Route path="/discrimination/chapter1/sub4" element={<Layout><DiscriminationPhase4/></Layout>} />
-    <Route path="/discrimination/chapter1/sub5" element={<Layout><DiscriminationPhase5/></Layout>} />
-
-    <Route path="/discrimination/chapter2" element={<Layout><DISCRIMINATIONChapter2 /></Layout>} />
-    <Route path="/discrimination/chapter2/sub1" element={<Layout><DISCRIMINATIONChapter2/></Layout>} />
-    <Route path="/discrimination/chapter2/sub2" element={<Layout><DISCRIMINATIONPhase2/></Layout>} />
-    <Route path="/discrimination/chapter2/sub3" element={<Layout><DISCRIMINATIONPhase3/></Layout>} />
-    <Route path="/discrimination/chapter2/sub4" element={<Layout><DISCRIMINATIONPhase4/></Layout>} />
-    <Route path="/discrimination/chapter2/sub5" element={<Layout><DISCRIMINATIONPhase5/></Layout>} />
-
-    <Route path="/discrimination/chapter3" element={<Layout><DISCRIMINATIONChapter3 /></Layout>} />
-    <Route path="/discrimination/chapter3/sub1" element={<Layout><DISCRIMINATIONChapter3/></Layout>} />
-    <Route path="/discrimination/chapter3/sub2" element={<Layout><DISCRIMINATIONPhase6/></Layout>} />
-    <Route path="/discrimination/chapter3/sub3" element={<Layout><DISCRIMINATIONPhase7/></Layout>} />
-    <Route path="/discrimination/chapter3/sub4" element={<Layout><DISCRIMINATIONPhase8/></Layout>} />
-    <Route path="/discrimination/chapter3/sub5" element={<Layout><DISCRIMINATIONPhase9/></Layout>} />
 
 
 
@@ -361,10 +334,33 @@ const App: React.FC = () => {
     <Route path="/academics/chapter3/sub4" element={<Layout><AcademicPhase8/></Layout>} />
     <Route path="/academics/chapter3/sub5" element={<Layout><AcademicPhase9/></Layout>} />
     
-    
+  
 
-    
-    <Route path="/peer" element={<Layout><PeerIntroduction /></Layout>} />
+
+
+    <Route path="/discrimination" element={<Layout><DiscriminationIntroduction /></Layout>} />
+    <Route path="/discrimination/chapter1" element={<Layout><DiscriminationChapter1/></Layout>} />
+    <Route path="/discrimination/chapter1/sub2" element={<Layout><DiscriminationPhase2/></Layout>} />
+    <Route path="/discrimination/chapter1/sub3" element={<Layout><DiscriminationPhase3/></Layout>} />
+    <Route path="/discrimination/chapter1/sub4" element={<Layout><DiscriminationPhase4/></Layout>} />
+    <Route path="/discrimination/chapter1/sub5" element={<Layout><DiscriminationPhase5/></Layout>} />
+
+    <Route path="/discrimination/chapter2" element={<Layout><DISCRIMINATIONChapter2 /></Layout>} />
+    <Route path="/discrimination/chapter2/sub1" element={<Layout><DISCRIMINATIONChapter2/></Layout>} />
+    <Route path="/discrimination/chapter2/sub2" element={<Layout><DISCRIMINATIONPhase2/></Layout>} />
+    <Route path="/discrimination/chapter2/sub3" element={<Layout><DISCRIMINATIONPhase3/></Layout>} />
+    <Route path="/discrimination/chapter2/sub4" element={<Layout><DISCRIMINATIONPhase4/></Layout>} />
+    <Route path="/discrimination/chapter2/sub5" element={<Layout><DISCRIMINATIONPhase5/></Layout>} />
+
+    <Route path="/discrimination/chapter3" element={<Layout><DISCRIMINATIONChapter3 /></Layout>} />
+    <Route path="/discrimination/chapter3/sub1" element={<Layout><DISCRIMINATIONChapter3/></Layout>} />
+    <Route path="/discrimination/chapter3/sub2" element={<Layout><DISCRIMINATIONPhase6/></Layout>} />
+    <Route path="/discrimination/chapter3/sub3" element={<Layout><DISCRIMINATIONPhase7/></Layout>} />
+    <Route path="/discrimination/chapter3/sub4" element={<Layout><DISCRIMINATIONPhase8/></Layout>} />
+    <Route path="/discrimination/chapter3/sub5" element={<Layout><DISCRIMINATIONPhase9/></Layout>} />
+
+
+ <Route path="/peer" element={<Layout><PeerIntroduction /></Layout>} />
     <Route path="/peer/chapter1" element={<Layout><PeerChapter1/></Layout>} />
     <Route path="/peer/chapter1/sub2" element={<Layout><PeerPhase2/></Layout>} />
     <Route path="/peer/chapter1/sub3" element={<Layout><PeerPhase3/></Layout>} />
