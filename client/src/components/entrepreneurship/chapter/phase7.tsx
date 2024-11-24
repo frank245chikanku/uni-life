@@ -1,15 +1,20 @@
 import React from 'react';
 
-const Phase7 = () => {
+const Phase7: React.FC = () => {
   return (
-    <div>
-      <h1>Fail Fast, Fail Smart</h1>
-      <p>
-        Failure is an inevitable part of growth and success, but how we handle failure makes all the difference. The concept of "Fail Fast, Fail Smart" encourages a proactive approach to learning from 
-        setbacks. Failing fast means recognizing mistakes early and adjusting course swiftly, minimizing the time and resources wasted on unproductive paths. However, it's not just about failing quickly; 
-        it's about failing smart. This means learning from every mistake, analyzing what went wrong, and using that insight to improve your approach moving forward. Rather than being discouraged by failure, 
-        you embrace it as an opportunity to adapt and refine your strategies. By failing smart, you can ensure that each setback contributes to your growth and resilience, ultimately helping you reach your goals 
-        faster and more efficiently. Embrace the mindset of intelligent failure—learn from your mistakes, and use those lessons to continuously evolve and improve.
+    <div
+      className="py-8 px-8 max-w-4xl mx-auto rounded-lg shadow-lg"
+      style={{ backgroundColor: '#936a8c', color: 'white' }}
+    >
+      <h1 className="font-bold text-3xl mb-6 text-center">Fail Fast, Fail Smart</h1>
+      <p className="text-lg leading-relaxed">
+        This approach suggests that failure, rather than being avoided, should be embraced as a critical part of the learning process. The idea is to experiment, identify what doesn’t work, and pivot or adapt 
+        without wasting excessive time or resources. For instance, in the world of startups, launching a minimum viable product (MVP) to test assumptions allows entrepreneurs to gather feedback, recognize mistakes, 
+        and refine their approach before committing fully.
+        <br />
+        <br />
+        Failing smart means analyzing what went wrong, extracting lessons, and applying those insights to future endeavors. It’s about taking calculated risks, ensuring that setbacks are manageable, and leveraging them 
+        for improvement. By adopting this mindset, individuals cultivate resilience, adaptability, and the ability to innovate in the face of challenges, setting a foundation for long-term success.
       </p>
     </div>
   );

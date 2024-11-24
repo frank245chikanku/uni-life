@@ -1,16 +1,23 @@
 import React from 'react';
 
-const Phase8 = () => {
+const Phase8: React.FC = () => {
   return (
-    <div>
-      <h1>Plan for Asymmetric Payoffs</h1>
-      <p>
-        In business and personal growth, not all efforts yield equal returns. "Planning for asymmetric payoffs" is a strategy that focuses on maximizing rewards while minimizing risks. The idea is 
-        to target opportunities where the potential upside is much larger than the downside. This approach encourages you to seek situations where the investment—whether time, effort, or resources—has the 
-        potential to deliver exponentially greater returns than the initial cost. In doing so, you can strategically invest your energy and resources in high-reward opportunities that carry relatively low risk. 
-        This method is common in areas like venture capital, innovation, and entrepreneurship, where small bets can lead to massive payoffs. By focusing on asymmetric payoffs, you prioritize actions and decisions 
-        that have the possibility of transforming your situation, rather than just providing incremental gains. The key to success lies in identifying those high-leverage opportunities, taking calculated risks, 
-        and preparing for extraordinary outcomes.
+    <div
+      className="py-8 px-8 max-w-4xl mx-auto rounded-lg shadow-lg"
+      style={{ backgroundColor: '#936a8c', color: 'white' }}
+    >
+      <h1 className="font-bold text-3xl mb-6 text-center">Plan for Asymmetric Payoffs</h1>
+      <p className="text-lg leading-relaxed">
+        Thinkers who explore decision-making under uncertainty emphasize that success often hinges not on playing it safe but on identifying high-reward scenarios where losses are limited but gains can be exponential.
+        <br />
+        <br />
+        For instance, in venture capitalism, investors often back multiple startups knowing most may fail, but a single success can yield returns that far surpass the initial investment. This idea also applies to students 
+        or professionals, where taking calculated risks—like pursuing unconventional career paths or ambitious projects—might feel uncertain but holds the potential for outsized rewards.
+        <br />
+        <br />
+        The theory encourages individuals to think strategically, allocate resources wisely, and remain open to possibilities that offer transformative outcomes. It’s a mindset shift that values bold but thoughtful 
+        decision-making, ensuring that efforts are aligned with opportunities capable of delivering profound impact. Planning for asymmetric payoffs teaches resilience, strategic thinking, and the courage to embrace 
+        uncertainty for significant long-term gains.
       </p>
     </div>
   );

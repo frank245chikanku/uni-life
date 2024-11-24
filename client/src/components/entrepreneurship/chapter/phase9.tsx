@@ -1,18 +1,28 @@
 import React from 'react';
 
-const Phase9 = () => {
+const Phase9: React.FC = () => {
   return (
-    <div>
-      <h1>Iterate Until You Get It Right</h1>
-      <p>
-        The path to success is rarely linear, and perfection rarely happens on the first attempt. "Iterate until you get it right" is about embracing the process of continuous improvement, learning from 
-        your mistakes, and refining your approach over time. In any field, whether in business, design, or personal growth, it's vital to recognize that the initial version of your idea or project is just 
-        the beginning. Each iteration brings you closer to the optimal solution, and through constant testing, feedback, and adjustments, you evolve your work into something much stronger and more refined.
-        This mindset encourages persistence and resilience, as you learn to see failures not as setbacks, but as valuable learning opportunities. The key to success lies in committing to the process, 
-        iterating on your ideas, and making small, steady improvements until you get it right. It's through this cyclical process of refining, testing, and improving that innovation and mastery are achieved.
+    <div
+      className="py-8 px-8 max-w-4xl mx-auto rounded-lg shadow-lg"
+      style={{ backgroundColor: '#936a8c', color: 'white' }}
+    >
+      <h1 className="font-bold text-3xl mb-6 text-center">Iterate Until You Get It Right</h1>
+      <p className="text-lg leading-relaxed">
+        Success doesn’t come from one perfect attempt but from multiple iterations—refining, learning from mistakes, and making adjustments along the way. Many authors who focus on the startup world emphasize this 
+        iterative process, pointing out that businesses and products rarely succeed in their first version. Instead, they evolve based on feedback, testing, and adjustments to better meet the needs of users or 
+        customers.
+        <br />
+        <br />
+        This concept is crucial in both academic and personal growth. The process of iteration allows individuals to learn from failures, refine their approaches, and improve with each step. It’s about resilience and not 
+        being discouraged by early setbacks, but rather seeing them as part of the journey toward mastery. This approach fosters a growth mindset, where mistakes are viewed as opportunities to improve rather than 
+        obstacles.
+        <br />
+        <br />
+        Whether it’s refining a project, mastering a skill, or navigating challenges, the key is persistence—keeping at it, making small, thoughtful changes, and iterating until the right solution is found. This process 
+        is what leads to eventual success and expertise, not perfection at the start.
       </p>
     </div>
   );
 };
 
-export default Phase9;
+export default Phase9; 
