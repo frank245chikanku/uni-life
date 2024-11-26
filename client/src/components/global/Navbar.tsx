@@ -21,7 +21,7 @@ const Navbar = () => {
           <Link to="/">Home</Link>
           <Link to="/">Classifications</Link>
           <Link to="/about">About</Link>
-          <Link to="/chat">Chat</Link>
+          {/* <Link to="/chat">Chat</Link> */}
         </div>
       </div>
       <div className="flex gap-6 items-center">
