@@ -180,6 +180,7 @@ import DISCRIMINATIONPhase6     from "./components/discrimination/chapter/phase6
 import DISCRIMINATIONPhase7     from "./components/discrimination/chapter/phase7"
 import DISCRIMINATIONPhase8     from "./components/discrimination/chapter/phase8"
 import DISCRIMINATIONPhase9     from "./components/discrimination/chapter/phase9"
+import Classifications from "./pages/Classifications";
 
 
 
@@ -192,6 +193,7 @@ const App: React.FC = () => {
   return (
     <Routes>
     <Route path="/" element={<Home />} />
+    <Route path="/classifications" element={<Classifications/>} />
     <Route path="/about" element={<About />} />
     <Route path="/chat" element={<Chat />} />
     <Route path="/login" element={<Signin />} />
