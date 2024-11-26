@@ -72,9 +72,9 @@ const Navbar = () => {
           <Link to="/" onClick={toggleMenu}>
             Home
           </Link>
-          <Link to="/classifications" onClick={toggleMenu}>
+          {isAuthenticated && <Link to="/classifications" onClick={toggleMenu}>
             Classifications
-          </Link>
+          </Link>}
           <Link to="/about" onClick={toggleMenu}>
             About
           </Link>
