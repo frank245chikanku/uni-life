@@ -44,7 +44,7 @@ const Signin = () => {
   return (
     <section style={{ backgroundImage: `url(${bg})` }} className="bg-cover bg-center object-cover">
       <div className="w-full min-h-screen flex p-4 justify-center items-center">
-        <div className="grid grid-cols-2 w-1/2 h-96 border-2 border-blue-950 shadow-lg shadow-blue-200 rounded-3xl backdrop-blur-sm bg-slate-950 bg-opacity-90">
+        <div className="grid md:grid-cols-2 grid-cols-1 md:w-1/2 w-full h-96 border-2 border-blue-950 shadow-lg shadow-blue-200 rounded-3xl backdrop-blur-sm bg-slate-950 bg-opacity-90">
           <div className="flex flex-col justify-center w-full p-3">
             <p className="text-2xl font-bold text-white text-center">Login</p>
             {error && <p className="text-red-500 text-center mt-2">{error}</p>}
@@ -79,7 +79,7 @@ const Signin = () => {
               Don’t have an account? <Link to="/register" className="text-[#00a6ff]">Sign Up</Link>
             </p>
           </div>
-          <div className="w-full flex flex-col justify-center items-center p-4">
+          <div className="w-full md:flex hidden flex-col justify-center items-center p-4">
             <p className="text-white text-3xl font-bold text-end max-w-min">WELCOME BACK!</p>
             <p className="text-gray-200 text-end">To Uni-Life Guide</p>
           </div>

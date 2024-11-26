@@ -39,8 +39,8 @@ const Register = () => {
       className="bg-cover bg-center object-cover"
     >
       <div className="w-full min-h-screen flex p-4 justify-center items-center">
-        <div className="grid grid-cols-2 w-1/2 h-96 border-2 border-blue-950 shadow-lg shadow-blue-200 rounded-3xl backdrop-blur-sm bg-slate-950 bg-opacity-90">
-          <div className="w-full p-3 flex flex-col justify-center items-center">
+        <div className="grid md:grid-cols-2 grid-cols-1 md:w-1/2 w-full h-96 border-2 border-blue-950 shadow-lg shadow-blue-200 rounded-3xl backdrop-blur-sm bg-slate-950 bg-opacity-90">
+          <div className="w-full p-3 md:flex flex-col hidden justify-center items-center">
             <p className="text-gray-200 text-3xl font-bold max-w-min">
               Register To Adjust With University Life.
             </p>
