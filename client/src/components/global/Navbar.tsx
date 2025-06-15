@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { isAuthenticatedAtom, userDetailsAtom } from "../../recoil/atom";
 import { Menu, X } from "lucide-react";
@@ -9,9 +9,11 @@ const Navbar = () => {
   const isAuthenticated = useRecoilValue(isAuthenticatedAtom);
   const userDetails = useRecoilValue(userDetailsAtom);
   const setIsAuthenticated = useSetRecoilState(isAuthenticatedAtom);
+  const navigate = useNavigate()
 
   const handleLogout = () => {
     setIsAuthenticated(false);
+    navigate("/")
   };
 
   const toggleMenu = () => {
@@ -25,7 +27,7 @@ const Navbar = () => {
           Uni-Guide
         </Link>
         <div className="md:flex hidden gap-6">
-          <Link to="/">Home</Link>
+          {isAuthenticated ? (<Link to="/dashboard">Dashboard</Link>) : (<Link to="/">Home</Link>)}
           {isAuthenticated && <Link to="/classifications">Classifications</Link>}
           <Link to="/about">About</Link>
         </div>
