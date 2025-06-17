@@ -185,6 +185,9 @@ import Classifications from "./pages/Classifications";
 import Dashboard from "./pages/dashboard/Dashboard";
 import RootLayout from "./components/global/RootLayout";
 import CareerGuidance from "./pages/dashboard/CareerGuidance";
+import LearningResources from "./pages/dashboard/LearningResources";
+import CommunityEngagement from "./pages/dashboard/CommunityEngagement";
+import InternshipsPrograms from "./pages/dashboard/InternshipsPrograms";
 
 
 
@@ -391,8 +394,14 @@ const App: React.FC = () => {
       {/* //DASHBOARD LINKS  */}
       <Route path="/dashboard" element={<RootLayout><Dashboard/></RootLayout>}/>
       <Route path="/career-guidance-and-skill-tracking" element={<RootLayout><CareerGuidance/></RootLayout>}/>
+
+<Route path="/skill-assessments-and-learning-resources" element={<RootLayout><LearningResources/></RootLayout>}/>
+<Route path="/ethical-decision-making-and-community-engagement" element={<RootLayout><CommunityEngagement/></RootLayout>}/> 
+<Route path="/internships-and-industrial-programs" element={<RootLayout><InternshipsPrograms/></RootLayout>}/>
+
+
     </Routes>
   );
 };
 
-export default App;
+export default App;   
