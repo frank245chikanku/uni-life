@@ -13,7 +13,7 @@ const Dashboard = () => {
         Welcome, {user.username}!
       </p>
 
-      <h2 className="text-xl font-semibold mb-4 text-gray-700 px-2">📊 Quick Stats</h2>
+      <h2 className="text-xl font-semibold mb-4 text-gray-700 px-2">📊 Quick Starts</h2>
 
       <div className="grid md:grid-cols-4 gap-4 mb-10">
         {[

@@ -11,15 +11,15 @@ const Signin = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const [,authState] = useRecoilState(isAuthenticatedAtom)
-  const [,user] = useRecoilState(userDetailsAtom)
+  const [, authState] = useRecoilState(isAuthenticatedAtom)
+  const [, user] = useRecoilState(userDetailsAtom)
 
 
   const handleChange = (e: { target: { name: any; value: any; }; }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  
+
   const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     setLoading(true);
@@ -28,7 +28,7 @@ const Signin = () => {
     try {
       const response = await axios.post(`${ENDPOINT}/api/auth/signin`, formData);
       if (response.status === 200) {
-        
+
         console.log(response.data)
         authState(true);
         user(response.data)

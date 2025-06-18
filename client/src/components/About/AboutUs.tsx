@@ -1,14 +1,25 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useRecoilValue } from "recoil";
+import { isAuthenticatedAtom } from "../../recoil/atom";
 import uni from "../../assets/front-view-stacked-books-graduation-cap-ladders-education-day.jpg";
 
 const AboutUs = () => {
+  const navigate = useNavigate();
+  const isLoggedIn = useRecoilValue(isAuthenticatedAtom);
+
+  const handleExploreClick = () => {
+    if (isLoggedIn) {
+      navigate("/dashboard");
+    } else {
+      navigate("/register");
+    }
+  };
+
   return (
     <div className="px-6 md:px-16 lg:px-32 py-20 bg-[#eef6fb] text-gray-800">
-
       <h2 className="text-center text-4xl font-semibold tracking-wide mb-14 text-[#003366] font-serif">
         About UniGuide
       </h2>
-
 
       <div className="grid md:grid-cols-2 gap-10 items-center bg-white rounded-2xl shadow-xl overflow-hidden">
         <div className="h-full">
@@ -28,19 +39,18 @@ const AboutUs = () => {
           </p>
 
           <p className="text-base leading-relaxed">
-            unfortunately, today, the education process does not wholly prepare the students to contribute to this national goal,
-            instead it is limited to bookish and theoretical knowledge/information that fail to equip the students fully to face the real challenges of life.
+            Unfortunately, today, the education process does not wholly prepare the students to contribute to this national goal.
+            Instead, it is limited to bookish and theoretical knowledge/information that fail to equip the students fully to face the real challenges of life.
             With changing times and increasing competition,
             job demands have grown, but the capability found in the employees is unsatisfactory.
           </p>
 
           <p className="text-base leading-relaxed">
             <strong>Uni Life Guide</strong> aims to address this gap by providing a structured, accessible framework that combines ethical guidelines, decision trees,
-            and case studies,helping students navigate moral dilemmas with confidence and integrity.
+            and case studies, helping students navigate moral dilemmas with confidence and integrity.
           </p>
         </div>
       </div>
-
 
       <div className="mt-16 grid md:grid-cols-3 gap-8 text-center">
         <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
@@ -63,7 +73,6 @@ const AboutUs = () => {
         </div>
       </div>
 
-
       <div className="mt-20 bg-white p-6 md:p-10 rounded-xl shadow-md text-center">
         <blockquote className="italic text-lg text-gray-700 max-w-3xl mx-auto">
           "Uni Life Guide is more than a tool — it's a compass for students navigating
@@ -72,17 +81,16 @@ const AboutUs = () => {
         <p className="mt-4 text-sm text-gray-500">— Project Vision Statement</p>
       </div>
 
-
       <div className="mt-16 text-center">
         <p className="text-lg mb-4 font-medium">
           Want to experience how UniGuide makes a difference?
         </p>
-        <Link
-          to="/dashboard"
+        <button
+          onClick={handleExploreClick}
           className="bg-gradient-to-br from-[#00a6ff] to-red-500 hover:from-[#00a6ffec] hover:to-red-400 text-white p-3 px-6 rounded-full transition duration-300 inline-block"
         >
           Explore Features
-        </Link>
+        </button>
       </div>
     </div>
   );

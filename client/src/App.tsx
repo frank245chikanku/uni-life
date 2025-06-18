@@ -6,6 +6,9 @@ import About from "./pages/About";
 import Chat from "./pages/Chat";
 import Home from "./pages/Home";
 
+
+
+
 import Layout from "./components/Layout";
 import Chapter1 from "./components/academic/Chapter1";
 import Introduction from "./components/academic/Introduction"
@@ -392,12 +395,12 @@ const App: React.FC = () => {
 
 
       {/* //DASHBOARD LINKS  */}
-      <Route path="/dashboard" element={<RootLayout><Dashboard/></RootLayout>}/>
-      <Route path="/career-guidance-and-skill-tracking" element={<RootLayout><CareerGuidance/></RootLayout>}/>
+      <Route path="/dashboard" element={<RootLayout><Dashboard /></RootLayout>} />
+      <Route path="/career-guidance-and-skill-tracking" element={<RootLayout><CareerGuidance /></RootLayout>} />
 
-<Route path="/skill-assessments-and-learning-resources" element={<RootLayout><LearningResources/></RootLayout>}/>
-<Route path="/ethical-decision-making-and-community-engagement" element={<RootLayout><CommunityEngagement/></RootLayout>}/> 
-<Route path="/internships-and-industrial-programs" element={<RootLayout><InternshipsPrograms/></RootLayout>}/>
+      <Route path="/skill-assessments-and-learning-resources" element={<RootLayout><LearningResources /></RootLayout>} />
+      <Route path="/ethical-decision-making-and-community-engagement" element={<RootLayout><CommunityEngagement /></RootLayout>} />
+      <Route path="/internships-and-industrial-programs" element={<RootLayout><InternshipsPrograms /></RootLayout>} />
 
 
     </Routes>
