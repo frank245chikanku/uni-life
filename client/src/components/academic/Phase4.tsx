@@ -3,15 +3,17 @@ import React from "react";
 const Phase4: React.FC = () => {
   return (
     <div
-      className="py-8 px-8 max-w-4xl mx-auto rounded-lg"
+      className="py-10 px-8 max-w-4xl mx-auto rounded-2xl"
       style={{
-        backgroundColor: "#d2548e", // Softer pinkish background color
-        color: "white", // White text for contrast
+        backgroundColor: "#ffffff",
+        color: "#1f2937", // Tailwind's text-gray-800
+        boxShadow: "0 10px 25px rgba(210, 84, 142, 0.2)", // subtle pinkish glow
       }}
     >
-      <h2 className="font-bold text-3xl mb-6 text-center">
+      <h2 className="font-bold text-3xl mb-6 text-center text-[#b83260]">
         Phase 4: Promoting a Culture of Integrity
       </h2>
+
       <p className="text-lg leading-relaxed mb-4">
         Much has been written in recent years about honesty and integrity in the
         classroom. Academic integrity is a core value in our schools—for
@@ -22,6 +24,7 @@ const Phase4: React.FC = () => {
         from cutting and pasting material from the Internet to sharing online
         quizzes and texting answers to classmates.
       </p>
+
       <p className="text-lg leading-relaxed mb-4">
         Many important steps have been taken within the academy to achieve a
         culture of academic integrity. Starting on the first day of professional
@@ -35,6 +38,7 @@ const Phase4: React.FC = () => {
         laboratories, and in all group research activities for graduate
         students.
       </p>
+
       <p className="text-lg leading-relaxed">
         Technology will surround students during their education and when they
         become pharmacists, scientists, and educators. We should embrace

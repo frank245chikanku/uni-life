@@ -3,10 +3,16 @@ import React from "react";
 const Phase6: React.FC = () => {
   return (
     <div
-      className="py-8 px-8 max-w-4xl mx-auto rounded-lg shadow-lg"
-      style={{ backgroundColor: "#936a8c", color: "white" }}
+      className="py-8 px-8 max-w-4xl mx-auto rounded-lg"
+      style={{
+        backgroundColor: "#ffffff",
+        color: "#1f2937",
+        boxShadow: "0 10px 25px rgba(210, 84, 142, 0.2)",
+      }}
     >
-      <h1 className="font-bold text-3xl mb-6 text-center">Setting the Right Tone</h1>
+      <h1 className="font-bold text-3xl mb-6 text-center text-[#b83260]">
+        Setting the Right Tone
+      </h1>
       <p className="text-lg leading-relaxed">
         Setting the right tone is crucial for fostering a positive and productive environment. 
         Whether in academic settings, workplaces, or personal relationships, the tone you set 

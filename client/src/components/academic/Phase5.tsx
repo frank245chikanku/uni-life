@@ -3,12 +3,17 @@ import React from "react";
 const Phase5: React.FC = () => {
   return (
     <div
-      className="py-8 px-8 max-w-4xl mx-auto rounded-lg shadow-lg"
-      style={{ backgroundColor: "#d2548e", color: "white" }}
+      className="py-10 px-8 max-w-4xl mx-auto rounded-2xl"
+      style={{
+        backgroundColor: "#ffffff",
+        color: "#1f2937", // text-gray-800 for readability
+        boxShadow: "0 10px 25px rgba(210, 84, 142, 0.2)", // subtle pink shadow
+      }}
     >
-      <h2 className="font-bold text-3xl mb-6 text-center">
+      <h2 className="font-bold text-3xl mb-6 text-center text-[#b83260]">
         Phase 5: Continuous Improvement
       </h2>
+
       <p className="text-lg leading-relaxed mb-4">
         Providing education and professional development ensures that students, instructors, and staff are aware of policies and procedures related to cheating, plagiarism, and reporting academic misconduct—specifically who to contact, how, when, and what evidence to provide. It is important that the range of possible consequences is appropriate to the nature of offenses and that stakeholders are aware of the variations among them. Administrator accountability includes budgeting for resources and assistance for pursuing alleged cases and ensuring instructors and staff have the skills needed. Administrative championship of academic integrity is essential; without leadership commitment, there will be little compliance from the rest of the institution.
       </p>

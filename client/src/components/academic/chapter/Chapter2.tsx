@@ -3,13 +3,18 @@ import React from "react";
 const Chapter2: React.FC = () => {
   return (
     <div
-      className="py-8 px-8 max-w-4xl mx-auto rounded-lg shadow-lg"
-      style={{ backgroundColor: "#5a81b8", color: "white" }}
+      className="py-10 px-8 max-w-4xl mx-auto rounded-2xl"
+      style={{
+        backgroundColor: "#ffffff",
+        color: "#1f2937", // text-gray-800
+        boxShadow: "0 10px 25px rgba(210, 84, 142, 0.2)", // subtle pink shadow
+      }}
     >
-      <h1 className="font-bold text-3xl mb-6 text-center">
+      <h1 className="font-bold text-3xl mb-6 text-center text-[#b83260]">
         Common Misunderstandings
       </h1>
-      <p className="text-lg leading-relaxed">
+
+      <p className="text-lg leading-relaxed mb-4">
         An academic integrity offence is commonly believed to be cheating on a
         test (e.g., copying answers from another student’s paper, using
         unauthorized materials such as a cellphone) or plagiarizing (e.g.,
@@ -17,7 +22,8 @@ const Chapter2: React.FC = () => {
         However, an academic integrity offence involves more than just the
         above.
       </p>
-      <p className="text-lg leading-relaxed mt-4">
+
+      <p className="text-lg leading-relaxed mb-4">
         <strong>Missing In-Text Citations</strong>
         <br />
         Failure to cite the sources listed at the end of your assignment within
@@ -29,7 +35,8 @@ const Chapter2: React.FC = () => {
         research by providing in-text citations that refer to the sources you
         have listed at the end of your assignment.
       </p>
-      <p className="text-lg leading-relaxed mt-4">
+
+      <p className="text-lg leading-relaxed mb-4">
         <strong>Improper Research Practices</strong>
         <br />
         Research involves collection, analysis, and interpretation of published
@@ -37,7 +44,8 @@ const Chapter2: React.FC = () => {
         represented in your academic work, such as falsifying or fabricating
         the information, this is an act of academic misconduct.
       </p>
-      <p className="text-lg leading-relaxed mt-4">
+
+      <p className="text-lg leading-relaxed">
         <strong>Tips to help you avoid engaging in an academic offence:</strong>
         <ul className="list-disc ml-6 mt-2">
           <li>Take notes and review notes (e.g., in class, feedback) on a regular basis.</li>
