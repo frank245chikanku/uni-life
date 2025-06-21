@@ -11,7 +11,7 @@ const Introduction: React.FC = () => {
         boxShadow: "0 10px 25px rgba(210, 84, 142, 0.2)", 
       }}
     >
-      <h1 className="font-bold text-3xl mb-10 text-center text-[#b83260]">
+      <h1 className="font-bold text-3xl mb-10 text-center text-[#050505]">
         Introduction to Academic Integrity
       </h1>
 
@@ -41,7 +41,7 @@ const Introduction: React.FC = () => {
       <div className="text-center mt-10">
         <Link
           to="/academics/chapter1"
-          className="bg-[#b83260] hover:bg-[#9d2c54] text-white px-6 py-3 rounded-full text-lg shadow-md transition duration-300 inline-block"
+          className="bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-full text-lg shadow-md transition duration-300 inline-block"
         >
           Continue to Phase 1
         </Link>

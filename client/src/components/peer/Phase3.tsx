@@ -3,12 +3,17 @@ import React from "react";
 const Phase3: React.FC = () => {
   return (
     <div
-      className="py-8 px-8 max-w-4xl mx-auto rounded-lg shadow-lg"
-      style={{ backgroundColor: "#d2548e", color: "white" }}
+      className="py-10 px-8 max-w-4xl mx-auto rounded-2xl"
+      style={{
+        backgroundColor: "#ffffff",
+        color: "#1f2937",
+        boxShadow: "0 10px 25px rgba(210, 84, 142, 0.2)",
+      }}
     >
-      <h2 className="font-bold text-3xl mb-6 text-center">
+      <h2 className="font-bold text-3xl mb-6 text-center text-[#050505]">
         Phase 3: Groupthink and Conformity
       </h2>
+
       <p className="text-lg leading-relaxed mb-4">
         Groupthink and conformity are both social phenomena that illustrate how peer pressure can shape individual behavior within groups. Groupthink occurs when the desire for group cohesion and unanimity overrides individuals’ ability to think independently or critically. In situations of groupthink, individuals may suppress dissenting opinions, leading to irrational or harmful decision-making. This dynamic often arises when people prioritize harmony over accuracy, resulting in decisions that may not align with individual or collective best interests.
       </p>

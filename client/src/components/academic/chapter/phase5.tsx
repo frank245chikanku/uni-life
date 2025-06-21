@@ -10,7 +10,7 @@ const Phase5: React.FC = () => {
         boxShadow: "0 10px 25px rgba(210, 84, 142, 0.2)",
       }}
     >
-      <h1 className="font-bold text-3xl mb-6 text-center text-[#b83260]">
+      <h1 className="font-bold text-3xl mb-6 text-center text-[#050505]">
         Understanding Plagiarism
       </h1>
       <p className="text-lg leading-relaxed mb-4">

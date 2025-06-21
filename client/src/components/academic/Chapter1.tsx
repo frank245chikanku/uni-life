@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-
 const chapters = [
   {
     title: "Phase 1: Understanding Academic Integrity",
@@ -64,21 +63,33 @@ const ChapterReader: React.FC = () => {
     }
   };
 
+  const prevChapter = () => {
+    if (current > 0) {
+      setCurrent(current - 1);
+    }
+  };
+
+  const restart = () => {
+    setCurrent(0);
+  };
+
+  const printPDF = () => {
+    window.print();
+  };
+
   return (
     <div className="max-w-4xl mx-auto py-10 px-6">
       {/* Progress Bar */}
       <div className="w-full bg-gray-300 rounded-full h-3 mb-6">
         <div
-          className="bg-green-500 h-3 rounded-full transition-all duration-500"
+          className="bg-pink-500 h-3 rounded-full transition-all duration-500"
           style={{ width: `${progress}%` }}
         />
       </div>
 
       {/* Chapter Content */}
-      <div className="bg-white rounded-xl shadow-lg p-8 text-gray-800">
-        <h2 className="text-3xl font-bold mb-4 text-[#b83260]">
-          {chapters[current].title}
-        </h2>
+      <div>
+        <h2 className="text-3xl font-bold mb-4">{chapters[current].title}</h2>
         {chapters[current].content.split("\n\n").map((para, i) => (
           <p key={i} className="mb-4 text-lg leading-relaxed whitespace-pre-wrap">
             {para}
@@ -87,18 +98,43 @@ const ChapterReader: React.FC = () => {
       </div>
 
       {/* Navigation */}
-      <div className="mt-6 text-right">
+      <div className="mt-6 flex justify-between items-center flex-wrap gap-2">
+        <button
+          onClick={prevChapter}
+          disabled={current === 0}
+          className={`${
+            current === 0
+              ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+              : "bg-gray-800 text-white hover:bg-gray-900"
+          } font-semibold px-6 py-2 rounded-lg shadow transition`}
+        >
+          Previous
+        </button>
+
+        <button
+          onClick={printPDF}
+          className="bg-gray-800 text-white font-semibold px-6 py-2 rounded-lg shadow hover:bg-gray-900 transition"
+        >
+          📄 Print / Save
+        </button>
+
         {current < chapters.length - 1 ? (
           <button
             onClick={nextChapter}
-            className="bg-[#d2548e] text-white px-6 py-2 rounded-lg shadow hover:bg-pink-700 transition"
+            className="bg-gray-800 text-white font-semibold px-6 py-2 rounded-lg shadow hover:bg-gray-900 transition"
           >
             Next Chapter
           </button>
         ) : (
-          <p className="text-green-600 font-semibold mt-4 text-center">
-            🎉 You’ve completed all chapters!
-          </p>
+          <div className="text-center w-full mt-4">
+            <p className="text-green-600 font-semibold mb-4">🎉 You’ve completed all chapters!</p>
+            <button
+              onClick={restart}
+              className="bg-gray-800 text-white font-semibold px-6 py-2 rounded-lg shadow hover:bg-gray-900 transition"
+            >
+              🔁 Restart
+            </button>
+          </div>
         )}
       </div>
     </div>

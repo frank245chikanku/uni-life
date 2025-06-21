@@ -6,11 +6,11 @@ const Phase4: React.FC = () => {
       className="py-10 px-8 max-w-4xl mx-auto rounded-2xl"
       style={{
         backgroundColor: "#ffffff",
-        color: "#1f2937", // Tailwind's gray-800
-        boxShadow: "0 10px 25px rgba(210, 84, 142, 0.2)", // pink shadow touch
+        color: "#1f2937", 
+        boxShadow: "0 10px 25px rgba(210, 84, 142, 0.2)", 
       }}
     >
-      <h1 className="font-bold text-3xl mb-6 text-center text-[#b83260]">
+      <h1 className="font-bold text-3xl mb-6 text-center text-[#050505]">
         Talking About Integrity
       </h1>
 
@@ -22,7 +22,7 @@ const Phase4: React.FC = () => {
         Integrity at work is about even more than honesty and respect. If an organization has a true culture of integrity, employees take their commitments seriously, are proactive when they don’t understand their responsibilities, and ultimately are accountable for their results. As a result, the business thrives.
       </p>
 
-      <h2 className="font-semibold text-2xl mt-6 mb-4 text-[#b83260]">
+      <h2 className="font-semibold text-2xl mt-6 mb-4 text-[#050505]">
         Most Common Traits of a Person with Integrity
       </h2>
 

@@ -3,10 +3,16 @@ import React from "react";
 const Phase3: React.FC = () => {
   return (
     <div
-      className="py-8 px-8 max-w-4xl mx-auto rounded-lg shadow-lg"
-      style={{ backgroundColor: "#d2548e", color: "white" }}
+      className="py-10 px-8 max-w-4xl mx-auto rounded-2xl"
+      style={{
+        backgroundColor: "#ffffff",
+        color: "#1f2937",
+        boxShadow: "0 10px 25px rgba(210, 84, 142, 0.2)",
+      }}
     >
-      <h2 className="font-bold text-3xl mb-6 text-center">Phase 3: The Role of Individuals</h2>
+      <h2 className="font-bold text-3xl mb-6 text-center text-[#050505]">
+        Phase 3: The Role of Individuals
+      </h2>
       <p className="text-lg leading-relaxed mb-4">
         An individual's role in shaping society contributes to the overall functioning and progression of that society. People are shaped by society as well, as construction in their individual cognitive, behavioural, and emotional abilities are based off of the social order. Individuals are important because they are the support beam to society. Those with good stable values disrupt chaos and give hope to society that we can all go back to normal. People also contain a vast amount of knowledge that lies in their heads ready to be tapped into for society's benefit.
       </p>

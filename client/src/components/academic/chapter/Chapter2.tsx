@@ -6,11 +6,11 @@ const Chapter2: React.FC = () => {
       className="py-10 px-8 max-w-4xl mx-auto rounded-2xl"
       style={{
         backgroundColor: "#ffffff",
-        color: "#1f2937", // text-gray-800
-        boxShadow: "0 10px 25px rgba(210, 84, 142, 0.2)", // subtle pink shadow
+        color: "#1f2937",
+        boxShadow: "0 10px 25px rgba(210, 84, 142, 0.2)",
       }}
     >
-      <h1 className="font-bold text-3xl mb-6 text-center text-[#b83260]">
+      <h1 className="font-bold text-3xl mb-6 text-center text-[#050505]">
         Common Misunderstandings
       </h1>
 
