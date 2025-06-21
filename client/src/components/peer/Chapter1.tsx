@@ -81,11 +81,10 @@ const ChapterReader: React.FC = () => {
         <button
           onClick={prevChapter}
           disabled={current === 0}
-          className={`${
-            current === 0
+          className={`${current === 0
               ? "bg-gray-200 text-gray-400 cursor-not-allowed"
               : "bg-gray-800 text-white hover:bg-gray-900"
-          } font-semibold px-6 py-2 rounded-lg shadow transition`}
+            } font-semibold px-6 py-2 rounded-lg shadow transition`}
         >
           Previous
         </button>

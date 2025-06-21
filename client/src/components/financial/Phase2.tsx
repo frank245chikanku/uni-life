@@ -14,8 +14,8 @@ const Phase2: React.FC = () => {
         Phase 2: The Importance of Saving
       </h1>
       <p className="text-lg leading-relaxed mb-6">
-        Saving money is one of the essential aspects of building wealth and having a secure financial future. 
-        Saving money gives you a way out of the uncertainties of life and provides you with an opportunity to enjoy a quality life. 
+        Saving money is one of the essential aspects of building wealth and having a secure financial future.
+        Saving money gives you a way out of the uncertainties of life and provides you with an opportunity to enjoy a quality life.
         Putting aside a sum of money in a systematic manner can help you steer out of many hurdles and obstacles in life.
       </p>
       <p className="text-lg leading-relaxed mb-6">

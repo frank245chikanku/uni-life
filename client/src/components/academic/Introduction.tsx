@@ -7,8 +7,8 @@ const Introduction: React.FC = () => {
       className="py-10 px-8 max-w-4xl mx-auto rounded-2xl"
       style={{
         backgroundColor: "#ffffff",
-        color: "#1f2937", 
-        boxShadow: "0 10px 25px rgba(210, 84, 142, 0.2)", 
+        color: "#1f2937",
+        boxShadow: "0 10px 25px rgba(210, 84, 142, 0.2)",
       }}
     >
       <h1 className="font-bold text-3xl mb-10 text-center text-[#050505]">

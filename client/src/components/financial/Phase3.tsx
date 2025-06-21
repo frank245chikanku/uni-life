@@ -14,7 +14,7 @@ const Phase3: React.FC = () => {
         Phase 3: Living Below Your Means
       </h1>
       <p className="text-lg leading-relaxed mb-6">
-        When you live below your means, the goal is to spend less than your total monthly income — which means that the money you bring in outweighs your expenses. 
+        When you live below your means, the goal is to spend less than your total monthly income — which means that the money you bring in outweighs your expenses.
         For example, if you bring in K3,000 each month and are left with K500 at the end of the month, then you are living below your means.
         The ideal amount to aim for depends on your unique circumstances.
       </p>
@@ -27,12 +27,12 @@ const Phase3: React.FC = () => {
         <li>Putting more money toward retirement or other investments.</li>
       </ul>
       <p className="text-lg leading-relaxed mb-6">
-        Ultimately, when you live below your means, you’re better prepared to handle unexpected expenses like a medical bill or home repairs, and to fund the things that make your life feel full, like travel or donating to causes. 
-        It’s not easy to shift your behavior when it comes to money, and if you want to reduce your spending, it won’t happen instantly. 
+        Ultimately, when you live below your means, you’re better prepared to handle unexpected expenses like a medical bill or home repairs, and to fund the things that make your life feel full, like travel or donating to causes.
+        It’s not easy to shift your behavior when it comes to money, and if you want to reduce your spending, it won’t happen instantly.
         But reflecting on your relationship with money and your financial habits can help set you up for success.
       </p>
       <p className="text-lg leading-relaxed">
-        Try this: Write down what you value in life. Then look closely at your last few financial statements. 
+        Try this: Write down what you value in life. Then look closely at your last few financial statements.
         Do your purchases match your values? You might find that small changes can help you stop spending money on nonessential items.
       </p>
     </div>
