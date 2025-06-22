@@ -8,34 +8,54 @@ The term can refer to the belief that individuals are members of multiple, diver
 Promoting global citizenship in sustainable development will allow individuals to embrace their social responsibility to act for the benefit of all societies, not just their own.`,
   },
   {
-    title: "Phase 2: Social Impact Assessment",
-    content: `Social impact assessment (SIA) is now conceived as being the process of managing the social issues of development. There is consensus on what ‘good’ SIA practice is – it is participatory; it supports affected peoples, proponents, and regulatory agencies. It increases understanding of change and capacities to respond to change; it seeks to avoid and mitigate negative impacts and to enhance positive benefits across the life cycle of developments, and it emphasizes enhancing the lives of vulnerable and disadvantaged people.
+    title: "Philanthropy",
+    content: `Philanthropy is most effective when it goes beyond mere acts of kindness to include thoughtful strategies that create long-term change.
+Simply giving without understanding the root causes of problems might provide temporary relief but fails to address systemic issues.
 
-We analyse the strengths, weaknesses, opportunities, and threats facing SIA. We assert that the SIA community needs to revisit core concepts, such as culture, community, power, human rights, gender, justice, place, resilience, and sustainable livelihoods.`,
+An example of this balance is supporting programs that teach self-reliance, such as job training or financial literacy initiatives,
+rather than perpetuating dependency. This approach respects the dignity of recipients and helps them build their capacity to contribute positively to society.
+
+Philanthropy is more than just helping others—it's a transformative act that reflects responsibility, competence, and the pursuit of meaning.
+It offers a way to confront the suffering and chaos of the world with courage and intent, fostering not just societal progress but also personal growth.
+By engaging in thoughtful and purposeful philanthropy, individuals contribute to building a better, more equitable world while cultivating their own character and sense of purpose.`,
   },
   {
-    title: "Phase 3: The Role of Individuals",
-    content: `An individual's role in shaping society contributes to the overall functioning and progression of that society. People are shaped by society as well, as construction in their individual cognitive, behavioural, and emotional abilities are based off of the social order. Individuals are important because they are the support beam to society. Those with good stable values disrupt chaos and give hope to society that we can all go back to normal. People also contain a vast amount of knowledge that lies in their heads ready to be tapped into for society's benefit.
+    title: "Digital Responsibility",
+    content: `As students navigating a world deeply intertwined with technology, understanding and practicing digital responsibility is not just a skill but a necessity.
+Think of it as taking ownership of your actions and choices in the digital space, much like an author writing a story with deliberate intent, 
+shaping not just the narrative but the impact it leaves on readers.
 
-The social environment is made up of a number of factors that determine individual lives. One way in which society can socially control and artificially segment and compartmentalize but at the same time develop unity is by this thing we call culture. Culture allows those within the societal structure to communicate and socialize with each other about their obtainable, official, regional, religious, and secular views, groups, and subgroups through shared beliefs, rituals, music, cultural customs, food, and through the usage of language. It is learned, socially acquired, and in essence, distinguishes key factors between groups of people or individuals.`,
+In this case, you are the author of your digital presence, and your choices define your contribution to the online world. 
+Digital responsibility is about crafting your online presence with care and intentionality, much like an author shaping a masterpiece. 
+Your actions today can influence not just your future but the broader digital world.
+
+By practicing ethical behavior, respecting privacy, exercising discipline, and fostering kindness, 
+you contribute to a healthier, more meaningful digital environment.`,
   },
   {
-    title: "Phase 4: Corporate Social Responsibility",
-    content: `There have long been conflicting expectations of the nature of companies’ responsibilities to society. However, for those businesses that do undertake what might be termed “corporate social responsibility,” what is actually socially responsible behaviour as opposed to management of corporate image or other activity aimed predominantly at business benefits?
+    title: "Cultural Awareness",
+    content: `Cultural awareness means being sensitive to the differences and similarities between two cultures when communicating or interacting with members of other cultural groups.
+Cultural sensitivity involves inculcating values, attitudes, and knowledge that display openness and respect for different cultures, religions, languages, manner of dress, and communication styles.
 
-Corporate social responsibility (CSR) is a management concept that describes how a company contributes to the well-being of communities and society through environmental and social measures. CSR plays a crucial role in how brands are perceived by customers and their target audience. It may also help attract employees and investors who prioritize the CSR goals a company has identified. Learn about the importance of CSR and how it can impact the success of your business.`,
+Cultural awareness involves raising people’s understanding of the influence our culture has on how we do things, including how we communicate, what foods we eat, or even how we go about our work. 
+Being culturally aware means understanding why cultural diversity is important and recognizing that not every person will do things in the same manner as we do. 
+Being mindful of this diversity allows us to be more respectful of the way others operate based on their cultural backgrounds.
+
+While you may not be intimately familiar with other cultures, if you at least understand your own culture and how it affects you, you can take the first step in developing a sense of cultural awareness when it comes to interacting with people who may have a different background than yourself.
+
+Cultural awareness helps you understand yourself better, your weaknesses, your psychology, and how to become a better person. 
+It also helps with cognitive flexibility, problem-solving, decision-making, and improved communication skills.`,
   },
   {
-    title: "Phase 5: Community Engagement",
-    content: `Community engagement is most effective when it involves a collaborative effort that brings together community members, organizations, and groups working towards a common goal. Collaboration fosters a sense of ownership and responsibility among community members and a shared commitment to achieving positive outcomes.
+    title: "Addressing Inequality",
+    content: `Inequality is an enduring feature of human existence. It manifests in various forms—social, economic, educational—and often leads to tension and suffering.
+However, as students, you are uniquely positioned to confront and address inequality in ways that are meaningful and transformative.
 
-Collaboration leads to another essential principle of community engagement: empowerment. Empowerment involves providing community members with the tools, knowledge, and resources to participate in decision-making and problem-solving. This may include providing training or educational resources and creating opportunities for community members to take on leadership roles and become more involved.
+Addressing inequality is not about dismantling everything that exists but about transforming systems and empowering individuals.
+It starts with you—your education, your competence, your willingness to take responsibility.
 
-Inclusivity is another vital principle of community engagement. Inclusivity involves ensuring all community members have a voice and an opportunity to participate in the process, including those who may be traditionally marginalized or underrepresented. Inclusion may involve reaching out to community members in different languages or through various channels and providing accommodations or support for those with disabilities or other special needs.
-
-When you do not engage with the community, everyone loses. Community members, feeling powerless, rally against you. Your organization must deal with many more grievances than if you took a proactive approach.
-
-A forward-thinking community engagement model establishes trust with communities from the outset. Your processes and community engagement strategy should consider what benefits all parties involved.`,
+As Jordan B. Peterson often says, "You’re not everything you could be, and you know it." Use that knowledge as motivation to grow, act, and contribute to a world where inequality is reduced and opportunities are expanded. 
+Through courage, truth, and responsibility, you can be a force for meaningful change.`,
   },
 ];
 
@@ -60,7 +80,50 @@ const SocialChapterReader: React.FC = () => {
   };
 
   const printPDF = () => {
-    window.print();
+    const chapter = chapters[current];
+    const contentToPrint = `
+      <div>
+        <h2>${chapter.title}</h2>
+        ${chapter.content
+        .split("\n\n")
+        .map((para) => `<p>${para}</p>`)
+        .join("")}
+      </div>
+    `;
+
+    const printWindow = window.open("", "", "width=800,height=600");
+    if (printWindow) {
+      printWindow.document.write(`
+        <html>
+          <head>
+            <title>${chapter.title}</title>
+            <style>
+              body {
+                font-family: Arial, sans-serif;
+                padding: 40px;
+                line-height: 1.7;
+                color: #1f2937;
+              }
+              h2 {
+                font-size: 24px;
+                margin-bottom: 16px;
+              }
+              p {
+                font-size: 16px;
+                margin-bottom: 12px;
+              }
+            </style>
+          </head>
+          <body>
+            ${contentToPrint}
+          </body>
+        </html>
+      `);
+      printWindow.document.close();
+      printWindow.focus();
+      printWindow.print();
+      printWindow.close();
+    }
   };
 
   return (
@@ -86,7 +149,10 @@ const SocialChapterReader: React.FC = () => {
           {chapters[current].title}
         </h2>
         {chapters[current].content.split("\n\n").map((para, idx) => (
-          <p key={idx} className="mb-4 text-lg leading-relaxed whitespace-pre-wrap">
+          <p
+            key={idx}
+            className="mb-4 text-lg leading-relaxed whitespace-pre-wrap"
+          >
             {para}
           </p>
         ))}
@@ -98,8 +164,8 @@ const SocialChapterReader: React.FC = () => {
           onClick={prevChapter}
           disabled={current === 0}
           className={`${current === 0
-              ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-              : "bg-gray-800 text-white hover:bg-gray-900"
+            ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+            : "bg-gray-800 text-white hover:bg-gray-900"
             } font-semibold px-6 py-2 rounded-lg shadow transition`}
         >
           Previous
@@ -122,7 +188,7 @@ const SocialChapterReader: React.FC = () => {
         ) : (
           <div className="text-center w-full mt-4">
             <p className="text-green-600 font-semibold mb-4">
-              🎉 You’ve completed all phases!
+              🎉 You’ve completed all chapters!
             </p>
             <button
               onClick={restart}

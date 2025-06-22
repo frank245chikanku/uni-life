@@ -3,10 +3,16 @@ import React from 'react';
 const Phase6: React.FC = () => {
   return (
     <div
-      className="py-8 px-8 max-w-4xl mx-auto rounded-lg shadow-lg"
-      style={{ backgroundColor: '#936a8c', color: 'white' }}
+      className="py-10 px-8 max-w-4xl mx-auto rounded-2xl"
+      style={{
+        backgroundColor: '#ffffff',
+        color: '#1f2937',
+        boxShadow: '0 10px 25px rgba(210, 84, 142, 0.2)',
+      }}
     >
-      <h1 className="font-bold text-3xl mb-6 text-center">Find Mentors, Not Idols</h1>
+      <h1 className="font-bold text-3xl mb-6 text-center text-[#050505]">
+        Find Mentors, Not Idols
+      </h1>
       <p className="text-lg leading-relaxed">
         The idea of finding mentors, not idols, emphasizes the importance of building relationships with individuals who can guide, challenge, and support personal and professional growth, rather than idolizing people from a distance. Mentors provide practical wisdom, constructive feedback, and personalized advice based on real experiences. 
       </p>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const chapters = [
   {
-    title: "Phase 2: Common Misunderstandings",
+    title: "Phase 1: Common Misunderstandings",
     content: (
       <>
         <p className="text-lg leading-relaxed mb-4">
@@ -13,7 +13,6 @@ const chapters = [
           However, an academic integrity offence involves more than just the
           above.
         </p>
-
         <p className="text-lg leading-relaxed mb-4">
           <strong>Missing In-Text Citations</strong>
           <br />
@@ -22,11 +21,8 @@ const chapters = [
           misconduct. You must show where your research has been used in your
           written work in order for your professor to accurately assess and
           provide meaningful feedback about how well you have applied the
-          knowledge you have developed. Show where you have used ideas from your
-          research by providing in-text citations that refer to the sources you
-          have listed at the end of your assignment.
+          knowledge you have developed.
         </p>
-
         <p className="text-lg leading-relaxed mb-4">
           <strong>Improper Research Practices</strong>
           <br />
@@ -35,63 +31,56 @@ const chapters = [
           represented in your academic work, such as falsifying or fabricating
           the information, this is an act of academic misconduct.
         </p>
-
         <p className="text-lg leading-relaxed">
           <strong>Tips to help you avoid engaging in an academic offence:</strong>
           <ul className="list-disc ml-6 mt-2">
-            <li>Take notes and review notes (e.g., in class, feedback) on a regular basis.</li>
+            <li>Take notes and review notes on a regular basis.</li>
             <li>Use the available resources provided by your professor.</li>
-            <li>
-              Read your assignment carefully. If you do not understand, ask your
-              professor questions.
-            </li>
-            <li>
-              Manage your time wisely. Start tasks early and prioritize them
-              accordingly to make work manageable.
-            </li>
+            <li>Read your assignment carefully. If unclear, ask questions.</li>
+            <li>Manage your time wisely and start tasks early.</li>
           </ul>
         </p>
       </>
     ),
   },
   {
-    title: "Phase 3: The Role of Faculty",
+    title: "Phase 2: The Role of Faculty",
     content: (
       <>
         <p className="text-lg leading-relaxed mb-4">
-          The roles and responsibilities of college and university faculty members are closely tied to the central functions of higher education. Correspondingly, college and university faculty members undertake research, teaching, and service roles to carry out the academic work of their respective institutions. Each of these roles enables faculty members to generate and disseminate knowledge to peers, students, and external audiences.
+          The roles and responsibilities of college and university faculty members are closely tied to the central functions of higher education. Faculty members undertake research, teaching, and service to carry out academic work.
         </p>
         <p className="text-lg leading-relaxed">
-          The balance among teaching, research, and service, however, differs widely across institution types and by terms of the faculty member's appointment. The teaching role of faculty members reflects their centrality in addressing the primary educational mission among colleges and universities. As faculty members teach, they disseminate and impart basic or applied knowledge to students and assist students with the learning process and applying the knowledge.
+          The balance among teaching, research, and service differs across institutions. Teaching reflects their central role in education by imparting knowledge to students and supporting learning.
         </p>
       </>
     ),
   },
   {
-    title: "Phase 4: Student Responsibilities",
+    title: "Phase 3: Student Responsibilities",
     content: (
       <>
         <p className="text-lg leading-relaxed mb-4">
-          Student responsibility occurs when students take an active part in their learning by recognizing they are accountable for their academic success. It is demonstrated when they make choices and take actions that lead them toward their goal of education.
+          Student responsibility means taking active part in learning and being accountable for academic success. It involves making choices that lead to educational goals.
         </p>
         <p className="text-lg leading-relaxed mb-4">
-          There are some roles and responsibilities of a student that should and need to be performed during school life. By being respectful, students contribute to a healthy learning environment and lessen distractions and disciplinary actions. They are also expected to be punctual. Being late for school creates a negative impression, which can hurt their grades. Thus, they need to maintain discipline in the classroom and understand time management.
+          Students are expected to be respectful, punctual, and disciplined. These behaviors contribute to a healthy learning environment and academic success.
         </p>
         <p className="text-lg leading-relaxed">
-          School plays an important role in the process of socializing. An educational environment is required to ensure students gain access to quality education. To exist in such a setting, students are expected to comply with behavioral expectations and display values such as politeness, kindness, compassion, generosity, sympathy, and respect.
+          Students should show values like kindness, compassion, and respect in educational settings, fostering social and academic growth.
         </p>
       </>
     ),
   },
   {
-    title: "Phase 5: Talking About Integrity",
+    title: "Phase 4: Talking About Integrity",
     content: (
       <>
         <p className="text-lg leading-relaxed mb-4">
-          Integrity means being honest and having strong moral principles. A person with integrity behaves ethically and does the right thing, even behind closed doors. Having integrity means that you are honest, ethical, and follow defined moral principles.
+          Integrity means being honest and ethical, even when no one is watching. A person with integrity follows strong moral principles.
         </p>
         <p className="text-lg leading-relaxed mb-4">
-          Integrity at work is about even more than honesty and respect. If an organization has a true culture of integrity, employees take their commitments seriously, are proactive when they don’t understand their responsibilities, and ultimately are accountable for their results. As a result, the business thrives.
+          In workplaces, integrity also means being proactive, responsible, and accountable. A culture of integrity helps organizations thrive.
         </p>
         <h2 className="font-semibold text-2xl mt-6 mb-4 text-[#050505]">
           Most Common Traits of a Person with Integrity
@@ -99,12 +88,28 @@ const chapters = [
         <ul className="list-disc list-inside text-lg leading-relaxed space-y-2">
           <li>Expressing gratitude for others</li>
           <li>Valuing honesty and openness</li>
-          <li>Taking responsibility and accountability for actions, good and bad</li>
-          <li>Respecting yourself and others, no matter where you are</li>
-          <li>Helping those in need without sacrificing your own health</li>
-          <li>Demonstrating reliability and trustworthiness</li>
-          <li>Showing patience and flexibility, even when unexpected obstacles show up</li>
+          <li>Taking responsibility for actions</li>
+          <li>Respecting yourself and others</li>
+          <li>Helping others without compromising health</li>
+          <li>Demonstrating reliability</li>
+          <li>Showing patience and flexibility</li>
         </ul>
+      </>
+    ),
+  },
+  {
+    title: "Phase 5: Understanding Plagiarism",
+    content: (
+      <>
+        <p className="text-lg leading-relaxed mb-4">
+          Plagiarism can also include re-using your own work without citation. Under the regulations for examinations, intentional or reckless plagiarism is a disciplinary offence.
+        </p>
+        <p className="text-lg leading-relaxed mb-4">
+          The necessity to acknowledge others’ work or ideas applies not only to text but also to other media, such as computer code, illustrations, and graphs...
+        </p>
+        <p className="text-lg leading-relaxed">
+          The best way of avoiding plagiarism is to learn and employ the principles of good academic practice from the beginning of your university career...
+        </p>
       </>
     ),
   },
@@ -130,25 +135,21 @@ const AcademicChapter2Reader: React.FC = () => {
     setCurrent(0);
   };
 
-
   const printPDF = () => {
     const printWindow = window.open("", "", "width=800,height=600");
     if (printWindow) {
-
       const container = document.createElement("div");
       container.style.padding = "20px";
       container.style.fontFamily = "sans-serif";
       container.style.color = "#1f2937";
       container.innerHTML = `<h2 style="font-size:24px; margin-bottom:16px;">${chapters[current].title}</h2>`;
 
-
-
       const tempDiv = document.createElement("div");
       tempDiv.style.position = "fixed";
       tempDiv.style.left = "-9999px";
       document.body.appendChild(tempDiv);
 
-      import("react-dom/client").then(ReactDOMClient => {
+      import("react-dom/client").then((ReactDOMClient) => {
         const root = ReactDOMClient.createRoot(tempDiv);
         root.render(chapters[current].content);
 
@@ -161,8 +162,7 @@ const AcademicChapter2Reader: React.FC = () => {
                 <style>
                   body { font-family: sans-serif; padding: 20px; line-height: 1.6; color: #1f2937; }
                   h2 { font-size: 24px; margin-bottom: 16px; }
-                  p { font-size: 16px; margin-bottom: 12px; }
-                  ul { font-size: 16px; margin-bottom: 12px; padding-left: 20px; }
+                  p, ul { font-size: 16px; margin-bottom: 12px; padding-left: 20px; }
                   li { margin-bottom: 8px; }
                   strong { font-weight: bold; }
                 </style>
@@ -191,7 +191,7 @@ const AcademicChapter2Reader: React.FC = () => {
         />
       </div>
 
-      {/* Chapter Content Container */}
+      {/* Chapter Content */}
       <div
         className="py-10 px-8 max-w-4xl mx-auto rounded-2xl"
         style={{
@@ -231,12 +231,12 @@ const AcademicChapter2Reader: React.FC = () => {
             onClick={nextChapter}
             className="bg-gray-800 text-white font-semibold px-6 py-2 rounded-lg shadow hover:bg-gray-900 transition"
           >
-            Next Phase
+            Next Chapter
           </button>
         ) : (
           <div className="text-center w-full mt-4">
             <p className="text-green-600 font-semibold mb-4">
-              🎉 You’ve completed all phases!
+              🎉 You’ve completed all chapters!
             </p>
             <button
               onClick={restart}

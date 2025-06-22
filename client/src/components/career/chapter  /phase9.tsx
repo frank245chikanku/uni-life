@@ -3,10 +3,14 @@ import React from 'react';
 const Phase9: React.FC = () => {
   return (
     <div
-      className="py-8 px-8 max-w-4xl mx-auto rounded-lg shadow-lg"
-      style={{ backgroundColor: '#936a8c', color: 'white' }}
+      className="py-10 px-8 max-w-4xl mx-auto rounded-2xl"
+      style={{
+        backgroundColor: '#ffffff',
+        color: '#1f2937',
+        boxShadow: '0 10px 25px rgba(210, 84, 142, 0.2)',
+      }}
     >
-      <h1 className="font-bold text-3xl mb-6 text-center">Define Your Legacy</h1>
+      <h1 className="font-bold text-3xl mb-6 text-center text-[#050505]">Define Your Legacy</h1>
       <p className="text-lg leading-relaxed">
         Especially for students, it's essential to think critically about the legacy they wish to leave behind. Defining your legacy involves understanding the impact you want to have on the world and shaping your actions accordingly. For students, this means not just focusing on grades or immediate accomplishments, but also considering how their work, character, and relationships will be remembered. 
       </p>
