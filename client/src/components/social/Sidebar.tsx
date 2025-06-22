@@ -32,17 +32,17 @@ const items: MenuItem[] = [
           },
           {
             key: "3",
-            label: <Link to="/social/chapter1/sub3">Corporate Social Responsibility</Link>,
+            label: <Link to="/social/chapter1/sub3">Social Impact Assessment</Link>,
           },
           {
             key: "4",
             label: (
-              <Link to="/social/chapter1/sub4"> Community Engagement</Link>
+              <Link to="/social/chapter1/sub4">Corporate Social Responsibility</Link>
             ),
           },
           {
             key: "5",
-            label: <Link to="/social/chapter1/sub5">Ethical Consumerism</Link>,
+            label: <Link to="/social/chapter1/sub5">Community Engagement</Link>,
           },
         ],
       },

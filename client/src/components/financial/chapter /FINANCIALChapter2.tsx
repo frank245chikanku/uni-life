@@ -9,7 +9,7 @@ Financial literacy is the ability to understand and make use of a variety of fin
 
 Educating yourself on these topics also involves learning how money works, setting and achieving financial goals, becoming aware of unethical/discriminatory financial practices, and managing financial challenges that life throws your way.`,
   },
-  {     
+  {
     title: "Tracking Your Expenses",
     content: `Financial stability and prosperity—a lesson that is particularly valuable for students at the start of their financial journey. The text teaches that wealth is not determined by how much you earn but by how much you keep, and keeping wealth begins with knowing exactly where your money is going. Start by diligently recording every single expense, from the smallest purchase to the largest, as this creates a clear picture of your spending habits. This awareness allows you to separate your needs from your wants and ensure that your desires do not overshadow your responsibilities.
 
@@ -62,7 +62,50 @@ const FinancialLiteracyReader: React.FC = () => {
   };
 
   const restart = () => setCurrent(0);
-  const print = () => window.print();
+
+  const print = () => {
+    const contentToPrint = `
+      <div>
+        <h2>${chapters[current].title}</h2>
+        ${chapters[current].content
+          .split("\n\n")
+          .map((para) => `<p>${para}</p>`)
+          .join("")}
+      </div>
+    `;
+
+    const printWindow = window.open("", "", "width=800,height=600");
+    if (printWindow) {
+      printWindow.document.write(`
+        <html>
+          <head>
+            <title>${chapters[current].title}</title>
+            <style>
+              body {
+                font-family: sans-serif;
+                padding: 20px;
+                line-height: 1.6;
+                color: #1f2937;
+              }
+              h2 {
+                font-size: 24px;
+                margin-bottom: 16px;
+              }
+              p {
+                font-size: 16px;
+                margin-bottom: 12px;
+              }
+            </style>
+          </head>
+          <body>${contentToPrint}</body>
+        </html>
+      `);
+      printWindow.document.close();
+      printWindow.focus();
+      printWindow.print();
+      printWindow.close();
+    }
+  };
 
   return (
     <div className="max-w-4xl mx-auto py-10 px-6">
@@ -120,7 +163,7 @@ const FinancialLiteracyReader: React.FC = () => {
         ) : (
           <div className="text-center w-full mt-4">
             <p className="text-green-600 font-semibold mb-4">
-              🎉 You’ve completed all phases!
+              🎉 You’ve completed all chapters!
             </p>
             <button
               onClick={restart}
@@ -135,4 +178,4 @@ const FinancialLiteracyReader: React.FC = () => {
   );
 };
 
-export default FinancialLiteracyReader;    
+export default FinancialLiteracyReader;

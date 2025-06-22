@@ -11,14 +11,14 @@ const Phase2: React.FC = () => {
       }}
     >
       <h2 className="font-bold text-3xl mb-6 text-center text-[#050505]">
-        Phase 2: Social Impact Assessment
+        Phase 2: The Role of Individuals
       </h2>
       <p className="text-lg leading-relaxed mb-4">
-        Social impact assessment (SIA) is now conceived as being the process of managing the social issues of development. There is consensus on what ‘good’ SIA practice is – it is participatory; it supports affected peoples, proponents, and regulatory agencies. It increases understanding of change and capacities to respond to change; it seeks to avoid and mitigate negative impacts and to enhance positive benefits across the life cycle of developments, and it emphasizes enhancing the lives of vulnerable and disadvantaged people.
+        An individual's role in shaping society contributes to the overall functioning and progression of that society. People are shaped by society as well, as construction in their individual cognitive, behavioural, and emotional abilities are based off of the social order. Individuals are important because they are the support beam to society. Those with good stable values disrupt chaos and give hope to society that we can all go back to normal. People also contain a vast amount of knowledge that lies in their heads ready to be tapped into for society's benefit.
       </p>
 
       <p className="text-lg leading-relaxed">
-        We analyse the strengths, weaknesses, opportunities, and threats facing SIA. We assert that the SIA community needs to revisit core concepts, such as culture, community, power, human rights, gender, justice, place, resilience, and sustainable livelihoods.
+        The social environment is made up of a number of factors that determine individual lives. One way in which society can socially control and artificially segment and compartmentalize but at the same time develop unity is by this thing we call culture. Culture allows those within the societal structure to communicate and socialize with each other about their obtainable, official, regional, religious, and secular views, groups, and subgroups through shared beliefs, rituals, music, cultural customs, food, and through the usage of language. It is learned, socially acquired, and in essence, distinguishes key factors between groups of people or individuals.
       </p>
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const chapters = [
   {
@@ -10,14 +10,16 @@ The theory of social responsibility is built on a system of ethics, in which dec
 Moral values that are inherent in society create a distinction between right and wrong. In this way, social fairness is believed (by most) to be in the “right”, but more frequently than not this “fairness” is absent. Every individual has a responsibility to act in a manner that is beneficial to society and not solely to the individual.`,
   },
   {
-    title: "Phase 2: Social Impact Assessment",
-    content: `Social impact assessment (SIA) is now conceived as being the process of managing the social issues of development. There is consensus on what ‘good’ SIA practice is – it is participatory; it supports affected peoples, proponents, and regulatory agencies. It increases understanding of change and capacities to respond to change; it seeks to avoid and mitigate negative impacts and to enhance positive benefits across the life cycle of developments, and it emphasizes enhancing the lives of vulnerable and disadvantaged people.`,
-  },
-  {
-    title: "Phase 3: The Role of Individuals",
+    title: "Phase 2: The Role of Individuals",
     content: `An individual's role in shaping society contributes to the overall functioning and progression of that society. People are shaped by society as well, as construction in their individual cognitive, behavioural, and emotional abilities are based off of the social order. Individuals are important because they are the support beam to society. Those with good stable values disrupt chaos and give hope to society that we can all go back to normal. People also contain a vast amount of knowledge that lies in their heads ready to be tapped into for society's benefit.
 
 The social environment is made up of a number of factors that determine individual lives. One way in which society can socially control and artificially segment and compartmentalize but at the same time develop unity is by this thing we call culture. Culture allows those within the societal structure to communicate and socialize with each other about their obtainable, official, regional, religious, and secular views, groups, and subgroups through shared beliefs, rituals, music, cultural customs, food, and through the usage of language. It is learned, socially acquired, and in essence, distinguishes key factors between groups of people or individuals.`,
+  },
+  {
+    title: "Phase 3: Social Impact Assessment",
+    content: `Social impact assessment (SIA) is now conceived as being the process of managing the social issues of development. There is consensus on what ‘good’ SIA practice is – it is participatory; it supports affected peoples, proponents, and regulatory agencies. It increases understanding of change and capacities to respond to change; it seeks to avoid and mitigate negative impacts and to enhance positive benefits across the life cycle of developments, and it emphasizes enhancing the lives of vulnerable and disadvantaged people.
+
+We analyse the strengths, weaknesses, opportunities, and threats facing SIA. We assert that the SIA community needs to revisit core concepts, such as culture, community, power, human rights, gender, justice, place, resilience, and sustainable livelihoods.`,
   },
   {
     title: "Phase 4: Corporate Social Responsibility",
@@ -38,6 +40,7 @@ When you do not engage with the community, everyone loses. Community members, fe
 A forward-thinking community engagement model establishes trust with communities from the outset. Your processes and community engagement strategy should consider what benefits all parties involved.`,
   },
 ];
+
 
 const SocialChapter1Reader: React.FC = () => {
   const [current, setCurrent] = useState(0);
@@ -60,7 +63,50 @@ const SocialChapter1Reader: React.FC = () => {
   };
 
   const printPDF = () => {
-    window.print();
+    const chapter = chapters[current];
+    const contentToPrint = `
+      <div>
+        <h2>${chapter.title}</h2>
+        ${chapter.content
+        .split("\n\n")
+        .map((para) => `<p>${para}</p>`)
+        .join("")}
+      </div>
+    `;
+
+    const printWindow = window.open("", "", "width=800,height=600");
+    if (printWindow) {
+      printWindow.document.write(`
+        <html>
+          <head>
+            <title>${chapter.title}</title>
+            <style>
+              body {
+                font-family: Arial, sans-serif;
+                padding: 40px;
+                line-height: 1.7;
+                color: #1f2937;
+              }
+              h2 {
+                font-size: 24px;
+                margin-bottom: 16px;
+              }
+              p {
+                font-size: 16px;
+                margin-bottom: 12px;
+              }
+            </style>
+          </head>
+          <body>
+            ${contentToPrint}
+          </body>
+        </html>
+      `);
+      printWindow.document.close();
+      printWindow.focus();
+      printWindow.print();
+      printWindow.close();
+    }
   };
 
   return (
@@ -108,11 +154,11 @@ const SocialChapter1Reader: React.FC = () => {
             onClick={nextChapter}
             className="bg-gray-800 text-white font-semibold px-6 py-2 rounded-lg shadow hover:bg-gray-900 transition"
           >
-            Next Phase
+            Next Chapter
           </button>
         ) : (
           <div className="text-center w-full mt-4">
-            <p className="text-green-600 font-semibold mb-4">🎉 You’ve completed all phases!</p>
+            <p className="text-green-600 font-semibold mb-4">🎉 You’ve completed all chapters!</p>
             <button
               onClick={restart}
               className="bg-gray-800 text-white font-semibold px-6 py-2 rounded-lg shadow hover:bg-gray-900 transition"

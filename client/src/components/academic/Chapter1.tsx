@@ -74,7 +74,48 @@ const ChapterReader: React.FC = () => {
   };
 
   const printPDF = () => {
-    window.print();
+    const contentToPrint = `
+      <div>
+        <h2>${chapters[current].title}</h2>
+        ${chapters[current].content
+        .split("\n\n")
+        .map((para) => `<p>${para}</p>`)
+        .join("")}
+      </div>
+    `;
+
+    const printWindow = window.open("", "", "width=800,height=600");
+    if (printWindow) {
+      printWindow.document.write(`
+        <html>
+          <head>
+            <title>${chapters[current].title}</title>
+            <style>
+              body {
+                font-family: sans-serif;
+                padding: 20px;
+                line-height: 1.6;
+              }
+              h2 {
+                font-size: 24px;
+                margin-bottom: 16px;
+              }
+              p {
+                font-size: 16px;
+                margin-bottom: 12px;
+              }
+            </style>
+          </head>
+          <body>${contentToPrint}</body>
+        </html>
+      `);
+      printWindow.document.close();
+      printWindow.onload = () => {
+        printWindow.focus();
+        printWindow.print();
+        printWindow.close();
+      };
+    }
   };
 
   return (
@@ -103,8 +144,8 @@ const ChapterReader: React.FC = () => {
           onClick={prevChapter}
           disabled={current === 0}
           className={`${current === 0
-            ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-            : "bg-gray-800 text-white hover:bg-gray-900"
+              ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+              : "bg-gray-800 text-white hover:bg-gray-900"
             } font-semibold px-6 py-2 rounded-lg shadow transition`}
         >
           Previous
@@ -126,7 +167,9 @@ const ChapterReader: React.FC = () => {
           </button>
         ) : (
           <div className="text-center w-full mt-4">
-            <p className="text-green-600 font-semibold mb-4">🎉 You’ve completed all chapters!</p>
+            <p className="text-green-600 font-semibold mb-4">
+              🎉 You’ve completed all chapters!
+            </p>
             <button
               onClick={restart}
               className="bg-gray-800 text-white font-semibold px-6 py-2 rounded-lg shadow hover:bg-gray-900 transition"

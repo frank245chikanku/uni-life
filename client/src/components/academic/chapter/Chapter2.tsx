@@ -130,8 +130,55 @@ const AcademicChapter2Reader: React.FC = () => {
     setCurrent(0);
   };
 
+
   const printPDF = () => {
-    window.print();
+    const printWindow = window.open("", "", "width=800,height=600");
+    if (printWindow) {
+
+      const container = document.createElement("div");
+      container.style.padding = "20px";
+      container.style.fontFamily = "sans-serif";
+      container.style.color = "#1f2937";
+      container.innerHTML = `<h2 style="font-size:24px; margin-bottom:16px;">${chapters[current].title}</h2>`;
+
+
+
+      const tempDiv = document.createElement("div");
+      tempDiv.style.position = "fixed";
+      tempDiv.style.left = "-9999px";
+      document.body.appendChild(tempDiv);
+
+      import("react-dom/client").then(ReactDOMClient => {
+        const root = ReactDOMClient.createRoot(tempDiv);
+        root.render(chapters[current].content);
+
+        setTimeout(() => {
+          container.innerHTML += tempDiv.innerHTML;
+          printWindow.document.write(`
+            <html>
+              <head>
+                <title>${chapters[current].title}</title>
+                <style>
+                  body { font-family: sans-serif; padding: 20px; line-height: 1.6; color: #1f2937; }
+                  h2 { font-size: 24px; margin-bottom: 16px; }
+                  p { font-size: 16px; margin-bottom: 12px; }
+                  ul { font-size: 16px; margin-bottom: 12px; padding-left: 20px; }
+                  li { margin-bottom: 8px; }
+                  strong { font-weight: bold; }
+                </style>
+              </head>
+              <body>${container.innerHTML}</body>
+            </html>
+          `);
+          printWindow.document.close();
+          printWindow.focus();
+          printWindow.print();
+          printWindow.close();
+          root.unmount();
+          document.body.removeChild(tempDiv);
+        }, 100);
+      });
+    }
   };
 
   return (

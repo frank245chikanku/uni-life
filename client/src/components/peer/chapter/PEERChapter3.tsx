@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-
 const chapters = [
   {
     title: "Finding Your Voice",
@@ -79,7 +78,50 @@ const PEERChapter3Reader: React.FC = () => {
   };
 
   const printPDF = () => {
-    window.print();
+    const currentChapter = chapters[current];
+    const contentToPrint = `
+      <div>
+        <h2>${currentChapter.title}</h2>
+        ${currentChapter.content
+        .split("\n\n")
+        .map((para) => `<p>${para}</p>`)
+        .join("")}
+      </div>
+    `;
+
+    const printWindow = window.open("", "", "width=800,height=600");
+    if (printWindow) {
+      printWindow.document.write(`
+        <html>
+          <head>
+            <title>${currentChapter.title}</title>
+            <style>
+              body {
+                font-family: Arial, sans-serif;
+                padding: 40px;
+                line-height: 1.7;
+                color: #1f2937;
+              }
+              h2 {
+                font-size: 24px;
+                margin-bottom: 16px;
+              }
+              p {
+                font-size: 16px;
+                margin-bottom: 12px;
+              }
+            </style>
+          </head>
+          <body>
+            ${contentToPrint}
+          </body>
+        </html>
+      `);
+      printWindow.document.close();
+      printWindow.focus();
+      printWindow.print();
+      printWindow.close();
+    }
   };
 
   return (
@@ -117,8 +159,8 @@ const PEERChapter3Reader: React.FC = () => {
           onClick={prevChapter}
           disabled={current === 0}
           className={`${current === 0
-              ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-              : "bg-gray-800 text-white hover:bg-gray-900"
+            ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+            : "bg-gray-800 text-white hover:bg-gray-900"
             } font-semibold px-6 py-2 rounded-lg shadow transition`}
         >
           Previous

@@ -72,7 +72,53 @@ const FINANCIALChapter3Reader: React.FC = () => {
   };
 
   const restart = () => setCurrent(0);
-  const print = () => window.print();
+
+  const print = () => {
+    const contentToPrint = `
+      <div>
+        <h2>${chapters[current].title}</h2>
+        ${chapters[current].content
+          .split("\n\n")
+          .map((para) => `<p>${para}</p>`)
+          .join("")}
+      </div>
+    `;
+
+    const printWindow = window.open("", "", "width=800,height=600");
+    if (printWindow) {
+      printWindow.document.write(`
+        <html>
+          <head>
+            <title>${chapters[current].title}</title>
+            <style>
+              body {
+                font-family: Arial, sans-serif;
+                padding: 20px;
+                line-height: 1.6;
+                color: #1f2937;
+                background: white;
+              }
+              h2 {
+                font-size: 24px;
+                margin-bottom: 16px;
+                text-align: center;
+              }
+              p {
+                font-size: 16px;
+                margin-bottom: 12px;
+                white-space: pre-wrap;
+              }
+            </style>
+          </head>
+          <body>${contentToPrint}</body>
+        </html>
+      `);
+      printWindow.document.close();
+      printWindow.focus();
+      printWindow.print();
+      printWindow.close();
+    }
+  };
 
   return (
     <div className="max-w-4xl mx-auto py-10 px-6">
@@ -105,11 +151,10 @@ const FINANCIALChapter3Reader: React.FC = () => {
         <button
           onClick={prev}
           disabled={current === 0}
-          className={`${
-            current === 0
+          className={`${current === 0
               ? "bg-gray-200 text-gray-400 cursor-not-allowed"
               : "bg-gray-800 text-white hover:bg-gray-900"
-          } font-semibold px-6 py-2 rounded-lg shadow transition`}
+            } font-semibold px-6 py-2 rounded-lg shadow transition`}
         >
           Previous
         </button>
@@ -131,7 +176,7 @@ const FINANCIALChapter3Reader: React.FC = () => {
         ) : (
           <div className="text-center w-full mt-4">
             <p className="text-green-600 font-semibold mb-4">
-              🎉 You’ve completed all phases!
+              🎉 You’ve completed all chapters!
             </p>
             <button
               onClick={restart}

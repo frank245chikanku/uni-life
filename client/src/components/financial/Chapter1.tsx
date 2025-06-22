@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const chapters = [
+const phases = [
   {
     title: "Phase 1: Understanding Financial Strain",
     content: `Like any source of overwhelming stress, financial problems can take a huge toll on your mental and physical health, your relationships, and your overall quality of life. Feeling beaten down by money worries can adversely impact your sleep, self-esteem, and energy levels. It can leave you feeling angry, ashamed, or fearful, fuel tension and arguments with those closest to you, exacerbate pain and mood swings, and even increase your risk of depression and anxiety.
@@ -8,67 +8,121 @@ const chapters = [
 You may resort to unhealthy coping mechanisms, such as drinking, abusing drugs, or gambling to try to escape your worries. In the worst circumstances, financial stress can even prompt suicidal thoughts or actions. But no matter how hopeless your situation seems, there is help available. By tackling your money problems head-on, you can find a way through the financial quagmire, ease your stress levels, and regain control of your finances—and your life.`
   },
   {
-    title: "Phase 2: Tracking Your Expenses",
-    content: `Financial stability and prosperity—a lesson that is particularly valuable for students at the start of their financial journey. The text teaches that wealth is not determined by how much you earn but by how much you keep, and keeping wealth begins with knowing exactly where your money is going. Start by diligently recording every single expense, from the smallest purchase to the largest, as this creates a clear picture of your spending habits. This awareness allows you to separate your needs from your wants and ensure that your desires do not overshadow your responsibilities.
+    title: "Phase 2: The Importance of Saving",
+    content: `Saving money is one of the essential aspects of building wealth and having a secure financial future. Saving money gives you a way out of the uncertainties of life and provides you with an opportunity to enjoy a quality life. Putting aside a sum of money in a systematic manner can help you steer out of many hurdles and obstacles in life.
 
-For instance, if you’re spending excessively on non-essentials, you may find it difficult to save for critical goals such as tuition, books, or even starting a savings fund for the future. By consistently tracking expenses, you develop the habit of intentionality with your finances, learning to direct your money toward investments that create value rather than fleeting pleasures.
+It can support you in your hour of need and ensure that your family has something to fall back on in case of an unfortunate event. Among the many advantages of saving is the long-term security it provides you. The future is unpredictable, and financial emergencies can crop up anytime.
 
-As the wise men of Babylon remind us, "That which we call necessary expenses will always grow to equal our income unless we protest to the contrary." Therefore, live within your means, challenge the assumption of "necessities," and always ensure that you allocate a portion of your income toward savings and growth. This simple but powerful habit sets the foundation for financial success, giving you control over your resources and the confidence to build a secure and abundant future.`
+Saving money allows you to create a safety net for your future expenses as well as unplanned financial needs. The more you save, the more peace of mind you have, as you are better prepared for anything life throws at you.
+
+The importance of saving money cannot be understated when it comes to independence. Financial independence plays a critical role in making you self-sufficient. It helps you live life according to your preferences and comfort. You have the liberty and authority to spend your money on the things you like and live a comfortable and enriched life.`
   },
   {
-    title: "Phase 3: Creating a Financial Safety Net",
-    content: `Creating a financial safety net, as inspired by the principles in The Richest Man in Babylon, is an essential step toward securing your future and protecting yourself from unexpected challenges.
+    title: "Phase 3: Living Below Your Means",
+    content: `When you live below your means, the goal is to spend less than your total monthly income — which means that the money you bring in outweighs your expenses. For example, if you bring in K3,000 each month and are left with K500 at the end of the month, then you are living below your means. The ideal amount to aim for depends on your unique circumstances.
 
-For students, this concept is particularly important because life is unpredictable, and preparing for uncertainties ensures you remain stable during tough times. A financial safety net begins with saving a portion of all your income, no matter how small. The Babylonians advised setting aside at least 10% of your earnings as the "first step toward wealth," and this principle remains timeless. Think of this as your buffer—a reserve that shields you from emergencies, such as unexpected medical expenses, tuition adjustments, or unforeseen living costs.
+Living below your means has short- and long-term benefits, which can help bring you closer to financial security. Some of the benefits of spending less than you earn include:
 
-Building this reserve requires discipline and patience; it means avoiding unnecessary spending and prioritizing your long-term security over short-term desires. Moreover, as you grow your savings, consider where you store it. Ensure your money is kept in a secure, easily accessible place where it can serve its purpose when needed. By consistently saving and safeguarding your financial resources, you create a safety net that not only provides peace of mind but also lays the groundwork for future opportunities.
+- Freeing up money to help build an emergency savings fund.
+- Saving more money for big purchases like a vacation, car or home.
+- Putting more money toward retirement or other investments.
 
-In doing so, you learn to live wisely and responsibly, embodying the ancient wisdom of the Babylonians, who taught that "good luck waits to bless those who are prepared." Start small, stay consistent, and let your financial safety net be your first shield in the journey toward financial independence.`
+Ultimately, when you live below your means, you’re better prepared to handle unexpected expenses like a medical bill or home repairs, and to fund the things that make your life feel full, like travel or donating to causes. It’s not easy to shift your behavior when it comes to money, and if you want to reduce your spending, it won’t happen instantly.
+
+But reflecting on your relationship with money and your financial habits can help set you up for success. Try this: Write down what you value in life. Then look closely at your last few financial statements. Do your purchases match your values? You might find that small changes can help you stop spending money on nonessential items.`
   },
   {
-    title: "Phase 4: Assessing Your Financial Values",
-    content: `Assessing your financial values is a crucial step toward understanding how you approach money and aligning your spending and saving habits with what truly matters to you. Your financial values are the principles and priorities that guide your decisions about earning, spending, saving, and giving.
+    title: "Phase 4: Avoiding Debt",
+    content: `Before embarking on your debt-free journey, you must clearly understand your income, expenses, debts, and assets. Assess your financial well-being by looking at the big picture and understanding how much you spend in relation to your income.
 
-For students, this begins with reflecting on what you believe money represents—whether it’s security, freedom, opportunity, or a tool for helping others. Ask yourself: What do I want my money to achieve? Is it to fund my education, support my family, build a safety net, or invest in future opportunities? The Babylonians remind us that wealth grows when it serves a meaningful purpose and is managed wisely.
+Once you understand your financial situation, create a monthly expense budget that works for you. Budgets allow you to track spending and manage your cash flow systematically. A budget should be realistic, flexible, and tailored to your lifestyle. The 50/30/20 guideline is a great way to get started. This ensures that 50% of your monthly income goes toward necessities, 30% toward lifestyle and discretionary spending, and 20% toward savings and debt repayment. The goal is to cover your expenses from income and end each month with some money left over.
 
-When you assess your financial values, you gain clarity about where your priorities lie, making it easier to make disciplined choices. For instance, if you value education and growth, you may allocate more resources to books and courses rather than fleeting luxuries. Similarly, if generosity is important to you, you might include a portion of your budget for helping others, knowing that giving strengthens communities and builds goodwill.
+**Build an emergency fund**  
+An emergency fund serves as a safety net that you can tap into during unexpected life events like job loss, medical bills, car repairs, etc. Having an emergency fund of at least three to six months' worth of living expenses can help prevent you from accumulating more debt and ensure your financial security during difficult times.
 
-Aligning your financial habits with your values prevents unnecessary spending on things that do not truly matter to you and helps you stay focused on achieving your goals. By regularly reassessing your financial values, you ensure that your money is not just spent but invested in creating a life of purpose, stability, and fulfillment, embodying the timeless wisdom of the Babylonians who believed that wealth flows toward those who respect its power and use it wisely.`
+- Save a portion of your income.
+- Automate your savings to ensure you are setting aside money each month.
+- Invest your emergency funds in low-risk investments such as savings accounts or money market funds.
+
+**Establish smart spending habits**  
+Mindful spending means only purchasing what you need and avoiding overspending. Evaluate your purchases and ask yourself whether it’s truly necessary or if you’re just succumbing to temptation. Create a budget to track your personal finances to ensure you make the best use of your money. Additionally, challenge yourself to find more affordable and creative alternatives to your desired items. Distinguish between needs and wants to develop smart spending habits.`
   },
   {
-    title: "Phase 5: The Benefits of Minimalism",
-    content: `The benefits of minimalism extend far beyond simply owning less; they offer a pathway to clarity, focus, and financial freedom. Minimalism encourages you to prioritize what truly adds value to your life and eliminate the distractions of unnecessary possessions and expenses. For students, adopting this philosophy means understanding that fulfillment doesn’t come from accumulating things but from pursuing meaningful goals and experiences.
+    title: "Phase 5: Diversifying Income Streams",
+    content: `When you diversify income streams, it is like planting seeds in your financial garden, each growing at different rates and requiring different amounts of attention, but collectively contributing to a robust and flourishing economic ecosystem.
 
-By choosing minimalism, you learn to spend intentionally, directing your money and energy toward investments that enrich your life—like education, personal development, and building a financial safety net. This approach not only reduces waste but also cultivates gratitude for what you already have, freeing you from the constant pressure to keep up with trends or satisfy fleeting desires.
+The primary benefit of this approach is financial security. By spreading income sources across different channels, you mitigate the risk associated with relying solely on one income source. This is particularly valuable in times of economic uncertainty or when unexpected personal circumstances arise, such as a job loss or a sudden expense.
 
-The Babylonians taught that wealth grows not through excessive consumption but through disciplined saving and careful management, principles that align perfectly with the minimalist mindset. Living with less also reduces stress, as you avoid the financial burdens of debt and the emotional toll of clutter, allowing you to focus on what matters most.
+Having multiple income streams can accelerate you reaching your financial goals. Whether it's saving for retirement, purchasing a home, or funding education, additional revenue can make these goals more attainable within a shorter timeframe. This strategy not only speeds up wealth accumulation but also provides opportunities to invest in a broader range of assets, further enhancing financial stability.
 
-Ultimately, minimalism empowers you to achieve greater freedom, enabling you to live with intention and purpose, unburdened by the distractions of excess and guided by the wisdom of simplicity.`
+Diversifying income can also lead to personal growth and satisfaction. Engaging in varied work such as a side business, freelance projects, or investments can foster new skills, expand your professional network, and increase your marketability. It also allows for greater control over your time and the potential for pursuing passions that might not be feasible through a single income source.
+
+Embracing multiple income streams, therefore, not only fortifies your financial position but also enriches your personal and professional life, making it a powerful strategy for anyone looking to build a resilient and fulfilling future.`
   }
 ];
 
-const Chapter1Reader: React.FC = () => {
+const FinancialChapter1Reader: React.FC = () => {
   const [current, setCurrent] = useState(0);
-  const progress = ((current + 1) / chapters.length) * 100;
+  const progress = ((current + 1) / phases.length) * 100;
 
-  const nextChapter = () => {
-    if (current < chapters.length - 1) {
-      setCurrent(current + 1);
+  const next = () => {
+    if (current < phases.length - 1) setCurrent(current + 1);
+  };
+
+  const prev = () => {
+    if (current > 0) setCurrent(current - 1);
+  };
+
+  const restart = () => setCurrent(0);
+
+  const print = () => {
+    const contentToPrint = `
+      <div>
+        <h2>${phases[current].title}</h2>
+        ${phases[current].content
+        .split("\n\n")
+        .map((para) => `<p>${para}</p>`)
+        .join("")}
+      </div>
+    `;
+
+    const printWindow = window.open("", "", "width=800,height=600");
+    if (printWindow) {
+      printWindow.document.write(`
+        <html>
+          <head>
+            <title>${phases[current].title}</title>
+            <style>
+              body {
+                font-family: sans-serif;
+                padding: 20px;
+                line-height: 1.6;
+                color: #1f2937;
+              }
+              h2 {
+                font-size: 24px;
+                margin-bottom: 16px;
+              }
+              p {
+                font-size: 16px;
+                margin-bottom: 12px;
+              }
+              ul {
+                margin-left: 20px;
+              }
+              li {
+                margin-bottom: 8px;
+              }
+            </style>
+          </head>
+          <body>${contentToPrint}</body>
+        </html>
+      `);
+      printWindow.document.close();
+      printWindow.focus();
+      printWindow.print();
+      printWindow.close();
     }
-  };
-
-  const prevChapter = () => {
-    if (current > 0) {
-      setCurrent(current - 1);
-    }
-  };
-
-  const restart = () => {
-    setCurrent(0);
-  };
-
-  const printPDF = () => {
-    window.print();
   };
 
   return (
@@ -80,10 +134,19 @@ const Chapter1Reader: React.FC = () => {
         />
       </div>
 
-      <div>
-        <h2 className="text-3xl font-bold mb-4">{chapters[current].title}</h2>
-        {chapters[current].content.split("\n\n").map((para, i) => (
-          <p key={i} className="mb-4 text-lg leading-relaxed whitespace-pre-wrap">
+      <div
+        className="py-10 px-8 max-w-4xl mx-auto rounded-2xl"
+        style={{
+          backgroundColor: "#ffffff",
+          color: "#1f2937",
+          boxShadow: "0 10px 25px rgba(147, 106, 140, 0.2)"
+        }}
+      >
+        <h2 className="font-bold text-3xl mb-6 text-center text-[#050505]">
+          {phases[current].title}
+        </h2>
+        {phases[current].content.split("\n\n").map((para, idx) => (
+          <p key={idx} className="mb-4 text-lg leading-relaxed whitespace-pre-wrap">
             {para}
           </p>
         ))}
@@ -91,7 +154,7 @@ const Chapter1Reader: React.FC = () => {
 
       <div className="mt-6 flex justify-between items-center flex-wrap gap-2">
         <button
-          onClick={prevChapter}
+          onClick={prev}
           disabled={current === 0}
           className={`${current === 0
             ? "bg-gray-200 text-gray-400 cursor-not-allowed"
@@ -102,15 +165,15 @@ const Chapter1Reader: React.FC = () => {
         </button>
 
         <button
-          onClick={printPDF}
+          onClick={print}
           className="bg-gray-800 text-white font-semibold px-6 py-2 rounded-lg shadow hover:bg-gray-900 transition"
         >
           📄 Print / Save
         </button>
 
-        {current < chapters.length - 1 ? (
+        {current < phases.length - 1 ? (
           <button
-            onClick={nextChapter}
+            onClick={next}
             className="bg-gray-800 text-white font-semibold px-6 py-2 rounded-lg shadow hover:bg-gray-900 transition"
           >
             Next Chapter
@@ -133,4 +196,4 @@ const Chapter1Reader: React.FC = () => {
   );
 };
 
-export default Chapter1Reader;
+export default FinancialChapter1Reader;
