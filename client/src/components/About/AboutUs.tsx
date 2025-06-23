@@ -75,7 +75,7 @@ const AboutUs = () => {
 
       <div className="mt-20 bg-white p-6 md:p-10 rounded-xl shadow-md text-center">
         <blockquote className="italic text-lg text-gray-700 max-w-3xl mx-auto">
-          "Uni Life Guide is more than a tool — it's a compass for students navigating
+          "Uni Life Guide is more than a tool — it's a compass, for students, navigating through
           the ethical realities of university life and beyond."
         </blockquote>
         <p className="mt-4 text-sm text-gray-500">— Project Vision Statement</p>

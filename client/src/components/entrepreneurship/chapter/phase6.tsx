@@ -3,10 +3,14 @@ import React from 'react';
 const Phase6: React.FC = () => {
   return (
     <div
-      className="py-8 px-8 max-w-4xl mx-auto rounded-lg shadow-lg"
-      style={{ backgroundColor: '#936a8c', color: 'white' }}
-    >
-      <h1 className="font-bold text-3xl mb-6 text-center">Don’t Be Fooled by Randomness</h1>
+    className="py-10 px-8 max-w-4xl mx-auto rounded-2xl"
+    style={{
+      backgroundColor: "#ffffff",
+      color: "#1f2937",
+      boxShadow: "0 10px 25px rgba(210, 84, 142, 0.2)",
+    }}    
+  >
+    <h2 className="font-bold text-3xl mb-6 text-center text-[#050505]">Don’t Be Fooled by Randomness</h2>
       <p className="text-lg leading-relaxed">
         The idea of not being fooled by randomness emphasizes the importance of recognizing the role of chance in outcomes, especially in areas like success, failure, and decision-making. Often, people attribute positive results to skill or strategy without acknowledging the impact of luck or unpredictable factors.
         <br />

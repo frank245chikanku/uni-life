@@ -3,10 +3,14 @@ import React from 'react';
 const Phase2: React.FC = () => {
   return (
     <div
-      className="py-8 px-8 max-w-4xl mx-auto rounded-lg shadow-lg"
-      style={{ backgroundColor: '#5a81b8', color: 'white' }}
-    >
-      <h1 className="font-bold text-3xl mb-6 text-center">Building Your Blueprint</h1>
+    className="py-10 px-8 max-w-4xl mx-auto rounded-2xl"
+    style={{
+      backgroundColor: "#ffffff",
+      color: "#1f2937",
+      boxShadow: "0 10px 25px rgba(210, 84, 142, 0.2)",
+    }}    
+  >
+    <h2 className="font-bold text-3xl mb-6 text-center text-[#050505]">Building Your Blueprint</h2>
       <p className="text-lg leading-relaxed">
         Building Your Blueprint is about crafting a deliberate plan for your future, grounded in purpose, vision, and actionable steps. Much like an architect designs a structure before construction begins, 
         building a personal or professional blueprint requires you to outline your goals, identify the resources needed, and anticipate challenges that might arise along the way. Without a blueprint, your efforts 
