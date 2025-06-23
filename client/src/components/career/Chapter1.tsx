@@ -10,7 +10,7 @@ It is critical that young people build their own career awareness of not only oc
 Understanding why they are choosing certain careers, or struggling to make decisions, can prompt them to explore different pathways, investigate employment market trends, or reflect further on how their own strengths and interests relate to career options.
 
 Studies have shown that the more time young people invest in career exploration and career planning, the greater their career certainty and confidence become.`,
-  },
+  },   
   {
     title: "Phase 2: Start with What You Know",
     content: `No matter how confident you are, you can still have doubts about your abilities. 

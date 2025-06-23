@@ -1,12 +1,18 @@
-import React from 'react';
+import React from "react";
 
 const Phase9: React.FC = () => {
   return (
     <div
-      className="py-8 px-8 max-w-4xl mx-auto rounded-lg shadow-lg"
-      style={{ backgroundColor: '#936a8c', color: 'white' }}
+      className="py-10 px-8 max-w-4xl mx-auto rounded-2xl"
+      style={{
+        backgroundColor: "#ffffff",
+        color: "#1f2937",
+        boxShadow: "0 10px 25px rgba(210, 84, 142, 0.2)",
+      }}
     >
-      <h1 className="font-bold text-3xl mb-6 text-center">Stay Grounded in Facts</h1>
+      <h2 className="font-bold text-3xl mb-6 text-center text-[#050505]">
+        Stay Grounded in Facts
+      </h2>
       <p className="text-lg leading-relaxed">
         Staying grounded is important because it helps us to maintain balance, stability, and a sense of connection to reality amidst life’s ups and downs. It allows us to make clearer decisions, manage stress more effectively, and maintain a healthy perspective on life. Staying spiritually grounded can be an important aspect of maintaining overall well-being and a sense of connection to oneself and the world around you.
       </p>

@@ -1,12 +1,18 @@
-import React from 'react';
+import React from "react";
 
 const Phase4: React.FC = () => {
   return (
     <div
-      className="py-8 px-8 max-w-4xl mx-auto rounded-lg shadow-lg"
-      style={{ backgroundColor: '#5a81b8', color: 'white' }}
+      className="py-10 px-8 max-w-4xl mx-auto rounded-2xl"
+      style={{
+        backgroundColor: "#ffffff",
+        color: "#1f2937",
+        boxShadow: "0 10px 25px rgba(210, 84, 142, 0.2)",
+      }}
     >
-      <h1 className="font-bold text-3xl mb-6 text-center">Develop Emotional Intelligence</h1>
+      <h2 className="font-bold text-3xl mb-6 text-center text-[#050505]">
+        Develop Emotional Intelligence
+      </h2>
       <p className="text-lg leading-relaxed">
         Emotional intelligence encompasses self-awareness, self-regulation, motivation, empathy, and social skills. By fostering these qualities, individuals can better understand their own emotional responses, leading to more thoughtful decision-making and improved interactions with others.
       </p>

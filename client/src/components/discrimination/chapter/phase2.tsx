@@ -1,12 +1,18 @@
-import React from 'react';
+import React from "react";
 
 const Phase2: React.FC = () => {
   return (
     <div
-      className="py-8 px-8 max-w-4xl mx-auto rounded-lg shadow-lg"
-      style={{ backgroundColor: '#5a81b8', color: 'white' }}
+      className="py-10 px-8 max-w-4xl mx-auto rounded-2xl"
+      style={{
+        backgroundColor: "#ffffff",
+        color: "#1f2937",
+        boxShadow: "0 10px 25px rgba(210, 84, 142, 0.2)",
+      }}
     >
-      <h1 className="font-bold text-3xl mb-6 text-center">Pursue Justice, Not Revenge</h1>
+      <h2 className="font-bold text-3xl mb-6 text-center text-[#050505]">
+        Pursue Justice, Not Revenge
+      </h2>
       <p className="text-lg leading-relaxed">
         Revenge often stems from a desire for personal satisfaction or to right a perceived wrong, but it rarely leads to true healing or progress. Instead, pursuing justice involves a focus on fairness, accountability, and the long-term well-being of all parties involved.
       </p>

@@ -1,12 +1,18 @@
-import React from 'react';
+import React from "react";
 
 const Phase3: React.FC = () => {
   return (
     <div
-      className="py-8 px-8 max-w-4xl mx-auto rounded-lg shadow-lg"
-      style={{ backgroundColor: '#5a81b8', color: 'white' }}
+      className="py-10 px-8 max-w-4xl mx-auto rounded-2xl"
+      style={{
+        backgroundColor: "#ffffff",
+        color: "#1f2937",
+        boxShadow: "0 10px 25px rgba(210, 84, 142, 0.2)",
+      }}
     >
-      <h1 className="font-bold text-3xl mb-6 text-center">Recognize Subtle Biases</h1>
+      <h2 className="font-bold text-3xl mb-6 text-center text-[#050505]">
+        Recognize Subtle Biases
+      </h2>
       <p className="text-lg leading-relaxed">
         These biases, often unconscious, can shape our perceptions and interactions in ways that we may not immediately recognize. Whether based on race, gender, age, or other factors, subtle biases influence decision-making, communication, and judgment in everyday life. For students, this means being aware of the ways in which their own biases might affect how they engage with peers, instructors, or the learning environment.
       </p>

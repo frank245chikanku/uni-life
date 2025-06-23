@@ -1,12 +1,18 @@
-import React from 'react';
+import React from "react";
 
 const Phase7: React.FC = () => {
   return (
     <div
-      className="py-8 px-8 max-w-4xl mx-auto rounded-lg shadow-lg"
-      style={{ backgroundColor: '#936a8c', color: 'white' }}
+      className="py-10 px-8 max-w-4xl mx-auto rounded-2xl"
+      style={{
+        backgroundColor: "#ffffff",
+        color: "#1f2937",
+        boxShadow: "0 10px 25px rgba(210, 84, 142, 0.2)",
+      }}
     >
-      <h1 className="font-bold text-3xl mb-6 text-center">Encourage Open Dialogue</h1>
+      <h2 className="font-bold text-3xl mb-6 text-center text-[#050505]">
+        Encourage Open Dialogue
+      </h2>
       <p className="text-lg leading-relaxed">
         Before you announce your decision, make sure you have a clear and logical explanation for it. How did you arrive at your decision? What criteria did you use? What evidence did you consider? What assumptions did you make? By sharing your reasoning, you show respect for your audience and invite them to understand your perspective. You also demonstrate your critical thinking skills and show that you are open to scrutiny and challenge.
       </p>

@@ -1,12 +1,18 @@
-import React from 'react';
+import React from "react";
 
 const Phase8: React.FC = () => {
   return (
     <div
-      className="py-8 px-8 max-w-4xl mx-auto rounded-lg shadow-lg"
-      style={{ backgroundColor: '#936a8c', color: 'white' }}
+      className="py-10 px-8 max-w-4xl mx-auto rounded-2xl"
+      style={{
+        backgroundColor: "#ffffff",
+        color: "#1f2937",
+        boxShadow: "0 10px 25px rgba(210, 84, 142, 0.2)",
+      }}
     >
-      <h1 className="font-bold text-3xl mb-6 text-center">Practice Humility</h1>
+      <h2 className="font-bold text-3xl mb-6 text-center text-[#050505]">
+        Practice Humility
+      </h2>
       <p className="text-lg leading-relaxed">
         Don’t think you’re too good for everything you do. People who have big egos tend to think that they deserve to be working at a better place, to be dating someone better, or even to be hanging out with people who are interesting and cooler. But your life is your life, and if you want better things, then you have to work to reach for them, instead of assuming the attitude that you’re not getting treated fairly. To practice humility, work to accept the life you have while striving for more without complaining.
       </p>

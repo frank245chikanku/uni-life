@@ -1,12 +1,18 @@
-import React from 'react';
+import React from "react";
 
 const Phase5: React.FC = () => {
   return (
     <div
-      className="py-8 px-8 max-w-4xl mx-auto rounded-lg shadow-lg"
-      style={{ backgroundColor: '#5a81b8', color: 'white' }}
+      className="py-10 px-8 max-w-4xl mx-auto rounded-2xl"
+      style={{
+        backgroundColor: "#ffffff",
+        color: "#1f2937",
+        boxShadow: "0 10px 25px rgba(210, 84, 142, 0.2)",
+      }}
     >
-      <h1 className="font-bold text-3xl mb-6 text-center">Stay Curious, Not Defensive</h1>
+      <h2 className="font-bold text-3xl mb-6 text-center text-[#050505]">
+        Stay Curious, Not Defensive
+      </h2>
       <p className="text-lg leading-relaxed">
         The purpose of a curious mind is an openness to learn. The purpose of a defensive mind is resisting attack. And although defensiveness can be a natural response, it's not always the best response.
       </p>
