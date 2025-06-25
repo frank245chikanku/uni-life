@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 const Introduction: React.FC = () => {
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    const handleScroll = () => {
+    };
+
+    el.addEventListener("scroll", handleScroll);
+    return () => el.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div
-      className="py-10 px-8 max-w-4xl mx-auto rounded-2xl"
+      ref={scrollRef}
+      className="py-10 px-8 max-w-4xl mx-auto rounded-2xl h-[calc(100vh-4rem)] overflow-y-scroll"
       style={{
         backgroundColor: "#ffffff",
         color: "#1f2937",
@@ -16,14 +30,14 @@ const Introduction: React.FC = () => {
       </h1>
 
       <p className="text-lg leading-relaxed mb-6">
-        Discrimination is the unfair or prejudicial treatment of people and groups based on characteristics such as race, gender, age, or sexual orientation. 
+        Discrimination is the unfair or prejudicial treatment of people and groups based on characteristics such as race, gender, age, or sexual orientation.
         That’s the simple answer. But explaining why it happens is more complicated.
       </p>
 
       <p className="text-lg leading-relaxed mb-6">
-        The human brain naturally puts things in categories to make sense of the world. 
-        Very young children quickly learn the difference between boys and girls, for instance. 
-        But the values we place on different categories are learned—from our parents, our peers, and the observations we make about how the world works. 
+        The human brain naturally puts things in categories to make sense of the world.
+        Very young children quickly learn the difference between boys and girls, for instance.
+        But the values we place on different categories are learned—from our parents, our peers, and the observations we make about how the world works.
         Often, discrimination stems from fear and misunderstanding.
       </p>
 
@@ -32,7 +46,7 @@ const Introduction: React.FC = () => {
           to="/discrimination/chapter1"
           className="bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-full text-lg shadow-md transition duration-300 inline-block"
         >
-          Continue to Phase 1   
+          Continue to Phase 1
         </Link>
       </div>
     </div>

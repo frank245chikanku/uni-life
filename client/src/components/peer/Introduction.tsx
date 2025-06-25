@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Introduction: React.FC = () => {
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    const handleScroll = () => {
+    };
+
+    el.addEventListener("scroll", handleScroll);
+    return () => el.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div
-      className="py-10 px-8 max-w-4xl mx-auto rounded-2xl"
+      ref={scrollRef}
+      className="py-10 px-8 max-w-4xl mx-auto rounded-2xl h-[calc(100vh-4rem)] overflow-y-scroll"
       style={{
         backgroundColor: "#ffffff",
         color: "#1f2937",
@@ -50,7 +64,7 @@ const Introduction: React.FC = () => {
           to="/peer/chapter1"
           className="bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-full text-lg shadow-md transition duration-300 inline-block"
         >
-          Continue to Phase 1
+          Continue to Phase&nbsp;1
         </Link>
       </div>
     </div>

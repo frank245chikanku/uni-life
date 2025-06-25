@@ -115,6 +115,7 @@ const AdjustmentChapterReader: React.FC = () => {
   };
 
   return (
+    
     <div className="max-w-4xl mx-auto py-10 px-6 h-[calc(100vh-4rem)] flex flex-col">
       <div className="w-full bg-gray-300 rounded-full h-3 mb-6">
         <div

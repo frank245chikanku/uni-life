@@ -119,8 +119,8 @@ const ChapterReader: React.FC = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto py-10 px-6">
-      {/* Progress Bar */}
+
+    <div className="max-w-4xl mx-auto py-10 px-6 h-[calc(100vh-4rem)] flex flex-col">
       <div className="w-full bg-gray-300 rounded-full h-3 mb-6">
         <div
           className="bg-pink-500 h-3 rounded-full transition-all duration-500"
@@ -128,8 +128,8 @@ const ChapterReader: React.FC = () => {
         />
       </div>
 
-      {/* Chapter Content */}
-      <div>
+      <div className="flex-1 overflow-y-scroll">
+
         <h2 className="text-3xl font-bold mb-4">{chapters[current].title}</h2>
         {chapters[current].content.split("\n\n").map((para, i) => (
           <p key={i} className="mb-4 text-lg leading-relaxed whitespace-pre-wrap">
@@ -144,8 +144,8 @@ const ChapterReader: React.FC = () => {
           onClick={prevChapter}
           disabled={current === 0}
           className={`${current === 0
-              ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-              : "bg-gray-800 text-white hover:bg-gray-900"
+            ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+            : "bg-gray-800 text-white hover:bg-gray-900"
             } font-semibold px-6 py-2 rounded-lg shadow transition`}
         >
           Previous

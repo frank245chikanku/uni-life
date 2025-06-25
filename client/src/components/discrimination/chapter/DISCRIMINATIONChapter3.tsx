@@ -84,16 +84,16 @@ const ChapterReader: React.FC = () => {
         <body>
           <h2>${chapters[current].title}</h2>
           ${chapters[current].content
-        .split(/\n\n|-\s/)
-        .map((block) =>
-          block.trim().startsWith("-")
-            ? `<ul>${block
-              .split("\n")
-              .map((li) => `<li>${li.replace(/^- /, "").trim()}</li>`)
-              .join("")}</ul>`
-            : `<p>${block.trim()}</p>`
-        )
-        .join("")}
+            .split(/\n\n|-\s/)
+            .map((block) =>
+              block.trim().startsWith("-")
+                ? `<ul>${block
+                    .split("\n")
+                    .map((li) => `<li>${li.replace(/^- /, "").trim()}</li>`)
+                    .join("")}</ul>`
+                : `<p>${block.trim()}</p>`
+            )
+            .join("")}
         </body>
       </html>`;
 
@@ -105,7 +105,7 @@ const ChapterReader: React.FC = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto py-10 px-6">
+    <div className="max-w-4xl mx-auto py-10 px-6 h-[calc(100vh-4rem)] flex flex-col">
       <div className="w-full bg-gray-300 rounded-full h-3 mb-6">
         <div
           className="bg-pink-500 h-3 rounded-full transition-all duration-500"
@@ -113,33 +113,33 @@ const ChapterReader: React.FC = () => {
         />
       </div>
 
-      <h2 className="text-3xl font-bold mb-4">{chapters[current].title}</h2>
+      <div className="flex-1 overflow-y-scroll pr-4">
+        <h2 className="text-3xl font-bold mb-4">{chapters[current].title}</h2>
 
-      {chapters[current].content.split("\n\n").map((para, i) =>
-        para.trim().startsWith("-") ? (
-          <ul key={i} className="list-disc pl-6 mb-4">
-            {para
-              .split("\n")
-              .map((li, idx) => (
+        {chapters[current].content.split("\n\n").map((para, i) =>
+          para.trim().startsWith("-") ? (
+            <ul key={i} className="list-disc pl-6 mb-4">
+              {para.split("\n").map((li, idx) => (
                 <li key={idx} className="mb-2 text-lg leading-relaxed">
                   {li.replace(/^- /, "")}
                 </li>
               ))}
-          </ul>
-        ) : (
-          <p key={i} className="mb-4 text-lg leading-relaxed whitespace-pre-wrap">
-            {para}
-          </p>
-        )
-      )}
+            </ul>
+          ) : (
+            <p key={i} className="mb-4 text-lg leading-relaxed whitespace-pre-wrap">
+              {para}
+            </p>
+          )
+        )}
+      </div>
 
       <div className="mt-6 flex justify-between items-center flex-wrap gap-2">
         <button
           onClick={prev}
           disabled={current === 0}
           className={`${current === 0
-              ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-              : "bg-gray-800 text-white hover:bg-gray-900"
+            ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+            : "bg-gray-800 text-white hover:bg-gray-900"
             } font-semibold px-6 py-2 rounded-lg shadow transition`}
         >
           Previous

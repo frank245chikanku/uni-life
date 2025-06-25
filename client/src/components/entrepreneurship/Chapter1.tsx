@@ -41,7 +41,7 @@ However, it’s important for companies to keep improving and for governments to
   },
 ];
 
-const BiasChapterReader: React.FC = () => {
+const entrepreneurshipChapterReader: React.FC = () => {
   const [current, setCurrent] = useState(0);
   const progress = ((current + 1) / entrepreneurshipChapters.length) * 100;
 
@@ -60,9 +60,9 @@ const BiasChapterReader: React.FC = () => {
       <div>
         <h2>${entrepreneurshipChapters[current].title}</h2>
         ${entrepreneurshipChapters[current].content
-          .split("\n\n")
-          .map((para) => `<p>${para}</p>`)
-          .join("")}
+        .split("\n\n")
+        .map((para) => `<p>${para}</p>`)
+        .join("")}
       </div>
     `;
 
@@ -101,7 +101,7 @@ const BiasChapterReader: React.FC = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto py-10 px-6">
+    <div className="max-w-4xl mx-auto py-10 px-6 h-[calc(100vh-4rem)] flex flex-col">
       <div className="w-full bg-gray-300 rounded-full h-3 mb-6">
         <div
           className="bg-pink-500 h-3 rounded-full transition-all duration-500"
@@ -109,7 +109,7 @@ const BiasChapterReader: React.FC = () => {
         />
       </div>
 
-      <div>
+      <div className="flex-1 overflow-y-scroll">
         <h2 className="text-3xl font-bold mb-4">
           {entrepreneurshipChapters[current].title}
         </h2>
@@ -129,11 +129,10 @@ const BiasChapterReader: React.FC = () => {
         <button
           onClick={prevChapter}
           disabled={current === 0}
-          className={`${
-            current === 0
+          className={`${current === 0
               ? "bg-gray-200 text-gray-400 cursor-not-allowed"
               : "bg-gray-800 text-white hover:bg-gray-900"
-          } font-semibold px-6 py-2 rounded-lg shadow transition`}
+            } font-semibold px-6 py-2 rounded-lg shadow transition`}
         >
           Previous
         </button>
@@ -170,4 +169,4 @@ const BiasChapterReader: React.FC = () => {
   );
 };
 
-export default BiasChapterReader;
+export default entrepreneurshipChapterReader;

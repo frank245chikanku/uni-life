@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 const Introduction: React.FC = () => {
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    const handleScroll = () => {
+    };
+
+    el.addEventListener("scroll", handleScroll);
+    return () => el.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div
-      className="py-10 px-8 max-w-4xl mx-auto rounded-2xl"
+      ref={scrollRef}
+      className="py-10 px-8 max-w-4xl mx-auto rounded-2xl h-[calc(100vh-4rem)] overflow-y-scroll"
       style={{
         backgroundColor: "#ffffff",
         color: "#1f2937",
@@ -16,9 +30,9 @@ const Introduction: React.FC = () => {
       </h1>
 
       <p className="text-lg leading-relaxed mb-6">
-        It is critical that young people build their own career awareness of not only occupational options or study pathways, 
-        but also of their feelings and the decision-making processes associated with making choices. 
-        Understanding why they are choosing certain careers, or struggling to make decisions, can prompt them to explore different pathways, 
+        It is critical that young people build their own career awareness of not only occupational options or study pathways,
+        but also of their feelings and the decision-making processes associated with making choices.
+        Understanding why they are choosing certain careers, or struggling to make decisions, can prompt them to explore different pathways,
         investigate employment market trends, or reflect further on how their own strengths and interests relate to career options.
       </p>
 
@@ -27,8 +41,8 @@ const Introduction: React.FC = () => {
       </p>
 
       <p className="text-lg leading-relaxed mb-6">
-        It is also important that young people acknowledge that making career decisions is a complex, ongoing process, 
-        and that the skills and knowledge they are building through this process are beneficial to their overall career development and future employability. 
+        It is also important that young people acknowledge that making career decisions is a complex, ongoing process,
+        and that the skills and knowledge they are building through this process are beneficial to their overall career development and future employability.
         Understanding that career decision-making will likely evoke different emotions at different times is key to managing their own wellbeing.
       </p>
 

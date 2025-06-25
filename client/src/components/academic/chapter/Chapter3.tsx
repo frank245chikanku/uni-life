@@ -158,8 +158,8 @@ const Chapter3Reader: React.FC = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto py-10 px-6">
-      {/* Progress Bar */}
+    <div className="max-w-4xl mx-auto py-10 px-6 h-[calc(100vh-4rem)] flex flex-col">
+      {/* Progress bar */}
       <div className="w-full bg-gray-300 rounded-full h-3 mb-6">
         <div
           className="bg-pink-500 h-3 rounded-full transition-all duration-500"
@@ -167,20 +167,23 @@ const Chapter3Reader: React.FC = () => {
         />
       </div>
 
-      {/* Chapter Content Container */}
-      <div
-        className="py-10 px-8 max-w-4xl mx-auto rounded-2xl"
-        style={{
-          backgroundColor: "#ffffff",
-          color: "#1f2937",
-          boxShadow: "0 10px 25px rgba(210, 84, 142, 0.2)",
-        }}
-      >
-        <h2 className="font-bold text-3xl mb-6 text-center text-[#050505]">
-          {chapters[current].title}
-        </h2>
-        {chapters[current].content}
+      {/* Scrollable content */}
+      <div className="flex-1 overflow-y-scroll px-4">
+        <div
+          className="py-10 px-8 max-w-4xl mx-auto rounded-2xl"
+          style={{
+            backgroundColor: "#ffffff",
+            color: "#1f2937",
+            boxShadow: "0 10px 25px rgba(210, 84, 142, 0.2)",
+          }}
+        >
+          <h2 className="font-bold text-3xl mb-6 text-center text-[#050505]">
+            {chapters[current].title}
+          </h2>
+          {chapters[current].content}
+        </div>
       </div>
+
 
       {/* Navigation */}
       <div className="mt-6 flex justify-between items-center flex-wrap gap-2">
