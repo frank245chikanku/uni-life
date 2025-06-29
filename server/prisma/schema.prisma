@@ -13,9 +13,18 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User{
-  id String @id @default(uuid())
+model User {
+  id       String @id @default(uuid())
   username String
-  email String @unique
+  email    String @unique
   password String
+}
+
+model Internship {
+  id          String  @id @default(uuid())
+  contact     String?
+  link        String?
+  address     String
+  title       String
+  description String?
 }
