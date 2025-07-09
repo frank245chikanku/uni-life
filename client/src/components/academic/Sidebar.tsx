@@ -24,7 +24,7 @@ const AcademicsSidebar: React.FC = () => {
       icon: <MailOutlined />,
       children: [
         {
-          key: "1",
+          key: "/academics/chapter1",
           label: (
             <Link to="/academics/chapter1" onClick={closeDrawer}>
               Understanding Academic Integrity
@@ -32,7 +32,7 @@ const AcademicsSidebar: React.FC = () => {
           ),
         },
         {
-          key: "2",
+          key: "/academics/chapter1/sub2",
           label: (
             <Link to="/academics/chapter1/sub2" onClick={closeDrawer}>
               Implementing Best Practices
@@ -40,7 +40,7 @@ const AcademicsSidebar: React.FC = () => {
           ),
         },
         {
-          key: "3",
+          key: "/academics/chapter1/sub3",
           label: (
             <Link to="/academics/chapter1/sub3" onClick={closeDrawer}>
               Addressing Violations
@@ -48,7 +48,7 @@ const AcademicsSidebar: React.FC = () => {
           ),
         },
         {
-          key: "4",
+          key: "/academics/chapter1/sub4",
           label: (
             <Link to="/academics/chapter1/sub4" onClick={closeDrawer}>
               Promoting a Culture of Integrity
@@ -56,7 +56,7 @@ const AcademicsSidebar: React.FC = () => {
           ),
         },
         {
-          key: "5",
+          key: "/academics/chapter1/sub5",
           label: (
             <Link to="/academics/chapter1/sub5" onClick={closeDrawer}>
               Continuous Improvement
@@ -71,7 +71,7 @@ const AcademicsSidebar: React.FC = () => {
       icon: <AppstoreOutlined />,
       children: [
         {
-          key: "6",
+          key: "/academics/chapter2/sub1",
           label: (
             <Link to="/academics/chapter2/sub1" onClick={closeDrawer}>
               Common Misunderstandings
@@ -79,7 +79,7 @@ const AcademicsSidebar: React.FC = () => {
           ),
         },
         {
-          key: "7",
+          key: "/academics/chapter2/sub2",
           label: (
             <Link to="/academics/chapter2/sub2" onClick={closeDrawer}>
               The Role of Faculty
@@ -87,7 +87,7 @@ const AcademicsSidebar: React.FC = () => {
           ),
         },
         {
-          key: "8",
+          key: "/academics/chapter2/sub3",
           label: (
             <Link to="/academics/chapter2/sub3" onClick={closeDrawer}>
               Student Responsibilities
@@ -95,7 +95,7 @@ const AcademicsSidebar: React.FC = () => {
           ),
         },
         {
-          key: "9",
+          key: "/academics/chapter2/sub4",
           label: (
             <Link to="/academics/chapter2/sub4" onClick={closeDrawer}>
               Talking About Integrity
@@ -103,7 +103,7 @@ const AcademicsSidebar: React.FC = () => {
           ),
         },
         {
-          key: "10",
+          key: "/academics/chapter2/sub5",
           label: (
             <Link to="/academics/chapter2/sub5" onClick={closeDrawer}>
               Understanding Plagiarism
@@ -118,7 +118,7 @@ const AcademicsSidebar: React.FC = () => {
       icon: <SettingOutlined />,
       children: [
         {
-          key: "11",
+          key: "/academics/chapter3/sub1",
           label: (
             <Link to="/academics/chapter3/sub1" onClick={closeDrawer}>
               Creating Integrity Pledges
@@ -126,7 +126,7 @@ const AcademicsSidebar: React.FC = () => {
           ),
         },
         {
-          key: "12",
+          key: "/academics/chapter3/sub2",
           label: (
             <Link to="/academics/chapter3/sub2" onClick={closeDrawer}>
               Setting the Right Tone
@@ -134,7 +134,7 @@ const AcademicsSidebar: React.FC = () => {
           ),
         },
         {
-          key: "13",
+          key: "/academics/chapter3/sub3",
           label: (
             <Link to="/academics/chapter3/sub3" onClick={closeDrawer}>
               Everyone's Involved
@@ -142,7 +142,7 @@ const AcademicsSidebar: React.FC = () => {
           ),
         },
         {
-          key: "14",
+          key: "/academics/chapter3/sub4",
           label: (
             <Link to="/academics/chapter3/sub4" onClick={closeDrawer}>
               Check-Ins for Integrity
@@ -150,7 +150,7 @@ const AcademicsSidebar: React.FC = () => {
           ),
         },
         {
-          key: "15",
+          key: "/academics/chapter3/sub5",
           label: (
             <Link to="/academics/chapter3/sub5" onClick={closeDrawer}>
               Acting on Feedback
@@ -163,8 +163,8 @@ const AcademicsSidebar: React.FC = () => {
 
   const menu = (
     <Menu
-      defaultSelectedKeys={[location.pathname]}
-      defaultOpenKeys={["academics"]}
+      selectedKeys={[location.pathname]}
+      defaultOpenKeys={["academics", "chapter2", "chapter3"]}
       mode="inline"
       items={items}
       className="text-base"
@@ -192,7 +192,7 @@ const AcademicsSidebar: React.FC = () => {
         {menu}
       </Drawer>
 
-      {/* Static Sidebar for Desktop */}
+      {/* Sidebar for Desktop */}
       <div className="hidden md:block">{menu}</div>
     </>
   );
