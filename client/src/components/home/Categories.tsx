@@ -77,23 +77,24 @@ const categoryData = [
 
 const Categories = () => {
   return (
-    <section className="w-full flex flex-col min-h-screen justify-center items-center p-6">
-      <p className="font-bold text-[50px] text-gray-200">Categories</p>
-      <div className="w-full grid md:grid-cols-4 grid-cols-1 gap-4 mt-16">
+    <section className="w-full min-h-screen px-6 py-12 bg-gradient-to-b from-gray-50 to-white">
+      <h2 className="text-4xl font-extrabold text-center text-gray-800 mb-10">
+        Categories
+      </h2>
+
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {categoryData.map((category, index) => (
           <Link
             key={index}
             to={category.to}
-            className={`w-full shadow shadow-gray-600 ${category.bgColor} cursor-pointer hover:shadow-slate-900 hover:shadow-md p-4 rounded-sm flex flex-col justify-center items-center`}
+            className={`rounded-xl shadow-md transition-all transform hover:scale-105 hover:shadow-lg ${category.bgColor} ${category.textColor} p-6 flex flex-col items-center text-center`}
           >
             <img
-              className="h-20 w-20"
+              className="w-16 h-16 mb-4"
               src={category.imgSrc}
               alt={category.altText}
             />
-            <p
-              className={`mt-4 font-bold ${category.textColor} text-lg text-center`}
-            >
+            <p className="text-base font-bold leading-tight">
               {category.label}
             </p>
           </Link>
