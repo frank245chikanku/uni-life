@@ -23,16 +23,9 @@ const Hero = () => {
           <img src={bg} alt="bg" />
         </div>
       </div>
-      {/* <div className="fw-full flex flex-col justify-center items-center mt-32">
-        <div className="text-gray-200 shadow shadow-blue-200 items-center flex flex-col p-4 hover:bg-[#da3163] cursor-pointer rounded-full">
-          <p>SEE FEATURES</p>
-          <svg viewBox="0 0 24 24" fill="currentColor" height="2em" width="2em">
-            <path d="M11.178 19.569a.998.998 0 001.644 0l9-13A.999.999 0 0021 5H3a1.002 1.002 0 00-.822 1.569l9 13z" />
-          </svg>
-        </div>
-      </div> */}
+      
     </section>
   );
 };
 
-export default Hero;
+export default Hero;    

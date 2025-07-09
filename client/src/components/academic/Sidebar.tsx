@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   AppstoreOutlined,
   MailOutlined,
   SettingOutlined,
+  MenuOutlined,
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
-import { Menu } from "antd";
+import { Menu, Drawer, Button } from "antd";
 import { Link } from "react-router-dom";
 
 type MenuItem = Required<MenuProps>["items"][number];
@@ -75,20 +76,45 @@ const items: MenuItem[] = [
 ];
 
 const AcademicsSidebar: React.FC = () => {
-  const onClick: MenuProps["onClick"] = (e) => {
-    console.log("click ", e);
-  };
+  const [open, setOpen] = useState(false);
 
-  return (
+  const showDrawer = () => setOpen(true);
+  const onClose = () => setOpen(false);
+
+  const menu = (
     <Menu
-      onClick={onClick}
-      style={{ width: 384 }}
       defaultSelectedKeys={["1"]}
-      defaultOpenKeys={["academics/chapter1"]}
+      defaultOpenKeys={["academics"]}
       mode="inline"
       items={items}
-      className="text-lg custom-menu group"
+      className="text-lg custom-menu"
     />
+  );
+
+  return (
+    <>
+      {/* Mobile toggle button */}
+      <div className="md:hidden mb-4">
+        <Button icon={<MenuOutlined />} onClick={showDrawer}>
+          Menu
+        </Button>
+      </div>
+
+      {/* Mobile Drawer */}
+      <Drawer
+        title="Chapters"
+        placement="left"
+        onClose={onClose}
+        open={open}
+        className="md:hidden"
+        bodyStyle={{ padding: 0 }}
+      >
+        {menu}
+      </Drawer>
+
+      {/* Desktop Menu */}
+      <div className="hidden md:block">{menu}</div>
+    </>
   );
 };
 
