@@ -1,20 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 
 const Introduction: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-
-    const handleScroll = () => {
-
-    };
-
-    el.addEventListener("scroll", handleScroll);
-    return () => el.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <div
