@@ -120,77 +120,57 @@ const AcademicChapter2Reader: React.FC = () => {
   const progress = ((current + 1) / chapters.length) * 100;
 
   const nextChapter = () => {
-    if (current < chapters.length - 1) {
-      setCurrent(current + 1);
-    }
+    if (current < chapters.length - 1) setCurrent(current + 1);
   };
 
   const prevChapter = () => {
-    if (current > 0) {
-      setCurrent(current - 1);
-    }
+    if (current > 0) setCurrent(current - 1);
   };
 
-  const restart = () => {
-    setCurrent(0);
-  };
+  const restart = () => setCurrent(0);
 
   const printPDF = () => {
     const printWindow = window.open("", "", "width=800,height=600");
     if (printWindow) {
-      const container = document.createElement("div");
-      container.style.padding = "20px";
-      container.style.fontFamily = "sans-serif";
-      container.style.color = "#1f2937";
-      container.innerHTML = `<h2 style="font-size:24px; margin-bottom:16px;">${chapters[current].title}</h2>`;
-
-      const tempDiv = document.createElement("div");
-      tempDiv.style.position = "fixed";
-      tempDiv.style.left = "-9999px";
-      document.body.appendChild(tempDiv);
-
-      import("react-dom/client").then((ReactDOMClient) => {
-        const root = ReactDOMClient.createRoot(tempDiv);
-        root.render(chapters[current].content);
-
-        setTimeout(() => {
-          container.innerHTML += tempDiv.innerHTML;
-          printWindow.document.write(`
-            <html>
-              <head>
-                <title>${chapters[current].title}</title>
-                <style>
-                  body { font-family: sans-serif; padding: 20px; line-height: 1.6; color: #1f2937; }
-                  h2 { font-size: 24px; margin-bottom: 16px; }
-                  p, ul { font-size: 16px; margin-bottom: 12px; padding-left: 20px; }
-                  li { margin-bottom: 8px; }
-                  strong { font-weight: bold; }
-                </style>
-              </head>
-              <body>${container.innerHTML}</body>
-            </html>
-          `);
-          printWindow.document.close();
-          printWindow.focus();
-          printWindow.print();
-          printWindow.close();
-          root.unmount();
-          document.body.removeChild(tempDiv);
-        }, 100);
-      });
+      printWindow.document.write(`
+        <html>
+          <head>
+            <title>${chapters[current].title}</title>
+            <style>
+              body { font-family: sans-serif; padding: 20px; line-height: 1.6; color: #1f2937; }
+              h2 { font-size: 24px; margin-bottom: 16px; }
+              p, ul { font-size: 16px; margin-bottom: 12px; padding-left: 20px; }
+              li { margin-bottom: 8px; }
+              strong { font-weight: bold; }
+            </style>
+          </head>
+          <body>
+            <h2>${chapters[current].title}</h2>
+            ${document.querySelector(".chapter-content")?.innerHTML}
+          </body>
+        </html>
+      `);
+      printWindow.document.close();
+      printWindow.onload = () => {
+        printWindow.focus();
+        printWindow.print();
+        printWindow.close();
+      };
     }
   };
 
   return (
-    <div className="max-w-4xl mx-auto py-10 px-6 h-[calc(100vh-4rem)] flex flex-col">
-    <div className="w-full bg-gray-300 rounded-full h-3 mb-6">
-      <div
-        className="bg-pink-500 h-3 rounded-full transition-all duration-500"
-        style={{ width: `${progress}%` }}
-      />
-    </div>
+    <div className="max-w-4xl mx-auto py-6 px-4 md:px-6 h-[calc(100vh-4rem)] flex flex-col">
+      {/* Progress */}
+      <div className="w-full bg-gray-300 rounded-full h-3 mb-6">
+        <div
+          className="bg-pink-500 h-3 rounded-full transition-all duration-500"
+          style={{ width: `${progress}%` }}
+        />
+      </div>
 
-    <div className="flex-1 overflow-y-scroll">
+      {/* Chapter Content */}
+      <div className="flex-1 overflow-y-auto pb-4 chapter-content">
         <h2 className="font-bold text-3xl mb-6 text-center text-[#050505]">
           {chapters[current].title}
         </h2>
@@ -198,21 +178,21 @@ const AcademicChapter2Reader: React.FC = () => {
       </div>
 
       {/* Navigation */}
-      <div className="mt-6 flex justify-between items-center flex-wrap gap-2">
+      <div className="mt-6 flex flex-col md:flex-row justify-between items-center gap-4">
         <button
           onClick={prevChapter}
           disabled={current === 0}
           className={`${current === 0
             ? "bg-gray-200 text-gray-400 cursor-not-allowed"
             : "bg-gray-800 text-white hover:bg-gray-900"
-            } font-semibold px-6 py-2 rounded-lg shadow transition`}
+            } font-semibold px-6 py-2 rounded-lg shadow transition w-full md:w-auto`}
         >
           Previous
         </button>
 
         <button
           onClick={printPDF}
-          className="bg-gray-800 text-white font-semibold px-6 py-2 rounded-lg shadow hover:bg-gray-900 transition"
+          className="bg-gray-800 text-white font-semibold px-6 py-2 rounded-lg shadow hover:bg-gray-900 transition w-full md:w-auto"
         >
           📄 Print / Save
         </button>
@@ -220,18 +200,18 @@ const AcademicChapter2Reader: React.FC = () => {
         {current < chapters.length - 1 ? (
           <button
             onClick={nextChapter}
-            className="bg-gray-800 text-white font-semibold px-6 py-2 rounded-lg shadow hover:bg-gray-900 transition"
+            className="bg-gray-800 text-white font-semibold px-6 py-2 rounded-lg shadow hover:bg-gray-900 transition w-full md:w-auto"
           >
             Next Chapter
           </button>
         ) : (
-          <div className="text-center w-full mt-4">
+          <div className="text-center w-full">
             <p className="text-green-600 font-semibold mb-4">
               🎉 You’ve completed all chapters!
             </p>
             <button
               onClick={restart}
-              className="bg-gray-800 text-white font-semibold px-6 py-2 rounded-lg shadow hover:bg-gray-900 transition"
+              className="bg-gray-800 text-white font-semibold px-6 py-2 rounded-lg shadow hover:bg-gray-900 transition w-full md:w-auto"
             >
               🔁 Restart
             </button>
