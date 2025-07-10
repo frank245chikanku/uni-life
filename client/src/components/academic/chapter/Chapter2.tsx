@@ -150,7 +150,7 @@ const AcademicChapter2Reader: React.FC = () => {
 
   return (
     <div className="max-w-4xl mx-auto py-6 px-4 md:px-6 h-[calc(100vh-4rem)] flex flex-col">
-      {/* Progress Bar */}
+
       <div className="w-full bg-gray-300 rounded-full h-3 mb-4 md:mb-6">
         <div
           className="bg-pink-500 h-3 rounded-full transition-all duration-500"
@@ -158,7 +158,7 @@ const AcademicChapter2Reader: React.FC = () => {
         />
       </div>
 
-      {/* Content */}
+
       <div ref={printRef} className="flex-1 overflow-y-auto pb-4">
         <h2 className="text-center font-bold text-2xl md:text-3xl mb-6 text-[#050505]">
           {chapters[current].title}
@@ -166,16 +166,15 @@ const AcademicChapter2Reader: React.FC = () => {
         {chapters[current].content}
       </div>
 
-      {/* Buttons */}
+
       <div className="mt-6 flex flex-col md:flex-row justify-between items-center gap-4">
         <button
           onClick={prevChapter}
           disabled={current === 0}
-          className={`w-full md:w-auto ${
-            current === 0
-              ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-              : "bg-gray-800 text-white hover:bg-gray-900"
-          } font-semibold px-6 py-2 rounded-lg shadow transition`}
+          className={`w-full md:w-auto ${current === 0
+            ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+            : "bg-gray-800 text-white hover:bg-gray-900"
+            } font-semibold px-6 py-2 rounded-lg shadow transition`}
         >
           Previous
         </button>
