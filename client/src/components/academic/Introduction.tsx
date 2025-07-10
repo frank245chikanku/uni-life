@@ -45,7 +45,7 @@ const Introduction: React.FC = () => {
       <div className="text-center mt-10">
         <Link
           to="/academics/chapter1"
-          className="bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-full text-lg shadow-md transition duration-300 inline-block"
+          className="bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-full text-lg shadow-md transition duration-300 inline-block"
         >
           Continue to Phase 1
         </Link>
