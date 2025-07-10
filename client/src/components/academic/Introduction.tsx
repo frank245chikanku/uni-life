@@ -9,6 +9,7 @@ const Introduction: React.FC = () => {
     if (!el) return;
 
     const handleScroll = () => {
+      // Reserved for future scroll tracking if needed
     };
 
     el.addEventListener("scroll", handleScroll);
@@ -18,11 +19,12 @@ const Introduction: React.FC = () => {
   return (
     <div
       ref={scrollRef}
-      className="py-10 px-8 max-w-4xl mx-auto rounded-2xl h-[calc(100vh-4rem)] overflow-y-scroll"
+      className="py-10 px-6 md:px-8 max-w-4xl mx-auto rounded-2xl h-[100dvh] overflow-y-scroll"
       style={{
         backgroundColor: "#ffffff",
         color: "#1f2937",
         boxShadow: "0 10px 25px rgba(210, 84, 142, 0.2)",
+        scrollBehavior: "smooth",
       }}
     >
       <h1 className="font-bold text-3xl mb-10 text-center text-[#050505]">

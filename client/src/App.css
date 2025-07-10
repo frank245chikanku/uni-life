@@ -34,3 +34,24 @@ html {
 }
 
 
+.custom-menu {
+    max-height: 100vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #f472b6 transparent; 
+  }
+  
+  
+  .custom-menu::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .custom-menu::-webkit-scrollbar-thumb {
+    background-color: #f472b6; 
+    border-radius: 4px;
+  }
+  
+  .custom-menu::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  

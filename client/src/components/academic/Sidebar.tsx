@@ -167,20 +167,20 @@ const AcademicsSidebar: React.FC = () => {
       defaultOpenKeys={["academics", "chapter2", "chapter3"]}
       mode="inline"
       items={items}
-      className="text-base"
+      className="custom-menu text-base"
     />
   );
 
   return (
     <>
-      {/* Mobile Toggle Button */}
+      
       <div className="md:hidden mb-4">
         <Button icon={<MenuOutlined />} onClick={() => setOpen(true)}>
           Menu
         </Button>
       </div>
 
-      {/* Drawer for Mobile */}
+      
       <Drawer
         title="Chapters"
         placement="left"
@@ -192,7 +192,7 @@ const AcademicsSidebar: React.FC = () => {
         {menu}
       </Drawer>
 
-      {/* Sidebar for Desktop */}
+  
       <div className="hidden md:block">{menu}</div>
     </>
   );
