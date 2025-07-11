@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const chapters = [
   {
@@ -41,26 +42,25 @@ A forward-thinking community engagement model establishes trust with communities
   },
 ];
 
-
 const SocialChapter1Reader: React.FC = () => {
   const [current, setCurrent] = useState(0);
+  const location = useLocation();
+
+  useEffect(() => {
+    const match = location.pathname.match(/sub(\d+)/);
+    if (match) {
+      const index = parseInt(match[1]) - 1;
+      if (!isNaN(index) && index >= 0 && index < chapters.length) {
+        setCurrent(index);
+      }
+    }
+  }, [location]);
+
   const progress = ((current + 1) / chapters.length) * 100;
 
-  const nextChapter = () => {
-    if (current < chapters.length - 1) {
-      setCurrent(current + 1);
-    }
-  };
-
-  const prevChapter = () => {
-    if (current > 0) {
-      setCurrent(current - 1);
-    }
-  };
-
-  const restart = () => {
-    setCurrent(0);
-  };
+  const nextChapter = () => current < chapters.length - 1 && setCurrent(current + 1);
+  const prevChapter = () => current > 0 && setCurrent(current - 1);
+  const restart = () => setCurrent(0);
 
   const printPDF = () => {
     const chapter = chapters[current];
@@ -68,12 +68,11 @@ const SocialChapter1Reader: React.FC = () => {
       <div>
         <h2>${chapter.title}</h2>
         ${chapter.content
-        .split("\n\n")
-        .map((para) => `<p>${para}</p>`)
-        .join("")}
+          .split("\n\n")
+          .map((para) => `<p>${para}</p>`)
+          .join("")}
       </div>
     `;
-
     const printWindow = window.open("", "", "width=800,height=600");
     if (printWindow) {
       printWindow.document.write(`
@@ -97,9 +96,7 @@ const SocialChapter1Reader: React.FC = () => {
               }
             </style>
           </head>
-          <body>
-            ${contentToPrint}
-          </body>
+          <body>${contentToPrint}</body>
         </html>
       `);
       printWindow.document.close();
@@ -127,22 +124,21 @@ const SocialChapter1Reader: React.FC = () => {
         ))}
       </div>
 
-      {/* Navigation */}
-      <div className="mt-6 flex justify-between items-center flex-wrap gap-2">
+      <div className="mt-6 flex flex-col md:flex-row justify-between items-center gap-4">
         <button
           onClick={prevChapter}
           disabled={current === 0}
           className={`${current === 0
             ? "bg-gray-200 text-gray-400 cursor-not-allowed"
             : "bg-gray-800 text-white hover:bg-gray-900"
-            } font-semibold px-6 py-2 rounded-lg shadow transition`}
+            } font-semibold px-6 py-2 rounded-lg shadow transition w-full md:w-auto`}
         >
           Previous
         </button>
 
         <button
           onClick={printPDF}
-          className="bg-gray-800 text-white font-semibold px-6 py-2 rounded-lg shadow hover:bg-gray-900 transition"
+          className="bg-gray-800 text-white font-semibold px-6 py-2 rounded-lg shadow hover:bg-gray-900 transition w-full md:w-auto"
         >
           📄 Print / Save
         </button>
@@ -150,12 +146,12 @@ const SocialChapter1Reader: React.FC = () => {
         {current < chapters.length - 1 ? (
           <button
             onClick={nextChapter}
-            className="bg-gray-800 text-white font-semibold px-6 py-2 rounded-lg shadow hover:bg-gray-900 transition"
+            className="bg-gray-800 text-white font-semibold px-6 py-2 rounded-lg shadow hover:bg-gray-900 transition w-full md:w-auto"
           >
             Next Chapter
           </button>
         ) : (
-          <div className="text-center w-full mt-4">
+          <div className="text-center w-full">
             <p className="text-green-600 font-semibold mb-4">🎉 You’ve completed all chapters!</p>
             <button
               onClick={restart}

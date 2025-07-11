@@ -67,9 +67,9 @@ const EntrepreneurshipChapterReader: React.FC = () => {
       <div>
         <h2>${entrepreneurshipChapters[current].title}</h2>
         ${entrepreneurshipChapters[current].content
-          .split("\n\n")
-          .map((para) => `<p>${para}</p>`)
-          .join("")}
+        .split("\n\n")
+        .map((para) => `<p>${para}</p>`)
+        .join("")}
       </div>
     `;
     const printWindow = window.open("", "", "width=800,height=600");
@@ -132,8 +132,8 @@ const EntrepreneurshipChapterReader: React.FC = () => {
           onClick={prevChapter}
           disabled={current === 0}
           className={`w-full md:w-auto ${current === 0
-              ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-              : "bg-gray-800 text-white hover:bg-gray-900"
+            ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+            : "bg-gray-800 text-white hover:bg-gray-900"
             } font-semibold px-6 py-2 rounded-lg shadow transition`}
         >
           Previous

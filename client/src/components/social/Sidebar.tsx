@@ -1,95 +1,198 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   AppstoreOutlined,
   MailOutlined,
   SettingOutlined,
+  MenuOutlined,
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
-import { Menu } from "antd";
-import { Link } from "react-router-dom";
+import { Menu, Drawer, Button } from "antd";
+import { Link, useLocation } from "react-router-dom";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
-const items: MenuItem[] = [
-  {
-    key: "/social",
-    label: <Link to="/social">Chapter 1</Link>,
-    icon: <MailOutlined />,
-    children: [
-      {
-        key: "sub1",
-        label: "Introduction",
-        children: [
-          {
-            key: "1",
-            label: (
-              <Link to="/social/chapter1">Understanding Social Responsibility</Link>
-            ),
-          },
-          {
-            key: "2",
-            label: <Link to="/social/chapter1/sub2">The Role of Individuals</Link>,
-          },
-          {
-            key: "3",
-            label: <Link to="/social/chapter1/sub3">Social Impact Assessment</Link>,
-          },
-          {
-            key: "4",
-            label: (
-              <Link to="/social/chapter1/sub4">Corporate Social Responsibility</Link>
-            ),
-          },
-          {
-            key: "5",
-            label: <Link to="/social/chapter1/sub5">Community Engagement</Link>,
-          },
-        ],
-      },
-    ],
-  },
-  {
-    key: "social/chapter2",
-    label: <Link to="/social/chapter2">Chapter 2</Link>,
-    icon: <AppstoreOutlined />,
-    children: [
-      { key: "6", label: <Link to="/social/chapter2/sub1">Global Citizenship</Link> },
-      { key: "7", label: <Link to="/social/chapter2/sub2">Philanthropy</Link> },
-      { key: "8", label: <Link to="/social/chapter2/sub3">Digital Responsibility</Link> },
-      { key: "9", label: <Link to="/social/chapter2/sub4">Cultural Awareness</Link> },
-      { key: "10", label: <Link to="/social/chapter2/sub5">Addressing Inequality</Link> },
-    ],
-  },
-  {
-    key: "social/chapter3",
-    label: <Link to="/social/chapter3">Chapter 3</Link>,
-    icon: <SettingOutlined />,
-    children: [
-      { key: "11", label: <Link to="/social/chapter3/sub1">Listening Circles</Link> },
-      { key: "12", label: <Link to="/social/chapter3/sub2">Finding Meaning in Service</Link> },
-      { key: "13", label: <Link to="/social/chapter3/sub3">Order and Chaos</Link> },
-      { key: "14", label: <Link to="/social/chapter3/sub4">The Value of Truth</Link> },
-      { key: "15", label: <Link to="/social/chapter3/sub5">Finding Your Place in the Community</Link> },
-    ],
-  },
-];
+const SocialSidebar: React.FC = () => {
+  const [open, setOpen] = useState(false);
+  const location = useLocation();
 
-const socialSidebar: React.FC = () => {
-  const onClick: MenuProps["onClick"] = (e) => {
-    console.log("click ", e);
-  };
+  const closeDrawer = () => setOpen(false);
 
-  return (
+  const items: MenuItem[] = [
+    {
+      key: "social",
+      label: "Chapter 1",
+      icon: <MailOutlined />,
+      children: [
+        {
+          key: "/social/chapter1",
+          label: (
+            <Link to="/social/chapter1" onClick={closeDrawer}>
+              Understanding Social Responsibility
+            </Link>
+          ),
+        },
+        {
+          key: "/social/chapter1/sub2",
+          label: (
+            <Link to="/social/chapter1/sub2" onClick={closeDrawer}>
+              The Role of Individuals
+            </Link>
+          ),
+        },
+        {
+          key: "/social/chapter1/sub3",
+          label: (
+            <Link to="/social/chapter1/sub3" onClick={closeDrawer}>
+              Social Impact Assessment
+            </Link>
+          ),
+        },
+        {
+          key: "/social/chapter1/sub4",
+          label: (
+            <Link to="/social/chapter1/sub4" onClick={closeDrawer}>
+              Corporate Social Responsibility
+            </Link>
+          ),
+        },
+        {
+          key: "/social/chapter1/sub5",
+          label: (
+            <Link to="/social/chapter1/sub5" onClick={closeDrawer}>
+              Community Engagement
+            </Link>
+          ),
+        },
+      ],
+    },
+    {
+      key: "chapter2",
+      label: "Chapter 2",
+      icon: <AppstoreOutlined />,
+      children: [
+        {
+          key: "/social/chapter2/sub1",
+          label: (
+            <Link to="/social/chapter2/sub1" onClick={closeDrawer}>
+              Global Citizenship
+            </Link>
+          ),
+        },
+        {
+          key: "/social/chapter2/sub2",
+          label: (
+            <Link to="/social/chapter2/sub2" onClick={closeDrawer}>
+              Philanthropy
+            </Link>
+          ),
+        },
+        {
+          key: "/social/chapter2/sub3",
+          label: (
+            <Link to="/social/chapter2/sub3" onClick={closeDrawer}>
+              Digital Responsibility
+            </Link>
+          ),
+        },
+        {
+          key: "/social/chapter2/sub4",
+          label: (
+            <Link to="/social/chapter2/sub4" onClick={closeDrawer}>
+              Cultural Awareness
+            </Link>
+          ),
+        },
+        {
+          key: "/social/chapter2/sub5",
+          label: (
+            <Link to="/social/chapter2/sub5" onClick={closeDrawer}>
+              Addressing Inequality
+            </Link>
+          ),
+        },
+      ],
+    },
+    {
+      key: "chapter3",
+      label: "Chapter 3",
+      icon: <SettingOutlined />,
+      children: [
+        {
+          key: "/social/chapter3/sub1",
+          label: (
+            <Link to="/social/chapter3/sub1" onClick={closeDrawer}>
+              Listening Circles
+            </Link>
+          ),
+        },
+        {
+          key: "/social/chapter3/sub2",
+          label: (
+            <Link to="/social/chapter3/sub2" onClick={closeDrawer}>
+              Finding Meaning in Service
+            </Link>
+          ),
+        },
+        {
+          key: "/social/chapter3/sub3",
+          label: (
+            <Link to="/social/chapter3/sub3" onClick={closeDrawer}>
+              Order and Chaos
+            </Link>
+          ),
+        },
+        {
+          key: "/social/chapter3/sub4",
+          label: (
+            <Link to="/social/chapter3/sub4" onClick={closeDrawer}>
+              The Value of Truth
+            </Link>
+          ),
+        },
+        {
+          key: "/social/chapter3/sub5",
+          label: (
+            <Link to="/social/chapter3/sub5" onClick={closeDrawer}>
+              Finding Your Place in the Community
+            </Link>
+          ),
+        },
+      ],
+    },
+  ];
+
+  const menu = (
     <Menu
-      onClick={onClick}
-      style={{ width: 384 }}
-      defaultSelectedKeys={["1"]}
-      defaultOpenKeys={["social/chapter1"]}
+      selectedKeys={[location.pathname]}
+      defaultOpenKeys={["social", "chapter2", "chapter3"]}
       mode="inline"
       items={items}
-      className="text-lg custom-menu group"
+      className="custom-menu text-base"
     />
+  );
+
+  return (
+    <>
+      <div className="md:hidden mb-4">
+        <Button icon={<MenuOutlined />} onClick={() => setOpen(true)}>
+          Menu
+        </Button>
+      </div>
+
+      <Drawer
+        title="Chapters"
+        placement="left"
+        onClose={closeDrawer}
+        open={open}
+        className="md:hidden"
+        bodyStyle={{ padding: 0 }}
+      >
+        {menu}
+      </Drawer>
+
+      <div className="hidden md:block">{menu}</div>
+    </>
   );
 };
 
-export default socialSidebar;
+export default SocialSidebar;

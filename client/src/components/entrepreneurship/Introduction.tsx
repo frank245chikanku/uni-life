@@ -9,7 +9,7 @@ const Introduction: React.FC = () => {
     if (!el) return;
 
     const handleScroll = () => {
-      // Optional: scroll events (if needed later)
+
     };
 
     el.addEventListener("scroll", handleScroll);
