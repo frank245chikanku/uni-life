@@ -1,94 +1,197 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   AppstoreOutlined,
   MailOutlined,
   SettingOutlined,
+  MenuOutlined,
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
-import { Menu } from "antd";
-import { Link } from "react-router-dom";
+import { Menu, Drawer, Button } from "antd";
+import { Link, useLocation } from "react-router-dom";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
-const items: MenuItem[] = [
-  {
-    key: "/entrepreneurship",
-    label: <Link to="/entrepreneurship">Chapter 1</Link>,
-    icon: <MailOutlined />,
-    children: [
-      {
-        key: "sub1",
-        label: "Introduction",
-        children: [
-          {
-            key: "1",
-            label: (
-              <Link to="/entrepreneurship/chapter1/sub1" className="group">
-                Understanding Entrepreneurship Uncertainty
-              </Link>
-            ),
-          },
-          {
-            key: "2",
-            label: <Link to="/entrepreneurship/chapter1/sub2" className="group">The Power of Contrarian Thinking</Link>,
-          },
-          {
-            key: "3",
-            label: <Link to="/entrepreneurship/chapter1/sub3" className="group">Prepare for Black Swan Events</Link>,
-          },
-          {
-            key: "4",
-            label: <Link to="/entrepreneurship/chapter1/sub4" className="group">Start Small, Learn Fast</Link>,
-          },
-          {
-            key: "5",
-            label: <Link to="/entrepreneurship/chapter1/sub5" className="group">Create a Monopoly Through Innovation</Link>,
-          },
-        ],
-      },
-    ],
-  },
-  {
-    key: "entrepreneurship/chapter2",
-    label: <Link to="/entrepreneurship/chapter2" className="group">Chapter 2</Link>,
-    icon: <AppstoreOutlined />,
-    children: [
-      { key: "6", label: <Link to="/entrepreneurship/chapter2/sub1" className="group">Decentralize Risk in Your Startup</Link> },
-      { key: "7", label: <Link to="/entrepreneurship/chapter2/sub2" className="group">Pivot, Don’t Persevere</Link> },
-      { key: "8", label: <Link to="/entrepreneurship/chapter2/sub3" className="group">Understand Optionality</Link> },
-      { key: "9", label: <Link to="/entrepreneurship/chapter2/sub4" className="group">Build Resilience, Not Fragility</Link> },
-      { key: "10", label: <Link to="/entrepreneurship/chapter2/sub5" className="group">Prepare for Extreme Outcomes</Link> },
-    ],
-  },
-  {
-    key: "entrepreneurship/chapter3",
-    label: <Link to="/entrepreneurship/chapter3" className="group">Chapter 3</Link>,
-    icon: <SettingOutlined />,
-    children: [
-      { key: "11", label: <Link to="/entrepreneurship/chapter3/sub1" className="group">Bet on the Unseen</Link> },
-      { key: "12", label: <Link to="/entrepreneurship/chapter3/sub2" className="group">Don’t Be Fooled by Randomness</Link> },
-      { key: "13", label: <Link to="/entrepreneurship/chapter3/sub3" className="group">Fail Fast, Fail Smart</Link> },
-      { key: "14", label: <Link to="/entrepreneurship/chapter3/sub4" className="group">Plan for Asymmetric Payoffs</Link> },
-      { key: "15", label: <Link to="/entrepreneurship/chapter3/sub5" className="group">Iterate Until You Get It Right</Link> },
-    ],
-  },
-];
-
 const EntrepreneurshipSidebar: React.FC = () => {
-  const onClick: MenuProps["onClick"] = (e) => {
-    console.log("click ", e);
-  };
+  const [open, setOpen] = useState(false);
+  const location = useLocation();
 
-  return (
+  const closeDrawer = () => setOpen(false);
+
+  const items: MenuItem[] = [
+    {
+      key: "chapter1",
+      label: "Chapter 1",
+      icon: <MailOutlined />,
+      children: [
+        {
+          key: "/entrepreneurship/chapter1/sub1",
+          label: (
+            <Link to="/entrepreneurship/chapter1/sub1" onClick={closeDrawer}>
+              Understanding Entrepreneurship Uncertainty
+            </Link>
+          ),
+        },
+        {
+          key: "/entrepreneurship/chapter1/sub2",
+          label: (
+            <Link to="/entrepreneurship/chapter1/sub2" onClick={closeDrawer}>
+              The Power of Contrarian Thinking
+            </Link>
+          ),
+        },
+        {
+          key: "/entrepreneurship/chapter1/sub3",
+          label: (
+            <Link to="/entrepreneurship/chapter1/sub3" onClick={closeDrawer}>
+              Prepare for Black Swan Events
+            </Link>
+          ),
+        },
+        {
+          key: "/entrepreneurship/chapter1/sub4",
+          label: (
+            <Link to="/entrepreneurship/chapter1/sub4" onClick={closeDrawer}>
+              Start Small, Learn Fast
+            </Link>
+          ),
+        },
+        {
+          key: "/entrepreneurship/chapter1/sub5",
+          label: (
+            <Link to="/entrepreneurship/chapter1/sub5" onClick={closeDrawer}>
+              Create a Monopoly Through Innovation
+            </Link>
+          ),
+        },
+      ],
+    },
+    {
+      key: "chapter2",
+      label: "Chapter 2",
+      icon: <AppstoreOutlined />,
+      children: [
+        {
+          key: "/entrepreneurship/chapter2/sub1",
+          label: (
+            <Link to="/entrepreneurship/chapter2/sub1" onClick={closeDrawer}>
+              Decentralize Risk in Your Startup
+            </Link>
+          ),
+        },
+        {
+          key: "/entrepreneurship/chapter2/sub2",
+          label: (
+            <Link to="/entrepreneurship/chapter2/sub2" onClick={closeDrawer}>
+              Pivot, Don’t Persevere
+            </Link>
+          ),
+        },
+        {
+          key: "/entrepreneurship/chapter2/sub3",
+          label: (
+            <Link to="/entrepreneurship/chapter2/sub3" onClick={closeDrawer}>
+              Understand Optionality
+            </Link>
+          ),
+        },
+        {
+          key: "/entrepreneurship/chapter2/sub4",
+          label: (
+            <Link to="/entrepreneurship/chapter2/sub4" onClick={closeDrawer}>
+              Build Resilience, Not Fragility
+            </Link>
+          ),
+        },
+        {
+          key: "/entrepreneurship/chapter2/sub5",
+          label: (
+            <Link to="/entrepreneurship/chapter2/sub5" onClick={closeDrawer}>
+              Prepare for Extreme Outcomes
+            </Link>
+          ),
+        },
+      ],
+    },
+    {
+      key: "chapter3",
+      label: "Chapter 3",
+      icon: <SettingOutlined />,
+      children: [
+        {
+          key: "/entrepreneurship/chapter3/sub1",
+          label: (
+            <Link to="/entrepreneurship/chapter3/sub1" onClick={closeDrawer}>
+              Bet on the Unseen
+            </Link>
+          ),
+        },
+        {
+          key: "/entrepreneurship/chapter3/sub2",
+          label: (
+            <Link to="/entrepreneurship/chapter3/sub2" onClick={closeDrawer}>
+              Don’t Be Fooled by Randomness
+            </Link>
+          ),
+        },
+        {
+          key: "/entrepreneurship/chapter3/sub3",
+          label: (
+            <Link to="/entrepreneurship/chapter3/sub3" onClick={closeDrawer}>
+              Fail Fast, Fail Smart
+            </Link>
+          ),
+        },
+        {
+          key: "/entrepreneurship/chapter3/sub4",
+          label: (
+            <Link to="/entrepreneurship/chapter3/sub4" onClick={closeDrawer}>
+              Plan for Asymmetric Payoffs
+            </Link>
+          ),
+        },
+        {
+          key: "/entrepreneurship/chapter3/sub5",
+          label: (
+            <Link to="/entrepreneurship/chapter3/sub5" onClick={closeDrawer}>
+              Iterate Until You Get It Right
+            </Link>
+          ),
+        },
+      ],
+    },
+  ];
+
+  const menu = (
     <Menu
-      onClick={onClick}
-      style={{ width: 384 }}
-      defaultSelectedKeys={["1"]}
-      defaultOpenKeys={["entrepreneurship/chapter1"]}
+      selectedKeys={[location.pathname]}
+      defaultOpenKeys={["chapter1", "chapter2", "chapter3"]}
       mode="inline"
       items={items}
-       className="text-lg custom-menu group"
+      className="custom-menu text-base"
     />
+  );
+
+  return (
+    <>
+      <div className="md:hidden mb-4">
+        <Button icon={<MenuOutlined />} onClick={() => setOpen(true)}>
+          Menu
+        </Button>
+      </div>
+
+      <Drawer
+        title="Chapters"
+        placement="left"
+        onClose={closeDrawer}
+        open={open}
+        className="md:hidden"
+        bodyStyle={{ padding: 0 }}
+      >
+        {menu}
+      </Drawer>
+
+      <div className="hidden md:block">{menu}</div>
+    </>
   );
 };
 

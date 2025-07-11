@@ -40,7 +40,7 @@ Active listening techniques include:
 - Paraphrasing and reflecting back what has been said
 - Listening to understand rather than to respond
 - Withholding judgment and advice`,
-  },
+  },    
   {
     title: "Phase 3: The Pressure to Conform",
     content: `There are many aspects of life that pressure us to be conformed. Growing up, there is peer pressure. 
