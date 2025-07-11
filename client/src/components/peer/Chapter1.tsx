@@ -35,7 +35,7 @@ How do you become assertive? Well, it involves being clear and direct in your co
   }
 ];
 
-const ChapterReader: React.FC = () => {
+const PeerChapterReader: React.FC = () => {
   const [current, setCurrent] = useState(0);
   const progress = ((current + 1) / chapters.length) * 100;
 
@@ -162,4 +162,4 @@ const ChapterReader: React.FC = () => {
   );
 };
 
-export default ChapterReader;
+export default PeerChapterReader;

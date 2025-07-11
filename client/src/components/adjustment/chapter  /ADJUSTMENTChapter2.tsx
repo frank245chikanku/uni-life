@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
-const adjustmentChapters2 = [
+const adjustmentChapters2 = [ 
   {
     title: "Paths Less Traveled",
     content: `One compelling example is the idea of embracing "first-principles thinking," a strategy of deconstructing problems to their core assumptions and rebuilding solutions from the ground up. Innovators like those who pioneered industries often took this less-traveled path, refusing to follow established models and instead questioning everything to carve out entirely new directions. For students and professionals alike, this concept is a call to action—to resist the comfort of conformity, challenge established norms, and explore unique perspectives.
@@ -65,9 +65,9 @@ const AdjustmentChapterReader2: React.FC = () => {
       <div>
         <h2>${adjustmentChapters2[current].title}</h2>
         ${adjustmentChapters2[current].content
-          .split("\n\n")
-          .map((para) => `<p>${para}</p>`)
-          .join("")}
+        .split("\n\n")
+        .map((para) => `<p>${para}</p>`)
+        .join("")}
       </div>
     `;
     const printWindow = window.open("", "", "width=800,height=600");
@@ -106,7 +106,7 @@ const AdjustmentChapterReader2: React.FC = () => {
 
   return (
     <div className="w-full h-screen py-6 px-4 md:px-6 flex flex-col">
-    
+
       <div className="w-full bg-gray-300 rounded-full h-3 mb-4 md:mb-6">
         <div
           className="bg-pink-500 h-3 rounded-full transition-all duration-500"
@@ -114,7 +114,7 @@ const AdjustmentChapterReader2: React.FC = () => {
         />
       </div>
 
-      
+
       <div className="flex-1 overflow-y-auto pb-4">
         <h2 className="text-2xl md:text-3xl font-bold mb-4">
           {adjustmentChapters2[current].title}
@@ -129,7 +129,7 @@ const AdjustmentChapterReader2: React.FC = () => {
         ))}
       </div>
 
-    
+
       <div className="mt-6 flex flex-col md:flex-row justify-between items-center gap-4">
         <button
           onClick={prevChapter}

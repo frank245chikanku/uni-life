@@ -1,94 +1,197 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   AppstoreOutlined,
   MailOutlined,
   SettingOutlined,
+  MenuOutlined,
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
-import { Menu } from "antd";
-import { Link } from "react-router-dom";
+import { Menu, Drawer, Button } from "antd";
+import { Link, useLocation } from "react-router-dom";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
-const items: MenuItem[] = [
-  {
-    key: "peer",
-    label: <Link to="/peer">Chapter 1</Link>,
-    icon: <MailOutlined />,
-    children: [
-      {
-        key: "sub1",
-        label: "Introduction",
-        children: [
-          {
-            key: "1",
-            label: (
-              <Link to="/peer/chapter1">Understanding Peer Pressure</Link>
-            ),
-          },
-          {
-            key: "2",
-            label: <Link to="/peer/chapter1/sub2">Who Are Your Peers </Link>,
-          },
-          {
-            key: "3",
-            label: <Link to="/peer/chapter1/sub3">Groupthink and Comformity</Link>,
-          },
-          {
-            key: "4",
-            label: (
-              <Link to="/peer/chapter1/sub4">Communication and Assertiveness</Link>
-            ),
-          },
-          {
-            key: "5",
-            label: <Link to="/peer/chapter1/sub5">Refusing Pressure Tactfully</Link>,
-          },
-        ],
-      },
-    ],
-  },
-  {
-    key: "peer/chapter2",
-    label: <Link to="/peer/chapter2">Chapter 2</Link>,
-    icon: <AppstoreOutlined />,
-    children: [
-      { key: "6", label: <Link to="/peer/chapter2/sub1">Understanding Assertiveness</Link> },
-      { key: "7", label: <Link to="/peer/chapter2/sub2">Active Listening Skills</Link> },
-      { key: "8", label: <Link to="/peer/chapter2/sub3">The Pressure to Conform</Link> },
-      { key: "9", label: <Link to="/peer/chapter2/sub4">Encouraging Diverse Opinions</Link> },
-      { key: "10", label: <Link to="/peer/chapter2/sub5">How to Say No</Link> },
-    ],
-  },
-  {
-    key: "peer/chapter3",
-    label: <Link to="/peer/chapter3">Chapter 3</Link>,
-    icon: <SettingOutlined />,
-    children: [
-      { key: "11", label: <Link to="/peer/chapter3/sub1">Finding Your Voice</Link> },
-      { key: "12", label: <Link to="/peer/chapter3/sub2">The Pull of the Crowd</Link> },
-      { key: "13", label: <Link to="/peer/chapter3/sub3">Mapping Your Social Circle</Link> },
-      { key: "14", label: <Link to="/peer/chapter3/sub4">Crafting Your No</Link> },
-      { key: "15", label: <Link to="/peer/chapter3/sub5">The Influence Spectrum</Link> },
-    ],
-  },
-];
-
 const PeerSidebar: React.FC = () => {
-  const onClick: MenuProps["onClick"] = (e) => {
-    console.log("click ", e);
-  };
+  const [open, setOpen] = useState(false);
+  const location = useLocation();            
 
-  return (
+  const closeDrawer = () => setOpen(false);
+
+  const items: MenuItem[] = [
+    {
+      key: "chapter1",
+      label: "Chapter 1",
+      icon: <MailOutlined />,
+      children: [
+        {
+          key: "/peer/chapter1",
+          label: (
+            <Link to="/peer/chapter1" onClick={closeDrawer}>
+              Understanding Peer Pressure
+            </Link>
+          ),
+        },
+        {
+          key: "/peer/chapter1/sub2",
+          label: (
+            <Link to="/peer/chapter1/sub2" onClick={closeDrawer}>
+              Who Are Your Peers
+            </Link>
+          ),
+        },
+        {
+          key: "/peer/chapter1/sub3",
+          label: (
+            <Link to="/peer/chapter1/sub3" onClick={closeDrawer}>
+              Groupthink and Conformity
+            </Link>
+          ),
+        },
+        {
+          key: "/peer/chapter1/sub4",
+          label: (
+            <Link to="/peer/chapter1/sub4" onClick={closeDrawer}>
+              Communication and Assertiveness
+            </Link>
+          ),
+        },
+        {
+          key: "/peer/chapter1/sub5",
+          label: (
+            <Link to="/peer/chapter1/sub5" onClick={closeDrawer}>
+              Refusing Pressure Tactfully
+            </Link>
+          ),
+        },
+      ],
+    },
+    {
+      key: "chapter2",
+      label: "Chapter 2",
+      icon: <AppstoreOutlined />,
+      children: [
+        {
+          key: "/peer/chapter2/sub1",
+          label: (
+            <Link to="/peer/chapter2/sub1" onClick={closeDrawer}>
+              Understanding Assertiveness
+            </Link>
+          ),
+        },
+        {
+          key: "/peer/chapter2/sub2",
+          label: (
+            <Link to="/peer/chapter2/sub2" onClick={closeDrawer}>
+              Active Listening Skills
+            </Link>
+          ),
+        },
+        {
+          key: "/peer/chapter2/sub3",
+          label: (
+            <Link to="/peer/chapter2/sub3" onClick={closeDrawer}>
+              The Pressure to Conform
+            </Link>
+          ),
+        },
+        {
+          key: "/peer/chapter2/sub4",
+          label: (
+            <Link to="/peer/chapter2/sub4" onClick={closeDrawer}>
+              Encouraging Diverse Opinions
+            </Link>
+          ),
+        },
+        {
+          key: "/peer/chapter2/sub5",
+          label: (
+            <Link to="/peer/chapter2/sub5" onClick={closeDrawer}>
+              How to Say No
+            </Link>
+          ),
+        },
+      ],
+    },
+    {
+      key: "chapter3",
+      label: "Chapter 3",
+      icon: <SettingOutlined />,
+      children: [
+        {
+          key: "/peer/chapter3/sub1",
+          label: (
+            <Link to="/peer/chapter3/sub1" onClick={closeDrawer}>
+              Finding Your Voice
+            </Link>
+          ),
+        },
+        {
+          key: "/peer/chapter3/sub2",
+          label: (
+            <Link to="/peer/chapter3/sub2" onClick={closeDrawer}>
+              The Pull of the Crowd
+            </Link>
+          ),
+        },
+        {
+          key: "/peer/chapter3/sub3",
+          label: (
+            <Link to="/peer/chapter3/sub3" onClick={closeDrawer}>
+              Mapping Your Social Circle
+            </Link>
+          ),
+        },
+        {
+          key: "/peer/chapter3/sub4",
+          label: (
+            <Link to="/peer/chapter3/sub4" onClick={closeDrawer}>
+              Crafting Your No
+            </Link>
+          ),
+        },
+        {
+          key: "/peer/chapter3/sub5",
+          label: (
+            <Link to="/peer/chapter3/sub5" onClick={closeDrawer}>
+              The Influence Spectrum
+            </Link>
+          ),
+        },
+      ],
+    },
+  ];
+
+  const menu = (
     <Menu
-      onClick={onClick}
-      style={{ width: 384 }}
-      defaultSelectedKeys={["1"]}
-      defaultOpenKeys={["peer/chapter1"]}
+      selectedKeys={[location.pathname]}
+      defaultOpenKeys={["chapter1", "chapter2", "chapter3"]}
       mode="inline"
       items={items}
-      className="text-lg custom-menu group"
+      className="text-base custom-menu"
     />
+  );
+
+  return (
+    <>
+      <div className="md:hidden mb-4">
+        <Button icon={<MenuOutlined />} onClick={() => setOpen(true)}>
+          Menu
+        </Button>
+      </div>
+
+      <Drawer
+        title="Chapters"
+        placement="left"
+        onClose={closeDrawer}
+        open={open}
+        className="md:hidden"
+        bodyStyle={{ padding: 0 }}
+      >
+        {menu}
+      </Drawer>
+
+      <div className="hidden md:block">{menu}</div>
+    </>
   );
 };
 
