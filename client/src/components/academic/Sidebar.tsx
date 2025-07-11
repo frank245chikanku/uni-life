@@ -173,14 +173,14 @@ const AcademicsSidebar: React.FC = () => {
 
   return (
     <>
-      
+
       <div className="md:hidden mb-4">
         <Button icon={<MenuOutlined />} onClick={() => setOpen(true)}>
           Menu
         </Button>
       </div>
 
-      
+
       <Drawer
         title="Chapters"
         placement="left"
@@ -192,7 +192,7 @@ const AcademicsSidebar: React.FC = () => {
         {menu}
       </Drawer>
 
-  
+
       <div className="hidden md:block">{menu}</div>
     </>
   );
