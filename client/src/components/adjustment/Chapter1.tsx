@@ -81,9 +81,9 @@ const AdjustmentChapterReader: React.FC = () => {
       <div>
         <h2>${adjustmentChapters[current].title}</h2>
         ${adjustmentChapters[current].content
-          .split("\n\n")
-          .map((para) => `<p>${para}</p>`)
-          .join("")}
+        .split("\n\n")
+        .map((para) => `<p>${para}</p>`)
+        .join("")}
       </div>
     `;
 
@@ -123,7 +123,7 @@ const AdjustmentChapterReader: React.FC = () => {
 
   return (
     <div className="w-full h-screen py-6 px-4 md:px-6 flex flex-col">
-      {/* Progress Bar */}
+
       <div className="w-full bg-gray-300 rounded-full h-3 mb-4 md:mb-6">
         <div
           className="bg-pink-500 h-3 rounded-full transition-all duration-500"
@@ -131,7 +131,7 @@ const AdjustmentChapterReader: React.FC = () => {
         />
       </div>
 
-      {/* Chapter Content */}
+
       <div className="flex-1 overflow-y-auto pb-4">
         <h2 className="text-2xl md:text-3xl font-bold mb-4">
           {adjustmentChapters[current].title}
@@ -146,7 +146,7 @@ const AdjustmentChapterReader: React.FC = () => {
         ))}
       </div>
 
-      {/* Navigation */}
+
       <div className="mt-6 flex flex-col md:flex-row justify-between items-center gap-4">
         <button
           onClick={prevChapter}

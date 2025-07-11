@@ -173,14 +173,14 @@ const AdjustmentSidebar: React.FC = () => {
 
   return (
     <>
-      {/* Mobile menu button */}
+
       <div className="md:hidden mb-4">
         <Button icon={<MenuOutlined />} onClick={() => setOpen(true)}>
           Menu
         </Button>
       </div>
 
-      {/* Mobile drawer */}
+
       <Drawer
         title="Chapters"
         placement="left"
@@ -192,7 +192,7 @@ const AdjustmentSidebar: React.FC = () => {
         {menu}
       </Drawer>
 
-      {/* Desktop sidebar */}
+
       <div className="hidden md:block">{menu}</div>
     </>
   );
