@@ -31,9 +31,9 @@ But family and friends can remind you of your worth and help you reframe those f
     title: "Phase 3: Confront Injustice with Truth",
     content: `All injustice affects others, so talking about justice that isn't social is like talking about water that isn't wet or a square with no right angles. 
 But the Bible's call to seek justice is not a call to superficial, kneejerk activism. 
-We are not merely commanded to execute justice, but to *\"truly execute justice.\"*
+We are not merely commanded to execute justice, but to "truly execute justice."
 
-The God who commands us to seek justice is the same God who commands us to *\"test everything\"* and *\"hold fast to what is good.\"*`
+The God who commands us to seek justice is the same God who commands us to "test everything" and "hold fast to what is good."`,
   },
   {
     title: "Phase 4: Cultivate Resilience",
@@ -46,7 +46,7 @@ If you lack resilience, you might get stuck on problems or feel like a victim.
 You might feel burdened or turn to ways to cope that aren't healthy, such as drug or alcohol use, eating disorders, or risky behaviors.
 
 Resilience won't make your problems go away, but it can help you see past them, find ways to enjoy life, and better handle stress. 
-If you aren't as resilient as you'd like to be, you can learn skills to become more resilient.`
+If you aren't as resilient as you'd like to be, you can learn skills to become more resilient.`,
   },
   {
     title: "Phase 5: Challenge Bias in Yourself",
@@ -73,8 +73,8 @@ Strategies for Challenging Biases and Behaviors:
 - Get involved in your community:
   - Join a multicultural organization.
   - Attend a local meeting and see how you can be of service.
-- Be willing to make mistakes and show up again anyway.`
-  }
+- Be willing to make mistakes and show up again anyway.`,
+  },
 ];
 
 const BiasChapterReader: React.FC = () => {
@@ -97,7 +97,7 @@ const BiasChapterReader: React.FC = () => {
         <h2>${biasChapters[current].title}</h2>
         ${biasChapters[current].content
           .split("\n\n")
-          .map((para) => `<p>${para}</p>`) 
+          .map((para) => `<p>${para}</p>`)
           .join("")}
       </div>
     `;
@@ -110,9 +110,10 @@ const BiasChapterReader: React.FC = () => {
             <title>${biasChapters[current].title}</title>
             <style>
               body {
-                font-family: sans-serif;
-                padding: 20px;
-                line-height: 1.6;
+                font-family: Arial, sans-serif;
+                padding: 40px;
+                line-height: 1.7;
+                color: #1f2937;
               }
               h2 {
                 font-size: 24px;
@@ -138,6 +139,7 @@ const BiasChapterReader: React.FC = () => {
 
   return (
     <div className="max-w-4xl mx-auto py-10 px-6 h-[calc(100vh-4rem)] flex flex-col">
+      {/* Progress Bar */}
       <div className="w-full bg-gray-300 rounded-full h-3 mb-6">
         <div
           className="bg-pink-500 h-3 rounded-full transition-all duration-500"
@@ -145,6 +147,7 @@ const BiasChapterReader: React.FC = () => {
         />
       </div>
 
+      {/* Chapter Content */}
       <div className="flex-1 overflow-y-scroll">
         <h2 className="text-3xl font-bold mb-4">{biasChapters[current].title}</h2>
         {biasChapters[current].content.split("\n\n").map((para, i) => (
@@ -154,14 +157,16 @@ const BiasChapterReader: React.FC = () => {
         ))}
       </div>
 
+      {/* Navigation Buttons */}
       <div className="mt-6 flex justify-between items-center flex-wrap gap-2">
         <button
           onClick={prevChapter}
           disabled={current === 0}
-          className={`${current === 0
+          className={`${
+            current === 0
               ? "bg-gray-200 text-gray-400 cursor-not-allowed"
               : "bg-gray-800 text-white hover:bg-gray-900"
-            } font-semibold px-6 py-2 rounded-lg shadow transition`}
+          } font-semibold px-6 py-2 rounded-lg shadow transition`}
         >
           Previous
         </button>

@@ -1,94 +1,200 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   AppstoreOutlined,
   MailOutlined,
   SettingOutlined,
+  MenuOutlined,
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
-import { Menu } from "antd";
-import { Link } from "react-router-dom";
+import { Menu, Drawer, Button } from "antd";
+import { Link, useLocation } from "react-router-dom";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
-const items: MenuItem[] = [
-  {
-    key: "/discrimination",
-    label: <Link to="/discrimination">Chapter 1</Link>,
-    icon: <MailOutlined />,
-    children: [
-      {
-        key: "sub1",
-        label: "Introduction",
-        children: [
-          {
-            key: "1",
-            label: (
-              <Link to="/discrimination/chapter1">Understanding discrimination and bias</Link>
-            ),
-          },
-          {
-            key: "2",
-            label: <Link to="/discrimination/chapter1/sub2">Recognize the Reality of Bias</Link>,
-          },
-          {
-            key: "3",
-            label: <Link to="/discrimination/chapter1/sub3">Confront Injustice with Truth</Link>,
-          },
-          {
-            key: "4",
-            label: (
-              <Link to="/discrimination/chapter1/sub4">Cultivate Resilience</Link>
-            ),
-          },
-          {
-            key: "5",
-            label: <Link to="/discrimination/chapter1/sub5">Challenge Bias in Yourself</Link>,
-          },
-        ],
-      },
-    ],
-  },
-  {
-    key: "discrimination/chapter2",
-    label: <Link to="/discrimination/chapter2">Chapter 2</Link>,
-    icon: <AppstoreOutlined />,
-    children: [
-      { key: "6", label: <Link to="/discrimination/chapter2/sub1">Challenge the System, Not Individuals</Link> },
-      { key: "7", label: <Link to="/discrimination/chapter2/sub2">Pursue Justice, Not Revenge</Link> },
-      { key: "8", label: <Link to="/discrimination/chapter2/sub3">Recognize Subtle Biases</Link> },
-      { key: "9", label: <Link to="/discrimination/chapter2/sub4">Develop Emotional Intelligence</Link> },
-      { key: "10", label: <Link to="/discrimination/chapter2/sub5">Stay Curious, Not Defensive</Link> },
-    ],
-  },
-  {
-    key: "discrimination/chapter3",
-    label: <Link to="/discrimination/chapter3">Chapter 3</Link>,
-    icon: <SettingOutlined />,
-    children: [
-      { key: "11", label: <Link to="/discrimination/chapter3/sub1">Challenge Assumptions</Link> },
-      { key: "12", label: <Link to="/discrimination/chapter3/sub2">Don’t Internalize Negativity</Link> },
-      { key: "13", label: <Link to="/discrimination/chapter3/sub3">Encourage Open Dialogue</Link> },
-      { key: "14", label: <Link to="/discrimination/chapter3/sub4">Practice Humility</Link> },
-      { key: "15", label: <Link to="/discrimination/chapter3/sub5">Stay Grounded in Facts</Link> },
-    ],
-  },
-];
-
 const DiscriminationSidebar: React.FC = () => {
-  const onClick: MenuProps["onClick"] = (e) => {
-    console.log("click ", e);
-  };
+  const [open, setOpen] = useState(false);
+  const location = useLocation();
 
-  return (
+  const closeDrawer = () => setOpen(false);
+
+  const items: MenuItem[] = [
+    {
+      key: "discrimination",
+      label: "Chapter 1",
+      icon: <MailOutlined />,
+      children: [
+        {
+          key: "/discrimination/chapter1",
+          label: (
+            <Link to="/discrimination/chapter1" onClick={closeDrawer}>
+              Understanding discrimination and bias
+            </Link>
+          ),
+        },
+        {
+          key: "/discrimination/chapter1/sub2",
+          label: (
+            <Link to="/discrimination/chapter1/sub2" onClick={closeDrawer}>
+              Recognize the Reality of Bias
+            </Link>
+          ),
+        },
+        {
+          key: "/discrimination/chapter1/sub3",
+          label: (
+            <Link to="/discrimination/chapter1/sub3" onClick={closeDrawer}>
+              Confront Injustice with Truth
+            </Link>
+          ),
+        },
+        {
+          key: "/discrimination/chapter1/sub4",
+          label: (
+            <Link to="/discrimination/chapter1/sub4" onClick={closeDrawer}>
+              Cultivate Resilience
+            </Link>
+          ),
+        },
+        {
+          key: "/discrimination/chapter1/sub5",
+          label: (
+            <Link to="/discrimination/chapter1/sub5" onClick={closeDrawer}>
+              Challenge Bias in Yourself
+            </Link>
+          ),
+        },
+      ],
+    },
+    {
+      key: "chapter2",
+      label: "Chapter 2",
+      icon: <AppstoreOutlined />,
+      children: [
+        {
+          key: "/discrimination/chapter2/sub1",
+          label: (
+            <Link to="/discrimination/chapter2/sub1" onClick={closeDrawer}>
+              Challenge the System, Not Individuals
+            </Link>
+          ),
+        },
+        {
+          key: "/discrimination/chapter2/sub2",
+          label: (
+            <Link to="/discrimination/chapter2/sub2" onClick={closeDrawer}>
+              Pursue Justice, Not Revenge
+            </Link>
+          ),
+        },
+        {
+          key: "/discrimination/chapter2/sub3",
+          label: (
+            <Link to="/discrimination/chapter2/sub3" onClick={closeDrawer}>
+              Recognize Subtle Biases
+            </Link>
+          ),
+        },
+        {
+          key: "/discrimination/chapter2/sub4",
+          label: (
+            <Link to="/discrimination/chapter2/sub4" onClick={closeDrawer}>
+              Develop Emotional Intelligence
+            </Link>
+          ),
+        },
+        {
+          key: "/discrimination/chapter2/sub5",
+          label: (
+            <Link to="/discrimination/chapter2/sub5" onClick={closeDrawer}>
+              Stay Curious, Not Defensive
+            </Link>
+          ),
+        },
+      ],
+    },
+    {
+      key: "chapter3",
+      label: "Chapter 3",
+      icon: <SettingOutlined />,
+      children: [
+        {
+          key: "/discrimination/chapter3/sub1",
+          label: (
+            <Link to="/discrimination/chapter3/sub1" onClick={closeDrawer}>
+              Challenge Assumptions
+            </Link>
+          ),
+        },
+        {
+          key: "/discrimination/chapter3/sub2",
+          label: (
+            <Link to="/discrimination/chapter3/sub2" onClick={closeDrawer}>
+              Don’t Internalize Negativity
+            </Link>
+          ),
+        },
+        {
+          key: "/discrimination/chapter3/sub3",
+          label: (
+            <Link to="/discrimination/chapter3/sub3" onClick={closeDrawer}>
+              Encourage Open Dialogue
+            </Link>
+          ),
+        },
+        {
+          key: "/discrimination/chapter3/sub4",
+          label: (
+            <Link to="/discrimination/chapter3/sub4" onClick={closeDrawer}>
+              Practice Humility
+            </Link>
+          ),
+        },
+        {
+          key: "/discrimination/chapter3/sub5",
+          label: (
+            <Link to="/discrimination/chapter3/sub5" onClick={closeDrawer}>
+              Stay Grounded in Facts
+            </Link>
+          ),
+        },
+      ],
+    },
+  ];
+
+  const menu = (
     <Menu
-      onClick={onClick}
-      style={{ width: 384 }}
-      defaultSelectedKeys={["1"]}
-      defaultOpenKeys={["discrimination/chapter1"]}
+      selectedKeys={[location.pathname]}
+      defaultOpenKeys={["discrimination", "chapter2", "chapter3"]}
       mode="inline"
       items={items}
-      className="text-lg custom-menu group"
+      className="custom-menu text-base"
     />
+  );
+
+  return (
+    <>
+      {/* Mobile button */}
+      <div className="md:hidden mb-4">
+        <Button icon={<MenuOutlined />} onClick={() => setOpen(true)}>
+          Menu
+        </Button>
+      </div>
+
+      {/* Mobile Drawer */}
+      <Drawer
+        title="Chapters"
+        placement="left"
+        onClose={closeDrawer}
+        open={open}
+        className="md:hidden"
+        bodyStyle={{ padding: 0 }}
+      >
+        {menu}
+      </Drawer>
+
+      {/* Desktop sidebar */}
+      <div className="hidden md:block">{menu}</div>
+    </>
   );
 };
 
