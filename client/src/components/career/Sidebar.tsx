@@ -1,94 +1,200 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   AppstoreOutlined,
   MailOutlined,
   SettingOutlined,
+  MenuOutlined,
 } from "@ant-design/icons";
+import { Menu, Drawer, Button } from "antd";
 import type { MenuProps } from "antd";
-import { Menu } from "antd";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
-const items: MenuItem[] = [
-  {
-    key: "/career",
-    label: <Link to="/career">Chapter 1</Link>,
-    icon: <MailOutlined />,
-    children: [
-      {
-        key: "sub1",
-        label: "Introduction",
-        children: [
-          {
-            key: "1",
-            label: (
-              <Link to="/career/chapter1">understanding Career uncertainty</Link>
-            ),
-          },
-          {
-            key: "2",
-            label: <Link to="/career/chapter1/sub2">Start with What You Know</Link>,
-          },
-          {
-            key: "3",
-            label: <Link to="/career/chapter1/sub3">Define Your Values</Link>,
-          },
-          {
-            key: "4",
-            label: (
-              <Link to="/career/chapter1/sub4">Accept Responsibility</Link>
-            ),
-          },
-          {
-            key: "5",
-            label: <Link to="/career/chapter1/sub5">Build Competence</Link>,
-          },
-        ],
-      },
-    ],
-  },
-  {
-    key: "career/chapter2",
-    label: <Link to="/career/chapter2">Chapter 2</Link>,
-    icon: <AppstoreOutlined />,
-    children: [
-      { key: "6", label: <Link to="/career/chapter2/sub1">Embrace Failure as Growth</Link> },
-      { key: "7", label: <Link to="/career/chapter2/sub2">Set Small Goals</Link> },
-      { key: "8", label: <Link to="/career/chapter2/sub3">Align Career with Character</Link> },
-      { key: "9", label: <Link to="/career/chapter2/sub4">Know When to Pivot</Link> },
-      { key: "10", label: <Link to="/career/chapter2/sub5">The Importance of Networking</Link> },
-    ],
-  },
-  {
-    key: "career/chapter3",
-    label: <Link to="/career/chapter3">Chapter 3</Link>,
-    icon: <SettingOutlined />,
-    children: [
-      { key: "11", label: <Link to="/career/chapter3/sub1">Stay Grounded in Reality</Link> },
-      { key: "12", label: <Link to="/career/chapter3/sub2">Find Mentors, Not Idols</Link> },
-      { key: "13", label: <Link to="/career/chapter3/sub3">Resist Cynicism</Link> },
-      { key: "14", label: <Link to="/career/chapter3/sub4">Focus on Long-Term Vision</Link> },
-      { key: "15", label: <Link to="/career/chapter3/sub5">Define Your Legacy</Link> },
-    ],
-  },
-];
-
 const CareerSidebar: React.FC = () => {
-  const onClick: MenuProps["onClick"] = (e) => {
-    console.log("click ", e);
-  };
+  const [open, setOpen] = useState(false);    
+  const location = useLocation();
 
-  return (
+  const closeDrawer = () => setOpen(false);
+
+  const items: MenuItem[] = [
+    {
+      key: "career",
+      label: "Chapter 1",
+      icon: <MailOutlined />,
+      children: [
+        {
+          key: "/career/chapter1",
+          label: (
+            <Link to="/career/chapter1" onClick={closeDrawer}>
+              Understanding Career Uncertainty
+            </Link>
+          ),
+        },
+        {
+          key: "/career/chapter1/sub2",
+          label: (
+            <Link to="/career/chapter1/sub2" onClick={closeDrawer}>
+              Start with What You Know
+            </Link>
+          ),
+        },
+        {
+          key: "/career/chapter1/sub3",
+          label: (
+            <Link to="/career/chapter1/sub3" onClick={closeDrawer}>
+              Define Your Values
+            </Link>
+          ),
+        },
+        {
+          key: "/career/chapter1/sub4",
+          label: (
+            <Link to="/career/chapter1/sub4" onClick={closeDrawer}>
+              Accept Responsibility
+            </Link>
+          ),
+        },
+        {
+          key: "/career/chapter1/sub5",
+          label: (
+            <Link to="/career/chapter1/sub5" onClick={closeDrawer}>
+              Build Competence
+            </Link>
+          ),
+        },
+      ],
+    },
+    {
+      key: "career2",
+      label: "Chapter 2",
+      icon: <AppstoreOutlined />,
+      children: [
+        {
+          key: "/career/chapter2/sub1",
+          label: (
+            <Link to="/career/chapter2/sub1" onClick={closeDrawer}>
+              Embrace Failure as Growth
+            </Link>
+          ),
+        },
+        {
+          key: "/career/chapter2/sub2",
+          label: (
+            <Link to="/career/chapter2/sub2" onClick={closeDrawer}>
+              Set Small Goals
+            </Link>
+          ),
+        },
+        {
+          key: "/career/chapter2/sub3",
+          label: (
+            <Link to="/career/chapter2/sub3" onClick={closeDrawer}>
+              Align Career with Character
+            </Link>
+          ),
+        },
+        {
+          key: "/career/chapter2/sub4",
+          label: (
+            <Link to="/career/chapter2/sub4" onClick={closeDrawer}>
+              Know When to Pivot
+            </Link>
+          ),
+        },
+        {
+          key: "/career/chapter2/sub5",
+          label: (
+            <Link to="/career/chapter2/sub5" onClick={closeDrawer}>
+              The Importance of Networking
+            </Link>
+          ),
+        },
+      ],
+    },
+    {
+      key: "career3",
+      label: "Chapter 3",
+      icon: <SettingOutlined />,
+      children: [
+        {
+          key: "/career/chapter3/sub1",
+          label: (
+            <Link to="/career/chapter3/sub1" onClick={closeDrawer}>
+              Stay Grounded in Reality
+            </Link>
+          ),
+        },
+        {
+          key: "/career/chapter3/sub2",
+          label: (
+            <Link to="/career/chapter3/sub2" onClick={closeDrawer}>
+              Find Mentors, Not Idols
+            </Link>
+          ),
+        },
+        {
+          key: "/career/chapter3/sub3",
+          label: (
+            <Link to="/career/chapter3/sub3" onClick={closeDrawer}>
+              Resist Cynicism
+            </Link>
+          ),
+        },
+        {
+          key: "/career/chapter3/sub4",
+          label: (
+            <Link to="/career/chapter3/sub4" onClick={closeDrawer}>
+              Focus on Long-Term Vision
+            </Link>
+          ),
+        },
+        {
+          key: "/career/chapter3/sub5",
+          label: (
+            <Link to="/career/chapter3/sub5" onClick={closeDrawer}>
+              Define Your Legacy
+            </Link>
+          ),
+        },
+      ],
+    },
+  ];
+
+  const menu = (
     <Menu
-      onClick={onClick}
-      style={{ width: 384 }}
-      defaultSelectedKeys={["1"]}
-      defaultOpenKeys={["career/chapter1"]}
+      selectedKeys={[location.pathname]}
+      defaultOpenKeys={["career", "career2", "career3"]}
       mode="inline"
       items={items}
-      className="text-lg custom-menu group"
+      className="custom-menu text-base"
     />
+  );
+
+  return (
+    <>
+      
+      <div className="md:hidden mb-4">
+        <Button icon={<MenuOutlined />} onClick={() => setOpen(true)}>
+          Menu
+        </Button>
+      </div>
+
+  
+      <Drawer
+        title="Chapters"
+        placement="left"
+        onClose={closeDrawer}
+        open={open}
+        className="md:hidden"
+        bodyStyle={{ padding: 0 }}
+      >
+        {menu}
+      </Drawer>
+
+    
+      <div className="hidden md:block">{menu}</div>
+    </>
   );
 };
 

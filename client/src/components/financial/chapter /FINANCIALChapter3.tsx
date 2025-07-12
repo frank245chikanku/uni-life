@@ -85,9 +85,9 @@ const FINANCIALChapter3Reader: React.FC = () => {
       <div>
         <h2>${chapters[current].title}</h2>
         ${chapters[current].content
-          .split("\n\n")
-          .map((para) => `<p>${para}</p>`)
-          .join("")}
+        .split("\n\n")
+        .map((para) => `<p>${para}</p>`)
+        .join("")}
       </div>
     `;
     const printWindow = window.open("", "", "width=800,height=600");
