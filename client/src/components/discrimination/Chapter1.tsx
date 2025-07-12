@@ -96,9 +96,9 @@ const BiasChapterReader: React.FC = () => {
       <div>
         <h2>${biasChapters[current].title}</h2>
         ${biasChapters[current].content
-          .split("\n\n")
-          .map((para) => `<p>${para}</p>`)
-          .join("")}
+        .split("\n\n")
+        .map((para) => `<p>${para}</p>`)
+        .join("")}
       </div>
     `;
 
@@ -157,16 +157,15 @@ const BiasChapterReader: React.FC = () => {
         ))}
       </div>
 
-      {/* Navigation Buttons */}
+
       <div className="mt-6 flex justify-between items-center flex-wrap gap-2">
         <button
           onClick={prevChapter}
           disabled={current === 0}
-          className={`${
-            current === 0
+          className={`${current === 0
               ? "bg-gray-200 text-gray-400 cursor-not-allowed"
               : "bg-gray-800 text-white hover:bg-gray-900"
-          } font-semibold px-6 py-2 rounded-lg shadow transition`}
+            } font-semibold px-6 py-2 rounded-lg shadow transition`}
         >
           Previous
         </button>
