@@ -12,7 +12,7 @@ import { Link, useLocation } from "react-router-dom";
 type MenuItem = Required<MenuProps>["items"][number];
 
 const CareerSidebar: React.FC = () => {
-  const [open, setOpen] = useState(false);    
+  const [open, setOpen] = useState(false);
   const location = useLocation();
 
   const closeDrawer = () => setOpen(false);
@@ -173,14 +173,14 @@ const CareerSidebar: React.FC = () => {
 
   return (
     <>
-      
+
       <div className="md:hidden mb-4">
         <Button icon={<MenuOutlined />} onClick={() => setOpen(true)}>
           Menu
         </Button>
       </div>
 
-  
+
       <Drawer
         title="Chapters"
         placement="left"
@@ -192,7 +192,7 @@ const CareerSidebar: React.FC = () => {
         {menu}
       </Drawer>
 
-    
+
       <div className="hidden md:block">{menu}</div>
     </>
   );
