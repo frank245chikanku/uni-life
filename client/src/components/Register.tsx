@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import bg from "../assets/front-view-stacked-books-graduation-cap-ladders-education-day.jpg";
-import axios from "axios";
+import axios from "axios"
 import { useState } from "react";
 import { ENDPOINT } from "../api";
 
@@ -10,20 +10,13 @@ const Register = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-
-    let formattedValue = value;
-    if (name === "email" || name === "username") {
-      formattedValue = value.trim().toLowerCase();
-    } else if (name === "password") {
-      formattedValue = value.trim();
-    }
-
-    setFormData(prev => ({ ...prev, [name]: formattedValue }));
+   
+   const handleChange = (e: { target: { name: any; value: any; }; }) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     setLoading(true);
     setError("");
@@ -66,10 +59,6 @@ const Register = () => {
                 placeholder="username"
                 type="text"
                 required
-                autoComplete="off"
-                autoCorrect="off"
-                autoCapitalize="none"
-                spellCheck="false"
               />
               <input
                 name="email"
@@ -79,10 +68,6 @@ const Register = () => {
                 placeholder="email"
                 type="email"
                 required
-                autoComplete="off"
-                autoCorrect="off"
-                autoCapitalize="none"
-                spellCheck="false"
               />
               <input
                 name="password"
@@ -92,10 +77,6 @@ const Register = () => {
                 placeholder="password"
                 type="password"
                 required
-                autoComplete="off"
-                autoCorrect="off"
-                autoCapitalize="none"
-                spellCheck="false"
               />
               <button
                 type="submit"
