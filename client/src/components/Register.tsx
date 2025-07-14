@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import bg from "../assets/front-view-stacked-books-graduation-cap-ladders-education-day.jpg";
-import axios from "axios"
+import axios from "axios";
 import { useState } from "react";
 import { ENDPOINT } from "../api";
 
@@ -10,19 +10,23 @@ const Register = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-   
-   const handleChange = (e: { target: { name: any; value: any; }; }) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  
-  const handleSubmit = async (e: { preventDefault: () => void; }) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setError("");
 
+    const payload = {
+      username: formData.username.trim(),
+      email: formData.email.trim().toLowerCase(),
+      password: formData.password.trim(),
+    };
+
     try {
-      const response = await axios.post(`${ENDPOINT}/api/auth/signup`, formData);
+      const response = await axios.post(`${ENDPOINT}/api/auth/signup`, payload);
       if (response.status === 201) {
         navigate("/login");
       }
@@ -46,9 +50,7 @@ const Register = () => {
             </p>
           </div>
           <div className="flex flex-col justify-center w-full p-3">
-            <p className="text-2xl font-bold text-white text-center">
-              Register
-            </p>
+            <p className="text-2xl font-bold text-white text-center">Register</p>
             {error && <p className="text-red-500 text-center mt-2">{error}</p>}
             <form onSubmit={handleSubmit} className="w-full flex flex-col mt-4">
               <input
@@ -56,27 +58,32 @@ const Register = () => {
                 value={formData.username}
                 onChange={handleChange}
                 className="p-3 outline-none bg-slate-900 border-b border-white text-white"
-                placeholder="username"
+                placeholder="Username"
                 type="text"
                 required
+                autoComplete="username"
               />
               <input
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
                 className="p-3 mt-4 outline-none bg-slate-900 border-b border-white text-white"
-                placeholder="email"
+                placeholder="Email"
                 type="email"
                 required
+                autoComplete="email"
+                autoCapitalize="none"
+                inputMode="email"
               />
               <input
                 name="password"
                 value={formData.password}
                 onChange={handleChange}
                 className="mt-4 p-3 outline-none bg-slate-900 border-b border-white text-white"
-                placeholder="password"
+                placeholder="Password"
                 type="password"
                 required
+                autoComplete="new-password"
               />
               <button
                 type="submit"
@@ -88,9 +95,7 @@ const Register = () => {
             </form>
             <p className="mt-2 text-gray-300 text-center">
               Already have an account?{" "}
-              <Link to="/login" className="text-[#00a6ff]">
-                Login
-              </Link>
+              <Link to="/login" className="text-[#00a6ff]">Login</Link>
             </p>
           </div>
         </div>
