@@ -8,6 +8,7 @@ const Register = () => {
   const [formData, setFormData] = useState({ username: "", email: "", password: "" });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false); 
   const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -75,16 +76,24 @@ const Register = () => {
                 autoCapitalize="none"
                 inputMode="email"
               />
-              <input
-                name="password"
-                value={formData.password}
-                onChange={handleChange}
-                className="mt-4 p-3 outline-none bg-slate-900 border-b border-white text-white"
-                placeholder="Password"
-                type="password"
-                required
-                autoComplete="new-password"
-              />
+              <div className="relative">
+                <input
+                  name="password"
+                  value={formData.password}
+                  onChange={handleChange}
+                  className="mt-4 p-3 pr-20 outline-none bg-slate-900 border-b border-white text-white w-full"
+                  placeholder="Password"
+                  type={showPassword ? "text" : "password"} 
+                  required
+                  autoComplete="new-password"
+                />
+                <span
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-sm text-blue-400 cursor-pointer"
+                >
+                  {showPassword ? "Hide" : "Show"}
+                </span>
+              </div>
               <button
                 type="submit"
                 className="mt-4 w-full bg-gradient-to-br from-[#00a6ff] to-red-500 hover:bg-gradient-to-br hover:from-[#00a6ffec] hover:to-red-400 text-white p-3 rounded-full"
@@ -104,4 +113,4 @@ const Register = () => {
   );
 };
 
-export default Register;       
+export default Register;

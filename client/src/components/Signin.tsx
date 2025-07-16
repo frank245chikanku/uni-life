@@ -10,17 +10,17 @@ const Signin = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false); 
+
   const navigate = useNavigate();
-  const [, authState] = useRecoilState(isAuthenticatedAtom)
-  const [, user] = useRecoilState(userDetailsAtom)
+  const [, authState] = useRecoilState(isAuthenticatedAtom);
+  const [, user] = useRecoilState(userDetailsAtom);
 
-
-  const handleChange = (e: { target: { name: any; value: any; }; }) => {
+  const handleChange = (e: { target: { name: any; value: any } }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-
-  const handleSubmit = async (e: { preventDefault: () => void; }) => {
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     setLoading(true);
     setError("");
@@ -28,10 +28,9 @@ const Signin = () => {
     try {
       const response = await axios.post(`${ENDPOINT}/api/auth/signin`, formData);
       if (response.status === 200) {
-
-        console.log(response.data)
+        console.log(response.data);
         authState(true);
-        user(response.data)
+        user(response.data);
         navigate("/");
       }
     } catch (err) {
@@ -42,7 +41,10 @@ const Signin = () => {
   };
 
   return (
-    <section style={{ backgroundImage: `url(${bg})` }} className="bg-cover bg-center object-cover">
+    <section
+      style={{ backgroundImage: `url(${bg})` }}
+      className="bg-cover bg-center object-cover"
+    >
       <div className="w-full min-h-screen flex p-4 justify-center items-center">
         <div className="grid md:grid-cols-2 grid-cols-1 md:w-1/2 w-full h-96 border-2 border-blue-950 shadow-lg shadow-blue-200 rounded-3xl backdrop-blur-sm bg-slate-950 bg-opacity-90">
           <div className="flex flex-col justify-center w-full p-3">
@@ -58,15 +60,25 @@ const Signin = () => {
                 type="text"
                 required
               />
-              <input
-                name="password"
-                value={formData.password}
-                onChange={handleChange}
-                className="mt-4 p-3 outline-none bg-slate-900 border-b border-white text-white"
-                placeholder="password"
-                type="password"
-                required
-              />
+
+              <div className="relative">
+                <input
+                  name="password"
+                  value={formData.password}
+                  onChange={handleChange}
+                  className="mt-4 p-3 pr-20 outline-none bg-slate-900 border-b border-white text-white w-full"
+                  placeholder="password"
+                  type={showPassword ? "text" : "password"} 
+                  required
+                />
+                <span
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-sm text-blue-400 cursor-pointer"
+                >
+                  {showPassword ? "Hide" : "Show"}
+                </span>
+              </div>
+
               <button
                 type="submit"
                 className="mt-4 w-full bg-gradient-to-br from-[#00a6ff] to-red-500 hover:bg-gradient-to-br hover:from-[#00a6ffec] hover:to-red-400 text-white p-3 rounded-full"
@@ -76,7 +88,8 @@ const Signin = () => {
               </button>
             </form>
             <p className="mt-2 text-gray-300 text-center">
-              Don’t have an account? <Link to="/register" className="text-[#00a6ff]">Sign Up</Link>
+              Don’t have an account?{" "}
+              <Link to="/register" className="text-[#00a6ff]">Sign Up</Link>
             </p>
           </div>
           <div className="w-full md:flex hidden flex-col justify-center items-center p-4">
