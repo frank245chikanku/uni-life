@@ -6,11 +6,20 @@ export type ChapterData = {
 
 export type CategoryData = {
   [key: string]: {
-    [key: string]: ChapterData; 
-    
+    [key: string]: ChapterData;
+
   };
 };
 
 export type DataStructure = {
-  [key: string]: CategoryData; 
+  [key: string]: CategoryData;
 };
+
+export interface IIntership {
+  id: string;
+  contact: string;
+  address: string;
+  title: string;
+  description: string
+  link:string
+}

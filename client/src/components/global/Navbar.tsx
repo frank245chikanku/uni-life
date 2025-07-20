@@ -11,7 +11,7 @@ const Navbar = () => {
   const setIsAuthenticated = useSetRecoilState(isAuthenticatedAtom);
   const navigate = useNavigate();
 
-  const handleLogout = () => {
+  const handleLogout = () => {     
     setIsAuthenticated(false);
     navigate("/");
   };
@@ -19,12 +19,12 @@ const Navbar = () => {
   return (
     <header className="bg-gradient-to-r from-[#3d2659] to-[#0c2856] text-white shadow-lg sticky top-0 z-50">
       <nav className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-        {/* Logo */}
+
         <Link to="/" className="text-2xl font-bold tracking-wide">
           Uni-Guide
         </Link>
 
-        {/* Desktop Links */}
+
         <div className="hidden md:flex items-center gap-8">
           {isAuthenticated ? (
             <>
@@ -37,7 +37,7 @@ const Navbar = () => {
           <Link to="/about" className="hover:text-blue-300 transition">About</Link>
         </div>
 
-        {/* Auth Buttons */}
+
         <div className="hidden md:flex items-center gap-4">
           {isAuthenticated ? (
             <>
@@ -67,7 +67,7 @@ const Navbar = () => {
           )}
         </div>
 
-        {/* Mobile Menu Icon */}
+
         <div className="md:hidden">
           <button onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle Menu">
             {menuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -75,7 +75,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Mobile Menu */}
+
       {menuOpen && (
         <div className="md:hidden bg-[#3d2659] px-4 py-4 space-y-4">
           {isAuthenticated ? (
@@ -126,4 +126,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar;       

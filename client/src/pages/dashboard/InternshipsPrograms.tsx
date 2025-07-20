@@ -1,3 +1,7 @@
+import { useEffect, useState } from "react";
+import axios from "axios"
+import { ENDPOINT } from "../../api";
+import { IIntership } from "../../types/interface";
 
 const internships = [
   {
@@ -7,6 +11,7 @@ const internships = [
     link: "https://www.atlascopco.com/en-zm/jobs/student-opportunities",
   },
 ];
+
 
 const prepResources = [
   {
@@ -33,10 +38,29 @@ const prepResources = [
 ];
 
 function InternshipsPrograms() {
+  const [loading, setLoading] = useState(false);
+  const [internship, setInternship] = useState<IIntership[]>([])
+
+  const fetchInternships = async () => {
+    setLoading(true)
+    try {
+      const res = await axios.get(`${ENDPOINT}/api/internship/get-all`)
+      console.log(res.data)
+      setInternship(res.data)
+    } catch (error) {
+      console.error("error", error)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  useEffect(() => {
+    fetchInternships()
+  }, [])
   return (
     <section className="px-6 py-12 bg-gradient-to-br from-blue-100 via-purple-100 to-blue-50 min-h-screen">
       <div className="max-w-6xl mx-auto space-y-14">
-        
+
         <header className="text-center">
           <h2 className="text-4xl font-extrabold text-gray-800 mb-2">
             Internship & Industrial Attachment Opportunities
@@ -46,23 +70,56 @@ function InternshipsPrograms() {
           </p>
         </header>
 
-        
-        <a
-          href={internships[0].link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-2xl hover:bg-purple-600 hover:text-white transition-all duration-300 transform hover:scale-105 p-6 max-w-3xl mx-auto"
-        >
-          <h3 className="text-2xl font-semibold mb-3">{internships[0].title}</h3>
-          <p className="text-md mb-1">
-            <span className="font-medium">Field:</span> {internships[0].field}
-          </p>
-          <p className="text-md">
-            <span className="font-medium">Company:</span> {internships[0].company}
-          </p>
-        </a>
+        <div>
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
+            🏢 Available Internship Listings
+          </h2>
 
-        
+          {loading ? (
+            <p className="text-center text-lg text-purple-700">Loading data...</p>
+          ) : internship.length === 0 ? (
+            <p className="text-center text-lg text-gray-600">No internships found</p>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              <a
+                href={internships[0].link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-2xl hover:bg-purple-600 hover:text-white transition-all duration-300 transform hover:scale-105 p-6 max-w-3xl mx-auto"
+              >
+                <h3 className="text-2xl font-semibold mb-3">{internships[0].title}</h3>
+                <p className="text-md mb-1">
+                  <span className="font-medium">Field:</span> {internships[0].field}
+                </p>
+                <p className="text-md">
+                  <span className="font-medium">Company:</span> {internships[0].company}
+                </p>
+              </a>
+              {internship.map((item, index) => (
+                <div
+                  key={index}
+                  className="p-6 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-lg hover:bg-purple-50 transition-all duration-300"
+                >
+                  <h3 className="text-xl font-semibold text-gray-800 mb-2">{item.title}</h3>
+                  <p className="text-sm text-gray-700 mb-2">{item.description}</p>
+                  <p className="text-sm text-gray-600 mb-1"><span className="font-medium">Address:</span> {item.address}</p>
+                  <p className="text-sm text-gray-600 mb-1"><span className="font-medium">Contact:</span> {item.contact}</p>
+                  {item.link && (
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-indigo-600 hover:underline"
+                    >
+                      View Internship →
+                    </a>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
         <div>
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
             🧰 Prepare to Apply
