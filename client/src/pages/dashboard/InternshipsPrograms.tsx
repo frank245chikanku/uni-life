@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from "axios"
+import axios from "axios";
 import { ENDPOINT } from "../../api";
 import { IIntership } from "../../types/interface";
 
@@ -10,8 +10,13 @@ const internships = [
     company: "Atlas Copco",
     link: "https://www.atlascopco.com/en-zm/jobs/student-opportunities",
   },
+  {
+    title: "Internships at UNDP Zambia",
+    field: "Development, Policy, Administration",
+    company: "United Nations Development Programme (UNDP)",
+    link: "https://www.undp.org/zambia/jobs",
+  },
 ];
-
 
 const prepResources = [
   {
@@ -39,24 +44,24 @@ const prepResources = [
 
 function InternshipsPrograms() {
   const [loading, setLoading] = useState(false);
-  const [internship, setInternship] = useState<IIntership[]>([])
+  const [internship, setInternship] = useState<IIntership[]>([]);
 
   const fetchInternships = async () => {
-    setLoading(true)
+    setLoading(true);
     try {
-      const res = await axios.get(`${ENDPOINT}/api/internship/get-all`)
-      console.log(res.data)
-      setInternship(res.data)
+      const res = await axios.get(`${ENDPOINT}/api/internship/get-all`);
+      setInternship(res.data);
     } catch (error) {
-      console.error("error", error)
+      console.error("error", error);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   useEffect(() => {
-    fetchInternships()
-  }, [])
+    fetchInternships();
+  }, []);
+
   return (
     <section className="px-6 py-12 bg-gradient-to-br from-blue-100 via-purple-100 to-blue-50 min-h-screen">
       <div className="max-w-6xl mx-auto space-y-14">
@@ -75,48 +80,71 @@ function InternshipsPrograms() {
             🏢 Available Internship Listings
           </h2>
 
-          {loading ? (
-            <p className="text-center text-lg text-purple-700">Loading data...</p>
-          ) : internship.length === 0 ? (
-            <p className="text-center text-lg text-gray-600">No internships found</p>
-          ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-              <a
-                href={internships[0].link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-2xl hover:bg-purple-600 hover:text-white transition-all duration-300 transform hover:scale-105 p-6 max-w-3xl mx-auto"
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-10">
+            {/* 1. Atlas Copco */}
+            <a
+              href={internships[0].link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-2xl hover:bg-purple-600 hover:text-white transition-all duration-300 transform hover:scale-105 p-6"
+            >
+              <h3 className="text-2xl font-semibold mb-3">{internships[0].title}</h3>
+              <p className="text-md mb-1">
+                <span className="font-medium">Field:</span> {internships[0].field}
+              </p>
+              <p className="text-md">
+                <span className="font-medium">Company:</span> {internships[0].company}
+              </p>
+            </a>
+
+            {/* 2. Dynamic card  */}
+            {!loading && internship.length > 0 && (
+              <div
+                key={internship[0].title}
+                className="block bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-2xl hover:bg-purple-600 hover:text-white transition-all duration-300 transform hover:scale-105 p-6"
               >
-                <h3 className="text-2xl font-semibold mb-3">{internships[0].title}</h3>
+                <h3 className="text-2xl font-semibold mb-3">{internship[0].title}</h3>
                 <p className="text-md mb-1">
-                  <span className="font-medium">Field:</span> {internships[0].field}
+                  <span className="font-medium">Description:</span> {internship[0].description}
                 </p>
-                <p className="text-md">
-                  <span className="font-medium">Company:</span> {internships[0].company}
+                <p className="text-md mb-1">
+                  <span className="font-medium">Address:</span> {internship[0].address}
                 </p>
-              </a>
-              {internship.map((item, index) => (
-                <div
-                  key={index}
-                  className="p-6 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-lg hover:bg-purple-50 transition-all duration-300"
-                >
-                  <h3 className="text-xl font-semibold text-gray-800 mb-2">{item.title}</h3>
-                  <p className="text-sm text-gray-700 mb-2">{item.description}</p>
-                  <p className="text-sm text-gray-600 mb-1"><span className="font-medium">Address:</span> {item.address}</p>
-                  <p className="text-sm text-gray-600 mb-1"><span className="font-medium">Contact:</span> {item.contact}</p>
-                  {item.link && (
-                    <a
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-indigo-600 hover:underline"
-                    >
-                      View Internship →
-                    </a>
-                  )}
-                </div>
-              ))}
-            </div>
+                <p className="text-md mb-3">
+                  <span className="font-medium">Contact:</span> {internship[0].contact}
+                </p>
+                {internship[0].link && (
+                  <a
+                    href={internship[0].link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-medium underline text-indigo-700 hover:text-white"
+                  >
+                    View Internship →
+                  </a>
+                )}
+              </div>
+            )}
+
+            {/* 3. UNDP card last */}
+            <a
+              href={internships[1].link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-2xl hover:bg-purple-600 hover:text-white transition-all duration-300 transform hover:scale-105 p-6"
+            >
+              <h3 className="text-2xl font-semibold mb-3">{internships[1].title}</h3>
+              <p className="text-md mb-1">
+                <span className="font-medium">Field:</span> {internships[1].field}
+              </p>
+              <p className="text-md">
+                <span className="font-medium">Company:</span> {internships[1].company}
+              </p>
+            </a>
+          </div>
+
+          {loading && (
+            <p className="text-center text-lg text-purple-700">Loading data...</p>
           )}
         </div>
 
