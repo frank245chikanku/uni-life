@@ -81,25 +81,15 @@ const AdjustmentChapterReader: React.FC = () => {
       <div>
         <h2>${adjustmentChapters[current].title}</h2>
         ${adjustmentChapters[current].content
-          .split("\n\n")
-          .map((para) => `<p>${para}</p>`)
-          .join("")}
+        .split("\n\n")
+        .map((para) => `<p>${para}</p>`)
+        .join("")}
       </div>
     `;
-  
-    const printFrame = document.createElement("iframe");
-    printFrame.style.position = "fixed";
-    printFrame.style.right = "0";
-    printFrame.style.bottom = "0";
-    printFrame.style.width = "0";
-    printFrame.style.height = "0";
-    printFrame.style.border = "0";
-    document.body.appendChild(printFrame);
-  
-    const doc = printFrame.contentWindow?.document;
-    if (doc) {
-      doc.open();
-      doc.write(`
+
+    const printWindow = window.open("", "", "width=800,height=600");
+    if (printWindow) {
+      printWindow.document.write(`
         <html>
           <head>
             <title>${adjustmentChapters[current].title}</title>
@@ -122,19 +112,14 @@ const AdjustmentChapterReader: React.FC = () => {
           <body>${contentToPrint}</body>
         </html>
       `);
-      doc.close();
-  
-      // Print after content loads
-      printFrame.onload = () => {
-        setTimeout(() => {
-          printFrame.contentWindow?.focus();
-          printFrame.contentWindow?.print();
-          document.body.removeChild(printFrame);
-        }, 250);
+      printWindow.document.close();
+      printWindow.onload = () => {
+        printWindow.focus();
+        printWindow.print();
+        printWindow.close();
       };
     }
   };
-  
 
   return (
     <div className="w-full h-screen py-6 px-4 md:px-6 flex flex-col">
