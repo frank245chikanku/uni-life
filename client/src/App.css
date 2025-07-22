@@ -55,3 +55,28 @@ html {
     background-color: transparent;
   }
   
+
+
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+  
+    body {
+      margin: 0;
+      padding: 0;
+    }
+  
+    #print-area {
+      width: 100%;
+      font-size: 14px;
+      padding: 20px;
+    }
+  
+    @page {
+      size: A4;
+      margin: 20mm;
+    }
+  }
+  
+  
