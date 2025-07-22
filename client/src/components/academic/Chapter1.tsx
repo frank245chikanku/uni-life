@@ -56,8 +56,9 @@ In line with our findings and interpretations, we encourage a balanced strategy 
 
 const ChapterReader: React.FC = () => {
   const [current, setCurrent] = useState(0);
-  const location = useLocation();
 
+
+  const location = useLocation();
   useEffect(() => {
     const chapterMatch = location.pathname.match(/sub(\d+)/);
     if (chapterMatch) {
@@ -75,40 +76,52 @@ const ChapterReader: React.FC = () => {
   const restart = () => setCurrent(0);
 
   const printPDF = () => {
-    const printContents = document.getElementById("print-area")?.innerHTML;
-    if (!printContents) return;
-
-    const originalContents = document.body.innerHTML;
-    document.body.innerHTML = printContents;
-
-    window.print();
-
-    // Restore the original content after print
-    setTimeout(() => {
-      document.body.innerHTML = originalContents;
-      window.location.reload(); // refresh React app
-    }, 1000);
+    const contentToPrint = `
+      <div>
+        <h2>${chapters[current].title}</h2>
+        ${chapters[current].content
+        .split("\n\n")
+        .map((para) => `<p>${para}</p>`)
+        .join("")}
+      </div>
+    `;
+    const printWindow = window.open("", "", "width=800,height=600");
+    if (printWindow) {
+      printWindow.document.write(`
+        <html>
+          <head>
+            <title>${chapters[current].title}</title>
+            <style>
+              body {
+                font-family: sans-serif;
+                padding: 20px;
+                line-height: 1.6;
+              }
+              h2 {
+                font-size: 24px;
+                margin-bottom: 16px;
+              }
+              p {
+                font-size: 16px;
+                margin-bottom: 12px;
+              }
+            </style>
+          </head>
+          <body>${contentToPrint}</body>
+        </html>
+      `);
+      printWindow.document.close();
+      printWindow.onload = () => {
+        printWindow.focus();
+        printWindow.print();
+        printWindow.close();
+      };
+    }
   };
 
   return (
     <div className="w-full h-screen py-6 px-4 md:px-6 flex flex-col">
-
-      {/* Hidden Print Area */}
-      <div className="hidden print:block" id="print-area">
-        <h2>{chapters[current].title}</h2>
-        {chapters[current].content
-          .split("\n\n")
-          .map((para, i) => (
-            <p
-              key={i}
-              style={{ marginBottom: "12px", fontSize: "16px", lineHeight: "1.6" }}
-            >
-              {para}
-            </p>
-          ))}
-      </div>
-
-      {/* Progress Bar */}
+      
       <div className="w-full bg-gray-300 rounded-full h-3 mb-4 md:mb-6">
         <div
           className="bg-pink-500 h-3 rounded-full transition-all duration-500"
@@ -116,7 +129,7 @@ const ChapterReader: React.FC = () => {
         />
       </div>
 
-      {/* Chapter Content */}
+
       <div className="flex-1 overflow-y-auto pb-4">
         <h2 className="text-2xl md:text-3xl font-bold mb-4">{chapters[current].title}</h2>
         {chapters[current].content.split("\n\n").map((para, i) => (
@@ -129,14 +142,14 @@ const ChapterReader: React.FC = () => {
         ))}
       </div>
 
-      {/* Controls */}
+
       <div className="mt-6 flex flex-col md:flex-row justify-between items-center gap-4">
         <button
           onClick={prevChapter}
           disabled={current === 0}
           className={`w-full md:w-auto ${current === 0
-            ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-            : "bg-gray-800 text-white hover:bg-gray-900"
+              ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+              : "bg-gray-800 text-white hover:bg-gray-900"
             } font-semibold px-6 py-2 rounded-lg shadow transition`}
         >
           Previous
@@ -170,6 +183,7 @@ const ChapterReader: React.FC = () => {
       </div>
     </div>
   );
+
 };
 
 export default ChapterReader;
