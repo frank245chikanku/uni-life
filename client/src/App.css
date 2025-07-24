@@ -58,41 +58,26 @@ html {
 
 
   @media print {
-    .no-print {
+    /* Hide navigation bar, buttons, menu etc. */
+    header,
+    nav,
+    button,
+    .menu,
+    .menuOpen,
+    .no-print,
+    .print-hidden {
       display: none !important;
     }
-
+  
+    /* Optional: remove page margin when printing */
     body {
       margin: 0;
       padding: 0;
-      background: white;
-      color: black;
-      font-family: sans-serif;
-      line-height: 1.6;
     }
-
-      #print-area {   
-      padding: 20px;
-      font-size: 16px;
-      color: #000;
-    }
-
-    h2 {
-      font-size: 22px;
-      margin-bottom: 16px;
-      font-weight: bold;
-    }
-
-    p {
-      margin-bottom: 12px;
-      font-size: 16px;
-    }
-
-    @page {
-      size: A4;
-      margin: 20mm;
+  
+    /* Ensure printed content takes full width */
+    .print-content {
+      width: 100%;
     }
   }
-
-  
   
