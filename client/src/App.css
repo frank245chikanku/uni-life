@@ -4,80 +4,79 @@
 
 body,
 html {
-    overflow-x: hidden;
-    min-height: 100vh;
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 
 * {
-    font-family: "Roboto", sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .gradient-text {
-    background: linear-gradient(to bottom right, #00a6ff, #ff4276);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
+  background: linear-gradient(to bottom right, #00a6ff, #ff4276);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 
 .custom-menu .ant-menu-item:hover,
 .custom-menu .ant-menu-submenu-title:hover {
-    @apply bg-gradient-to-br from-[#00a6ff] to-red-500 text-white;
+  @apply bg-gradient-to-br from-[#00a6ff] to-red-500 text-white;
 }
 
 .custom-menu .ant-menu-item a:hover,
 .custom-menu .ant-menu-submenu-title a:hover {
-    @apply text-white;
+  @apply text-white;
 }
 
 
 .custom-menu {
-    max-height: 100vh;
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: #f472b6 transparent; 
-  }
-  
-  
-  .custom-menu::-webkit-scrollbar {
-    width: 6px;
-  }
-  
-  .custom-menu::-webkit-scrollbar-thumb {
-    background-color: #f472b6; 
-    border-radius: 4px;
-  }
-  
-  .custom-menu::-webkit-scrollbar-track {
-    background-color: transparent;
-  }
-  
+  max-height: 100vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #f472b6 transparent;
+}
 
 
-  @media print {
-    /* Hide navigation bar, buttons, menu etc. */
-    header,
-    nav,
-    button,
-    .menu,
-    .menuOpen,
-    .no-print,
-    .print-hidden {
-      display: none !important;
-    }
-  
-    /* Optional: remove page margin when printing */
-    body {
-      margin: 0;
-      padding: 0;
-    }
-  
-    /* Ensure printed content takes full width */
-    .print-content {
-      width: 100%;
-    }
+.custom-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-menu::-webkit-scrollbar-thumb {
+  background-color: #f472b6;
+  border-radius: 4px;
+}
+
+.custom-menu::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+
+
+@media print {
+
+  header,
+  nav,
+  button,
+  .menu,
+  .menuOpen,
+  .no-print,
+  .print-hidden {
+    display: none !important;
   }
-  
+
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+
+  .print-content {
+    width: 100%;
+  }
+}

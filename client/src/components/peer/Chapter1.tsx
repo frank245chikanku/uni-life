@@ -57,74 +57,27 @@ const PeerChapterReader: React.FC = () => {
   const restart = () => setCurrent(0);
 
   const printPDF = () => {
-    const contentToPrint = `
-      <div>
-        <h2>${chapters[current].title}</h2>
-        ${chapters[current].content
-        .split("\n\n")
-        .map((para) => `<p>${para}</p>`)
-        .join("")}
-      </div>
-    `;
-    const printWindow = window.open("", "", "width=800,height=600");
-    if (printWindow) {
-      printWindow.document.write(`
-        <html>
-          <head>
-            <title>${chapters[current].title}</title>
-            <style>
-              body {
-                font-family: sans-serif;
-                padding: 20px;
-                line-height: 1.6;
-              }
-              h2 {
-                font-size: 24px;
-                margin-bottom: 16px;
-              }
-              p {
-                font-size: 16px;
-                margin-bottom: 12px;
-              }
-            </style>
-          </head>
-          <body>${contentToPrint}</body>
-        </html>
-      `);
-      printWindow.document.close();
-      printWindow.onload = () => {
-        printWindow.focus();
-        printWindow.print();
-        printWindow.close();
-      };
-    }
+    window.print();
   };
 
   return (
-    <div className="w-full h-screen py-6 px-4 md:px-6 flex flex-col">
+    <div className="max-w-4xl mx-auto py-6 px-4 md:px-6 h-[calc(100vh-4rem)] flex flex-col">
 
-      <div className="w-full bg-gray-300 rounded-full h-3 mb-4 md:mb-6">
+      <div className="no-print w-full bg-gray-300 rounded-full h-3 mb-4 md:mb-6">
         <div
           className="bg-pink-500 h-3 rounded-full transition-all duration-500"
           style={{ width: `${progress}%` }}
         />
       </div>
 
-
-      <div className="flex-1 overflow-y-auto pb-4">
-        <h2 className="text-2xl md:text-3xl font-bold mb-4">{chapters[current].title}</h2>
-        {chapters[current].content.split("\n\n").map((para, i) => (
-          <p
-            key={i}
-            className="mb-4 text-base md:text-lg leading-relaxed whitespace-pre-wrap"
-          >
-            {para}
-          </p>
-        ))}
+      <div id="print-area" className="flex-1 overflow-y-auto pb-4">
+        <h2 className="text-center font-bold text-2xl md:text-3xl mb-6 text-[#050505]">
+          {chapters[current].title}
+        </h2>
+        {chapters[current].content}
       </div>
 
-
-      <div className="mt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div className="no-print mt-6 flex flex-col md:flex-row justify-between items-center gap-4">
         <button
           onClick={prevChapter}
           disabled={current === 0}

@@ -11,7 +11,7 @@ const Navbar = () => {
   const setIsAuthenticated = useSetRecoilState(isAuthenticatedAtom);
   const navigate = useNavigate();
 
-  const handleLogout = () => {     
+  const handleLogout = () => {
     setIsAuthenticated(false);
     navigate("/");
   };

@@ -82,7 +82,7 @@ const ChapterReader: React.FC = () => {
   return (
     <div className="w-full h-screen py-6 px-4 md:px-6 flex flex-col">
 
-      
+
       <div className="no-print w-full bg-gray-300 rounded-full h-3 mb-4 md:mb-6">
         <div
           className="bg-pink-500 h-3 rounded-full transition-all duration-500"
@@ -90,7 +90,7 @@ const ChapterReader: React.FC = () => {
         />
       </div>
 
-    
+
       <div id="print-area" className="flex-1 overflow-y-auto pb-4">
         <h2 className="text-2xl md:text-3xl font-bold mb-4">
           {chapters[current].title}
@@ -105,16 +105,15 @@ const ChapterReader: React.FC = () => {
         ))}
       </div>
 
-      
+
       <div className="no-print mt-6 flex flex-col md:flex-row justify-between items-center gap-4">
         <button
           onClick={prevChapter}
           disabled={current === 0}
-          className={`w-full md:w-auto ${
-            current === 0
+          className={`w-full md:w-auto ${current === 0
               ? "bg-gray-200 text-gray-400 cursor-not-allowed"
               : "bg-gray-800 text-white hover:bg-gray-900"
-          } font-semibold px-6 py-2 rounded-lg shadow transition`}
+            } font-semibold px-6 py-2 rounded-lg shadow transition`}
         >
           Previous
         </button>
