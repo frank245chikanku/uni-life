@@ -38,12 +38,13 @@ How do you become assertive? Well, it involves being clear and direct in your co
 
 const PeerChapterReader: React.FC = () => {
   const [current, setCurrent] = useState(0);
-  const location = useLocation();
 
+
+  const location = useLocation();
   useEffect(() => {
-    const match = location.pathname.match(/sub(\d+)/);
-    if (match) {
-      const index = parseInt(match[1], 10) - 1;
+    const chapterMatch = location.pathname.match(/sub(\d+)/);
+    if (chapterMatch) {
+      const index = parseInt(chapterMatch[1]) - 1;
       if (!isNaN(index) && index >= 0 && index < chapters.length) {
         setCurrent(index);
       }
@@ -61,7 +62,8 @@ const PeerChapterReader: React.FC = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto py-6 px-4 md:px-6 h-[calc(100vh-4rem)] flex flex-col">
+    <div className="w-full h-screen py-6 px-4 md:px-6 flex flex-col">
+
 
       <div className="no-print w-full bg-gray-300 rounded-full h-3 mb-4 md:mb-6">
         <div
@@ -70,20 +72,29 @@ const PeerChapterReader: React.FC = () => {
         />
       </div>
 
+
       <div id="print-area" className="flex-1 overflow-y-auto pb-4">
-        <h2 className="text-center font-bold text-2xl md:text-3xl mb-6 text-[#050505]">
+        <h2 className="text-2xl md:text-3xl font-bold mb-4">
           {chapters[current].title}
         </h2>
-        {chapters[current].content}
+        {chapters[current].content.split("\n\n").map((para, i) => (
+          <p
+            key={i}
+            className="mb-4 text-base md:text-lg leading-relaxed whitespace-pre-wrap"
+          >
+            {para}
+          </p>
+        ))}
       </div>
+
 
       <div className="no-print mt-6 flex flex-col md:flex-row justify-between items-center gap-4">
         <button
           onClick={prevChapter}
           disabled={current === 0}
           className={`w-full md:w-auto ${current === 0
-              ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-              : "bg-gray-800 text-white hover:bg-gray-900"
+            ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+            : "bg-gray-800 text-white hover:bg-gray-900"
             } font-semibold px-6 py-2 rounded-lg shadow transition`}
         >
           Previous
@@ -105,9 +116,7 @@ const PeerChapterReader: React.FC = () => {
           </button>
         ) : (
           <div className="text-center w-full">
-            <p className="text-green-600 font-semibold mb-4">
-              🎉 You’ve completed all chapters!
-            </p>
+            <p className="text-green-600 font-semibold mb-4">🎉 You’ve completed all chapters!</p>
             <button
               onClick={restart}
               className="w-full md:w-auto bg-gray-800 text-white font-semibold px-6 py-2 rounded-lg shadow hover:bg-gray-900 transition"
@@ -120,5 +129,9 @@ const PeerChapterReader: React.FC = () => {
     </div>
   );
 };
+
+
+
+
 
 export default PeerChapterReader;
