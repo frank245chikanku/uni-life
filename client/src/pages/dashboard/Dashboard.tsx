@@ -27,7 +27,7 @@ const Dashboard = () => {
   }, []);
 
   const skills = ["React", "Node", "UI/UX"];
-   const assessments = 3;
+  const assessments = 3;
   const projects = 1;
   const internships = 0;
 
@@ -38,7 +38,7 @@ const Dashboard = () => {
   const quickStarts = [
     {
       label: "Skills",
-      value: `${skills.length} Added`,
+      value: `Skills Added`,
       footer: skills.length >= 5 ? "Skill Builder 🏅" : "Add More Skills",
       icon: <BarChart2 className="text-blue-500" />,
       to: "/career-guidance-and-skill-tracking",
@@ -46,7 +46,7 @@ const Dashboard = () => {
     },
     {
       label: "Assessments",
-      value: `${assessments} Completed`,
+      value: `Assessments `,
       footer: assessments > 0 ? "On Track 🏅" : "Start One Today",
       icon: <FileCheck2 className="text-purple-500" />,
       to: "/skill-assessments-and-learning-resources",
@@ -54,7 +54,7 @@ const Dashboard = () => {
     },
     {
       label: "Projects",
-      value: `${projects} Active`,
+      value: `Active Projects`,
       footer: projects > 0 ? "Maintain Momentum" : "Kick‑start One!",
       icon: <Award className="text-green-500" />,
       to: "/ethical-decision-making-and-community-engagement",
@@ -62,13 +62,14 @@ const Dashboard = () => {
     },
     {
       label: "Internships",
-      value: `${internships} Applied`,
+      value: `Internships`,
       footer: internships > 0 ? "Keep Networking" : "Find Opportunities",
       icon: <Briefcase className="text-red-500" />,
       to: "/internships-and-industrial-programs",
       progressClass: "bg-red-500 w-1/6",
     },
   ];
+
 
   return (
     <div className="w-full px-4 py-6 flex flex-col">
