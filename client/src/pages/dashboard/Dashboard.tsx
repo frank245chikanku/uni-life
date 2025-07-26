@@ -27,7 +27,7 @@ const Dashboard = () => {
   }, []);
 
   const skills = ["React", "Node", "UI/UX"];
-  const assessments = 3;
+   const assessments = 3;
   const projects = 1;
   const internships = 0;
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
-const chapters = [
+const chapters = [ 
   {
     title: "Phase 1: Understanding Peer Pressure",
     content: `Peer pressure is a very real issue that affects many of the teenagers of the world today. It is a normal part of growing up. Peer pressure is basically a social pressure. This can be from family members, friends, or those persons who work together. When we think of the words “peer pressure”, what is the first thing that comes to mind? Majority of us would say that peer pressure is an influence from friends or classmates to do something we normally do not follow as a routine.
