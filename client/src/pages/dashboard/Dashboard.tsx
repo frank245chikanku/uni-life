@@ -12,11 +12,11 @@ const quotes = [
   "Build your network before you need it — relationships are long-term assets.",
   "Solve real problems — the world rewards solutions, not just effort.",
   "Seek challenges, not shortcuts — growth lives in discomfort.",
-  "Your future self is shaped by today’s habits — choose wisely.",
+  "Your future self is shaped by today’s habits — choose wisely.",      
 ];
 
 const Dashboard = () => {
-  const user = useRecoilValue(userDetailsAtom);
+  const user = useRecoilValue(userDetailsAtom); 
 
   const [quoteIndex, setQuoteIndex] = useState(0);
   useEffect(() => {
@@ -130,7 +130,7 @@ const Dashboard = () => {
           },
         ].map((item) => (
           <Link
-            key={item.title}
+            key={item.title} 
             to={item.to}
             className="shadow-xl hover:shadow-2xl flex flex-col p-4 rounded-2xl h-96 bg-gradient-to-br from-[#00a6ff] to-red-500 hover:scale-105 transition-transform duration-300"
           >
@@ -158,4 +158,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;      
+export default Dashboard;          
