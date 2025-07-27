@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
-const adjustmentChapters2 = [ 
+const adjustmentChapters2 = [
   {
     title: "Paths Less Traveled",
     content: `One compelling example is the idea of embracing "first-principles thinking," a strategy of deconstructing problems to their core assumptions and rebuilding solutions from the ground up. Innovators like those who pioneered industries often took this less-traveled path, refusing to follow established models and instead questioning everything to carve out entirely new directions. For students and professionals alike, this concept is a call to action—to resist the comfort of conformity, challenge established norms, and explore unique perspectives.
@@ -42,12 +42,13 @@ Trusting it requires courage, especially when the external noise tells you other
 
 const AdjustmentChapterReader2: React.FC = () => {
   const [current, setCurrent] = useState(0);
-  const location = useLocation();
 
+
+  const location = useLocation();
   useEffect(() => {
-    const match = location.pathname.match(/sub(\d+)/);
-    if (match) {
-      const index = parseInt(match[1]) - 1;
+    const chapterMatch = location.pathname.match(/sub(\d+)/);
+    if (chapterMatch) {
+      const index = parseInt(chapterMatch[1]) - 1;
       if (!isNaN(index) && index >= 0 && index < adjustmentChapters2.length) {
         setCurrent(index);
       }
@@ -61,53 +62,14 @@ const AdjustmentChapterReader2: React.FC = () => {
   const restart = () => setCurrent(0);
 
   const printPDF = () => {
-    const contentToPrint = `
-      <div>
-        <h2>${adjustmentChapters2[current].title}</h2>
-        ${adjustmentChapters2[current].content
-        .split("\n\n")
-        .map((para) => `<p>${para}</p>`)
-        .join("")}
-      </div>
-    `;
-    const printWindow = window.open("", "", "width=800,height=600");
-    if (printWindow) {
-      printWindow.document.write(`
-        <html>
-          <head>
-            <title>${adjustmentChapters2[current].title}</title>
-            <style>
-              body {
-                font-family: sans-serif;
-                padding: 20px;
-                line-height: 1.6;
-              }
-              h2 {
-                font-size: 24px;
-                margin-bottom: 16px;
-              }
-              p {
-                font-size: 16px;
-                margin-bottom: 12px;
-              }
-            </style>
-          </head>
-          <body>${contentToPrint}</body>
-        </html>
-      `);
-      printWindow.document.close();
-      printWindow.onload = () => {
-        printWindow.focus();
-        printWindow.print();
-        printWindow.close();
-      };
-    }
+    window.print();
   };
 
   return (
     <div className="w-full h-screen py-6 px-4 md:px-6 flex flex-col">
 
-      <div className="w-full bg-gray-300 rounded-full h-3 mb-4 md:mb-6">
+
+      <div className="no-print w-full bg-gray-300 rounded-full h-3 mb-4 md:mb-6">
         <div
           className="bg-pink-500 h-3 rounded-full transition-all duration-500"
           style={{ width: `${progress}%` }}
@@ -115,7 +77,7 @@ const AdjustmentChapterReader2: React.FC = () => {
       </div>
 
 
-      <div className="flex-1 overflow-y-auto pb-4">
+      <div id="print-area" className="flex-1 overflow-y-auto pb-4">
         <h2 className="text-2xl md:text-3xl font-bold mb-4">
           {adjustmentChapters2[current].title}
         </h2>
@@ -130,7 +92,7 @@ const AdjustmentChapterReader2: React.FC = () => {
       </div>
 
 
-      <div className="mt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div className="no-print mt-6 flex flex-col md:flex-row justify-between items-center gap-4">
         <button
           onClick={prevChapter}
           disabled={current === 0}
@@ -158,9 +120,7 @@ const AdjustmentChapterReader2: React.FC = () => {
           </button>
         ) : (
           <div className="text-center w-full">
-            <p className="text-green-600 font-semibold mb-4">
-              🎉 You’ve completed all chapters!
-            </p>
+            <p className="text-green-600 font-semibold mb-4">🎉 You’ve completed all chapters!</p>
             <button
               onClick={restart}
               className="w-full md:w-auto bg-gray-800 text-white font-semibold px-6 py-2 rounded-lg shadow hover:bg-gray-900 transition"
@@ -173,5 +133,4 @@ const AdjustmentChapterReader2: React.FC = () => {
     </div>
   );
 };
-
 export default AdjustmentChapterReader2;
