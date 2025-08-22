@@ -4,52 +4,54 @@ const careers = [
   {
     title: "Business Administration Roles – Zambia",
     skills: ["Project Management", "Finance", "Human Resources", "Operations"],
-    link: "https://zm.linkedin.com/jobs/business-administration-jobs",
+    link: "https://jobsearchzm.com/", // Job Search Zambia
     nextSkill: "Excel for Business & Budgeting",
     mentorTip:
-      "Connect with an HR professional in Zambia via LinkedIn or your university career office.",
+      "Register on Job Search Zambia and filter for internships or entry-level Business roles in your field.",
   },
   {
     title: "Social Work Opportunities – Zambia",
     skills: ["Community Development", "Counseling", "NGO Management"],
-    link: "https://zm.linkedin.com/jobs/social-work-jobs",
+    link: "https://www.greatzambiajobs.com/job-categories/junior-job-fresh-graduate-entry-level-jobs-in-zambia-62",
     nextSkill: "Psychosocial Support and Case Management",
     mentorTip:
-      "Attend webinars hosted by NGOs like Lifeline/Childline Zambia or reach out to social work alumni.",
+      "Use Great Zambia Jobs and search under 'Junior/Fresh Graduate' to find opportunities in social work and NGO roles.",
   },
   {
     title: "Health Sciences & Public Health Jobs – Zambia",
     skills: ["Public Health", "Clinical Practice", "Health Education"],
-    link: "https://zm.linkedin.com/jobs/health-science-jobs",
+    link: "https://jobwebzambia.com/", // JobWebZambia
     nextSkill: "Data Collection & Analysis with DHIS2",
     mentorTip:
-      "Shadow a local health outreach team or volunteer with community clinics.",
+      "Check JobWebZambia for health and NGO job categories, especially internships or graduate level opportunities.",
   },
   {
-    title: "UI/UX Designer",
-    skills: ["Figma", "Adobe XD", "Design Thinking"],
-    link: "https://dribbble.com/jobs",
+    title: "IT Focused Entry Level Jobs",
+    skills: [ "Design Thinking"],
+    link: "https://www.zambiajob.com/", // Zambiajob.com
     nextSkill: "Accessibility Design (WCAG Standards)",
     mentorTip:
-      "Join global UX mentorship programs like ADPList and share your design work on Behance.",
+      "Use Zambiajob.com to search design or IT-related roles and build your portfolio on platforms like Behance.",
   },
   {
-    title: "Mobile App Developer",
-    skills: ["Flutter", "React Native", "Kotlin"],
-    link: "https://remoteok.com/remote-mobile+developer-jobs",
-    nextSkill: "Firebase Authentication & Storage",
+    title: "Entry-Level Jobs for Students – Zambia",
+    skills: ["Internships", "Graduate Trainee Programs", "Part-time Roles", "Volunteer Opportunities"],
+    link: "https://www.greatzambiajobs.com/job-categories/junior-job-fresh-graduate-entry-level-jobs-in-zambia-62",
+    nextSkill: "Workplace Communication & Professional Etiquette",
     mentorTip:
-      "Join Zambian Devs Slack or WhatsApp communities to ask real-world mobile dev questions.",
+      "Regularly check Great Zambia Jobs’ 'Fresh Graduate / Entry Level' section for new postings across all fields. Also, ask your university career office to link you with internship opportunities.",
   },
+  
   {
-    title: "Zambian Tech Jobs (Go Zambia Jobs)",
-    skills: ["General ICT", "Software Dev", "IT Support", "Networking"],
-    link: "https://gozambiajobs.com/?search_keywords=it",
-    nextSkill: "Networking with Cisco (CCNA Fundamentals)",
+    title: "Student-Focused Jobs – Zambia",
+    skills: ["Support Services", "Administration", "Campus Operations"],
+    link: "https://jobsinzambia.alljobspo.com/Student-jobs-in-zambia", // Alljobspo student jobs
+    nextSkill: "Coordination and Student Engagement",
     mentorTip:
-      "Engage with professionals from Tech Hub Zambia or BongoHive mentorship platforms.",
+      "Explore the Student Jobs section on Alljobspo.com for roles like Student Support Lead or Supervisory positions in student services.",
   },
 ];
+
 
 const CareerGuidance = () => {
   return (
