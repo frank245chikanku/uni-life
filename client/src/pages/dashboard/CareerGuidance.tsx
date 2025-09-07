@@ -27,7 +27,7 @@ const careers = [
   },
   {
     title: "IT Focused Entry Level Jobs",
-    skills: [ "Design Thinking"],
+    skills: ["Design Thinking"],
     link: "https://www.zambiajob.com/", // Zambiajob.com
     nextSkill: "Accessibility Design (WCAG Standards)",
     mentorTip:
@@ -41,7 +41,7 @@ const careers = [
     mentorTip:
       "Regularly check Great Zambia Jobs’ 'Fresh Graduate / Entry Level' section for new postings across all fields. Also, ask your university career office to link you with internship opportunities.",
   },
-  
+
   {
     title: "Student-Focused Jobs – Zambia",
     skills: ["Support Services", "Administration", "Campus Operations"],

@@ -12,11 +12,11 @@ const quotes = [
   "Build your network before you need it — relationships are long-term assets.",
   "Solve real problems — the world rewards solutions, not just effort.",
   "Seek challenges, not shortcuts — growth lives in discomfort.",
-  "Your future self is shaped by today’s habits — choose wisely.",      
+  "Your future self is shaped by today’s habits — choose wisely.",
 ];
 
 const Dashboard = () => {
-  const user = useRecoilValue(userDetailsAtom); 
+  const user = useRecoilValue(userDetailsAtom);
 
   const [quoteIndex, setQuoteIndex] = useState(0);
   useEffect(() => {
@@ -37,24 +37,24 @@ const Dashboard = () => {
 
   const quickStarts = [
     {
-      label: "Skills",
-      value: `Skills Added`,
-      footer: skills.length >= 5 ? "Skill Builder 🏅" : "Add More Skills",
+      label: "Jobs",
+      value: `Jobs Added`,
+      footer: skills.length >= 5 ? "Skill Builder 🏅" : "Add More Jobs",
       icon: <BarChart2 className="text-blue-500" />,
       to: "/career-guidance-and-skill-tracking",
       progressClass: "bg-blue-500 w-2/3",
     },
     {
-      label: "Assessments",
-      value: `Assessments `,
+      label: "Learning Resources",
+      value: `Free Learning Resources `,
       footer: assessments > 0 ? "On Track 🏅" : "Start One Today",
       icon: <FileCheck2 className="text-purple-500" />,
       to: "/skill-assessments-and-learning-resources",
       progressClass: "bg-purple-500 w-1/2",
     },
     {
-      label: "Projects",
-      value: `Active Projects`,
+      label: "Community-Engagement",
+      value: `Community Engagement`,
       footer: projects > 0 ? "Maintain Momentum" : "Kick‑start One!",
       icon: <Award className="text-green-500" />,
       to: "/ethical-decision-making-and-community-engagement",
@@ -130,7 +130,7 @@ const Dashboard = () => {
           },
         ].map((item) => (
           <Link
-            key={item.title} 
+            key={item.title}
             to={item.to}
             className="shadow-xl hover:shadow-2xl flex flex-col p-4 rounded-2xl h-96 bg-gradient-to-br from-[#00a6ff] to-red-500 hover:scale-105 transition-transform duration-300"
           >

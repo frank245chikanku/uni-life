@@ -24,7 +24,7 @@ const Navbar = () => {
           Uni-Guide
         </Link>
 
-
+        {/* Desktop menu */}
         <div className="hidden md:flex items-center gap-8">
           {isAuthenticated ? (
             <>
@@ -35,9 +35,11 @@ const Navbar = () => {
             <Link to="/" className="hover:text-blue-300 transition">Home</Link>
           )}
           <Link to="/about" className="hover:text-blue-300 transition">About</Link>
+        
+          <Link to="/chat" className="hover:text-blue-300 transition">Chat</Link>
         </div>
 
-
+        
         <div className="hidden md:flex items-center gap-4">
           {isAuthenticated ? (
             <>
@@ -67,7 +69,7 @@ const Navbar = () => {
           )}
         </div>
 
-
+        
         <div className="md:hidden">
           <button onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle Menu">
             {menuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -75,7 +77,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-
+    
       {menuOpen && (
         <div className="md:hidden bg-[#3d2659] px-4 py-4 space-y-4">
           {isAuthenticated ? (
@@ -87,6 +89,9 @@ const Navbar = () => {
             <Link to="/" onClick={() => setMenuOpen(false)} className="block">Home</Link>
           )}
           <Link to="/about" onClick={() => setMenuOpen(false)} className="block">About</Link>
+          
+          <Link to="/chat" onClick={() => setMenuOpen(false)} className="block">Chat</Link>
+
           <div className="border-t border-gray-500 pt-4">
             {isAuthenticated ? (
               <>
@@ -126,4 +131,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;       
+export default Navbar;
