@@ -19,8 +19,8 @@ const AboutUs = () => {
 
   return (
     <div className="px-6 md:px-16 lg:px-32 py-20 bg-[#eef6fb] text-gray-800">
-      <h2 className="text-center text-4xl md:text-5xl font-bold tracking-wide mb-14 text-[#003366] font-serif drop-shadow-sm">
-        About <span className="text-[#00a6ff]">UniGuide</span>
+      <h2 className="text-center text-3xl md:text-4xl font-extrabold tracking-tight mb-12 text-[#003366] font-[Inter] drop-shadow-sm">
+        About <span className="text-[#007acc]">UniGuide</span>
       </h2>
 
       <div className="grid md:grid-cols-2 gap-10 items-center bg-white rounded-2xl shadow-xl overflow-hidden">
