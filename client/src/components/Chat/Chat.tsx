@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { MessageSquare, User, Loader2, Brain } from "lucide-react";
 import axios from "axios";
 
+
 type Message = {
   role: "student" | "system";
   text?: string;
@@ -34,17 +35,11 @@ const CareerAssistant = () => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  // --- Backend URL (auto-switch between localhost & Wi-Fi IP) ---
-  const backendURL =
-    window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
-      ? "http://localhost:7000"
-      : "http://192.168.43.179:7000"; // your laptop Wi-Fi IP
 
-  // --- Fetch Suggestions ---
   const fetchCareerSuggestions = async (profile: Profile) => {
     try {
       const response = await axios.post(
-        `${backendURL}/api/careers/suggest-career`,
+        "http://192.168.43.179:7000/api/careers/suggest-career",
         profile,
         { headers: { "Content-Type": "application/json" } }
       );
@@ -54,6 +49,7 @@ const CareerAssistant = () => {
       return [];
     }
   };
+
 
   const sendProfile = async () => {
     if (!profile.name || !profile.course) {
@@ -83,6 +79,7 @@ const CareerAssistant = () => {
         ]);
         return;
       }
+
 
       const structuredContent = suggestions.map((s: any, idx: number) => (
         <div key={idx} className="mb-4 p-4 border rounded-lg bg-green-50 text-gray-800 shadow">
@@ -134,12 +131,13 @@ const CareerAssistant = () => {
   return (
     <div className="w-full max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-      {/* Left Panel - Profile */}
+
       <div className="lg:col-span-1 flex flex-col gap-6">
         <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-6 h-[500px] overflow-y-auto flex flex-col">
           <h3 className="text-2xl font-semibold flex items-center gap-2 mb-4 text-gray-700">
             <User className="w-6 h-6 text-blue-500" /> Student Profile
           </h3>
+
 
           {["name", "course", "interests", "skills"].map((field) => (
             <label className="mb-3 block" key={field}>
@@ -240,7 +238,7 @@ const CareerAssistant = () => {
         </div>
       </div>
 
-      {/* Personality Test Modal */}
+
       {showPersonality && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center">
           <div className="bg-white rounded-xl shadow-lg p-6 w-[400px]">
