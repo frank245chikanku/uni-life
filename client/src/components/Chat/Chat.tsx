@@ -240,37 +240,44 @@ const CareerAssistant = () => {
 
 
       {showPersonality && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center">
-          <div className="bg-white rounded-xl shadow-lg p-6 w-[400px]">
-            <h3 className="text-xl font-bold mb-4">🧠 Quick Personality Test</h3>
-            <p className="mb-2">Do you prefer working more with:</p>
-            <button
-              onClick={() => {
-                setProfile({ ...profile, personality: "People-oriented" });
-                setShowPersonality(false);
-              }}
-              className="w-full mb-2 px-4 py-2 bg-blue-500 text-white rounded-lg"
-            >
-              👥 People
-            </button>
-            <button
-              onClick={() => {
-                setProfile({ ...profile, personality: "Data-oriented" });
-                setShowPersonality(false);
-              }}
-              className="w-full mb-2 px-4 py-2 bg-purple-500 text-white rounded-lg"
-            >
-              📊 Data
-            </button>
-            <button
-              onClick={() => setShowPersonality(false)}
-              className="w-full mt-2 px-4 py-2 bg-gray-300 rounded-lg"
-            >
-              Cancel
-            </button>
-          </div>
-        </div>
-      )}
+  <div className="fixed inset-0 bg-black/50 flex items-center justify-center">
+    <div className="bg-white rounded-xl shadow-lg p-6 w-[450px] max-h-[80vh] overflow-y-auto">
+      <h3 className="text-xl font-bold mb-4">🧠 Choose Your Personality Type</h3>
+      <p className="mb-4 text-gray-600">Select the personality type that best describes you:</p>
+
+      {[
+        { id: "Type 1", label: "Type 1 – The Reformer (Principled, Purposeful, Self-Controlled)" },
+        { id: "Type 2", label: "Type 2 – The Helper (Caring, Generous, People-Pleasing)" },
+        { id: "Type 3", label: "Type 3 – The Achiever (Success-Oriented, Driven, Adaptive)" },
+        { id: "Type 4", label: "Type 4 – The Individualist (Sensitive, Creative, Expressive)" },
+        { id: "Type 5", label: "Type 5 – The Investigator (Perceptive, Innovative, Curious)" },
+        { id: "Type 6", label: "Type 6 – The Loyalist (Committed, Responsible, Security-Oriented)" },
+        { id: "Type 7", label: "Type 7 – The Enthusiast (Spontaneous, Fun-Loving, Adventurous)" },
+        { id: "Type 8", label: "Type 8 – The Challenger (Confident, Decisive, Assertive)" },
+        { id: "Type 9", label: "Type 9 – The Peacemaker (Easygoing, Accommodating, Trusting)" },
+      ].map((type) => (
+        <button
+          key={type.id}
+          onClick={() => {
+            setProfile({ ...profile, personality: type.label });
+            setShowPersonality(false);
+          }}
+          className="w-full mb-2 px-4 py-2 text-left bg-gradient-to-r from-blue-100 to-purple-100 hover:from-blue-200 hover:to-purple-200 text-gray-800 rounded-lg shadow-sm"
+        >
+          {type.label}
+        </button>
+      ))}
+
+      <button
+        onClick={() => setShowPersonality(false)}
+        className="w-full mt-3 px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400"
+      >
+        Cancel
+      </button>
+    </div>
+  </div>
+)}
+
     </div>
   );
 };
