@@ -3,102 +3,100 @@ import { LoginDto, RegisterDto } from "./dto";
 import { validate } from "class-validator";
 import { StatusCodes } from "http-status-codes";
 import { prisma } from "../config/prisma";
-import { hash } from "bcrypt";
+import { hash, compare } from "bcrypt";
 
 export class AuthCollection {
-    async Register(req: Request, res: Response): Promise<void> {
-        try {
-            const data = new RegisterDto(req.body);
+  async Register(req: Request, res: Response): Promise<void> {
+    try {
 
-            const errors = await validate(data);
+      req.body.email = req.body.email?.trim().toLowerCase();
+      req.body.password = req.body.password?.trim();
+      req.body.username = req.body.username?.trim();
 
-            if (errors.length > 0) {
-                res.status(StatusCodes.CONFLICT).json(errors);
-                return;
-            }
+      const data = new RegisterDto(req.body);
+      const errors = await validate(data);
 
-            const user = await prisma.user.findUnique({
-                where: {
-                    email: data.email
-                }
-            })
+      if (errors.length > 0) {
+        res.status(StatusCodes.CONFLICT).json(errors);
+        return;
+      }
 
-            if (user) {
-                res.status(StatusCodes.BAD_REQUEST).json({
-                    message: "user already exists"
-                })
-                return;
-            }
+      const user = await prisma.user.findUnique({
+        where: { email: data.email }
+      });
 
-            const hashPassword = await hash(data.password, 10);
+      if (user) {
+        res.status(StatusCodes.BAD_REQUEST).json({
+          message: "User already exists"
+        });
+        return;
+      }
 
-            await prisma.user.create({
-                data: {
-                    username: data.username,
-                    email: data.email,
-                    password: hashPassword
-                }
-            })
+      const hashPassword = await hash(data.password, 10);
 
-            res.status(StatusCodes.CREATED).json({
-                message: "user created successfully"
-            })
-            return;
-        } catch (error: any) {
-            res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
-                error: error
-            })
-            return;
+      await prisma.user.create({
+        data: {
+          username: data.username,
+          email: data.email,
+          password: hashPassword
         }
+      });
+
+      res.status(StatusCodes.CREATED).json({
+        message: "User created successfully"
+      });
+    } catch (error: any) {
+      res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+        error: error.message || "Server error"
+      });
     }
+  }
 
-    async Login(req: Request, res: Response): Promise<void> {
-        try {
-            const data = new LoginDto(req.body);
+  async Login(req: Request, res: Response): Promise<void> {
+    try {
 
-            console.log(req.body)
+      req.body.email = req.body.email?.trim().toLowerCase();
+      req.body.password = req.body.password?.trim();
 
-            const errors = await validate(data);
+      const data = new LoginDto(req.body);
+      const errors = await validate(data);
 
-            if (errors.length > 0) {
-                res.status(StatusCodes.CONFLICT).json(errors);
-                return;
-            }
+      if (errors.length > 0) {
+        res.status(StatusCodes.CONFLICT).json(errors);
+        return;
+      }
 
-            const user = await prisma.user.findUnique({
-                where: {
-                    email: data.email
-                }
-            })
+      const user = await prisma.user.findUnique({
+        where: { email: data.email }
+      });
 
-            if (!user) {
-                res.status(StatusCodes.BAD_REQUEST).json({
-                    message: "user doesnt exists"
-                })
-                return;
-            }
+      if (!user) {
+        res.status(StatusCodes.BAD_REQUEST).json({
+          message: "User doesn't exist"
+        });
+        return;
+      }
 
-            const hashPassword = await hash(data.password, 10);
 
-            if (!hashPassword) {
-                res.status(StatusCodes.BAD_REQUEST).json({
-                    message: "Incorrect password"
-                })
-            }
+      const isMatch = await compare(data.password, user.password);
+      if (!isMatch) {
+        res.status(StatusCodes.BAD_REQUEST).json({
+          message: "Incorrect password"
+        });
+        return;
+      }
 
-            const payload = {
-                id: user.id,
-                email: user.email,
-                username: user.username
-            }
+      const payload = {
+        id: user.id,
+        email: user.email,
+        username: user.username
+      };
 
-            res.status(StatusCodes.OK).json(payload)
-            return;
-        } catch (error: any) {
-            res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
-                error: error
-
-            })
-        }
+      res.status(StatusCodes.OK).json(payload);
+    } catch (error: any) {
+      res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+        error: error.message || "Server error"
+      });
     }
+  }
 }

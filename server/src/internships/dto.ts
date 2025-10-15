@@ -11,7 +11,7 @@ export class CreateDto {
 
     @IsNotEmpty()
     @IsString()
-    address: string;
+    address: string;   
 
     @IsNotEmpty()
     @IsString()
