@@ -43,11 +43,12 @@ const learningResources: {
       nextStep: "Read one article weekly and summarize it in your own words.",
     },
     {
-      title: "FreeCodeCamp",
-      topics: ["Web Development", "JavaScript", "APIs", "Data Structures"],
-      link: "https://www.freecodecamp.org/",
-      benefit: "Build real coding projects and earn certifications for free.",
-      nextStep: "Start a certification path and build your portfolio project.",
+      title: "Infosys Springboard",
+topics: ["Digital Skills", "Technology", "AI", "Career Development"],
+link: "https://infyspringboard.us.onwingspan.com/web/en/page/home",
+benefit: "Access a wide range of free courses and resources to enhance your digital and professional skills.",
+nextStep: "Sign up, explore learning paths, and start earning recognized certificates to boost your career."
+
     },
   ];
 
