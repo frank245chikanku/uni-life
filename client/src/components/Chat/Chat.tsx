@@ -39,7 +39,7 @@ const CareerAssistant = () => {
   const fetchCareerSuggestions = async (profile: Profile) => {
     try {
       const response = await axios.post(
-        "http://192.168.43.179:7000/api/careers/suggest-career",
+        "https://uni-life-one.vercel.app/api/careers/suggest-career",
         profile,
         { headers: { "Content-Type": "application/json" } }
       );
