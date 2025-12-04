@@ -39,16 +39,23 @@ const CareerAssistant = () => {
   const fetchCareerSuggestions = async (profile: Profile) => {
     try {
       const response = await axios.post(
-        "https://uni-life-one.vercel.app/api/careers/suggest-career",
+        "http://localhost:7000/api/careers/suggest-career",
         profile,
         { headers: { "Content-Type": "application/json" } }
       );
       return response.data.suggestions || [];
-    } catch (error) {
-      console.error(error);
+    } catch (error: any) {
+      if (error.response) {
+        console.error("Server responded with:", error.response.status, error.response.data);
+      } else if (error.request) {
+        console.error("No response received:", error.request);
+      } else {
+        console.error("Error setting up request:", error.message);
+      }
       return [];
     }
   };
+  
 
 
   const sendProfile = async () => {
