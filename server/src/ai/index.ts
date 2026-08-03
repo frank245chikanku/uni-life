@@ -17,8 +17,10 @@ aiRouter.post("/suggest-career", async (req: Request, res: Response) => {
   try {
     const { name, skills, interests, personality } = req.body as CareerRequestBody;
 
-   // latest supported model
-    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-exp" });
+
+    const model = genAI.getGenerativeModel({
+      model: "gemini-3.5-flash-lite",
+    });
 
     const prompt = `
   You are providing personalized career guidance directly to ${name}.
@@ -53,13 +55,13 @@ aiRouter.post("/suggest-career", async (req: Request, res: Response) => {
   ]
 `;
 
-    // Generate response from Gemini
+
     const result = await model.generateContent(prompt);
     const rawText = await result.response.text();
 
     console.log("Gemini raw response:", rawText);
 
-    // Clean and parse the JSON
+
     const cleaned = rawText.replace(/```json|```/g, "").trim();
     let suggestions;
 
