@@ -1,20 +1,17 @@
-import { useRecoilValue } from "recoil";
 import Navbar from "../components/global/Navbar";
 import Categories from "../components/home/Categories";
-import { isAuthenticatedAtom } from "../recoil/atom";
 import Footer from "../components/global/Footer";
 
 const Classifications = () => {
-    const auth = useRecoilValue(isAuthenticatedAtom)
+  return (
+    <div className="w-full min-h-screen bg-[#0b0b26]">
+      <Navbar />
 
+      <Categories />
 
-    return (
-        <div>
-            <Navbar />
-            {auth && <Categories />}
-            <Footer />
-        </div>
-    )
-}
+      <Footer />
+    </div>
+  );
+};
 
-export default Classifications
+export default Classifications;
