@@ -12,93 +12,164 @@ const categoryData = [
   {
     to: "/academics",
     imgSrc: academic,
-    altText: "academic",
+    altText: "Academic Integrity",
     label: "Academic Integrity",
-    bgColor: "bg-[#71c1fa]",
-    textColor: "text-slate-900",
   },
   {
     to: "/peer",
     imgSrc: peer,
-    altText: "peer",
+    altText: "Peer Pressure",
     label: "Peer Pressure",
-    bgColor: "bg-purple-700",
-    textColor: "text-slate-200",
   },
   {
     to: "/social",
     imgSrc: responsibility,
-    altText: "responsibility",
+    altText: "Social Responsibility",
     label: "Social Responsibility",
-    bgColor: "bg-[#ffb09d]",
-    textColor: "text-[#0101cf]",
   },
   {
     to: "/financial",
     imgSrc: financial,
-    altText: "financial",
+    altText: "Financial Strain",
     label: "Financial Strain",
-    bgColor: "bg-yellow-400",
-    textColor: "text-slate-900",
   },
   {
     to: "/career",
     imgSrc: career,
-    altText: "career",
+    altText: "Career Uncertainty",
     label: "Career Uncertainty",
-    bgColor: "bg-indigo-900",
-    textColor: "text-slate-200",
   },
   {
     to: "/discrimination",
     imgSrc: criticism,
-    altText: "criticism",
+    altText: "Discrimination & Bias",
     label: "Discrimination & Bias",
-    bgColor: "bg-[#71c1fa]",
-    textColor: "text-slate-900",
   },
   {
     to: "/entrepreneurship",
     imgSrc: presentation,
-    altText: "presentation",
+    altText: "Entrepreneurship Uncertainty",
     label: "Entrepreneurship Uncertainty",
-    bgColor: "bg-pink-600",
-    textColor: "text-slate-200",
   },
   {
     to: "/adjustment",
     imgSrc: leader,
-    altText: "leader",
+    altText: "Adjustment to Independence",
     label: "Adjustment to Independence",
-    bgColor: "bg-green-600",
-    textColor: "text-slate-200",
   },
 ];
 
 const Categories = () => {
   return (
-    <section className="w-full min-h-screen px-6 py-12 bg-gradient-to-b from-gray-50 to-white">
-      <h2 className="text-4xl font-extrabold text-center text-gray-800 mb-10">
-        Categories
-      </h2>
+    <section className="relative overflow-hidden bg-gradient-to-br from-slate-100 via-blue-50 to-slate-100 py-16 px-4 sm:px-6 lg:px-8">
 
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {categoryData.map((category, index) => (
-          <Link
-            key={index}
-            to={category.to}
-            className={`rounded-xl shadow-md transition-all transform hover:scale-105 hover:shadow-lg ${category.bgColor} ${category.textColor} p-6 flex flex-col items-center text-center`}
-          >
-            <img
-              className="w-16 h-16 mb-4"
-              src={category.imgSrc}
-              alt={category.altText}
-            />
-            <p className="text-base font-bold leading-tight">
-              {category.label}
-            </p>
-          </Link>
-        ))}
+      {/* Decorative Background Elements */}
+      <div className="absolute -top-24 -right-24 w-72 h-72 bg-blue-200/30 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="absolute -bottom-32 -left-24 w-80 h-80 bg-indigo-200/25 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="relative max-w-6xl mx-auto">
+
+        {/* Section Heading */}
+        <div className="text-center mb-10">
+          <p className="text-sm font-semibold uppercase tracking-wider text-blue-600 mb-2">
+            Student Life Guide
+          </p>
+
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">
+            What Are You Dealing With?
+          </h2>
+
+          <p className="mt-3 max-w-2xl mx-auto text-slate-600 text-sm sm:text-base">
+            Explore the areas below and find guidance, information and
+            practical support for your university journey.
+          </p>
+        </div>
+
+        {/* Categories */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {categoryData.map((category, index) => (
+            <Link
+              key={index}
+              to={category.to}
+              className="
+                group
+                bg-white/95
+                backdrop-blur-sm
+                border border-white
+                rounded-2xl
+                p-6
+                min-h-[190px]
+                flex
+                flex-col
+                items-center
+                justify-center
+                text-center
+                shadow-sm
+                transition-all
+                duration-300
+                hover:-translate-y-1
+                hover:shadow-xl
+                hover:border-blue-200
+                hover:bg-white
+              "
+            >
+              {/* Icon Container */}
+              <div
+                className="
+                  w-16
+                  h-16
+                  rounded-2xl
+                  bg-blue-50
+                  flex
+                  items-center
+                  justify-center
+                  mb-5
+                  transition-all
+                  duration-300
+                  group-hover:bg-blue-100
+                  group-hover:scale-105
+                "
+              >
+                <img
+                  src={category.imgSrc}
+                  alt={category.altText}
+                  className="w-9 h-9 object-contain"
+                />
+              </div>
+
+              {/* Category Name */}
+              <h3
+                className="
+                  text-base
+                  font-semibold
+                  text-slate-800
+                  leading-snug
+                  group-hover:text-blue-700
+                  transition-colors
+                "
+              >
+                {category.label}
+              </h3>
+
+              {/* View Link */}
+              <span
+                className="
+                  mt-3
+                  text-xs
+                  font-medium
+                  text-blue-600
+                  opacity-0
+                  group-hover:opacity-100
+                  transition-opacity
+                "
+              >
+                Explore →
+              </span>
+            </Link>
+          ))}
+        </div>
+
       </div>
     </section>
   );
