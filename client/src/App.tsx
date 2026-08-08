@@ -5,6 +5,7 @@ import Signin from "./components/Signin";
 import About from "./pages/About";
 import Chat from "./pages/Chat";
 import Home from "./pages/Home";
+import Programs from "./pages/Programs";
 
 
 
@@ -200,7 +201,9 @@ import InternshipsPrograms from "./pages/dashboard/InternshipsPrograms";
 
 
 const App: React.FC = () => {
+  
   return (
+    
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/classifications" element={<Classifications />} />
@@ -208,8 +211,7 @@ const App: React.FC = () => {
       <Route path="/chat" element={<Chat />} />
       <Route path="/login" element={<Signin />} />
       <Route path="/register" element={<Register />} />
-
-
+      <Route path="/programs" element={<RootLayout><Programs /></RootLayout>} />
 
       <Route path="/entrepreneurship" element={<Layout><EntrepreneurshipIntroduction /></Layout>} />
       <Route path="/entrepreneurship/chapter1/sub1" element={<Layout><EntrepreneurshipChapter1 /></Layout>} />
