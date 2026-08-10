@@ -1,18 +1,23 @@
-
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   Search,
   ArrowRight,
-  Clock,
+  Clock3,
   GraduationCap,
   BookOpen,
   X,
   MessageCircle,
-  Sparkles,
   BriefcaseBusiness,
   CheckCircle2,
   Layers3,
+  Code2,
+  HeartHandshake,
+  BarChart3,
+  Landmark,
+  Users,
+  ChevronRight,
+  Apple,
 } from "lucide-react";
 
 type Module = {
@@ -32,7 +37,6 @@ type Program = {
   careers: string[];
   skills: string[];
   modules: Module[];
-  icon: string;
 };
 
 const programs: Program[] = [
@@ -43,13 +47,10 @@ const programs: Program[] = [
     department: "School of Computing",
     duration: "4 Years",
     level: "Bachelor's Degree",
-
     description:
       "Build practical skills in software, computer systems, programming, networking, databases and modern computing technologies.",
-
     overview:
       "Computer Science prepares students to understand how computing systems work and how software and technology can be used to solve real-world problems. The programme combines programming, algorithms, databases, computer systems, networking and emerging technologies.",
-
     careers: [
       "Software Developer",
       "Systems Analyst",
@@ -60,7 +61,6 @@ const programs: Program[] = [
       "Systems Developer",
       "Technology Consultant",
     ],
-
     skills: [
       "Programming and software development",
       "Problem solving and algorithm design",
@@ -70,7 +70,6 @@ const programs: Program[] = [
       "Computer hardware and troubleshooting",
       "Research and technology innovation",
     ],
-
     modules: [
       { code: "CS", name: "Fundamentals of Computer" },
       {
@@ -103,10 +102,7 @@ const programs: Program[] = [
       { code: "CS", name: "Research Methodology" },
       { code: "CS", name: "Final Year Project" },
     ],
-
-    icon: "💻",
   },
-
   {
     id: "business-administration",
     name: "Bachelor of Business Administration",
@@ -114,13 +110,10 @@ const programs: Program[] = [
     department: "School of Business",
     duration: "4 Years",
     level: "Bachelor's Degree",
-
     description:
       "Develop business knowledge, leadership and entrepreneurial skills needed to understand organisations and create opportunities.",
-
     overview:
       "Business Administration provides a broad understanding of how organisations operate. Students explore management, marketing, entrepreneurship, accounting, operations and organisational leadership while developing practical business decision-making skills.",
-
     careers: [
       "Business Administrator",
       "Marketing Officer",
@@ -131,7 +124,6 @@ const programs: Program[] = [
       "Sales Executive",
       "Project Coordinator",
     ],
-
     skills: [
       "Business communication",
       "Leadership and management",
@@ -141,7 +133,6 @@ const programs: Program[] = [
       "Financial awareness",
       "Project coordination",
     ],
-
     modules: [
       { code: "BA", name: "Principles of Management" },
       { code: "BA", name: "Business Communication" },
@@ -159,83 +150,114 @@ const programs: Program[] = [
       { code: "BA", name: "Business Ethics" },
       { code: "BA", name: "Final Year Project" },
     ],
-
-    icon: "📊",
   },
-
   {
-    id: "information-technology",
-    name: "Bachelor of Information Technology",
-    shortName: "BIT",
-    department: "School of Computing",
+    id: "social-work",
+    name: "Bachelor of Social Work",
+    shortName: "BSW",
+    department: "School of Social Sciences",
     duration: "4 Years",
     level: "Bachelor's Degree",
-
     description:
-      "Learn how technology is used to solve organisational problems through information systems, networking, databases, web technologies and IT infrastructure.",
-
+      "Develop professional knowledge and practical skills for supporting individuals, families and communities while contributing to social development.",
     overview:
-      "Information Technology focuses on the practical application and management of technology within organisations. Students learn how to support computer infrastructure, develop information systems, manage networks and use technology to improve organisational operations.",
-
+      "Social Work prepares students to understand social challenges and support individuals, families and communities through professional social work practice. The programme develops knowledge in human behaviour, community development, social policy, counselling, research and social welfare.",
     careers: [
-      "IT Officer",
-      "Systems Administrator",
-      "IT Support Specialist",
-      "Network Administrator",
-      "Web Developer",
-      "Information Systems Officer",
-      "Database Administrator",
-      "IT Consultant",
+      "Social Worker",
+      "Community Development Officer",
+      "Child Protection Officer",
+      "Case Management Officer",
+      "Social Welfare Officer",
+      "Community Outreach Officer",
+      "Family Support Officer",
+      "NGO Programme Officer",
     ],
-
     skills: [
-      "IT infrastructure management",
-      "Networking",
-      "Web development",
-      "Database management",
-      "System administration",
-      "Technical support",
-      "Information systems analysis",
+      "Case management",
+      "Community development",
+      "Counselling and interpersonal communication",
+      "Social research",
+      "Community outreach",
+      "Advocacy and social support",
+      "Professional social work practice",
     ],
-
     modules: [
-      {
-        code: "IT",
-        name: "Fundamentals of Information Technology",
-      },
-      { code: "IT", name: "Computer Fundamentals" },
-      { code: "IT", name: "Programming Fundamentals" },
-      { code: "IT", name: "Object Oriented Programming" },
-      { code: "IT", name: "Computer Networks" },
-      { code: "IT", name: "Database Management Systems" },
-      { code: "IT", name: "Web Technologies" },
-      { code: "IT", name: "Systems Analysis and Design" },
-      { code: "IT", name: "PC Hardware and Troubleshooting" },
-      { code: "IT", name: "Operating Systems" },
-      { code: "IT", name: "Information Systems" },
-      { code: "IT", name: "Cloud Computing" },
-      { code: "IT", name: "Cybersecurity Fundamentals" },
-      { code: "IT", name: "Research Methodology" },
-      { code: "IT", name: "Final Year Project" },
+      { code: "SW", name: "Introduction to Social Work" },
+      { code: "SW", name: "Human Behaviour and Social Environment" },
+      { code: "SW", name: "Social Work Practice" },
+      { code: "SW", name: "Social Welfare Policy" },
+      { code: "SW", name: "Community Development" },
+      { code: "SW", name: "Social Work with Individuals and Families" },
+      { code: "SW", name: "Social Work with Groups" },
+      { code: "SW", name: "Child Welfare and Protection" },
+      { code: "SW", name: "Counselling Skills" },
+      { code: "SW", name: "Social Research Methods" },
+      { code: "SW", name: "Human Rights and Social Justice" },
+      { code: "SW", name: "Community Health and Social Care" },
+      { code: "SW", name: "Social Work Administration" },
+      { code: "SW", name: "Fieldwork Practice" },
+      { code: "SW", name: "Final Year Project" },
     ],
-
-    icon: "🌐",
   },
-
   {
-    id: "business-management",
+    id: "food-and-nutrition",
+    name: "Bachelor of Food and Nutrition",
+    shortName: "BSc Food & Nutrition",
+    department: "School of Health Sciences",
+    duration: "4 Years",
+    level: "Bachelor's Degree",
+    description:
+      "Explore food, nutrition and wellbeing while developing knowledge and practical skills for supporting healthier individuals and communities.",
+    overview:
+      "Food and Nutrition focuses on the relationship between food, nutrition and human wellbeing. Students develop knowledge of nutrients, food science, nutrition assessment, community nutrition, food safety and nutrition education.",
+    careers: [
+      "Nutrition Officer",
+      "Community Nutritionist",
+      "Food Quality Officer",
+      "Nutrition Programme Officer",
+      "Food Safety Officer",
+      "Public Health Nutrition Officer",
+      "Nutrition Education Officer",
+      "Food and Nutrition Consultant",
+    ],
+    skills: [
+      "Nutrition assessment",
+      "Food science",
+      "Community nutrition",
+      "Food safety and hygiene",
+      "Nutrition education",
+      "Dietary planning",
+      "Research and data analysis",
+    ],
+    modules: [
+      { code: "FN", name: "Introduction to Food and Nutrition" },
+      { code: "FN", name: "Human Nutrition" },
+      { code: "FN", name: "Food Science" },
+      { code: "FN", name: "Human Anatomy and Physiology" },
+      { code: "FN", name: "Biochemistry and Nutrition" },
+      { code: "FN", name: "Food Safety and Hygiene" },
+      { code: "FN", name: "Community Nutrition" },
+      { code: "FN", name: "Nutrition Assessment" },
+      { code: "FN", name: "Food Processing and Preservation" },
+      { code: "FN", name: "Nutrition Education and Communication" },
+      { code: "FN", name: "Public Health Nutrition" },
+      { code: "FN", name: "Maternal and Child Nutrition" },
+      { code: "FN", name: "Food Quality Management" },
+      { code: "FN", name: "Research Methodology" },
+      { code: "FN", name: "Final Year Project" },
+    ],
+  },
+  {
+    id: "business-administration-advanced",
     name: "Bachelor of Business Management",
     shortName: "BBM",
     department: "School of Business",
     duration: "4 Years",
     level: "Bachelor's Degree",
-
     description:
       "Prepare for the world of business with knowledge in management, leadership, operations and organisational development.",
-
     overview:
       "Business Management develops students' ability to understand organisations, manage people and resources, coordinate operations and make informed business decisions.",
-
     careers: [
       "Business Manager",
       "Operations Manager",
@@ -246,7 +268,6 @@ const programs: Program[] = [
       "Management Officer",
       "Business Development Officer",
     ],
-
     skills: [
       "Leadership",
       "Business planning",
@@ -256,7 +277,6 @@ const programs: Program[] = [
       "Project management",
       "Business communication",
     ],
-
     modules: [
       { code: "MG", name: "Principles of Management" },
       { code: "MG", name: "Business Communication" },
@@ -280,10 +300,7 @@ const programs: Program[] = [
       { code: "MG", name: "Business Ethics" },
       { code: "MG", name: "Final Year Project" },
     ],
-
-    icon: "📈",
   },
-
   {
     id: "education",
     name: "Bachelor of Education",
@@ -291,13 +308,10 @@ const programs: Program[] = [
     department: "School of Education",
     duration: "4 Years",
     level: "Bachelor's Degree",
-
     description:
       "Develop the knowledge and professional skills needed to inspire learners, support education and contribute meaningfully to society.",
-
     overview:
       "The Bachelor of Education prepares students for professional roles in teaching, education management and learning support. The programme combines educational theory, teaching practice, curriculum studies and professional development.",
-
     careers: [
       "Teacher",
       "Education Officer",
@@ -308,7 +322,6 @@ const programs: Program[] = [
       "Academic Coordinator",
       "Education Programme Officer",
     ],
-
     skills: [
       "Teaching and learning",
       "Classroom management",
@@ -318,7 +331,6 @@ const programs: Program[] = [
       "Educational leadership",
       "Research and academic writing",
     ],
-
     modules: [
       { code: "EDU", name: "Foundations of Education" },
       { code: "EDU", name: "Educational Psychology" },
@@ -335,10 +347,7 @@ const programs: Program[] = [
       { code: "EDU", name: "Educational Leadership" },
       { code: "EDU", name: "Final Year Project" },
     ],
-
-    icon: "🎓",
   },
-
   {
     id: "public-administration",
     name: "Bachelor of Public Administration",
@@ -346,13 +355,10 @@ const programs: Program[] = [
     department: "School of Social Sciences",
     duration: "4 Years",
     level: "Bachelor's Degree",
-
     description:
       "Gain an understanding of public service, administration, governance and policy while preparing for meaningful roles in public and community organisations.",
-
     overview:
       "Public Administration focuses on how public institutions and organisations are managed. Students explore governance, public policy, administration, development and organisational management.",
-
     careers: [
       "Administrative Officer",
       "Public Service Officer",
@@ -363,7 +369,6 @@ const programs: Program[] = [
       "Programme Officer",
       "Development Officer",
     ],
-
     skills: [
       "Public sector management",
       "Policy analysis",
@@ -373,7 +378,6 @@ const programs: Program[] = [
       "Community development",
       "Professional communication",
     ],
-
     modules: [
       {
         code: "PA",
@@ -394,10 +398,29 @@ const programs: Program[] = [
       { code: "PA", name: "Organisational Behaviour" },
       { code: "PA", name: "Final Year Project" },
     ],
-
-    icon: "🏛️",
   },
 ];
+
+const getProgramIcon = (programId: string) => {
+  switch (programId) {
+    case "computer-science":
+      return Code2;
+    case "business-administration":
+      return BarChart3;
+    case "social-work":
+      return HeartHandshake;
+    case "food-and-nutrition":
+      return Apple;
+    case "business-administration-advanced":
+      return BriefcaseBusiness;
+    case "education":
+      return GraduationCap;
+    case "public-administration":
+      return Landmark;
+    default:
+      return BookOpen;
+  }
+};
 
 const Programs = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -445,66 +468,67 @@ const Programs = () => {
   }, [searchTerm, selectedDepartment]);
 
   return (
-    <div className="min-h-screen w-full bg-white">
-      
-      <section className="relative w-full overflow-hidden bg-[#031b3a]">
-        
-        <div className="pointer-events-none absolute -right-40 -top-40 h-[520px] w-[500px] rounded-full bg-blue-500/10 blur-3xl" />
-
-        <div className="pointer-events-none absolute -bottom-48 -left-40 h-[520px] w-[500px] rounded-full bg-indigo-500/10 blur-3xl" />
-
-        <div className="relative mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-24">
+    <div className="min-h-screen bg-slate-50 text-slate-900">
+      <section className="bg-[#06264A]">
+        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
           <div className="max-w-3xl">
-            <div className="mb-6 flex items-center gap-3 text-sm font-semibold text-blue-200">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10">
-                <GraduationCap size={17} />
-              </span>
+            <div className="mb-6 flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-blue-100">
+                <GraduationCap size={20} />
+              </div>
 
-              <span>DMI St. Eugene University</span>
+              <div>
+                <p className="text-sm font-semibold text-white">
+                  DMI St. Eugene University
+                </p>
+
+                <p className="mt-0.5 text-xs text-blue-200">
+                  Academic Programmes
+                </p>
+              </div>
             </div>
 
-            <h1 className="max-w-3xl text-4xl font-extrabold leading-[1.06] tracking-tight text-white sm:text-5xl lg:text-[4.3rem]">
-              Your future starts
-              <span className="mt-2 block text-blue-300">
-                with the right choice.
+            <h1 className="max-w-3xl text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-[3.6rem]">
+              Choose a programme that
+              <span className="block text-blue-300">
+                moves you forward.
               </span>
             </h1>
 
-            <p className="mt-7 max-w-2xl text-base leading-8 text-blue-100 md:text-lg">
-              Explore programmes, discover what you could study,
-              understand the skills you can develop and see where
-              each path could take you.
+            <p className="mt-6 max-w-2xl text-base leading-7 text-blue-100 md:text-lg">
+              Explore programmes, understand what you will study,
+              discover possible career paths and make a more
+              informed choice about your future.
             </p>
 
-            <div className="mt-9 flex flex-wrap items-center gap-4">
+            <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link
                 to="/chat"
-                className="inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3.5 text-sm font-bold text-[#003366] shadow-lg transition hover:-translate-y-0.5 hover:bg-blue-50"
+                className="inline-flex items-center gap-2 rounded-lg bg-white px-5 py-3 text-sm font-semibold text-[#06264A] transition hover:bg-blue-50"
               >
-                <MessageCircle size={18} />
+                <MessageCircle size={17} />
                 Ask UNI
-                <ArrowRight size={17} />
+                <ArrowRight size={16} />
               </Link>
 
-              <span className="flex items-center gap-2 text-sm text-blue-200">
-                <Sparkles size={16} />
-                Need help choosing? Just ask.
+              <span className="text-sm text-blue-200">
+                Need help deciding? Talk to UNI Life Guide.
               </span>
             </div>
 
-            <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 border-t border-white/10 pt-7 text-sm text-blue-200">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 size={16} className="text-blue-300" />
+            <div className="mt-9 flex flex-wrap gap-x-7 gap-y-3 border-t border-white/10 pt-6">
+              <div className="flex items-center gap-2 text-sm text-blue-100">
+                <CheckCircle2 size={16} />
                 Programme guidance
               </div>
 
-              <div className="flex items-center gap-2">
-                <CheckCircle2 size={16} className="text-blue-300" />
+              <div className="flex items-center gap-2 text-sm text-blue-100">
+                <CheckCircle2 size={16} />
                 Career exploration
               </div>
 
-              <div className="flex items-center gap-2">
-                <CheckCircle2 size={16} className="text-blue-300" />
+              <div className="flex items-center gap-2 text-sm text-blue-100">
+                <CheckCircle2 size={16} />
                 Student support
               </div>
             </div>
@@ -512,13 +536,12 @@ const Programs = () => {
         </div>
       </section>
 
-     
-      <section className="relative z-10 mx-auto -mt-7 w-full max-w-5xl px-5 lg:px-8">
-        <div className="rounded-2xl border border-slate-200 bg-white p-3 shadow-lg shadow-slate-200/50">
+      <section className="relative z-10 mx-auto -mt-6 w-full max-w-6xl px-5 lg:px-8">
+        <div className="border border-slate-200 bg-white p-3 shadow-md">
           <div className="flex flex-col gap-3 sm:flex-row">
             <div className="relative flex-1">
               <Search
-                size={17}
+                size={18}
                 className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"
               />
 
@@ -526,8 +549,8 @@ const Programs = () => {
                 type="text"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                placeholder="Search a programme, career, skill or module..."
-                className="h-11 w-full rounded-xl border border-slate-200 bg-slate-50 pl-11 pr-4 text-sm text-slate-700 outline-none transition placeholder:text-slate-400 focus:border-blue-400 focus:bg-white focus:ring-2 focus:ring-blue-50"
+                placeholder="Search programmes, careers, skills or modules..."
+                className="h-12 w-full border border-slate-200 bg-slate-50 pl-11 pr-4 text-sm text-slate-700 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:bg-white"
               />
             </div>
 
@@ -536,7 +559,7 @@ const Programs = () => {
               onChange={(e) =>
                 setSelectedDepartment(e.target.value)
               }
-              className="h-11 rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm font-medium text-slate-600 outline-none transition focus:border-blue-400 focus:bg-white focus:ring-2 focus:ring-blue-50 sm:w-56"
+              className="h-12 border border-slate-200 bg-slate-50 px-4 text-sm font-medium text-slate-700 outline-none transition focus:border-blue-500 focus:bg-white sm:w-60"
             >
               {departments.map((department) => (
                 <option key={department} value={department}>
@@ -550,31 +573,28 @@ const Programs = () => {
         </div>
       </section>
 
-      
       <main className="mx-auto w-full max-w-7xl px-6 py-16 lg:px-8">
-        <div className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+        <div className="mb-9 flex flex-col justify-between gap-5 border-b border-slate-200 pb-7 md:flex-row md:items-end">
           <div>
-            <div className="mb-3 flex items-center gap-2">
-              <span className="h-1 w-8 rounded-full bg-blue-600" />
+            <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-[#155A96]">
+              Academic Programmes
+            </p>
 
-              <span className="text-sm font-bold uppercase tracking-wider text-blue-700">
-                Explore Programmes
-              </span>
-            </div>
-
-            <h2 className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
-              Find something that feels right.
+            <h2 className="text-3xl font-bold tracking-tight text-[#06264A] md:text-4xl">
+              Explore your options
             </h2>
 
-            <p className="mt-3 max-w-2xl text-base leading-7 text-slate-500">
-              Go beyond the programme name. Explore modules,
-              skills, career possibilities and what you can expect
-              from each academic path.
+            <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-500 md:text-base">
+              Compare programmes by their focus, skills, modules
+              and possible career opportunities.
             </p>
           </div>
 
-          <div className="rounded-full bg-slate-100 px-4 py-2 text-sm font-medium text-slate-500">
-            {filteredPrograms.length}{" "}
+          <div className="inline-flex w-fit items-center gap-2 border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-600">
+            <span className="font-bold text-[#06264A]">
+              {filteredPrograms.length}
+            </span>
+
             {filteredPrograms.length === 1
               ? "programme"
               : "programmes"}
@@ -582,120 +602,103 @@ const Programs = () => {
         </div>
 
         {filteredPrograms.length > 0 ? (
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {filteredPrograms.map((program) => (
-              <article
-                key={program.id}
-                className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-900/5"
-              >
-                {/* Card Header */}
-                <div className="relative bg-gradient-to-br from-blue-50 via-white to-indigo-50 p-6">
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-2xl shadow-sm ring-1 ring-slate-100">
-                      {program.icon}
-                    </div>
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {filteredPrograms.map((program) => {
+              const Icon = getProgramIcon(program.id);
 
-                    <span className="rounded-full bg-blue-100/80 px-3 py-1.5 text-xs font-bold text-blue-700">
-                      {program.shortName}
-                    </span>
-                  </div>
+              return (
+                <article
+                  key={program.id}
+                  className="group flex min-h-[510px] flex-col border border-slate-200 bg-white transition duration-200 hover:border-blue-300 hover:shadow-lg"
+                >
+                  <div className="border-b border-slate-200 px-6 py-6">
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-blue-100 bg-blue-50 text-[#155A96]">
+                        <Icon size={23} strokeWidth={1.8} />
+                      </div>
 
-                  <p className="mt-6 text-xs font-bold uppercase tracking-wide text-blue-600">
-                    {program.department}
-                  </p>
-
-                  <h3 className="mt-2 min-h-[60px] text-xl font-bold leading-7 text-slate-900">
-                    {program.name}
-                  </h3>
-                </div>
-
-               
-                <div className="flex flex-1 flex-col p-6">
-                  <div className="mb-5 flex flex-wrap gap-x-5 gap-y-2 text-xs font-medium text-slate-500">
-                    <span className="flex items-center gap-1.5">
-                      <Clock
-                        size={15}
-                        className="text-blue-600"
-                      />
-                      {program.duration}
-                    </span>
-
-                    <span className="flex items-center gap-1.5">
-                      <BookOpen
-                        size={15}
-                        className="text-blue-600"
-                      />
-                      {program.level}
-                    </span>
-                  </div>
-
-                  <p className="line-clamp-4 text-sm leading-6 text-slate-600">
-                    {program.description}
-                  </p>
-
-                  <div className="mt-5 rounded-xl bg-slate-50 p-4">
-                    <div className="flex items-center gap-2">
-                      <Layers3
-                        size={16}
-                        className="text-blue-600"
-                      />
-
-                      <span className="text-xs font-bold uppercase tracking-wide text-slate-500">
-                        What you'll study
+                      <span className="border border-blue-100 bg-blue-50 px-3 py-1.5 text-xs font-bold text-[#155A96]">
+                        {program.shortName}
                       </span>
                     </div>
 
-                    <p className="mt-2 text-sm font-medium text-slate-700">
-                      {program.modules.length} curriculum-informed
-                      modules
+                    <p className="mt-6 text-xs font-semibold uppercase tracking-wider text-[#155A96]">
+                      {program.department}
                     </p>
+
+                    <h3 className="mt-2 min-h-[64px] text-xl font-bold leading-7 text-[#06264A]">
+                      {program.name}
+                    </h3>
                   </div>
 
-                  <div className="mt-auto pt-7">
-                    <div className="flex gap-3">
+                  <div className="flex flex-1 flex-col px-6 py-6">
+                    <div className="mb-5 flex flex-wrap gap-x-5 gap-y-2 border-b border-slate-100 pb-5">
+                      <span className="flex items-center gap-2 text-xs font-medium text-slate-500">
+                        <Clock3
+                          size={15}
+                          className="text-[#155A96]"
+                        />
+                        {program.duration}
+                      </span>
+
+                      <span className="flex items-center gap-2 text-xs font-medium text-slate-500">
+                        <BookOpen
+                          size={15}
+                          className="text-[#155A96]"
+                        />
+                        {program.level}
+                      </span>
+                    </div>
+
+                    <p className="line-clamp-4 text-sm leading-6 text-slate-600">
+                      {program.description}
+                    </p>
+
+                    <div className="mt-6 border-l-2 border-blue-200 bg-slate-50 px-4 py-3">
+                      <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                        Programme structure
+                      </p>
+
+                      <p className="mt-1.5 text-sm font-semibold text-slate-800">
+                        {program.modules.length} curriculum-informed
+                        modules
+                      </p>
+                    </div>
+
+                    <div className="mt-auto pt-7">
                       <button
                         type="button"
                         onClick={() =>
                           setSelectedProgram(program)
                         }
-                        className="group/button flex flex-1 items-center justify-center gap-2 rounded-xl bg-blue-700 px-4 py-3 text-sm font-semibold text-white transition hover:bg-blue-800"
+                        className="flex w-full items-center justify-between border border-[#155A96] bg-[#155A96] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#0E4779]"
                       >
-                        Explore Programme
+                        <span>View Programme</span>
 
                         <ArrowRight
-                          size={16}
-                          className="transition-transform group-hover/button:translate-x-1"
+                          size={17}
+                          className="transition-transform group-hover:translate-x-0.5"
                         />
-                      </button>
-
-                      <button
-                        type="button"
-                        onClick={() =>
-                          setSelectedProgram(program)
-                        }
-                        className="rounded-xl border border-slate-200 px-4 py-3 text-sm font-semibold text-slate-600 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
-                      >
-                        Quick View
                       </button>
                     </div>
                   </div>
-                </div>
-              </article>
-            ))}
+                </article>
+              );
+            })}
           </div>
         ) : (
-          <div className="rounded-2xl border border-dashed border-slate-300 bg-white px-6 py-16 text-center">
-            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-slate-100">
-              <Search size={24} className="text-slate-400" />
+          <div className="border border-slate-200 bg-white px-6 py-16 text-center">
+            <div className="mx-auto flex h-14 w-14 items-center justify-center border border-slate-200 bg-slate-50 text-slate-400">
+              <Search size={23} />
             </div>
 
-            <h3 className="mt-5 text-xl font-bold text-slate-900">
-              We couldn't find that programme
+            <h3 className="mt-5 text-xl font-bold text-[#06264A]">
+              No programme found
             </h3>
 
             <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-slate-500">
-              Try another search or browse all of our available
-              programmes.
+              Try another search term or return to the full list
+              of programmes.
             </p>
 
             <button
@@ -704,7 +707,7 @@ const Programs = () => {
                 setSearchTerm("");
                 setSelectedDepartment("All");
               }}
-              className="mt-5 rounded-xl bg-blue-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-800"
+              className="mt-5 border border-[#155A96] bg-[#155A96] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#0E4779]"
             >
               Show All Programmes
             </button>
@@ -712,81 +715,85 @@ const Programs = () => {
         )}
       </main>
 
-     
       <section className="px-6 pb-16 lg:px-8">
-        <div className="mx-auto max-w-7xl overflow-hidden rounded-3xl bg-gradient-to-br from-blue-950 to-indigo-900">
-          <div className="relative px-7 py-12 md:px-12 md:py-14">
-            <div className="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-blue-400/10 blur-2xl" />
-
-            <div className="relative flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+        <div className="mx-auto max-w-7xl border border-blue-900 bg-[#06264A]">
+          <div className="px-7 py-10 md:px-10 md:py-12">
+            <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
               <div className="max-w-2xl">
-                <div className="mb-4 flex items-center gap-2 text-blue-300">
-                  <Sparkles size={18} />
+                <div className="mb-4 flex items-center gap-2 text-blue-200">
+                  <MessageCircle size={18} />
 
                   <span className="text-sm font-semibold">
                     UNI Life Guide
                   </span>
                 </div>
 
-                <h2 className="text-3xl font-bold leading-tight text-white md:text-4xl">
-                  Still wondering what to study?
+                <h2 className="text-2xl font-bold leading-tight text-white md:text-3xl">
+                  Still unsure what to study?
                 </h2>
 
-                <p className="mt-4 max-w-xl text-sm leading-7 text-blue-100 md:text-base">
-                  You don't have to figure everything out alone.
-                  Chat with UNI Life Guide and get help exploring
-                  programmes, careers and your next step.
+                <p className="mt-3 max-w-xl text-sm leading-6 text-blue-100 md:text-base">
+                  Speak with UNI Life Guide to explore programmes,
+                  possible careers and the next step that may be
+                  right for you.
                 </p>
               </div>
 
               <Link
                 to="/chat"
-                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 text-sm font-bold text-blue-900 shadow-lg transition hover:-translate-y-0.5 hover:bg-blue-50"
+                className="inline-flex shrink-0 items-center justify-center gap-2 border border-white/20 bg-white px-6 py-3 text-sm font-semibold text-[#06264A] transition hover:bg-blue-50"
               >
-                <MessageCircle size={18} />
+                <MessageCircle size={17} />
                 Chat with UNI
-                <ArrowRight size={17} />
+                <ArrowRight size={16} />
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-     
       {selectedProgram && (
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/70 p-3 backdrop-blur-sm sm:p-5"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-[#03182D]/75 p-3 backdrop-blur-sm sm:p-6"
           onClick={() => setSelectedProgram(null)}
           role="dialog"
           aria-modal="true"
           aria-labelledby="programme-modal-title"
         >
           <div
-            className="max-h-[94vh] w-full max-w-5xl overflow-y-auto rounded-3xl bg-white shadow-2xl"
+            className="max-h-[94vh] w-full max-w-5xl overflow-y-auto bg-white shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-           
-            <div className="relative overflow-hidden bg-gradient-to-br from-blue-950 via-blue-900 to-indigo-900 p-7 text-white md:p-9">
-              <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-blue-400/10 blur-3xl" />
-
-              <div className="relative flex items-start justify-between gap-6">
+            <div className="border-b border-slate-200 bg-[#06264A] px-6 py-7 text-white md:px-9 md:py-8">
+              <div className="flex items-start justify-between gap-6">
                 <div className="max-w-3xl">
-                  <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-2xl shadow-lg">
-                    {selectedProgram.icon}
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center border border-white/10 bg-white/10">
+                    {(() => {
+                      const Icon = getProgramIcon(
+                        selectedProgram.id
+                      );
+
+                      return (
+                        <Icon
+                          size={23}
+                          strokeWidth={1.8}
+                        />
+                      );
+                    })()}
                   </div>
 
-                  <p className="text-sm font-semibold text-blue-200">
+                  <p className="text-sm font-medium text-blue-200">
                     {selectedProgram.department}
                   </p>
 
                   <h2
                     id="programme-modal-title"
-                    className="mt-2 text-2xl font-bold leading-tight md:text-4xl"
+                    className="mt-2 text-2xl font-bold leading-tight md:text-3xl"
                   >
                     {selectedProgram.name}
                   </h2>
 
-                  <p className="mt-4 max-w-2xl text-sm leading-7 text-blue-100 md:text-base">
+                  <p className="mt-4 max-w-2xl text-sm leading-6 text-blue-100 md:text-base">
                     {selectedProgram.description}
                   </p>
                 </div>
@@ -794,33 +801,31 @@ const Programs = () => {
                 <button
                   type="button"
                   onClick={() => setSelectedProgram(null)}
-                  className="shrink-0 rounded-full bg-white/10 p-2.5 transition hover:bg-white/20"
+                  className="shrink-0 border border-white/10 bg-white/10 p-2.5 text-white transition hover:bg-white/20"
                   aria-label="Close programme details"
                 >
-                  <X size={21} />
+                  <X size={20} />
                 </button>
               </div>
             </div>
 
-            
-            <div className="p-6 md:p-9">
-             
-              <div className="grid gap-4 sm:grid-cols-3">
-                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <div className="px-6 py-7 md:px-9 md:py-9">
+              <div className="grid border border-slate-200 sm:grid-cols-3">
+                <div className="border-b border-slate-200 p-5 sm:border-b-0 sm:border-r">
                   <div className="flex items-center gap-2 text-slate-400">
-                    <Clock size={17} />
+                    <Clock3 size={17} />
 
                     <span className="text-xs font-bold uppercase tracking-wide">
                       Duration
                     </span>
                   </div>
 
-                  <p className="mt-2 text-lg font-bold text-slate-900">
+                  <p className="mt-2 text-base font-bold text-[#06264A]">
                     {selectedProgram.duration}
                   </p>
                 </div>
 
-                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                <div className="border-b border-slate-200 p-5 sm:border-b-0 sm:border-r">
                   <div className="flex items-center gap-2 text-slate-400">
                     <GraduationCap size={17} />
 
@@ -829,12 +834,12 @@ const Programs = () => {
                     </span>
                   </div>
 
-                  <p className="mt-2 text-lg font-bold text-slate-900">
+                  <p className="mt-2 text-base font-bold text-[#06264A]">
                     {selectedProgram.level}
                   </p>
                 </div>
 
-                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                <div className="p-5">
                   <div className="flex items-center gap-2 text-slate-400">
                     <BookOpen size={17} />
 
@@ -843,18 +848,17 @@ const Programs = () => {
                     </span>
                   </div>
 
-                  <p className="mt-2 text-lg font-bold text-slate-900">
+                  <p className="mt-2 text-base font-bold text-[#06264A]">
                     {selectedProgram.shortName}
                   </p>
                 </div>
               </div>
 
-             
-              <div className="mt-10">
-                <div className="mb-3 flex items-center gap-2">
-                  <span className="h-1 w-7 rounded-full bg-blue-600" />
+              <section className="mt-10">
+                <div className="mb-3 flex items-center gap-3">
+                  <span className="h-5 w-1 bg-[#155A96]" />
 
-                  <h3 className="text-xl font-bold text-slate-900">
+                  <h3 className="text-xl font-bold text-[#06264A]">
                     About the Programme
                   </h3>
                 </div>
@@ -862,19 +866,17 @@ const Programs = () => {
                 <p className="max-w-4xl text-sm leading-7 text-slate-600 md:text-base">
                   {selectedProgram.overview}
                 </p>
-              </div>
+              </section>
 
-              
-              <div className="mt-10">
+              <section className="mt-10">
                 <div className="mb-5 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
                   <div>
-                    <div className="flex items-center gap-2">
-                      <Layers3
-                        size={19}
-                        className="text-blue-600"
-                      />
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-9 w-9 items-center justify-center bg-blue-50 text-[#155A96]">
+                        <Layers3 size={18} />
+                      </div>
 
-                      <h3 className="text-xl font-bold text-slate-900">
+                      <h3 className="text-xl font-bold text-[#06264A]">
                         What You Will Study
                       </h3>
                     </div>
@@ -885,22 +887,22 @@ const Programs = () => {
                     </p>
                   </div>
 
-                  <span className="rounded-full bg-blue-50 px-3 py-1.5 text-xs font-semibold text-blue-700">
+                  <span className="w-fit border border-blue-100 bg-blue-50 px-3 py-1.5 text-xs font-semibold text-[#155A96]">
                     {selectedProgram.modules.length} modules
                   </span>
                 </div>
 
-                <div className="grid gap-3 md:grid-cols-2">
+                <div className="grid gap-2 md:grid-cols-2">
                   {selectedProgram.modules.map((module, index) => (
                     <div
                       key={`${module.name}-${index}`}
-                      className="group flex items-center gap-4 rounded-xl border border-slate-200 bg-white p-4 transition hover:border-blue-200 hover:bg-blue-50/50"
+                      className="flex items-center gap-4 border border-slate-200 bg-white px-4 py-3.5 transition hover:border-blue-200 hover:bg-blue-50/30"
                     >
-                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-xs font-bold text-blue-700 transition group-hover:bg-blue-100">
+                      <div className="flex h-8 w-8 shrink-0 items-center justify-center bg-slate-100 text-[11px] font-bold text-slate-500">
                         {String(index + 1).padStart(2, "0")}
                       </div>
 
-                      <div>
+                      <div className="min-w-0">
                         <p className="text-sm font-semibold text-slate-800">
                           {module.name}
                         </p>
@@ -913,7 +915,7 @@ const Programs = () => {
                   ))}
                 </div>
 
-                <div className="mt-4 rounded-xl border border-amber-100 bg-amber-50 p-4">
+                <div className="mt-4 border-l-2 border-amber-400 bg-amber-50 px-4 py-3">
                   <p className="text-xs leading-5 text-amber-800">
                     <strong>Note:</strong> Module names shown here
                     are curriculum-informed for the UNI Life Guide
@@ -923,30 +925,28 @@ const Programs = () => {
                     University.
                   </p>
                 </div>
-              </div>
+              </section>
 
-              
-              <div className="mt-10">
-                <div className="flex items-center gap-2">
-                  <CheckCircle2
-                    size={19}
-                    className="text-blue-600"
-                  />
+              <section className="mt-10">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-9 w-9 items-center justify-center bg-blue-50 text-[#155A96]">
+                    <CheckCircle2 size={18} />
+                  </div>
 
-                  <h3 className="text-xl font-bold text-slate-900">
+                  <h3 className="text-xl font-bold text-[#06264A]">
                     Skills You Can Develop
                   </h3>
                 </div>
 
-                <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="mt-5 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
                   {selectedProgram.skills.map((skill) => (
                     <div
                       key={skill}
-                      className="flex items-start gap-3 rounded-xl bg-slate-50 p-4"
+                      className="flex items-start gap-3 border border-slate-200 bg-white px-4 py-3.5"
                     >
                       <CheckCircle2
-                        size={17}
-                        className="mt-0.5 shrink-0 text-blue-600"
+                        size={16}
+                        className="mt-0.5 shrink-0 text-[#155A96]"
                       />
 
                       <span className="text-sm leading-6 text-slate-700">
@@ -955,73 +955,73 @@ const Programs = () => {
                     </div>
                   ))}
                 </div>
-              </div>
+              </section>
 
-             
-              <div className="mt-10">
-                <div className="flex items-center gap-2">
-                  <BriefcaseBusiness
-                    size={19}
-                    className="text-blue-600"
-                  />
+              <section className="mt-10">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-9 w-9 items-center justify-center bg-blue-50 text-[#155A96]">
+                    <BriefcaseBusiness size={18} />
+                  </div>
 
-                  <h3 className="text-xl font-bold text-slate-900">
+                  <h3 className="text-xl font-bold text-[#06264A]">
                     Where Could It Take You?
                   </h3>
                 </div>
 
-                <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="mt-5 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
                   {selectedProgram.careers.map((career) => (
                     <div
                       key={career}
-                      className="rounded-xl border border-slate-200 bg-white p-4 transition hover:border-blue-200 hover:shadow-sm"
+                      className="flex items-center gap-3 border border-slate-200 bg-white px-4 py-3.5"
                     >
-                      <div className="flex items-center gap-3">
-                        <span className="h-2.5 w-2.5 rounded-full bg-blue-600" />
+                      <span className="h-2 w-2 shrink-0 bg-[#155A96]" />
 
-                        <span className="text-sm font-semibold text-slate-700">
-                          {career}
-                        </span>
-                      </div>
+                      <span className="text-sm font-semibold text-slate-700">
+                        {career}
+                      </span>
                     </div>
                   ))}
                 </div>
-              </div>
+              </section>
 
-              
-              <div className="mt-10 rounded-2xl bg-gradient-to-r from-blue-50 to-indigo-50 p-5 md:p-6">
+              <section className="mt-10 border border-blue-100 bg-blue-50/60 px-5 py-5 md:px-6">
                 <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
                   <div>
-                    <h4 className="font-bold text-slate-900">
-                      Still not sure if this is for you?
+                    <h4 className="font-bold text-[#06264A]">
+                      Not sure if this programme is right for you?
                     </h4>
 
                     <p className="mt-1 text-sm leading-6 text-slate-500">
                       Ask UNI Life Guide about this programme,
-                      careers and whether it matches your interests.
+                      careers and how it may match your interests.
                     </p>
                   </div>
 
                   <Link
                     to="/chat"
                     onClick={() => setSelectedProgram(null)}
-                    className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-blue-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-800"
+                    className="inline-flex shrink-0 items-center justify-center gap-2 bg-[#155A96] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#0E4779]"
                   >
                     <MessageCircle size={17} />
                     Ask UNI
                     <ArrowRight size={16} />
                   </Link>
                 </div>
-              </div>
+              </section>
 
-              
-              <div className="mt-6 flex justify-end">
+              <div className="mt-7 flex items-center justify-between border-t border-slate-200 pt-6">
+                <div className="hidden items-center gap-2 text-xs text-slate-400 sm:flex">
+                  <Users size={14} />
+                  UNI Life Guide
+                </div>
+
                 <button
                   type="button"
                   onClick={() => setSelectedProgram(null)}
-                  className="rounded-xl border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-600 transition hover:bg-slate-50"
+                  className="ml-auto inline-flex items-center gap-2 border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-600 transition hover:bg-slate-50"
                 >
-                  Close Programme
+                  Close
+                  <ChevronRight size={15} />
                 </button>
               </div>
             </div>
@@ -1033,4 +1033,3 @@ const Programs = () => {
 };
 
 export default Programs;
-
