@@ -1,7 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Register from "./components/Register";
-import Signin from "./components/Signin";
+
 import About from "./pages/About";
 import Chat from "./pages/Chat";
 import Home from "./pages/Home";
@@ -209,8 +208,7 @@ const App: React.FC = () => {
       <Route path="/classifications" element={<Classifications />} />
       <Route path="/about" element={<About />} />
       <Route path="/chat" element={<Chat />} />
-      <Route path="/login" element={<Signin />} />
-      <Route path="/register" element={<Register />} />
+      
       <Route path="/programs" element={<RootLayout><Programs /></RootLayout>} />
 
       <Route path="/entrepreneurship" element={<Layout><EntrepreneurshipIntroduction /></Layout>} />
