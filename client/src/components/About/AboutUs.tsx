@@ -72,17 +72,16 @@ const AboutUs = () => {
 
   return (
     <div className="overflow-hidden bg-white">
-      {/* =========================================================
-          HERO
-      ========================================================== */}
+     
       <section className="relative overflow-hidden bg-[#031b3a]">
-        {/* Background atmosphere */}
+        
         <div className="absolute -right-40 -top-40 h-[520px] w-[520px] rounded-full bg-blue-500/10 blur-3xl" />
         <div className="absolute -bottom-48 -left-40 h-[500px] w-[500px] rounded-full bg-indigo-500/10 blur-3xl" />
 
         <div className="relative mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-24">
           <div className="grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr]">
-            {/* HERO CONTENT */}
+           
+           
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -147,17 +146,17 @@ const AboutUs = () => {
               </div>
             </motion.div>
 
-            {/* HERO IMAGE - CLEAN EDITORIAL STYLE */}
+            
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.9 }}
               className="relative"
             >
-              {/* Soft glow behind image */}
+              
               <div className="absolute -inset-8 bg-blue-500/10 blur-3xl" />
 
-              {/* Image */}
+             
               <div className="relative h-[380px] overflow-hidden sm:h-[480px] lg:h-[570px]">
                 <img
                   src={uni}
@@ -165,10 +164,10 @@ const AboutUs = () => {
                   className="h-full w-full object-cover object-center"
                 />
 
-                {/* Dark gradient for professional depth */}
+                
                 <div className="absolute inset-0 bg-gradient-to-t from-[#031b3a]/70 via-transparent to-transparent" />
 
-                {/* Minimal image caption */}
+              
                 <div className="absolute bottom-0 left-0 right-0 p-7 sm:p-9">
                   <div className="flex items-center gap-3">
                     <div className="h-px w-10 bg-blue-300" />
@@ -184,16 +183,14 @@ const AboutUs = () => {
                 </div>
               </div>
 
-              {/* Small decorative line */}
+             
               <div className="absolute -bottom-4 right-8 h-1 w-24 bg-blue-400 sm:right-12" />
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* =========================================================
-          INTRODUCTION
-      ========================================================== */}
+   
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
           <div className="grid gap-14 lg:grid-cols-[0.8fr_1.2fr]">
@@ -228,7 +225,7 @@ const AboutUs = () => {
               </div>
             </motion.div>
 
-            {/* RIGHT */}
+           
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -262,9 +259,7 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* =========================================================
-          JOURNEY
-      ========================================================== */}
+   
       <section className="bg-[#f6f9fc]">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
           <div className="max-w-2xl">
@@ -323,13 +318,11 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* =========================================================
-          WHY UNI LIFE GUIDE
-      ========================================================== */}
+     
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
           <div className="grid gap-14 lg:grid-cols-[0.75fr_1.25fr]">
-            {/* HEADING */}
+           
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -354,7 +347,7 @@ const AboutUs = () => {
               </p>
             </motion.div>
 
-            {/* FEATURES - SIMPLE LIST */}
+          
             <div>
               {features.map((feature, index) => (
                 <motion.div
@@ -395,14 +388,11 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* =========================================================
-          DMI FEATURE SECTION
-          IMAGE IS NOW FULL VISUAL - NO CARD
-      ========================================================== */}
+     
       <section className="bg-[#f3f7fc]">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
           <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
-            {/* PROFESSIONAL IMAGE */}
+           
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -410,7 +400,7 @@ const AboutUs = () => {
               transition={{ duration: 0.7 }}
               className="relative"
             >
-              {/* Decorative vertical accent */}
+             
               <div className="absolute -left-3 top-10 bottom-10 hidden w-1 bg-blue-600 lg:block" />
 
               <div className="relative h-[430px] overflow-hidden sm:h-[540px] lg:h-[620px]">
@@ -420,10 +410,10 @@ const AboutUs = () => {
                   className="h-full w-full object-cover object-center transition duration-700 hover:scale-[1.02]"
                 />
 
-                {/* Gradient only, no card */}
+                
                 <div className="absolute inset-0 bg-gradient-to-t from-[#031b3a]/70 via-transparent to-transparent" />
 
-                {/* Minimal caption */}
+               
                 <div className="absolute bottom-0 left-0 right-0 p-7 sm:p-9">
                   <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue-200">
                     DMI St. Eugene University
@@ -437,7 +427,7 @@ const AboutUs = () => {
               </div>
             </motion.div>
 
-            {/* CONTENT */}
+           
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -469,7 +459,7 @@ const AboutUs = () => {
                 step.
               </p>
 
-              {/* Benefits as clean text rows */}
+             
               <div className="mt-9 space-y-4">
                 {benefits.map((item) => (
                   <div
@@ -492,9 +482,7 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* =========================================================
-          VISION
-      ========================================================== */}
+     
       <section className="relative overflow-hidden bg-[#031b3a]">
         <div className="absolute -right-40 -top-40 h-[450px] w-[450px] rounded-full bg-blue-500/10 blur-3xl" />
 
@@ -531,9 +519,7 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* =========================================================
-          FINAL CTA
-      ========================================================== */}
+     
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
           <div className="flex flex-col gap-8 border-t border-slate-200 pt-10 md:flex-row md:items-center md:justify-between">

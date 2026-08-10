@@ -446,12 +446,9 @@ const Programs = () => {
 
   return (
     <div className="min-h-screen w-full bg-white">
-      {/* =====================================================
-          BLUE HERO
-          Matches the About Us page structure
-      ====================================================== */}
+      
       <section className="relative w-full overflow-hidden bg-[#031b3a]">
-        {/* Background atmosphere */}
+        
         <div className="pointer-events-none absolute -right-40 -top-40 h-[520px] w-[500px] rounded-full bg-blue-500/10 blur-3xl" />
 
         <div className="pointer-events-none absolute -bottom-48 -left-40 h-[520px] w-[500px] rounded-full bg-indigo-500/10 blur-3xl" />
@@ -515,9 +512,7 @@ const Programs = () => {
         </div>
       </section>
 
-      {/* =====================================================
-          SEARCH / FILTER
-      ====================================================== */}
+     
       <section className="relative z-10 mx-auto -mt-7 w-full max-w-5xl px-5 lg:px-8">
         <div className="rounded-2xl border border-slate-200 bg-white p-3 shadow-lg shadow-slate-200/50">
           <div className="flex flex-col gap-3 sm:flex-row">
@@ -555,9 +550,7 @@ const Programs = () => {
         </div>
       </section>
 
-      {/* =====================================================
-          PROGRAMMES
-      ====================================================== */}
+      
       <main className="mx-auto w-full max-w-7xl px-6 py-16 lg:px-8">
         <div className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
           <div>
@@ -616,7 +609,7 @@ const Programs = () => {
                   </h3>
                 </div>
 
-                {/* Card Content */}
+               
                 <div className="flex flex-1 flex-col p-6">
                   <div className="mb-5 flex flex-wrap gap-x-5 gap-y-2 text-xs font-medium text-slate-500">
                     <span className="flex items-center gap-1.5">
@@ -719,9 +712,7 @@ const Programs = () => {
         )}
       </main>
 
-      {/* =====================================================
-          MARKETING CTA
-      ====================================================== */}
+     
       <section className="px-6 pb-16 lg:px-8">
         <div className="mx-auto max-w-7xl overflow-hidden rounded-3xl bg-gradient-to-br from-blue-950 to-indigo-900">
           <div className="relative px-7 py-12 md:px-12 md:py-14">
@@ -761,9 +752,7 @@ const Programs = () => {
         </div>
       </section>
 
-      {/* =====================================================
-          DETAILED PROGRAMME MODAL
-      ====================================================== */}
+     
       {selectedProgram && (
         <div
           className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/70 p-3 backdrop-blur-sm sm:p-5"
@@ -776,7 +765,7 @@ const Programs = () => {
             className="max-h-[94vh] w-full max-w-5xl overflow-y-auto rounded-3xl bg-white shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Modal Header */}
+           
             <div className="relative overflow-hidden bg-gradient-to-br from-blue-950 via-blue-900 to-indigo-900 p-7 text-white md:p-9">
               <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-blue-400/10 blur-3xl" />
 
@@ -813,9 +802,9 @@ const Programs = () => {
               </div>
             </div>
 
-            {/* Modal Content */}
+            
             <div className="p-6 md:p-9">
-              {/* Programme Summary */}
+             
               <div className="grid gap-4 sm:grid-cols-3">
                 <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
                   <div className="flex items-center gap-2 text-slate-400">
@@ -860,7 +849,7 @@ const Programs = () => {
                 </div>
               </div>
 
-              {/* About */}
+             
               <div className="mt-10">
                 <div className="mb-3 flex items-center gap-2">
                   <span className="h-1 w-7 rounded-full bg-blue-600" />
@@ -875,7 +864,7 @@ const Programs = () => {
                 </p>
               </div>
 
-              {/* Modules */}
+              
               <div className="mt-10">
                 <div className="mb-5 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
                   <div>
@@ -936,7 +925,7 @@ const Programs = () => {
                 </div>
               </div>
 
-              {/* Skills */}
+              
               <div className="mt-10">
                 <div className="flex items-center gap-2">
                   <CheckCircle2
@@ -968,7 +957,7 @@ const Programs = () => {
                 </div>
               </div>
 
-              {/* Careers */}
+             
               <div className="mt-10">
                 <div className="flex items-center gap-2">
                   <BriefcaseBusiness
@@ -999,7 +988,7 @@ const Programs = () => {
                 </div>
               </div>
 
-              {/* Bottom CTA */}
+              
               <div className="mt-10 rounded-2xl bg-gradient-to-r from-blue-50 to-indigo-50 p-5 md:p-6">
                 <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
                   <div>
@@ -1025,7 +1014,7 @@ const Programs = () => {
                 </div>
               </div>
 
-              {/* Close */}
+              
               <div className="mt-6 flex justify-end">
                 <button
                   type="button"

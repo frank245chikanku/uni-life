@@ -16,7 +16,7 @@ const Navbar = () => {
     setMenuOpen(false);
   };
 
-  // DMI-St. Eugene University Admissions WhatsApp numbers
+ 
   const admissionsNumber1 = "260766955892";
   const admissionsNumber2 = "260770031271";
 
@@ -36,10 +36,10 @@ const Navbar = () => {
   return (
     <header className="relative z-50 w-full bg-[#071b4a] text-white shadow-lg">
 
-      {/* ================= MAIN NAVBAR ================= */}
+      
       <nav className="mx-auto flex h-[78px] max-w-7xl items-center justify-between px-6 lg:px-10">
 
-        {/* ================= LOGO ================= */}
+        
         <Link
           to="/"
           onClick={closeMenu}
@@ -99,7 +99,7 @@ const Navbar = () => {
         </div>
 
 
-        {/* ================= DESKTOP WHATSAPP ================= */}
+        {/*DESKTOP WHATSAPP */}
         <div className="relative hidden md:block">
 
           <button
@@ -127,7 +127,7 @@ const Navbar = () => {
           </button>
 
 
-          {/* ================= WHATSAPP OPTIONS ================= */}
+          {/*WHATSAPP OPTIONS */}
           {showWhatsAppOptions && (
             <div className="absolute right-0 top-14 w-[310px] overflow-hidden rounded-2xl border border-gray-200 bg-white p-4 text-[#101d4f] shadow-2xl">
 
@@ -238,7 +238,7 @@ const Navbar = () => {
         </div>
 
 
-        {/* ================= MOBILE MENU BUTTON ================= */}
+        {/* MOBILE MENU BUTTON */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="rounded-lg p-2 transition hover:bg-white/10 md:hidden"
@@ -254,7 +254,7 @@ const Navbar = () => {
       </nav>
 
 
-      {/* ================= MOBILE NAVIGATION ================= */}
+      
       {menuOpen && (
         <div className="border-t border-white/10 bg-[#0b2458] px-6 py-5 md:hidden">
 
@@ -311,7 +311,7 @@ const Navbar = () => {
           </div>
 
 
-          {/* ================= MOBILE WHATSAPP ================= */}
+          {/*  MOBILE WHATSAPP  */}
           <div className="mt-4 border-t border-white/10 pt-4">
 
             <button
