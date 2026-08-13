@@ -16,7 +16,7 @@ const Navbar = () => {
     setMenuOpen(false);
   };
 
- 
+
   const admissionsNumber1 = "260766955892";
   const admissionsNumber2 = "260770031271";
 
@@ -36,10 +36,10 @@ const Navbar = () => {
   return (
     <header className="relative z-50 w-full bg-[#071b4a] text-white shadow-lg">
 
-      
+
       <nav className="mx-auto flex h-[78px] max-w-7xl items-center justify-between px-6 lg:px-10">
 
-        
+
         <Link
           to="/"
           onClick={closeMenu}
@@ -51,7 +51,7 @@ const Navbar = () => {
         </Link>
 
 
-        {/* ================= DESKTOP NAVIGATION ================= */}
+        {/*DESKTOP NAVIGATION */}
         <div className="hidden items-center gap-7 md:flex">
 
           <Link
@@ -99,7 +99,6 @@ const Navbar = () => {
         </div>
 
 
-        {/*DESKTOP WHATSAPP */}
         <div className="relative hidden md:block">
 
           <button
@@ -119,15 +118,13 @@ const Navbar = () => {
 
             <ChevronRight
               size={16}
-              className={`transition-transform duration-200 ${
-                showWhatsAppOptions ? "rotate-90" : ""
-              }`}
+              className={`transition-transform duration-200 ${showWhatsAppOptions ? "rotate-90" : ""
+                }`}
             />
 
           </button>
 
 
-          {/*WHATSAPP OPTIONS */}
           {showWhatsAppOptions && (
             <div className="absolute right-0 top-14 w-[310px] overflow-hidden rounded-2xl border border-gray-200 bg-white p-4 text-[#101d4f] shadow-2xl">
 
@@ -254,7 +251,7 @@ const Navbar = () => {
       </nav>
 
 
-      
+
       {menuOpen && (
         <div className="border-t border-white/10 bg-[#0b2458] px-6 py-5 md:hidden">
 
@@ -328,9 +325,8 @@ const Navbar = () => {
 
               <ChevronRight
                 size={17}
-                className={`transition-transform ${
-                  showWhatsAppOptions ? "rotate-90" : ""
-                }`}
+                className={`transition-transform ${showWhatsAppOptions ? "rotate-90" : ""
+                  }`}
               />
 
             </button>

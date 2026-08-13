@@ -57,14 +57,12 @@ const Dashboard = () => {
     hour < 12
       ? "Good morning"
       : hour < 18
-      ? "Good afternoon"
-      : "Good evening";
+        ? "Good afternoon"
+        : "Good evening";
 
   const firstName = user?.username?.split(" ")[0] || "Student";
 
-  /*
-   * QUICK START CARDS
-   */
+
   const quickStarts = [
     {
       label: "Career Guidance",
@@ -135,9 +133,7 @@ const Dashboard = () => {
     },
   ];
 
-  /*
-   * EXPLORE FEATURES
-   */
+
   const exploreFeatures = [
     {
       title: "Career Guidance",
@@ -189,9 +185,7 @@ const Dashboard = () => {
     <div className="min-h-screen overflow-hidden bg-[#F7F9FC]">
       <main className="mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
 
-        {/* =========================================================
-            HERO
-        ========================================================= */}
+
         <section className="overflow-hidden rounded-[28px] border border-slate-200/80 bg-white shadow-sm">
           <div className="grid lg:grid-cols-[1.6fr_0.8fr]">
 
@@ -202,10 +196,10 @@ const Dashboard = () => {
                 backgroundImage: `url(${dashboardBg})`,
               }}
             >
-              {/* Overlay */}
+
               <div className="absolute inset-0 bg-gradient-to-br from-[#031A35]/95 via-[#06264A]/85 to-[#155A96]/70" />
 
-              {/* Decorative Glow */}
+
               <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-blue-400/20 blur-3xl" />
               <div className="absolute -bottom-24 -left-20 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl" />
 
@@ -232,7 +226,7 @@ const Dashboard = () => {
                     </div>
                   </div>
 
-                  {/* Greeting */}
+
                   <div className="mt-12 max-w-2xl">
                     <p className="text-sm font-semibold text-blue-200">
                       {greeting}
@@ -249,7 +243,7 @@ const Dashboard = () => {
                     </p>
                   </div>
 
-                  {/* Hero Buttons */}
+
                   <div className="mt-8 flex flex-wrap gap-3">
                     <Link
                       to="/Classifications"
@@ -281,7 +275,7 @@ const Dashboard = () => {
                   </div>
                 </div>
 
-                {/* Hero Bottom */}
+
                 <div className="mt-10 border-t border-white/10 pt-5">
                   <div className="flex flex-wrap gap-x-6 gap-y-3">
 
@@ -320,7 +314,7 @@ const Dashboard = () => {
               </div>
             </div>
 
-            {/* DAILY TIP */}
+
             <div className="flex flex-col justify-between bg-white p-7 sm:p-8 lg:p-9">
               <div>
 
@@ -355,9 +349,6 @@ const Dashboard = () => {
           </div>
         </section>
 
-        {/* =========================================================
-            QUICK START
-        ========================================================= */}
         <section className="mt-12">
 
           <div className="mb-6 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
@@ -376,7 +367,7 @@ const Dashboard = () => {
             </p>
           </div>
 
-          {/* MAIN DASHBOARD CARDS */}
+
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
 
             {quickStarts.map((item) => {
@@ -388,15 +379,14 @@ const Dashboard = () => {
                   to={item.to}
                   className="group relative overflow-hidden rounded-[22px] border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-300 hover:shadow-xl"
                 >
-                  {/* Gradient top line */}
+
                   <div
                     className={`absolute left-0 right-0 top-0 h-1 bg-gradient-to-r ${item.gradient}`}
                   />
 
-                  {/* Decorative glow */}
                   <div className="pointer-events-none absolute -right-12 -top-12 h-28 w-28 rounded-full bg-slate-100 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100" />
 
-                  {/* Header */}
+
                   <div className="relative flex items-start justify-between">
 
                     <div
@@ -424,7 +414,7 @@ const Dashboard = () => {
                     </div>
                   </div>
 
-                  {/* Content */}
+
                   <div className="relative mt-6">
 
                     <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-slate-400">
@@ -463,7 +453,7 @@ const Dashboard = () => {
 
                   </div>
 
-                  {/* Bottom */}
+
                   <div className="relative mt-5 flex items-center justify-between border-t border-slate-100 pt-4">
 
                     <span className="text-xs font-semibold text-slate-400 transition-colors group-hover:text-[#155A96]">
@@ -483,9 +473,7 @@ const Dashboard = () => {
           </div>
         </section>
 
-        {/* =========================================================
-            EXPLORE FEATURES
-        ========================================================= */}
+
         <section className="mt-14">
 
           <div className="mb-6">
@@ -514,7 +502,7 @@ const Dashboard = () => {
                   to={item.to}
                   className="group relative overflow-hidden rounded-[22px] border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-xl"
                 >
-                  {/* Top gradient */}
+
                   <div
                     className={`absolute left-0 right-0 top-0 h-1 bg-gradient-to-r ${item.gradient}`}
                   />
@@ -569,12 +557,9 @@ const Dashboard = () => {
           </div>
         </section>
 
-        {/* =========================================================
-            NEXT STEP + ASK UNI
-        ========================================================= */}
         <section className="mt-14 grid gap-5 lg:grid-cols-[1fr_360px]">
 
-          {/* NEXT STEP */}
+
           <div className="rounded-[22px] border border-slate-200 bg-white p-7 shadow-sm md:p-8">
 
             <div className="flex items-start gap-4">
@@ -690,9 +675,6 @@ const Dashboard = () => {
 
         </section>
 
-        {/* =========================================================
-            FINAL MESSAGE
-        ========================================================= */}
         <section className="mt-10 rounded-[22px] border border-slate-200 bg-white p-6 shadow-sm md:p-8">
 
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
@@ -731,7 +713,7 @@ const Dashboard = () => {
           </div>
         </section>
 
-        {/* FOOTER */}
+
         <div className="mt-8 flex items-center justify-center gap-2 pb-6 text-xs text-slate-400">
           <Clock3 size={13} />
           UNI Life Guide · Your academic and career companion

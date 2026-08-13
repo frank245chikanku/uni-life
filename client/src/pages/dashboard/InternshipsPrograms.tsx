@@ -87,7 +87,7 @@ function InternshipsPrograms() {
     <section className="min-h-screen bg-gradient-to-br from-blue-100 via-purple-100 to-blue-50 px-6 py-12">
       <div className="mx-auto max-w-6xl space-y-14">
 
-        {/* ================= HEADER ================= */}
+
         <header className="text-center">
           <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-white shadow-md">
             <BriefcaseBusiness className="h-7 w-7 text-purple-600" />
@@ -106,7 +106,6 @@ function InternshipsPrograms() {
           </p>
         </header>
 
-        {/* ================= INTERNSHIP LISTINGS ================= */}
         <div>
           <div className="mb-8 text-center">
             <h2 className="mb-2 text-3xl font-bold text-gray-800">
@@ -121,7 +120,6 @@ function InternshipsPrograms() {
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
 
-            {/* ================= STATIC INTERNSHIPS ================= */}
             {internships.map((item, index) => (
               <a
                 key={index}
@@ -174,7 +172,7 @@ function InternshipsPrograms() {
                   </div>
                 </div>
 
-                {/* Bottom Action */}
+
                 <div className="mt-auto pt-6">
                   <span className="inline-flex items-center gap-2 text-sm font-semibold text-purple-600 group-hover:text-white">
                     View Opportunity
@@ -184,7 +182,6 @@ function InternshipsPrograms() {
               </a>
             ))}
 
-            {/* ================= DYNAMIC INTERNSHIPS ================= */}
             {!loading &&
               internship.map((item, index) => (
                 <div
@@ -202,17 +199,17 @@ function InternshipsPrograms() {
                     )}
                   </div>
 
-                  {/* Label */}
+
                   <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-purple-600 group-hover:text-purple-100">
                     Internship Opportunity
                   </p>
 
-                  {/* Title */}
+
                   <h3 className="mb-4 text-xl font-bold leading-snug text-gray-800 group-hover:text-white">
                     {item.title}
                   </h3>
 
-                  {/* Information */}
+
                   <div className="space-y-3 text-sm text-gray-600 group-hover:text-purple-50">
                     {item.description && (
                       <div className="flex items-start gap-2">
@@ -254,7 +251,7 @@ function InternshipsPrograms() {
                     )}
                   </div>
 
-                  {/* Bottom Action */}
+
                   {item.link && (
                     <div className="mt-auto pt-6">
                       <a
@@ -272,7 +269,7 @@ function InternshipsPrograms() {
               ))}
           </div>
 
-          {/* Loading */}
+
           {loading && (
             <div className="py-8 text-center">
               <p className="text-lg font-medium text-purple-700">
@@ -281,7 +278,7 @@ function InternshipsPrograms() {
             </div>
           )}
 
-          {/* Empty State */}
+
           {!loading && internship.length === 0 && (
             <p className="mt-6 text-center text-sm text-gray-500">
               More opportunities will appear here as they become available.
@@ -289,7 +286,7 @@ function InternshipsPrograms() {
           )}
         </div>
 
-        {/* ================= PREPARE TO APPLY ================= */}
+
         <div>
           <div className="mb-8 text-center">
             <h2 className="mb-2 text-3xl font-bold text-gray-800">
@@ -313,7 +310,7 @@ function InternshipsPrograms() {
                   rel="noopener noreferrer"
                   className="group flex min-h-[290px] flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:bg-indigo-600 hover:shadow-2xl"
                 >
-                  {/* Icon */}
+
                   <div className="mb-5 flex items-center justify-between">
                     <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-100 transition-colors duration-300 group-hover:bg-white/20">
                       <Icon className="h-6 w-6 text-indigo-600 group-hover:text-white" />
@@ -322,17 +319,16 @@ function InternshipsPrograms() {
                     <ExternalLink className="h-5 w-5 text-gray-400 group-hover:text-white" />
                   </div>
 
-                  {/* Title */}
+
                   <h3 className="mb-3 text-xl font-bold text-gray-800 group-hover:text-white">
                     {resource.title}
                   </h3>
 
-                  {/* Description */}
                   <p className="mb-5 text-sm leading-6 text-gray-600 group-hover:text-indigo-50">
                     {resource.description}
                   </p>
 
-                  {/* Impact */}
+
                   <div className="mb-4">
                     <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-indigo-600 group-hover:text-indigo-100">
                       Why this matters
@@ -343,7 +339,7 @@ function InternshipsPrograms() {
                     </p>
                   </div>
 
-                  {/* Next Step */}
+
                   <div className="mt-auto border-t border-gray-100 pt-4 group-hover:border-indigo-400">
                     <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-500 group-hover:text-indigo-100">
                       Next Step

@@ -69,9 +69,7 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-[680px] w-full overflow-hidden bg-[#06174f]">
-      {/* =========================================================
-          BACKGROUND
-      ========================================================== */}
+
 
       <div className="absolute inset-0">
         <img
@@ -81,39 +79,35 @@ const Hero = () => {
         />
       </div>
 
-      {/* Dark cinematic overlay */}
+
       <div className="absolute inset-0 bg-[#06174f]/75" />
 
-      {/* Left-focused gradient */}
+
       <div className="absolute inset-0 bg-gradient-to-r from-[#04143f] via-[#092267]/90 to-[#092267]/35" />
 
-      {/* Bottom fade */}
+
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#06174f] to-transparent" />
 
-      {/* Decorative glow */}
+
       <div className="pointer-events-none absolute -left-32 top-20 h-72 w-72 rounded-full bg-blue-500/20 blur-3xl" />
 
       <div className="pointer-events-none absolute bottom-0 right-0 h-80 w-80 rounded-full bg-purple-500/20 blur-3xl" />
 
-      {/* =========================================================
-          MAIN CONTENT
-      ========================================================== */}
+
 
       <div className="relative z-10 mx-auto max-w-7xl px-5 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
         <div className="grid items-center gap-12 lg:grid-cols-[1fr_390px] lg:gap-16">
-          {/* =====================================================
-              LEFT SIDE
-          ====================================================== */}
+
 
           <div className="max-w-2xl">
-            {/* Badge */}
+
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[10px] font-bold tracking-[0.18em] text-blue-100 shadow-lg backdrop-blur-md sm:text-xs">
               <Sparkles className="h-3.5 w-3.5 text-blue-300" />
 
               DMI-ST. EUGENE UNIVERSITY
             </div>
 
-            {/* Heading */}
+
             <h1 className="text-4xl font-black leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
               Your future
               <br />
@@ -123,13 +117,13 @@ const Hero = () => {
               </span>
             </h1>
 
-            {/* Description */}
+
             <p className="mt-6 max-w-xl text-sm leading-7 text-blue-50/90 sm:text-base sm:leading-8 lg:text-lg">
               Discover programmes, explore career possibilities and understand
               where your education can take you — all in one place.
             </p>
 
-            {/* CTA */}
+
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
                 to="/programs"
@@ -152,9 +146,7 @@ const Hero = () => {
               </Link>
             </div>
 
-            {/* =================================================
-                QUICK TRUST POINTS
-            ================================================== */}
+
 
             <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs text-blue-100/80">
               <div className="flex items-center gap-2">
@@ -187,17 +179,15 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* =====================================================
-              RIGHT SIDE — UNIQUE CHANGING DISCOVERY PANEL
-          ====================================================== */}
+
 
           <div className="relative mx-auto w-full max-w-[390px] lg:mx-0 lg:ml-auto">
-            {/* Floating glow */}
+
             <div className="absolute -inset-4 rounded-[2rem] bg-blue-500/20 blur-2xl" />
 
-            {/* Main visual card */}
+
             <div className="group relative overflow-hidden rounded-[1.75rem] border border-white/20 bg-white/10 p-2 shadow-2xl backdrop-blur-md">
-              {/* Image */}
+
               <div className="relative h-[390px] overflow-hidden rounded-[1.35rem] sm:h-[430px]">
                 <img
                   key={slide.image}
@@ -206,10 +196,10 @@ const Hero = () => {
                   className="h-full w-full object-cover transition-all duration-700 group-hover:scale-105"
                 />
 
-                {/* Image overlay */}
+
                 <div className="absolute inset-0 bg-gradient-to-t from-[#06174f] via-[#06174f]/20 to-transparent" />
 
-                {/* Top floating label */}
+
                 <div className="absolute left-4 top-4 flex items-center gap-2 rounded-full border border-white/20 bg-black/20 px-3 py-1.5 backdrop-blur-md">
                   <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
 
@@ -218,12 +208,12 @@ const Hero = () => {
                   </span>
                 </div>
 
-                {/* Slide number */}
+
                 <div className="absolute right-4 top-4 rounded-full bg-white/15 px-3 py-1.5 text-[9px] font-bold text-white backdrop-blur-md">
                   0{activeSlide + 1} / 0{heroSlides.length}
                 </div>
 
-                {/* Bottom content */}
+
                 <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
                   <p className="mb-2 text-[9px] font-bold tracking-[0.2em] text-blue-200">
                     {slide.eyebrow}
@@ -237,25 +227,24 @@ const Hero = () => {
                     {slide.description}
                   </p>
 
-                  {/* Dots */}
+
                   <div className="mt-5 flex items-center gap-2">
                     {heroSlides.map((_, index) => (
                       <button
                         key={index}
                         onClick={() => setActiveSlide(index)}
                         aria-label={`View slide ${index + 1}`}
-                        className={`h-1.5 rounded-full transition-all duration-300 ${
-                          activeSlide === index
+                        className={`h-1.5 rounded-full transition-all duration-300 ${activeSlide === index
                             ? "w-7 bg-white"
                             : "w-1.5 bg-white/40 hover:bg-white/70"
-                        }`}
+                          }`}
                       />
                     ))}
                   </div>
                 </div>
               </div>
 
-              {/* Floating bottom navigation */}
+
               <div className="flex items-center justify-between px-3 py-3">
                 <div className="flex items-center gap-2">
                   <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white">
@@ -282,7 +271,6 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* Small floating card */}
             <div className="absolute -bottom-5 -left-4 hidden rounded-xl border border-white/20 bg-white p-3 shadow-xl sm:block">
               <div className="flex items-center gap-3">
                 <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-50">
@@ -303,9 +291,7 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* =======================================================
-            BOTTOM DISCOVERY BAR
-        ======================================================== */}
+
 
         <div className="mt-14 hidden border-t border-white/10 pt-5 md:block">
           <div className="flex items-center justify-between">
