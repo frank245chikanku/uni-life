@@ -6,7 +6,7 @@ import Chat from "./pages/Chat";
 import Home from "./pages/Home";
 import Programs from "./pages/Programs";
 import Query from "./pages/Query";
-
+import SendQuery from "./pages/queries/SendQuery";
 
 
 
@@ -201,17 +201,18 @@ import InternshipsPrograms from "./pages/dashboard/InternshipsPrograms";
 
 
 const App: React.FC = () => {
-  
+
   return (
-    
+
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/classifications" element={<Classifications />} />
       <Route path="/about" element={<About />} />
       <Route path="/chat" element={<Chat />} />
       <Route path="/query" element={<RootLayout><Query /></RootLayout>} />
+      <Route path="/query/send" element={<RootLayout><SendQuery /></RootLayout>} />
 
-      
+
       <Route path="/programs" element={<RootLayout><Programs /></RootLayout>} />
 
       <Route path="/entrepreneurship" element={<Layout><EntrepreneurshipIntroduction /></Layout>} />
