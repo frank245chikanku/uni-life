@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Chat from "./pages/Chat";
 import Home from "./pages/Home";
 import Programs from "./pages/Programs";
+import Query from "./pages/Query";
 
 
 
@@ -208,6 +209,8 @@ const App: React.FC = () => {
       <Route path="/classifications" element={<Classifications />} />
       <Route path="/about" element={<About />} />
       <Route path="/chat" element={<Chat />} />
+      <Route path="/query" element={<RootLayout><Query /></RootLayout>} />
+
       
       <Route path="/programs" element={<RootLayout><Programs /></RootLayout>} />
 
