@@ -17,71 +17,69 @@ const categoryData = [
     image: academic,
     altText: "African university student studying",
     label: "Academic Integrity",
+    description: "Guidance on honesty, assignments and academic rules.",
   },
   {
     to: "/peer",
     image: peer,
     altText: "African students experiencing peer pressure",
     label: "Peer Pressure",
+    description: "Help with social pressure and making good choices.",
   },
   {
     to: "/social",
     image: social,
-    altText:
-      "African young people participating in community activities",
+    altText: "African young people participating in community activities",
     label: "Social Responsibility",
+    description: "Learn about responsible behaviour and helping others.",
   },
   {
     to: "/financial",
     image: financial,
     altText: "African student managing personal finances",
     label: "Financial Strain",
+    description: "Get guidance on financial challenges.",
   },
   {
     to: "/career",
     image: career,
     altText: "African student thinking about career opportunities",
     label: "Career Uncertainty",
+    description: "Explore careers, skills and opportunities after university.",
   },
   {
     to: "/discrimination",
     image: discrimination,
     altText: "African students from different backgrounds",
     label: "Discrimination & Bias",
+    description: "Understand unfair treatment and where to get support.",
   },
   {
     to: "/entrepreneurship",
     image: entrepreneurship,
-    altText:
-      "African young people working on an entrepreneurial idea",
+    altText: "African young people working on an entrepreneurial idea",
     label: "Entrepreneurship Uncertainty",
+    description: "Explore business ideas and how to get started.",
   },
   {
     to: "/adjustment",
     image: adjustment,
-    altText:
-      "African university student adapting to independent life",
+    altText: " adapting to independent life",
     label: "Adjustment to Independence",
+    description: "Get help adapting to independent life.",
   },
 ];
 
 const Categories = () => {
   return (
     <section className="relative overflow-hidden bg-[#0b172a] px-4 py-14 sm:px-6 lg:px-8">
-
-      {/* =====================================================
-          BACKGROUND DETAILS
-      ===================================================== */}
-
+  
       <div className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-orange-500/10 blur-3xl" />
-
       <div className="pointer-events-none absolute -bottom-40 -left-32 h-96 w-96 rounded-full bg-blue-500/10 blur-3xl" />
 
       <div className="relative mx-auto max-w-6xl">
-
-
+      
         <div className="mb-9 text-center">
-
           <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-orange-500">
             Student Life Guide
           </p>
@@ -91,18 +89,13 @@ const Categories = () => {
           </h2>
 
           <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-slate-300">
-            Explore the areas below and find guidance,
-            information and practical support for your
-            university journey.
+            Explore the areas below and find guidance, information and
+            practical support for your university journey.
           </p>
-
         </div>
 
-
-
-
+        {/* Categories */}
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-
           {categoryData.map((category) => (
             <Link
               key={category.to}
@@ -122,11 +115,8 @@ const Categories = () => {
                 hover:shadow-2xl
               "
             >
-
-
-
+              {/* Image */}
               <div className="relative p-2">
-
                 <div
                   className="
                     pointer-events-none
@@ -153,9 +143,7 @@ const Categories = () => {
                     shadow-md
                   "
                 >
-
                   <div className="relative h-40 overflow-hidden">
-
                     <img
                       src={category.image}
                       alt={category.altText}
@@ -170,7 +158,7 @@ const Categories = () => {
                       "
                     />
 
-
+                   
                     <div
                       className="
                         absolute
@@ -182,10 +170,8 @@ const Categories = () => {
                       "
                     />
 
-
-
+                  
                     <div className="absolute bottom-4 left-4 right-4">
-
                       <p
                         className="
                           mb-1
@@ -210,11 +196,7 @@ const Categories = () => {
                       >
                         {category.label}
                       </h3>
-
                     </div>
-
-
-
 
                     <div
                       className="
@@ -229,18 +211,13 @@ const Categories = () => {
                         group-hover:w-full
                       "
                     />
-
                   </div>
-
                 </div>
-
               </div>
 
-
-
-
-              <div className="px-5 pb-5 pt-2">
-
+              
+              <div className="px-5 pb-5 pt-1">
+               
                 <h3
                   className="
                     text-base
@@ -255,9 +232,14 @@ const Categories = () => {
                   {category.label}
                 </h3>
 
-                <div className="mt-3 flex items-center justify-between">
+                
+                <p className="mt-2 min-h-[40px] text-xs leading-5 text-slate-400">
+                  {category.description}
+                </p>
 
-                  <span className="text-xs font-medium text-white">
+                
+                <div className="mt-4 flex items-center justify-between">
+                  <span className="text-xs font-medium text-slate-500">
                     Student Support
                   </span>
 
@@ -278,23 +260,15 @@ const Categories = () => {
                     "
                   >
                     Explore
-
                     <ArrowRight size={13} />
-
                   </span>
-
                 </div>
-
               </div>
-
             </Link>
           ))}
-
         </div>
 
-
-
-
+       
         <div
           className="
             mt-10
@@ -305,15 +279,9 @@ const Categories = () => {
             bg-white/[0.04]
           "
         >
-
           <div className="grid lg:grid-cols-[1fr_auto]">
-
-
-
             <div className="p-6 sm:p-7">
-
               <div className="flex items-start gap-4">
-
                 <div
                   className="
                     flex
@@ -331,7 +299,6 @@ const Categories = () => {
                 </div>
 
                 <div>
-
                   <p
                     className="
                       text-[10px]
@@ -349,21 +316,14 @@ const Categories = () => {
                   </h3>
 
                   <p className="mt-2 max-w-xl text-xs leading-5 text-slate-400 sm:text-sm">
-                    Submit a question to the UNI Life Guide
-                    team or check the response to a query you
-                    have already submitted.
+                    Submit a question to the UNI Life Guide team or check the
+                    response to a query you have already submitted.
                   </p>
-
                 </div>
-
               </div>
 
-
-
-
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
-
-
+               
                 <Link
                   to="/query"
                   className="
@@ -383,9 +343,7 @@ const Categories = () => {
                     hover:bg-white/[0.07]
                   "
                 >
-
                   <div className="flex items-center gap-3">
-
                     <div
                       className="
                         flex
@@ -402,7 +360,6 @@ const Categories = () => {
                     </div>
 
                     <div>
-
                       <p className="text-xs font-semibold text-white">
                         Submit a Query
                       </p>
@@ -410,9 +367,7 @@ const Categories = () => {
                       <p className="mt-0.5 text-[10px] text-slate-500">
                         Ask the support team
                       </p>
-
                     </div>
-
                   </div>
 
                   <ArrowRight
@@ -425,12 +380,9 @@ const Categories = () => {
                       group-hover:text-orange-500
                     "
                   />
-
                 </Link>
 
-
-
-
+                
                 <Link
                   to="/query"
                   className="
@@ -450,9 +402,7 @@ const Categories = () => {
                     hover:bg-white/[0.07]
                   "
                 >
-
                   <div className="flex items-center gap-3">
-
                     <div
                       className="
                         flex
@@ -469,7 +419,6 @@ const Categories = () => {
                     </div>
 
                     <div>
-
                       <p className="text-xs font-semibold text-white">
                         Check a Query
                       </p>
@@ -477,9 +426,7 @@ const Categories = () => {
                       <p className="mt-0.5 text-[10px] text-slate-500">
                         View your response
                       </p>
-
                     </div>
-
                   </div>
 
                   <ArrowRight
@@ -492,15 +439,11 @@ const Categories = () => {
                       group-hover:text-blue-400
                     "
                   />
-
                 </Link>
-
               </div>
-
             </div>
 
-
-
+            
             <div
               className="
                 flex
@@ -514,9 +457,7 @@ const Categories = () => {
                 lg:border-t-0
               "
             >
-
               <div className="w-full">
-
                 <p
                   className="
                     text-[9px]
@@ -530,8 +471,8 @@ const Categories = () => {
                 </p>
 
                 <p className="mt-2 text-xs leading-5 text-slate-400">
-                  Your Query ID and security code can be
-                  used to securely access your query later.
+                  Your Query ID and security code can be used to securely
+                  access your query later.
                 </p>
 
                 <Link
@@ -555,36 +496,23 @@ const Categories = () => {
                   "
                 >
                   Open Queries
-
                   <ArrowRight size={14} />
-
                 </Link>
-
               </div>
-
             </div>
-
           </div>
-
         </div>
-
-
-
 
         <div className="mt-5 text-center">
-
           <p className="text-[10px] text-slate-500">
-            Browse a category for guidance or use Queries
-            when you need direct assistance.
+            Browse a category for guidance or use Queries when you need direct
+            assistance.
           </p>
-
         </div>
-
       </div>
-
     </section>
   );
 };
 
-export default Categories;
+export default Categories;  
 

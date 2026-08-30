@@ -38,9 +38,6 @@ const Navbar = () => {
 
       <nav className="mx-auto flex h-[78px] max-w-7xl items-center justify-between px-6 lg:px-10">
 
-        {/* =====================================================
-            LOGO
-        ===================================================== */}
 
         <Link
           to="/"
@@ -53,9 +50,7 @@ const Navbar = () => {
         </Link>
 
 
-        {/* =====================================================
-            DESKTOP NAVIGATION
-        ===================================================== */}
+
 
         <div className="hidden items-center gap-7 md:flex">
 
@@ -161,9 +156,6 @@ const Navbar = () => {
           </Link>
 
 
-          {/* =================================================
-              QUERIES
-          ================================================= */}
 
           <Link
             to="/query"
@@ -217,9 +209,7 @@ const Navbar = () => {
         </div>
 
 
-        {/* =====================================================
-            DESKTOP WHATSAPP
-        ===================================================== */}
+
 
         <div className="relative hidden md:block">
 
@@ -265,10 +255,9 @@ const Navbar = () => {
               className={`
                 transition-transform
                 duration-200
-                ${
-                  showWhatsAppOptions
-                    ? "rotate-90"
-                    : ""
+                ${showWhatsAppOptions
+                  ? "rotate-90"
+                  : ""
                 }
               `}
             />
@@ -276,9 +265,6 @@ const Navbar = () => {
           </button>
 
 
-          {/* =================================================
-              WHATSAPP OPTIONS
-          ================================================= */}
 
           {showWhatsAppOptions && (
             <div
@@ -336,9 +322,6 @@ const Navbar = () => {
               </div>
 
 
-              {/* =================================================
-                  CONTACT 1
-              ================================================= */}
 
               <a
                 href={createWhatsAppLink(
@@ -406,9 +389,7 @@ const Navbar = () => {
               </a>
 
 
-              {/* =================================================
-                  CONTACT 2
-              ================================================= */}
+
 
               <a
                 href={createWhatsAppLink(
@@ -480,9 +461,7 @@ const Navbar = () => {
         </div>
 
 
-        {/* =====================================================
-            MOBILE MENU BUTTON
-        ===================================================== */}
+
 
         <button
           type="button"
@@ -508,9 +487,7 @@ const Navbar = () => {
       </nav>
 
 
-      {/* =======================================================
-          MOBILE NAVIGATION
-      ======================================================= */}
+
 
       {menuOpen && (
         <div
@@ -646,10 +623,7 @@ const Navbar = () => {
             </Link>
 
 
-            {/* =================================================
-                MOBILE QUERIES
-            ================================================= */}
-
+           
             <Link
               to="/query"
               onClick={closeMenu}
@@ -690,9 +664,7 @@ const Navbar = () => {
           </div>
 
 
-          {/* =================================================
-              MOBILE WHATSAPP
-          ================================================= */}
+
 
           <div
             className="
@@ -738,10 +710,9 @@ const Navbar = () => {
                 size={17}
                 className={`
                   transition-transform
-                  ${
-                    showWhatsAppOptions
-                      ? "rotate-90"
-                      : ""
+                  ${showWhatsAppOptions
+                    ? "rotate-90"
+                    : ""
                   }
                 `}
               />
@@ -749,9 +720,7 @@ const Navbar = () => {
             </button>
 
 
-            {/* =================================================
-                MOBILE WHATSAPP OPTIONS
-            ================================================= */}
+
 
             {showWhatsAppOptions && (
               <div

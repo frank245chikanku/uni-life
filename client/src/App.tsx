@@ -7,7 +7,9 @@ import Home from "./pages/Home";
 import Programs from "./pages/Programs";
 import Query from "./pages/Query";
 import SendQuery from "./pages/queries/SendQuery";
-
+import AdminSignIn from "./pages/admin/AdminSignIn";
+import AdminQueries from "./pages/admin/AdminQueries";
+import AdminProtectedRoute from "./components/admin/AdminProtectedRoute";
 
 
 import Layout from "./components/Layout";
@@ -214,7 +216,25 @@ const App: React.FC = () => {
 
 
       <Route path="/programs" element={<RootLayout><Programs /></RootLayout>} />
+      <Route
+  path="/admin/signin"
+  element={
+    <RootLayout>
+      <AdminSignIn />
+    </RootLayout>
+  }
+/>
 
+<Route
+  path="/admin/queries"
+  element={
+    <AdminProtectedRoute>
+      <RootLayout>
+        <AdminQueries />
+      </RootLayout>
+    </AdminProtectedRoute>
+  }
+/>
       <Route path="/entrepreneurship" element={<Layout><EntrepreneurshipIntroduction /></Layout>} />
       <Route path="/entrepreneurship/chapter1/sub1" element={<Layout><EntrepreneurshipChapter1 /></Layout>} />
       <Route path="/entrepreneurship/chapter1/sub2" element={<Layout><EntrepreneurshipPhase2 /></Layout>} />
