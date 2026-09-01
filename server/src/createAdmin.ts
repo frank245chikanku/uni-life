@@ -21,11 +21,11 @@ const ask = (question: string): Promise<string> => {
 
 const createAdmin = async (): Promise<void> => {
   try {
-    console.log("");
-    console.log("==========================================");
-    console.log("       UNI LIFE GUIDE ADMIN SETUP");
-    console.log("==========================================");
-    console.log("");
+    console.log();
+    console.log();
+    console.log();
+    console.log();
+    console.log();
 
     const username = await ask(
       "Enter administrator username: "
@@ -88,9 +88,9 @@ const createAdmin = async (): Promise<void> => {
       });
 
     console.log("");
-    console.log("==========================================");
-    console.log("       ADMINISTRATOR CREATED");
-    console.log("==========================================");
+    console.log();
+    console.log("");
+    console.log();
     console.log("");
     console.log(`Username: ${admin.username}`);
     console.log(`ID:       ${admin.id}`);
@@ -99,10 +99,10 @@ const createAdmin = async (): Promise<void> => {
     );
     console.log("");
     console.log(
-      "The password has been securely hashed."
+     
     );
     console.log(
-      "You can now use this account on the admin sign-in page."
+      
     );
     console.log("");
   } catch (error) {
