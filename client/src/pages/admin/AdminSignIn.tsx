@@ -1,6 +1,7 @@
 
 import {
   FormEvent,
+  useEffect,
   useState,
 } from "react";
 
@@ -37,7 +38,20 @@ const AdminSignIn = () => {
   const [loading, setLoading] =
     useState(false);
 
-
+  /*
+   * IMPORTANT:
+   * Remove any previous administrator session
+   * when the sign-in page is opened.
+   *
+   * This prevents an old valid JWT from making
+   * it appear that a failed login succeeded.
+   */
+  useEffect(() => {
+    localStorage.removeItem("adminToken");
+    localStorage.removeItem("adminAuthenticated");
+    localStorage.removeItem("adminName");
+    localStorage.removeItem("adminId");
+  }, []);
 
   const handleSubmit = async (
     e: FormEvent<HTMLFormElement>
@@ -49,7 +63,6 @@ const AdminSignIn = () => {
     }
 
     setError("");
-
 
     if (!username.trim()) {
       setError(
@@ -70,16 +83,13 @@ const AdminSignIn = () => {
     setLoading(true);
 
     try {
-
-
       const response = await fetch(
         `${API_URL}/api/admin/login`,
         {
           method: "POST",
 
           headers: {
-            "Content-Type":
-              "application/json",
+            "Content-Type": "application/json",
           },
 
           body: JSON.stringify({
@@ -88,8 +98,6 @@ const AdminSignIn = () => {
           }),
         }
       );
-
-
 
       let data: {
         success?: boolean;
@@ -107,22 +115,31 @@ const AdminSignIn = () => {
         return;
       }
 
-
+      /*
+       * Login is successful ONLY when:
+       *
+       * 1. HTTP response is successful
+       * 2. Backend explicitly says success === true
+       * 3. Backend provides an authentication token
+       */
       if (
         !response.ok ||
-        !data.success
+        data.success !== true
       ) {
+        // Make absolutely sure no previous token survives
+        localStorage.removeItem("adminToken");
+
         setError(
           data.message ||
-          "Invalid administrator credentials."
+            "Invalid administrator credentials."
         );
 
         return;
       }
 
-
-
       if (!data.token) {
+        localStorage.removeItem("adminToken");
+
         setError(
           "Sign in failed because the server did not provide an authentication token."
         );
@@ -130,21 +147,25 @@ const AdminSignIn = () => {
         return;
       }
 
-
-
+      /*
+       * Store the token ONLY after the backend
+       * has confirmed the credentials.
+       */
       localStorage.setItem(
         "adminToken",
         data.token
       );
 
-
-
-      navigate("/admin/queries");
+      navigate("/admin/queries", {
+        replace: true,
+      });
     } catch (error) {
       console.error(
         "Administrator sign in error:",
         error
       );
+
+      localStorage.removeItem("adminToken");
 
       setError(
         "Unable to connect to the server. Please make sure the UNI Life Guide server is running."
@@ -156,26 +177,17 @@ const AdminSignIn = () => {
 
   return (
     <div className="min-h-screen bg-[#f7f9fc] text-[#06264A]">
-
       <main className="flex min-h-screen items-center justify-center px-4 py-10 sm:px-6">
-
         <div className="w-full max-w-md">
 
-
-
           <div className="mb-7 text-center">
-
             <div className="mb-3 flex items-center justify-center">
-
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#edf3fa] text-[#155A96]">
-
                 <ShieldCheck
                   size={22}
                   strokeWidth={2}
                 />
-
               </div>
-
             </div>
 
             <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#155A96]">
@@ -190,26 +202,18 @@ const AdminSignIn = () => {
               Sign in to manage and respond to
               student queries.
             </p>
-
           </div>
 
           <section className="rounded-xl border border-slate-200 bg-white shadow-sm">
 
-
             <div className="border-b border-slate-100 px-5 py-4 sm:px-6">
-
               <div className="flex items-center gap-3">
 
                 <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#edf3fa] text-[#155A96]">
-
-                  <LockKeyhole
-                    size={17}
-                  />
-
+                  <LockKeyhole size={17} />
                 </div>
 
                 <div>
-
                   <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[#155A96]">
                     Secure Access
                   </p>
@@ -217,13 +221,10 @@ const AdminSignIn = () => {
                   <h2 className="mt-0.5 text-sm font-bold text-[#06264A]">
                     Query Centre
                   </h2>
-
                 </div>
 
               </div>
-
             </div>
-
 
             <form
               onSubmit={handleSubmit}
@@ -231,7 +232,6 @@ const AdminSignIn = () => {
             >
 
               <div className="mb-5">
-
                 <h3 className="text-sm font-bold text-[#06264A]">
                   Welcome back
                 </h3>
@@ -240,14 +240,11 @@ const AdminSignIn = () => {
                   Enter your administrator details
                   to continue.
                 </p>
-
               </div>
 
               <div className="space-y-4">
 
-
                 <div>
-
                   <label
                     htmlFor="admin-username"
                     className="mb-1.5 block text-xs font-semibold text-[#06264A]"
@@ -297,12 +294,9 @@ const AdminSignIn = () => {
                     />
 
                   </div>
-
                 </div>
 
-
                 <div>
-
                   <label
                     htmlFor="admin-password"
                     className="mb-1.5 block text-xs font-semibold text-[#06264A]"
@@ -380,32 +374,23 @@ const AdminSignIn = () => {
                           : "Show password"
                       }
                     >
-
                       {showPassword ? (
                         <EyeOff size={15} />
                       ) : (
                         <Eye size={15} />
                       )}
-
                     </button>
 
                   </div>
-
                 </div>
 
-
                 {error && (
-
                   <div className="rounded-lg border border-red-100 bg-red-50 px-3 py-2.5">
-
                     <p className="text-xs font-medium text-red-600">
                       {error}
                     </p>
-
                   </div>
-
                 )}
-
 
                 <button
                   type="submit"
@@ -432,7 +417,6 @@ const AdminSignIn = () => {
                     disabled:opacity-60
                   "
                 >
-
                   {loading ? (
                     <>
                       <span className="h-3.5 w-3.5 animate-spin rounded-full border-2 border-white/30 border-t-white" />
@@ -441,23 +425,16 @@ const AdminSignIn = () => {
                     </>
                   ) : (
                     <>
-                      <ShieldCheck
-                        size={15}
-                      />
+                      <ShieldCheck size={15} />
 
                       Sign in
 
-                      <ArrowRight
-                        size={15}
-                      />
+                      <ArrowRight size={15} />
                     </>
                   )}
-
                 </button>
 
               </div>
-
-
 
               <div className="mt-5 flex items-start gap-2.5 border-t border-slate-100 pt-4">
 
@@ -474,21 +451,16 @@ const AdminSignIn = () => {
               </div>
 
             </form>
-
           </section>
 
           <div className="mt-5 text-center">
-
             <p className="text-[10px] text-slate-400">
               UNI Life Guide · Query Management
             </p>
-
           </div>
 
         </div>
-
       </main>
-
     </div>
   );
 };
