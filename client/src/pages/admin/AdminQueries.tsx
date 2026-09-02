@@ -104,18 +104,11 @@ const saveQueries = (queries: Query[]) => {
       JSON.stringify(queries)
     );
   } catch {
-    // Ignore localStorage write errors.
+   
   }
 };
 
-/*
- * Temporary browser identity used only for the
- * current local query-lock demonstration.
- *
- * IMPORTANT:
- * Authentication itself is handled by the
- * backend JWT stored in adminToken.
- */
+
 const getAdminId = () => {
   const storedId = localStorage.getItem("adminId");
 
@@ -148,17 +141,12 @@ const AdminQueries = () => {
   const [adminId] =
     useState<string>(getAdminId);
 
-  /*
-   * Save query state whenever it changes.
-   */
+  
   useEffect(() => {
     saveQueries(queries);
   }, [queries]);
 
-  /*
-   * Synchronize query changes between browser tabs
-   * using localStorage.
-   */
+  
   useEffect(() => {
     const handleStorageChange = (
       event: StorageEvent
@@ -180,7 +168,7 @@ const AdminQueries = () => {
           );
         }
       } catch {
-        // Ignore malformed storage data.
+        
       }
     };
 
@@ -242,18 +230,7 @@ const AdminQueries = () => {
     statusFilter,
   ]);
 
-  /*
-   * Handles:
-   *
-   * Pending
-   *     ↓
-   * Resolving
-   *     ↓
-   * Resolved
-   *
-   * A Resolving query can only be resolved by
-   * the administrator who currently owns its lock.
-   */
+  
   const updateQueryStatus = (
     queryId: string
   ) => {
@@ -268,9 +245,7 @@ const AdminQueries = () => {
         return currentQueries;
       }
 
-      /*
-       * PENDING → RESOLVING
-       */
+     
       if (
         targetQuery.status ===
         "Pending"
@@ -294,12 +269,7 @@ const AdminQueries = () => {
         );
       }
 
-      /*
-       * RESOLVING → RESOLVED
-       *
-       * Only the administrator who took
-       * the query can resolve it.
-       */
+     
       if (
         targetQuery.status ===
         "Resolving"
@@ -329,9 +299,7 @@ const AdminQueries = () => {
         );
       }
 
-      /*
-       * RESOLVED queries cannot be changed.
-       */
+     
       if (
         targetQuery.status ===
         "Resolved"
@@ -343,21 +311,13 @@ const AdminQueries = () => {
     });
   };
 
-  /*
-   * IMPORTANT:
-   *
-   * The actual authentication token is adminToken.
-   * We must remove it when logging out.
-   */
+ 
   const handleLogout = () => {
     localStorage.removeItem(
       "adminToken"
     );
 
-    /*
-     * Remove old authentication values
-     * from the previous authentication system.
-     */
+    
     localStorage.removeItem(
       "adminAuthenticated"
     );
@@ -366,17 +326,12 @@ const AdminQueries = () => {
       "adminName"
     );
 
-    /*
-     * Remove the temporary browser identity.
-     */
+   
     localStorage.removeItem(
       "adminId"
     );
 
-    /*
-     * Send administrator back to the
-     * administrator sign-in page.
-     */
+    
     navigate(
       "/admin/signin",
       {

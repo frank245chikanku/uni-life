@@ -18,7 +18,9 @@ import {
   Users,
   ChevronRight,
   Apple,
+  Lightbulb,
 } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 type Module = {
   code: string;
@@ -429,26 +431,26 @@ const Programs = () => {
   const [selectedProgram, setSelectedProgram] =
     useState<Program | null>(null);
 
-  const departments = useMemo(
-    () => [
+  const departments = useMemo(() => {
+    return [
       "All",
       ...Array.from(
         new Set(programs.map((program) => program.department))
       ),
-    ],
-    []
-  );
+    ];
+  }, []);
 
   const filteredPrograms = useMemo(() => {
     const search = searchTerm.toLowerCase().trim();
 
     return programs.filter((program) => {
       const matchesSearch =
-        search === "" ||
+        !search ||
         program.name.toLowerCase().includes(search) ||
         program.shortName.toLowerCase().includes(search) ||
         program.description.toLowerCase().includes(search) ||
         program.overview.toLowerCase().includes(search) ||
+        program.department.toLowerCase().includes(search) ||
         program.careers.some((career) =>
           career.toLowerCase().includes(search)
         ) ||
@@ -467,14 +469,25 @@ const Programs = () => {
     });
   }, [searchTerm, selectedDepartment]);
 
+  const clearFilters = () => {
+    setSearchTerm("");
+    setSelectedDepartment("All");
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
+      {/* Page header */}
       <section className="bg-[#06264A]">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
-          <div className="max-w-3xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="max-w-3xl"
+          >
             <div className="mb-6 flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-blue-100">
-                <GraduationCap size={20} />
+              <div className="flex h-10 w-10 items-center justify-center bg-white/10 text-blue-100">
+                <SchoolIcon />
               </div>
 
               <div>
@@ -488,23 +501,23 @@ const Programs = () => {
               </div>
             </div>
 
-            <h1 className="max-w-3xl text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-[3.6rem]">
+            <h1 className="text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-[3.6rem]">
               Choose a programme that
               <span className="block text-blue-300">
                 moves you forward.
               </span>
             </h1>
 
-            <p className="mt-6 max-w-2xl text-base leading-7 text-blue-100 md:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-8 text-blue-100 md:text-lg">
               Explore programmes, understand what you will study,
-              discover possible career paths and make a more
-              informed choice about your future.
+              discover possible career paths and make a more informed
+              choice about your future.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link
                 to="/chat"
-                className="inline-flex items-center gap-2 rounded-lg bg-white px-5 py-3 text-sm font-semibold text-[#06264A] transition hover:bg-blue-50"
+                className="inline-flex items-center gap-2 bg-white px-5 py-3 text-sm font-semibold text-[#06264A] transition hover:bg-blue-50"
               >
                 <MessageCircle size={17} />
                 Ask UNI
@@ -515,28 +528,12 @@ const Programs = () => {
                 Need help deciding? Talk to UNI Life Guide.
               </span>
             </div>
-
-            <div className="mt-9 flex flex-wrap gap-x-7 gap-y-3 border-t border-white/10 pt-6">
-              <div className="flex items-center gap-2 text-sm text-blue-100">
-                <CheckCircle2 size={16} />
-                Programme guidance
-              </div>
-
-              <div className="flex items-center gap-2 text-sm text-blue-100">
-                <CheckCircle2 size={16} />
-                Career exploration
-              </div>
-
-              <div className="flex items-center gap-2 text-sm text-blue-100">
-                <CheckCircle2 size={16} />
-                Student support
-              </div>
-            </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      <section className="relative z-10 mx-auto -mt-6 w-full max-w-6xl px-5 lg:px-8">
+      {/* Search */}
+      <section className="relative z-10 mx-auto -mt-5 w-full max-w-6xl px-5 lg:px-8">
         <div className="border border-slate-200 bg-white p-3 shadow-md">
           <div className="flex flex-col gap-3 sm:flex-row">
             <div className="relative flex-1">
@@ -548,18 +545,20 @@ const Programs = () => {
               <input
                 type="text"
                 value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+                onChange={(event) =>
+                  setSearchTerm(event.target.value)
+                }
                 placeholder="Search programmes, careers, skills or modules..."
-                className="h-12 w-full border border-slate-200 bg-slate-50 pl-11 pr-4 text-sm text-slate-700 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:bg-white"
+                className="h-12 w-full border border-slate-200 bg-slate-50 pl-11 pr-4 text-sm text-slate-700 outline-none transition focus:border-blue-500 focus:bg-white"
               />
             </div>
 
             <select
               value={selectedDepartment}
-              onChange={(e) =>
-                setSelectedDepartment(e.target.value)
+              onChange={(event) =>
+                setSelectedDepartment(event.target.value)
               }
-              className="h-12 border border-slate-200 bg-slate-50 px-4 text-sm font-medium text-slate-700 outline-none transition focus:border-blue-500 focus:bg-white sm:w-60"
+              className="h-12 border border-slate-200 bg-slate-50 px-4 text-sm font-medium text-slate-700 outline-none transition focus:border-blue-500 focus:bg-white sm:w-64"
             >
               {departments.map((department) => (
                 <option key={department} value={department}>
@@ -573,14 +572,15 @@ const Programs = () => {
         </div>
       </section>
 
+      {/* Programme list */}
       <main className="mx-auto w-full max-w-7xl px-6 py-16 lg:px-8">
         <div className="mb-9 flex flex-col justify-between gap-5 border-b border-slate-200 pb-7 md:flex-row md:items-end">
           <div>
-            <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-[#155A96]">
+            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-blue-700">
               Academic Programmes
             </p>
 
-            <h2 className="text-3xl font-bold tracking-tight text-[#06264A] md:text-4xl">
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#06264A] md:text-4xl">
               Explore your options
             </h2>
 
@@ -590,11 +590,10 @@ const Programs = () => {
             </p>
           </div>
 
-          <div className="inline-flex w-fit items-center gap-2 border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-600">
+          <div className="w-fit border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-600">
             <span className="font-bold text-[#06264A]">
               {filteredPrograms.length}
-            </span>
-
+            </span>{" "}
             {filteredPrograms.length === 1
               ? "programme"
               : "programmes"}
@@ -602,90 +601,103 @@ const Programs = () => {
         </div>
 
         {filteredPrograms.length > 0 ? (
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {filteredPrograms.map((program) => {
-              const Icon = getProgramIcon(program.id);
+          <motion.div
+            layout
+            className="grid gap-5 md:grid-cols-2 lg:grid-cols-3"
+          >
+            <AnimatePresence mode="popLayout">
+              {filteredPrograms.map((program) => {
+                const Icon = getProgramIcon(program.id);
 
-              return (
-                <article
-                  key={program.id}
-                  className="group flex min-h-[510px] flex-col border border-slate-200 bg-white transition duration-200 hover:border-blue-300 hover:shadow-lg"
-                >
-                  <div className="border-b border-slate-200 px-6 py-6">
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-blue-100 bg-blue-50 text-[#155A96]">
-                        <Icon size={23} strokeWidth={1.8} />
+                return (
+                  <motion.article
+                    key={program.id}
+                    layout
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 15 }}
+                    transition={{ duration: 0.25 }}
+                    className="group flex min-h-[500px] flex-col border border-slate-200 bg-white transition duration-200 hover:border-blue-300 hover:shadow-lg"
+                  >
+                    <div className="border-b border-slate-200 px-6 py-6">
+                      <div className="flex items-start justify-between gap-4">
+                        <div className="flex h-12 w-12 shrink-0 items-center justify-center bg-blue-50 text-[#155A96]">
+                          <Icon
+                            size={23}
+                            strokeWidth={1.8}
+                          />
+                        </div>
+
+                        <span className="border border-blue-100 bg-blue-50 px-3 py-1.5 text-xs font-bold text-[#155A96]">
+                          {program.shortName}
+                        </span>
                       </div>
 
-                      <span className="border border-blue-100 bg-blue-50 px-3 py-1.5 text-xs font-bold text-[#155A96]">
-                        {program.shortName}
-                      </span>
-                    </div>
-
-                    <p className="mt-6 text-xs font-semibold uppercase tracking-wider text-[#155A96]">
-                      {program.department}
-                    </p>
-
-                    <h3 className="mt-2 min-h-[64px] text-xl font-bold leading-7 text-[#06264A]">
-                      {program.name}
-                    </h3>
-                  </div>
-
-                  <div className="flex flex-1 flex-col px-6 py-6">
-                    <div className="mb-5 flex flex-wrap gap-x-5 gap-y-2 border-b border-slate-100 pb-5">
-                      <span className="flex items-center gap-2 text-xs font-medium text-slate-500">
-                        <Clock3
-                          size={15}
-                          className="text-[#155A96]"
-                        />
-                        {program.duration}
-                      </span>
-
-                      <span className="flex items-center gap-2 text-xs font-medium text-slate-500">
-                        <BookOpen
-                          size={15}
-                          className="text-[#155A96]"
-                        />
-                        {program.level}
-                      </span>
-                    </div>
-
-                    <p className="line-clamp-4 text-sm leading-6 text-slate-600">
-                      {program.description}
-                    </p>
-
-                    <div className="mt-6 border-l-2 border-blue-200 bg-slate-50 px-4 py-3">
-                      <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
-                        Programme structure
+                      <p className="mt-6 text-xs font-semibold uppercase tracking-wider text-[#155A96]">
+                        {program.department}
                       </p>
 
-                      <p className="mt-1.5 text-sm font-semibold text-slate-800">
-                        {program.modules.length} curriculum-informed
-                        modules
+                      <h3 className="mt-2 min-h-[64px] text-xl font-bold leading-7 text-[#06264A]">
+                        {program.name}
+                      </h3>
+                    </div>
+
+                    <div className="flex flex-1 flex-col px-6 py-6">
+                      <div className="mb-5 flex flex-wrap gap-x-5 gap-y-2 border-b border-slate-100 pb-5">
+                        <span className="flex items-center gap-2 text-xs font-medium text-slate-500">
+                          <Clock3
+                            size={15}
+                            className="text-[#155A96]"
+                          />
+                          {program.duration}
+                        </span>
+
+                        <span className="flex items-center gap-2 text-xs font-medium text-slate-500">
+                          <BookOpen
+                            size={15}
+                            className="text-[#155A96]"
+                          />
+                          {program.level}
+                        </span>
+                      </div>
+
+                      <p className="line-clamp-4 text-sm leading-6 text-slate-600">
+                        {program.description}
                       </p>
-                    </div>
 
-                    <div className="mt-auto pt-7">
-                      <button
-                        type="button"
-                        onClick={() =>
-                          setSelectedProgram(program)
-                        }
-                        className="flex w-full items-center justify-between border border-[#155A96] bg-[#155A96] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#0E4779]"
-                      >
-                        <span>View Programme</span>
+                      <div className="mt-6 border-l-2 border-blue-200 bg-slate-50 px-4 py-3">
+                        <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                          Programme structure
+                        </p>
 
-                        <ArrowRight
-                          size={17}
-                          className="transition-transform group-hover:translate-x-0.5"
-                        />
-                      </button>
+                        <p className="mt-1.5 text-sm font-semibold text-slate-800">
+                          {program.modules.length} curriculum-informed
+                          modules
+                        </p>
+                      </div>
+
+                      <div className="mt-auto pt-7">
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setSelectedProgram(program)
+                          }
+                          className="flex w-full items-center justify-between bg-[#155A96] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#0E4779]"
+                        >
+                          <span>View Programme</span>
+
+                          <ArrowRight
+                            size={17}
+                            className="transition-transform group-hover:translate-x-1"
+                          />
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
+                  </motion.article>
+                );
+              })}
+            </AnimatePresence>
+          </motion.div>
         ) : (
           <div className="border border-slate-200 bg-white px-6 py-16 text-center">
             <div className="mx-auto flex h-14 w-14 items-center justify-center border border-slate-200 bg-slate-50 text-slate-400">
@@ -697,17 +709,14 @@ const Programs = () => {
             </h3>
 
             <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-slate-500">
-              Try another search term or return to the full list
-              of programmes.
+              Try another search term or change the department
+              filter.
             </p>
 
             <button
               type="button"
-              onClick={() => {
-                setSearchTerm("");
-                setSelectedDepartment("All");
-              }}
-              className="mt-5 border border-[#155A96] bg-[#155A96] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#0E4779]"
+              onClick={clearFilters}
+              className="mt-5 bg-[#155A96] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#0E4779]"
             >
               Show All Programmes
             </button>
@@ -715,8 +724,9 @@ const Programs = () => {
         )}
       </main>
 
+      {/* Chat CTA */}
       <section className="px-6 pb-16 lg:px-8">
-        <div className="mx-auto max-w-7xl border border-blue-900 bg-[#06264A]">
+        <div className="mx-auto max-w-7xl border border-[#06264A] bg-[#06264A]">
           <div className="px-7 py-10 md:px-10 md:py-12">
             <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
               <div className="max-w-2xl">
@@ -734,14 +744,14 @@ const Programs = () => {
 
                 <p className="mt-3 max-w-xl text-sm leading-6 text-blue-100 md:text-base">
                   Speak with UNI Life Guide to explore programmes,
-                  possible careers and the next step that may be
-                  right for you.
+                  possible careers and the next step that may be right
+                  for you.
                 </p>
               </div>
 
               <Link
                 to="/chat"
-                className="inline-flex shrink-0 items-center justify-center gap-2 border border-white/20 bg-white px-6 py-3 text-sm font-semibold text-[#06264A] transition hover:bg-blue-50"
+                className="inline-flex shrink-0 items-center justify-center gap-2 bg-white px-6 py-3 text-sm font-semibold text-[#06264A] transition hover:bg-blue-50"
               >
                 <MessageCircle size={17} />
                 Chat with UNI
@@ -752,284 +762,313 @@ const Programs = () => {
         </div>
       </section>
 
-      {selectedProgram && (
-        <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-[#03182D]/75 p-3 backdrop-blur-sm sm:p-6"
-          onClick={() => setSelectedProgram(null)}
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="programme-modal-title"
-        >
-          <div
-            className="max-h-[94vh] w-full max-w-5xl overflow-y-auto bg-white shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
+      {/* Programme modal */}
+      <AnimatePresence>
+        {selectedProgram && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-[#03182D]/75 p-3 backdrop-blur-sm sm:p-6"
+            onClick={() => setSelectedProgram(null)}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="programme-modal-title"
           >
-            <div className="border-b border-slate-200 bg-[#06264A] px-6 py-7 text-white md:px-9 md:py-8">
-              <div className="flex items-start justify-between gap-6">
-                <div className="max-w-3xl">
-                  <div className="mb-5 flex h-12 w-12 items-center justify-center border border-white/10 bg-white/10">
-                    {(() => {
-                      const Icon = getProgramIcon(
-                        selectedProgram.id
-                      );
+            <motion.div
+              initial={{ opacity: 0, y: 25, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 15, scale: 0.98 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
+              className="max-h-[94vh] w-full max-w-5xl overflow-y-auto bg-white shadow-2xl"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <div className="border-b border-slate-200 bg-[#06264A] px-6 py-7 text-white md:px-9 md:py-8">
+                <div className="flex items-start justify-between gap-6">
+                  <div className="max-w-3xl">
+                    <div className="mb-5 flex h-12 w-12 items-center justify-center bg-white/10">
+                      {(() => {
+                        const Icon = getProgramIcon(
+                          selectedProgram.id
+                        );
 
-                      return (
-                        <Icon
-                          size={23}
-                          strokeWidth={1.8}
-                        />
-                      );
-                    })()}
-                  </div>
-
-                  <p className="text-sm font-medium text-blue-200">
-                    {selectedProgram.department}
-                  </p>
-
-                  <h2
-                    id="programme-modal-title"
-                    className="mt-2 text-2xl font-bold leading-tight md:text-3xl"
-                  >
-                    {selectedProgram.name}
-                  </h2>
-
-                  <p className="mt-4 max-w-2xl text-sm leading-6 text-blue-100 md:text-base">
-                    {selectedProgram.description}
-                  </p>
-                </div>
-
-                <button
-                  type="button"
-                  onClick={() => setSelectedProgram(null)}
-                  className="shrink-0 border border-white/10 bg-white/10 p-2.5 text-white transition hover:bg-white/20"
-                  aria-label="Close programme details"
-                >
-                  <X size={20} />
-                </button>
-              </div>
-            </div>
-
-            <div className="px-6 py-7 md:px-9 md:py-9">
-              <div className="grid border border-slate-200 sm:grid-cols-3">
-                <div className="border-b border-slate-200 p-5 sm:border-b-0 sm:border-r">
-                  <div className="flex items-center gap-2 text-slate-400">
-                    <Clock3 size={17} />
-
-                    <span className="text-xs font-bold uppercase tracking-wide">
-                      Duration
-                    </span>
-                  </div>
-
-                  <p className="mt-2 text-base font-bold text-[#06264A]">
-                    {selectedProgram.duration}
-                  </p>
-                </div>
-
-                <div className="border-b border-slate-200 p-5 sm:border-b-0 sm:border-r">
-                  <div className="flex items-center gap-2 text-slate-400">
-                    <GraduationCap size={17} />
-
-                    <span className="text-xs font-bold uppercase tracking-wide">
-                      Qualification
-                    </span>
-                  </div>
-
-                  <p className="mt-2 text-base font-bold text-[#06264A]">
-                    {selectedProgram.level}
-                  </p>
-                </div>
-
-                <div className="p-5">
-                  <div className="flex items-center gap-2 text-slate-400">
-                    <BookOpen size={17} />
-
-                    <span className="text-xs font-bold uppercase tracking-wide">
-                      Programme
-                    </span>
-                  </div>
-
-                  <p className="mt-2 text-base font-bold text-[#06264A]">
-                    {selectedProgram.shortName}
-                  </p>
-                </div>
-              </div>
-
-              <section className="mt-10">
-                <div className="mb-3 flex items-center gap-3">
-                  <span className="h-5 w-1 bg-[#155A96]" />
-
-                  <h3 className="text-xl font-bold text-[#06264A]">
-                    About the Programme
-                  </h3>
-                </div>
-
-                <p className="max-w-4xl text-sm leading-7 text-slate-600 md:text-base">
-                  {selectedProgram.overview}
-                </p>
-              </section>
-
-              <section className="mt-10">
-                <div className="mb-5 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
-                  <div>
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-9 w-9 items-center justify-center bg-blue-50 text-[#155A96]">
-                        <Layers3 size={18} />
-                      </div>
-
-                      <h3 className="text-xl font-bold text-[#06264A]">
-                        What You Will Study
-                      </h3>
+                        return (
+                          <Icon
+                            size={23}
+                            strokeWidth={1.8}
+                          />
+                        );
+                      })()}
                     </div>
 
-                    <p className="mt-2 text-sm text-slate-500">
-                      Key curriculum-informed modules associated
-                      with this programme.
+                    <p className="text-sm font-medium text-blue-200">
+                      {selectedProgram.department}
+                    </p>
+
+                    <h2
+                      id="programme-modal-title"
+                      className="mt-2 text-2xl font-bold leading-tight md:text-3xl"
+                    >
+                      {selectedProgram.name}
+                    </h2>
+
+                    <p className="mt-4 max-w-2xl text-sm leading-6 text-blue-100 md:text-base">
+                      {selectedProgram.description}
                     </p>
                   </div>
 
-                  <span className="w-fit border border-blue-100 bg-blue-50 px-3 py-1.5 text-xs font-semibold text-[#155A96]">
-                    {selectedProgram.modules.length} modules
-                  </span>
-                </div>
-
-                <div className="grid gap-2 md:grid-cols-2">
-                  {selectedProgram.modules.map((module, index) => (
-                    <div
-                      key={`${module.name}-${index}`}
-                      className="flex items-center gap-4 border border-slate-200 bg-white px-4 py-3.5 transition hover:border-blue-200 hover:bg-blue-50/30"
-                    >
-                      <div className="flex h-8 w-8 shrink-0 items-center justify-center bg-slate-100 text-[11px] font-bold text-slate-500">
-                        {String(index + 1).padStart(2, "0")}
-                      </div>
-
-                      <div className="min-w-0">
-                        <p className="text-sm font-semibold text-slate-800">
-                          {module.name}
-                        </p>
-
-                        <p className="mt-0.5 text-xs text-slate-400">
-                          {module.code}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-4 border-l-2 border-amber-400 bg-amber-50 px-4 py-3">
-                  <p className="text-xs leading-5 text-amber-800">
-                    <strong>Note:</strong> Module names shown here
-                    are curriculum-informed for the UNI Life Guide
-                    demo. Students should confirm the latest
-                    official programme structure, semester allocation
-                    and admission requirements with DMI St. Eugene
-                    University.
-                  </p>
-                </div>
-              </section>
-
-              <section className="mt-10">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-9 w-9 items-center justify-center bg-blue-50 text-[#155A96]">
-                    <CheckCircle2 size={18} />
-                  </div>
-
-                  <h3 className="text-xl font-bold text-[#06264A]">
-                    Skills You Can Develop
-                  </h3>
-                </div>
-
-                <div className="mt-5 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-                  {selectedProgram.skills.map((skill) => (
-                    <div
-                      key={skill}
-                      className="flex items-start gap-3 border border-slate-200 bg-white px-4 py-3.5"
-                    >
-                      <CheckCircle2
-                        size={16}
-                        className="mt-0.5 shrink-0 text-[#155A96]"
-                      />
-
-                      <span className="text-sm leading-6 text-slate-700">
-                        {skill}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              <section className="mt-10">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-9 w-9 items-center justify-center bg-blue-50 text-[#155A96]">
-                    <BriefcaseBusiness size={18} />
-                  </div>
-
-                  <h3 className="text-xl font-bold text-[#06264A]">
-                    Where Could It Take You?
-                  </h3>
-                </div>
-
-                <div className="mt-5 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-                  {selectedProgram.careers.map((career) => (
-                    <div
-                      key={career}
-                      className="flex items-center gap-3 border border-slate-200 bg-white px-4 py-3.5"
-                    >
-                      <span className="h-2 w-2 shrink-0 bg-[#155A96]" />
-
-                      <span className="text-sm font-semibold text-slate-700">
-                        {career}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              <section className="mt-10 border border-blue-100 bg-blue-50/60 px-5 py-5 md:px-6">
-                <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
-                  <div>
-                    <h4 className="font-bold text-[#06264A]">
-                      Not sure if this programme is right for you?
-                    </h4>
-
-                    <p className="mt-1 text-sm leading-6 text-slate-500">
-                      Ask UNI Life Guide about this programme,
-                      careers and how it may match your interests.
-                    </p>
-                  </div>
-
-                  <Link
-                    to="/chat"
+                  <button
+                    type="button"
                     onClick={() => setSelectedProgram(null)}
-                    className="inline-flex shrink-0 items-center justify-center gap-2 bg-[#155A96] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#0E4779]"
+                    className="shrink-0 bg-white/10 p-2.5 text-white transition hover:bg-white/20"
+                    aria-label="Close programme details"
                   >
-                    <MessageCircle size={17} />
-                    Ask UNI
-                    <ArrowRight size={16} />
-                  </Link>
+                    <X size={20} />
+                  </button>
                 </div>
-              </section>
-
-              <div className="mt-7 flex items-center justify-between border-t border-slate-200 pt-6">
-                <div className="hidden items-center gap-2 text-xs text-slate-400 sm:flex">
-                  <Users size={14} />
-                  UNI Life Guide
-                </div>
-
-                <button
-                  type="button"
-                  onClick={() => setSelectedProgram(null)}
-                  className="ml-auto inline-flex items-center gap-2 border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-600 transition hover:bg-slate-50"
-                >
-                  Close
-                  <ChevronRight size={15} />
-                </button>
               </div>
-            </div>
-          </div>
-        </div>
-      )}
+
+              <div className="px-6 py-7 md:px-9 md:py-9">
+                {/* Programme summary */}
+                <div className="grid border border-slate-200 sm:grid-cols-3">
+                  <div className="border-b border-slate-200 p-5 sm:border-b-0 sm:border-r">
+                    <div className="flex items-center gap-2 text-slate-400">
+                      <Clock3 size={17} />
+
+                      <span className="text-xs font-bold uppercase tracking-wide">
+                        Duration
+                      </span>
+                    </div>
+
+                    <p className="mt-2 text-base font-bold text-[#06264A]">
+                      {selectedProgram.duration}
+                    </p>
+                  </div>
+
+                  <div className="border-b border-slate-200 p-5 sm:border-b-0 sm:border-r">
+                    <div className="flex items-center gap-2 text-slate-400">
+                      <GraduationCap size={17} />
+
+                      <span className="text-xs font-bold uppercase tracking-wide">
+                        Qualification
+                      </span>
+                    </div>
+
+                    <p className="mt-2 text-base font-bold text-[#06264A]">
+                      {selectedProgram.level}
+                    </p>
+                  </div>
+
+                  <div className="p-5">
+                    <div className="flex items-center gap-2 text-slate-400">
+                      <BookOpen size={17} />
+
+                      <span className="text-xs font-bold uppercase tracking-wide">
+                        Programme
+                      </span>
+                    </div>
+
+                    <p className="mt-2 text-base font-bold text-[#06264A]">
+                      {selectedProgram.shortName}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Overview */}
+                <section className="mt-10">
+                  <div className="mb-3 flex items-center gap-3">
+                    <span className="h-5 w-1 bg-[#155A96]" />
+
+                    <h3 className="text-xl font-bold text-[#06264A]">
+                      About the Programme
+                    </h3>
+                  </div>
+
+                  <p className="max-w-4xl text-sm leading-7 text-slate-600 md:text-base">
+                    {selectedProgram.overview}
+                  </p>
+                </section>
+
+                {/* Modules */}
+                <section className="mt-10">
+                  <div className="mb-5 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
+                    <div>
+                      <div className="flex items-center gap-3">
+                        <div className="flex h-9 w-9 items-center justify-center bg-blue-50 text-[#155A96]">
+                          <Layers3 size={18} />
+                        </div>
+
+                        <h3 className="text-xl font-bold text-[#06264A]">
+                          What You Will Study
+                        </h3>
+                      </div>
+
+                      <p className="mt-2 text-sm text-slate-500">
+                        Key curriculum-informed modules associated
+                        with this programme.
+                      </p>
+                    </div>
+
+                    <span className="w-fit border border-blue-100 bg-blue-50 px-3 py-1.5 text-xs font-semibold text-[#155A96]">
+                      {selectedProgram.modules.length} modules
+                    </span>
+                  </div>
+
+                  <div className="grid gap-2 md:grid-cols-2">
+                    {selectedProgram.modules.map((module, index) => (
+                      <div
+                        key={`${module.name}-${index}`}
+                        className="flex items-center gap-4 border border-slate-200 bg-white px-4 py-3.5 transition hover:border-blue-200 hover:bg-blue-50/30"
+                      >
+                        <div className="flex h-8 w-8 shrink-0 items-center justify-center bg-slate-100 text-[11px] font-bold text-slate-500">
+                          {String(index + 1).padStart(2, "0")}
+                        </div>
+
+                        <div className="min-w-0">
+                          <p className="text-sm font-semibold text-slate-800">
+                            {module.name}
+                          </p>
+
+                          <p className="mt-0.5 text-xs text-slate-400">
+                            {module.code}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-4 border-l-2 border-amber-400 bg-amber-50 px-4 py-3">
+                    <p className="text-xs leading-5 text-amber-800">
+                      <strong>Note:</strong> Module names shown here
+                      are curriculum-informed for the UNI Life Guide
+                      demo. Students should confirm the latest official
+                      programme structure, semester allocation and
+                      admission requirements with DMI St. Eugene
+                      University.
+                    </p>
+                  </div>
+                </section>
+
+                {/* Skills */}
+                <section className="mt-10">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-9 w-9 items-center justify-center bg-blue-50 text-[#155A96]">
+                      <CheckCircle2 size={18} />
+                    </div>
+
+                    <h3 className="text-xl font-bold text-[#06264A]">
+                      Skills You Can Develop
+                    </h3>
+                  </div>
+
+                  <div className="mt-5 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+                    {selectedProgram.skills.map((skill) => (
+                      <div
+                        key={skill}
+                        className="flex items-start gap-3 border border-slate-200 bg-white px-4 py-3.5"
+                      >
+                        <CheckCircle2
+                          size={16}
+                          className="mt-0.5 shrink-0 text-[#155A96]"
+                        />
+
+                        <span className="text-sm leading-6 text-slate-700">
+                          {skill}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+
+                {/* Careers */}
+                <section className="mt-10">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-9 w-9 items-center justify-center bg-blue-50 text-[#155A96]">
+                      <BriefcaseBusiness size={18} />
+                    </div>
+
+                    <h3 className="text-xl font-bold text-[#06264A]">
+                      Where Could It Take You?
+                    </h3>
+                  </div>
+
+                  <div className="mt-5 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+                    {selectedProgram.careers.map((career) => (
+                      <div
+                        key={career}
+                        className="flex items-center gap-3 border border-slate-200 bg-white px-4 py-3.5"
+                      >
+                        <span className="h-2 w-2 shrink-0 bg-[#155A96]" />
+
+                        <span className="text-sm font-semibold text-slate-700">
+                          {career}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+
+                {/* Ask UNI */}
+                <section className="mt-10 border border-blue-100 bg-blue-50/60 px-5 py-5 md:px-6">
+                  <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <Lightbulb
+                          size={18}
+                          className="text-[#155A96]"
+                        />
+
+                        <h4 className="font-bold text-[#06264A]">
+                          Need help choosing?
+                        </h4>
+                      </div>
+
+                      <p className="mt-1.5 text-sm leading-6 text-slate-500">
+                        Ask UNI about this programme, possible careers
+                        and how it may match your interests.
+                      </p>
+                    </div>
+
+                    <Link
+                      to="/chat"
+                      onClick={() => setSelectedProgram(null)}
+                      className="inline-flex shrink-0 items-center justify-center gap-2 bg-[#155A96] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#0E4779]"
+                    >
+                      <MessageCircle size={17} />
+                      Ask UNI
+                      <ArrowRight size={16} />
+                    </Link>
+                  </div>
+                </section>
+
+                {/* Close */}
+                <div className="mt-7 flex items-center justify-between border-t border-slate-200 pt-6">
+                  <div className="hidden items-center gap-2 text-xs text-slate-400 sm:flex">
+                    <Users size={14} />
+                    UNI Life Guide
+                  </div>
+
+                  <button
+                    type="button"
+                    onClick={() => setSelectedProgram(null)}
+                    className="ml-auto inline-flex items-center gap-2 border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-600 transition hover:bg-slate-50"
+                  >
+                    Close
+                    <ChevronRight size={15} />
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
+};
+
+const SchoolIcon = () => {
+  return <GraduationCap size={20} />;
 };
 
 export default Programs;

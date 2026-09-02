@@ -8,7 +8,7 @@ import {
 import { useNavigate } from "react-router-dom";
 
 import {
-  ArrowRight,
+  ArrowRight, 
   Eye,
   EyeOff,
   LockKeyhole,
@@ -38,14 +38,7 @@ const AdminSignIn = () => {
   const [loading, setLoading] =
     useState(false);
 
-  /*
-   * IMPORTANT:
-   * Remove any previous administrator session
-   * when the sign-in page is opened.
-   *
-   * This prevents an old valid JWT from making
-   * it appear that a failed login succeeded.
-   */
+ 
   useEffect(() => {
     localStorage.removeItem("adminToken");
     localStorage.removeItem("adminAuthenticated");
@@ -115,18 +108,12 @@ const AdminSignIn = () => {
         return;
       }
 
-      /*
-       * Login is successful ONLY when:
-       *
-       * 1. HTTP response is successful
-       * 2. Backend explicitly says success === true
-       * 3. Backend provides an authentication token
-       */
+     
       if (
         !response.ok ||
         data.success !== true
       ) {
-        // Make absolutely sure no previous token survives
+       
         localStorage.removeItem("adminToken");
 
         setError(
@@ -147,10 +134,7 @@ const AdminSignIn = () => {
         return;
       }
 
-      /*
-       * Store the token ONLY after the backend
-       * has confirmed the credentials.
-       */
+     
       localStorage.setItem(
         "adminToken",
         data.token

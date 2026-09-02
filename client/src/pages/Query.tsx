@@ -73,11 +73,7 @@ const Query = () => {
     setStudentAction(null);
     setError("");
 
-    /*
-     * If the user chooses Administrator again,
-     * remove any old browser token so that this
-     * login always starts with a fresh session.
-     */
+
     if (type === "admin") {
       localStorage.removeItem("adminToken");
       localStorage.removeItem("adminAuthenticated");
@@ -121,13 +117,7 @@ const Query = () => {
     }
   };
 
-  /*
-   * REAL ADMINISTRATOR AUTHENTICATION
-   *
-   * Credentials are sent to the backend.
-   * We do NOT navigate to /admin/queries
-   * unless the backend confirms authentication.
-   */
+ 
   const handleAdminLogin = async () => {
     if (adminLoading) {
       return;
@@ -151,10 +141,7 @@ const Query = () => {
 
     setAdminLoading(true);
 
-    /*
-     * Remove an old token before beginning a
-     * completely new administrator login.
-     */
+    
     localStorage.removeItem("adminToken");
     localStorage.removeItem("adminAuthenticated");
     localStorage.removeItem("adminName");
@@ -196,9 +183,7 @@ const Query = () => {
         return;
       }
 
-      /*
-       * The backend must explicitly confirm success.
-       */
+     
       if (
         !response.ok ||
         data.success !== true
@@ -213,10 +198,7 @@ const Query = () => {
         return;
       }
 
-      /*
-       * A successful response without a JWT
-       * is not considered a successful login.
-       */
+     
       if (!data.token) {
         localStorage.removeItem("adminToken");
 

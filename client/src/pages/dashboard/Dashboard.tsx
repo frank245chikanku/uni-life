@@ -1,12 +1,11 @@
-
 import { useEffect, useState } from "react";
 import { useRecoilValue } from "recoil";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
   ArrowUpRight,
-  BriefcaseBusiness,
   BookOpen,
+  BriefcaseBusiness,
   CheckCircle2,
   Clock3,
   GraduationCap,
@@ -23,27 +22,24 @@ import { userDetailsAtom } from "../../recoil/atom";
 import dashboardBg from "../../assets/IMG-20260704-WA0015.jpg";
 
 const quotes = [
-  "Stay curious — every skill you learn today prepares you for tomorrow’s opportunities.",
-  "Consistency beats intensity — show up every day.",
-  "Your progress is your responsibility — own it.",
-  "Invest in your skills — they’re the currency of tomorrow’s job market.",
-  "Build your network before you need it — relationships are long-term assets.",
-  "Solve real problems — the world rewards solutions, not just effort.",
-  "Seek challenges, not shortcuts — growth lives in discomfort.",
-  "Your future self is shaped by today’s habits — choose wisely.",
+  "Stay curious. Every skill you develop can create new opportunities.",
+  "Consistency makes progress easier to maintain.",
+  "Take time to understand where your studies can lead you.",
+  "Build skills that you can apply beyond the classroom.",
+  "Good opportunities often start with good connections.",
+  "Look for practical ways to apply what you learn.",
 ];
 
 const Dashboard = () => {
   const user = useRecoilValue(userDetailsAtom);
-
   const [quoteIndex, setQuoteIndex] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    const interval = window.setInterval(() => {
       setQuoteIndex((current) => (current + 1) % quotes.length);
     }, 5000);
 
-    return () => clearInterval(interval);
+    return () => window.clearInterval(interval);
   }, []);
 
   const skills = ["React", "Node", "UI/UX"];
@@ -60,199 +56,137 @@ const Dashboard = () => {
         ? "Good afternoon"
         : "Good evening";
 
-  const firstName = user?.username?.split(" ")[0] || "Student";
-
+  const firstName = user?.username?.trim().split(/\s+/)[0] || "Student";
 
   const quickStarts = [
     {
-      label: "Career Guidance",
-      shortLabel: "Career",
+      title: "Career Guidance",
       value: "Career & Skills",
-      footer:
+      description:
         skills.length >= 5
-          ? "Strong progress"
-          : "Continue building skills",
+          ? "Good progress"
+          : "Continue building your skills",
       icon: BriefcaseBusiness,
       to: "/career-guidance-and-skill-tracking",
-      progress: 65,
-      number: "01",
-      gradient: "from-blue-500 to-cyan-400",
-      iconBg: "bg-blue-50",
-      iconColor: "text-blue-600",
     },
     {
-      label: "Learning Resources",
-      shortLabel: "Learning",
+      title: "Learning Resources",
       value: `${assessments} Assessments`,
-      footer:
-        assessments > 0
-          ? "Keep learning"
-          : "Start learning today",
+      description:
+        assessments > 0 ? "Continue learning" : "Start learning today",
       icon: BookOpen,
       to: "/skill-assessments-and-learning-resources",
-      progress: 50,
-      number: "02",
-      gradient: "from-violet-500 to-purple-400",
-      iconBg: "bg-violet-50",
-      iconColor: "text-violet-600",
     },
     {
-      label: "Community Engagement",
-      shortLabel: "Community",
+      title: "Community Engagement",
       value: `${projects} Active Project`,
-      footer:
-        projects > 0
-          ? "Maintain momentum"
-          : "Start something useful",
+      description:
+        projects > 0 ? "Keep making progress" : "Start a project",
       icon: Handshake,
       to: "/ethical-decision-making-and-community-engagement",
-      progress: 35,
-      number: "03",
-      gradient: "from-emerald-500 to-teal-400",
-      iconBg: "bg-emerald-50",
-      iconColor: "text-emerald-600",
     },
     {
-      label: "Internships",
-      shortLabel: "Experience",
+      title: "Internships",
       value:
         internships > 0
           ? `${internships} Opportunities`
           : "Explore Opportunities",
-      footer:
+      description:
         internships > 0
-          ? "Keep networking"
-          : "Find your first opportunity",
+          ? "Keep looking for opportunities"
+          : "Find practical experience",
       icon: Target,
       to: "/internships-and-industrial-programs",
-      progress: 20,
-      number: "04",
-      gradient: "from-orange-500 to-amber-400",
-      iconBg: "bg-orange-50",
-      iconColor: "text-orange-600",
     },
   ];
-
 
   const exploreFeatures = [
     {
       title: "Career Guidance",
       description:
-        "Explore career paths and discover the skills that can move you forward.",
+        "Explore career paths and identify the skills needed for the roles you are interested in.",
       icon: BriefcaseBusiness,
       to: "/career-guidance-and-skill-tracking",
       label: "Explore careers",
-      gradient: "from-blue-500 to-cyan-400",
-      iconBg: "bg-blue-50",
-      iconColor: "text-blue-600",
     },
     {
       title: "Learning Resources",
       description:
-        "Build knowledge through assessments, learning materials and practical resources.",
+        "Access assessments, learning materials and practical resources to support your studies.",
       icon: BookOpen,
       to: "/skill-assessments-and-learning-resources",
       label: "Start learning",
-      gradient: "from-violet-500 to-purple-400",
-      iconBg: "bg-violet-50",
-      iconColor: "text-violet-600",
     },
     {
       title: "Community Engagement",
       description:
-        "Develop responsible decision-making and discover ways to contribute.",
+        "Develop responsible decision-making skills and find ways to contribute to your community.",
       icon: Users,
       to: "/ethical-decision-making-and-community-engagement",
       label: "Get involved",
-      gradient: "from-emerald-500 to-teal-400",
-      iconBg: "bg-emerald-50",
-      iconColor: "text-emerald-600",
     },
     {
       title: "Internships",
       description:
-        "Find practical opportunities that help prepare you for employment.",
+        "Explore practical opportunities that can help you gain experience before entering employment.",
       icon: GraduationCap,
       to: "/internships-and-industrial-programs",
       label: "Find opportunities",
-      gradient: "from-orange-500 to-amber-400",
-      iconBg: "bg-orange-50",
-      iconColor: "text-orange-600",
     },
   ];
 
   return (
-    <div className="min-h-screen overflow-hidden bg-[#F7F9FC]">
+    <div className="min-h-screen bg-slate-50">
       <main className="mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
-
-
-        <section className="overflow-hidden rounded-[28px] border border-slate-200/80 bg-white shadow-sm">
+        {/* Hero */}
+        <section className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
           <div className="grid lg:grid-cols-[1.6fr_0.8fr]">
-
-            {/* HERO IMAGE */}
             <div
-              className="relative min-h-[430px] bg-cover bg-center"
-              style={{
-                backgroundImage: `url(${dashboardBg})`,
-              }}
+              className="relative min-h-[420px] bg-cover bg-center"
+              style={{ backgroundImage: `url(${dashboardBg})` }}
             >
+              <div className="absolute inset-0 bg-[#06264A]/85" />
 
-              <div className="absolute inset-0 bg-gradient-to-br from-[#031A35]/95 via-[#06264A]/85 to-[#155A96]/70" />
-
-
-              <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-blue-400/20 blur-3xl" />
-              <div className="absolute -bottom-24 -left-20 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl" />
-
-              <div className="relative z-10 flex min-h-[430px] flex-col justify-between p-7 sm:p-10 lg:p-12">
-
+              <div className="relative z-10 flex min-h-[420px] flex-col justify-between p-7 sm:p-10 lg:p-12">
                 <div>
-                  {/* Logo */}
                   <div className="flex items-center gap-3">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/20 bg-white/10 text-white backdrop-blur-md">
-                      <GraduationCap
-                        size={23}
-                        strokeWidth={1.8}
-                      />
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/20 bg-white/10 text-white">
+                      <GraduationCap size={21} strokeWidth={1.8} />
                     </div>
 
                     <div>
-                      <p className="text-sm font-bold text-white">
+                      <p className="text-sm font-semibold text-white">
                         UNI Life Guide
                       </p>
-
                       <p className="text-xs text-blue-200">
                         Student Dashboard
                       </p>
                     </div>
                   </div>
 
-
-                  <div className="mt-12 max-w-2xl">
-                    <p className="text-sm font-semibold text-blue-200">
+                  <div className="mt-14 max-w-2xl">
+                    <p className="text-sm font-medium text-blue-200">
                       {greeting}
                     </p>
 
-                    <h1 className="mt-2 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
-                      {firstName}.
+                    <h1 className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-5xl">
+                      {firstName}
                     </h1>
 
                     <p className="mt-5 max-w-xl text-sm leading-7 text-blue-100 sm:text-base">
-                      Welcome to your student guide. Explore your programme,
-                      discover career opportunities, build practical skills
-                      and take your next step with confidence.
+                      Manage your academic and career development from one
+                      place. Explore programmes, build useful skills and find
+                      opportunities that support your goals.
                     </p>
                   </div>
-
 
                   <div className="mt-8 flex flex-wrap gap-3">
                     <Link
                       to="/Classifications"
-                      className="group inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-bold text-[#06264A] shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-blue-50"
+                      className="group inline-flex items-center gap-2 rounded-lg bg-white px-5 py-3 text-sm font-semibold text-[#06264A] transition hover:bg-blue-50"
                     >
                       <Search size={16} />
-
                       Explore Classifications
-
                       <ArrowRight
                         size={15}
                         className="transition-transform group-hover:translate-x-1"
@@ -261,12 +195,10 @@ const Dashboard = () => {
 
                     <Link
                       to="/chat"
-                      className="group inline-flex items-center gap-2 rounded-xl border border-white/25 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/20"
+                      className="group inline-flex items-center gap-2 rounded-lg border border-white/25 bg-white/10 px-5 py-3 text-sm font-medium text-white transition hover:bg-white/20"
                     >
                       <MessageCircle size={16} />
-
                       Ask UNI
-
                       <ArrowRight
                         size={15}
                         className="transition-transform group-hover:translate-x-1"
@@ -275,86 +207,77 @@ const Dashboard = () => {
                   </div>
                 </div>
 
-
-                <div className="mt-10 border-t border-white/10 pt-5">
-                  <div className="flex flex-wrap gap-x-6 gap-y-3">
-
+                <div className="mt-10 border-t border-white/15 pt-5">
+                  <div className="flex flex-wrap gap-x-8 gap-y-4">
                     <div>
-                      <p className="text-xs font-bold uppercase tracking-wider text-blue-300">
+                      <p className="text-xs font-semibold uppercase tracking-wide text-blue-300">
                         Explore
                       </p>
-
                       <p className="mt-1 text-xs text-blue-100">
                         Programmes & Careers
                       </p>
                     </div>
 
                     <div>
-                      <p className="text-xs font-bold uppercase tracking-wider text-blue-300">
+                      <p className="text-xs font-semibold uppercase tracking-wide text-blue-300">
                         Develop
                       </p>
-
                       <p className="mt-1 text-xs text-blue-100">
                         Skills & Knowledge
                       </p>
                     </div>
 
                     <div>
-                      <p className="text-xs font-bold uppercase tracking-wider text-blue-300">
+                      <p className="text-xs font-semibold uppercase tracking-wide text-blue-300">
                         Prepare
                       </p>
-
                       <p className="mt-1 text-xs text-blue-100">
                         Opportunities & Experience
                       </p>
                     </div>
-
                   </div>
                 </div>
               </div>
             </div>
 
-
+            {/* Daily tip */}
             <div className="flex flex-col justify-between bg-white p-7 sm:p-8 lg:p-9">
               <div>
-
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-[#155A96]">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-[#155A96]">
                     <Lightbulb size={19} />
                   </div>
 
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#155A96]">
-                    Today's Tip
+                  <span className="text-xs font-semibold uppercase tracking-wide text-[#155A96]">
+                    Daily Tip
                   </span>
                 </div>
 
-                <p className="mt-7 text-xl font-bold leading-8 text-[#06264A]">
-                  “{quotes[quoteIndex]}”
+                <p className="mt-7 text-xl font-semibold leading-8 text-[#06264A]">
+                  {quotes[quoteIndex]}
                 </p>
-
               </div>
 
-              <div className="mt-10 rounded-2xl border border-slate-100 bg-[#F7F9FC] p-5">
-                <p className="text-xs font-bold uppercase tracking-wider text-[#155A96]">
-                  Keep Moving
+              <div className="mt-10 rounded-xl border border-slate-200 bg-slate-50 p-5">
+                <p className="text-xs font-semibold uppercase tracking-wide text-[#155A96]">
+                  Student Guide
                 </p>
 
-                <p className="mt-2 text-xs leading-6 text-slate-500">
-                  Small, consistent progress can make a meaningful difference
-                  in your academic and career journey.
+                <p className="mt-2 text-sm leading-6 text-slate-500">
+                  Use the sections on your dashboard to plan your studies,
+                  develop your skills and prepare for opportunities.
                 </p>
               </div>
             </div>
-
           </div>
         </section>
 
+        {/* Quick Start */}
         <section className="mt-12">
-
-          <div className="mb-6 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
+          <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#155A96]">
-                Your Progress
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#155A96]">
+                Overview
               </p>
 
               <h2 className="mt-1 text-2xl font-bold tracking-tight text-[#06264A]">
@@ -363,122 +286,65 @@ const Dashboard = () => {
             </div>
 
             <p className="text-sm text-slate-500">
-              Pick up where you left off.
+              Access the areas you use most.
             </p>
           </div>
 
-
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {quickStarts.map((item) => {
               const Icon = item.icon;
 
               return (
                 <Link
-                  key={item.label}
+                  key={item.title}
                   to={item.to}
-                  className="group relative overflow-hidden rounded-[22px] border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-300 hover:shadow-xl"
+                  className="group rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-slate-300 hover:shadow-md"
                 >
-
-                  <div
-                    className={`absolute left-0 right-0 top-0 h-1 bg-gradient-to-r ${item.gradient}`}
-                  />
-
-                  <div className="pointer-events-none absolute -right-12 -top-12 h-28 w-28 rounded-full bg-slate-100 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100" />
-
-
-                  <div className="relative flex items-start justify-between">
-
-                    <div
-                      className={`flex h-12 w-12 items-center justify-center rounded-2xl ${item.iconBg} ${item.iconColor} transition-all duration-300 group-hover:scale-105`}
-                    >
-                      <Icon
-                        size={21}
-                        strokeWidth={1.8}
-                      />
+                  <div className="flex items-start justify-between">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-blue-50 text-[#155A96]">
+                      <Icon size={20} strokeWidth={1.8} />
                     </div>
 
-                    <div className="flex items-center gap-2">
-
-                      <span className="text-[10px] font-bold tracking-widest text-slate-300">
-                        {item.number}
-                      </span>
-
-                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-50 transition-all duration-300 group-hover:bg-slate-100">
-                        <ArrowUpRight
-                          size={15}
-                          className="text-slate-400 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[#155A96]"
-                        />
-                      </div>
-
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-50 transition group-hover:bg-blue-50">
+                      <ArrowUpRight
+                        size={15}
+                        className="text-slate-400 transition group-hover:text-[#155A96]"
+                      />
                     </div>
                   </div>
 
-
-                  <div className="relative mt-6">
-
-                    <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-slate-400">
-                      {item.label}
+                  <div className="mt-6">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+                      {item.title}
                     </p>
 
-                    <h3 className="mt-1 text-lg font-bold leading-6 text-[#06264A]">
+                    <h3 className="mt-1 text-lg font-bold text-[#06264A]">
                       {item.value}
                     </h3>
 
-                    <p className="mt-1 text-xs text-slate-500">
-                      {item.footer}
+                    <p className="mt-1 text-sm text-slate-500">
+                      {item.description}
                     </p>
-
                   </div>
 
-                  {/* Progress */}
-                  <div className="relative mt-5">
-
-                    <div className="flex items-center justify-between text-[10px] font-semibold text-slate-400">
-                      <span>Progress</span>
-
-                      <span className="text-[#155A96]">
-                        {item.progress}%
-                      </span>
-                    </div>
-
-                    <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-slate-100">
-                      <div
-                        className={`h-full rounded-full bg-gradient-to-r ${item.gradient} transition-all duration-700 group-hover:brightness-105`}
-                        style={{
-                          width: `${item.progress}%`,
-                        }}
-                      />
-                    </div>
-
-                  </div>
-
-
-                  <div className="relative mt-5 flex items-center justify-between border-t border-slate-100 pt-4">
-
-                    <span className="text-xs font-semibold text-slate-400 transition-colors group-hover:text-[#155A96]">
-                      Open section
-                    </span>
-
+                  <div className="mt-5 flex items-center gap-1 border-t border-slate-100 pt-4 text-sm font-medium text-[#155A96]">
+                    Open section
                     <ArrowRight
                       size={14}
-                      className="text-slate-300 transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#155A96]"
+                      className="transition-transform group-hover:translate-x-1"
                     />
-
                   </div>
                 </Link>
               );
             })}
-
           </div>
         </section>
 
-
+        {/* Explore Features */}
         <section className="mt-14">
-
           <div className="mb-6">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#155A96]">
-              Student Development
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#155A96]">
+              Student Services
             </p>
 
             <h2 className="mt-1 text-2xl font-bold tracking-tight text-[#06264A]">
@@ -486,243 +352,184 @@ const Dashboard = () => {
             </h2>
 
             <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-500">
-              Tools designed to help you move from university learning to
-              practical career preparation.
+              Use these tools to support your studies, career planning and
+              preparation for employment.
             </p>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-2">
-
-            {exploreFeatures.map((item, index) => {
+          <div className="grid gap-4 md:grid-cols-2">
+            {exploreFeatures.map((item) => {
               const Icon = item.icon;
 
               return (
                 <Link
                   key={item.title}
                   to={item.to}
-                  className="group relative overflow-hidden rounded-[22px] border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-xl"
+                  className="group rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-slate-300 hover:shadow-md"
                 >
-
-                  <div
-                    className={`absolute left-0 right-0 top-0 h-1 bg-gradient-to-r ${item.gradient}`}
-                  />
-
                   <div className="flex items-start justify-between">
-
-                    <div
-                      className={`flex h-12 w-12 items-center justify-center rounded-2xl ${item.iconBg} ${item.iconColor} transition-all duration-300 group-hover:scale-105`}
-                    >
-                      <Icon
-                        size={22}
-                        strokeWidth={1.7}
-                      />
+                    <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-blue-50 text-[#155A96]">
+                      <Icon size={21} strokeWidth={1.8} />
                     </div>
 
-                    <span className="text-xs font-bold tracking-widest text-slate-300">
-                      0{index + 1}
-                    </span>
-
+                    <ArrowUpRight
+                      size={17}
+                      className="text-slate-300 transition group-hover:text-[#155A96]"
+                    />
                   </div>
 
-                  <div className="mt-6">
+                  <h3 className="mt-6 text-lg font-bold text-[#06264A]">
+                    {item.title}
+                  </h3>
 
-                    <h3 className="text-lg font-bold text-[#06264A]">
-                      {item.title}
-                    </h3>
+                  <p className="mt-2 max-w-xl text-sm leading-6 text-slate-500">
+                    {item.description}
+                  </p>
 
-                    <p className="mt-2 max-w-xl text-sm leading-6 text-slate-500">
-                      {item.description}
-                    </p>
-
-                  </div>
-
-                  <div className="mt-6 flex items-center justify-between border-t border-slate-100 pt-5">
-
-                    <span className="text-sm font-semibold text-[#155A96]">
-                      {item.label}
-                    </span>
-
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-50 transition-all group-hover:bg-blue-50">
-                      <ArrowRight
-                        size={15}
-                        className="text-slate-400 transition-transform group-hover:translate-x-1 group-hover:text-[#155A96]"
-                      />
-                    </div>
-
+                  <div className="mt-6 flex items-center gap-1 border-t border-slate-100 pt-5 text-sm font-semibold text-[#155A96]">
+                    {item.label}
+                    <ArrowRight
+                      size={15}
+                      className="transition-transform group-hover:translate-x-1"
+                    />
                   </div>
                 </Link>
               );
             })}
-
           </div>
         </section>
 
+        {/* Next Step */}
         <section className="mt-14 grid gap-5 lg:grid-cols-[1fr_360px]">
-
-
-          <div className="rounded-[22px] border border-slate-200 bg-white p-7 shadow-sm md:p-8">
-
+          <div className="rounded-xl border border-slate-200 bg-white p-7 shadow-sm md:p-8">
             <div className="flex items-start gap-4">
-
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-[#155A96]">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-[#155A96]">
                 <TrendingUp size={21} />
               </div>
 
               <div>
-
-                <p className="text-xs font-bold uppercase tracking-wider text-[#155A96]">
-                  Your Next Step
+                <p className="text-xs font-semibold uppercase tracking-wide text-[#155A96]">
+                  Next Step
                 </p>
 
                 <h3 className="mt-1 text-xl font-bold text-[#06264A]">
-                  Build a stronger career direction
+                  Plan your career direction
                 </h3>
 
                 <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-500">
-                  Explore your programme, understand the careers connected to
-                  it, identify the skills employers value and start building
-                  practical experience.
+                  Start with your programme, explore related career options,
+                  identify useful skills and look for ways to gain practical
+                  experience.
                 </p>
-
               </div>
-
             </div>
 
             <div className="mt-7 grid gap-3 sm:grid-cols-3">
+              <div className="rounded-lg border border-slate-200 bg-slate-50 p-4 transition hover:border-blue-100 hover:bg-blue-50">
+                <Search size={18} className="text-[#155A96]" />
 
-              <div className="rounded-xl border border-slate-100 bg-slate-50 p-4 transition hover:bg-blue-50">
-                <Search
-                  size={18}
-                  className="text-[#155A96]"
-                />
-
-                <p className="mt-3 text-sm font-bold text-[#06264A]">
+                <p className="mt-3 text-sm font-semibold text-[#06264A]">
                   Explore
                 </p>
 
                 <p className="mt-1 text-xs leading-5 text-slate-500">
-                  Discover programmes and career paths.
+                  Review programmes and possible career paths.
                 </p>
               </div>
 
-              <div className="rounded-xl border border-slate-100 bg-slate-50 p-4 transition hover:bg-blue-50">
-                <Target
-                  size={18}
-                  className="text-[#155A96]"
-                />
+              <div className="rounded-lg border border-slate-200 bg-slate-50 p-4 transition hover:border-blue-100 hover:bg-blue-50">
+                <Target size={18} className="text-[#155A96]" />
 
-                <p className="mt-3 text-sm font-bold text-[#06264A]">
+                <p className="mt-3 text-sm font-semibold text-[#06264A]">
                   Develop
                 </p>
 
                 <p className="mt-1 text-xs leading-5 text-slate-500">
-                  Build skills through learning and practice.
+                  Improve your skills through learning and practice.
                 </p>
               </div>
 
-              <div className="rounded-xl border border-slate-100 bg-slate-50 p-4 transition hover:bg-blue-50">
+              <div className="rounded-lg border border-slate-200 bg-slate-50 p-4 transition hover:border-blue-100 hover:bg-blue-50">
                 <BriefcaseBusiness
                   size={18}
                   className="text-[#155A96]"
                 />
 
-                <p className="mt-3 text-sm font-bold text-[#06264A]">
+                <p className="mt-3 text-sm font-semibold text-[#06264A]">
                   Prepare
                 </p>
 
                 <p className="mt-1 text-xs leading-5 text-slate-500">
-                  Find opportunities and gain experience.
+                  Look for opportunities to gain experience.
                 </p>
               </div>
-
             </div>
           </div>
 
-          {/* ASK UNI */}
-          <div className="relative overflow-hidden rounded-[22px] bg-[#06264A] p-7 shadow-sm md:p-8">
-
-            <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-blue-400/10 blur-2xl" />
-
-            <div className="relative">
-
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/10 text-blue-100">
-                <MessageCircle size={21} />
-              </div>
-
-              <h3 className="mt-6 text-xl font-bold text-white">
-                Need some direction?
-              </h3>
-
-              <p className="mt-3 text-sm leading-6 text-blue-100">
-                Ask UNI about programmes, careers, skills and opportunities
-                based on your interests.
-              </p>
-
-              <Link
-                to="/chat"
-                className="group mt-7 inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-[#06264A] transition-all hover:-translate-y-0.5 hover:bg-blue-50"
-              >
-                Chat with UNI
-
-                <ArrowRight
-                  size={16}
-                  className="transition-transform group-hover:translate-x-1"
-                />
-              </Link>
-
+          {/* Ask UNI */}
+          <div className="rounded-xl bg-[#06264A] p-7 shadow-sm md:p-8">
+            <div className="flex h-11 w-11 items-center justify-center rounded-lg border border-white/15 bg-white/10 text-blue-100">
+              <MessageCircle size={21} />
             </div>
-          </div>
 
+            <h3 className="mt-6 text-xl font-bold text-white">
+              Have a question?
+            </h3>
+
+            <p className="mt-3 text-sm leading-6 text-blue-100">
+              Ask UNI about programmes, careers, skills and opportunities.
+            </p>
+
+            <Link
+              to="/chat"
+              className="group mt-7 inline-flex items-center gap-2 rounded-lg bg-white px-5 py-3 text-sm font-semibold text-[#06264A] transition hover:bg-blue-50"
+            >
+              Chat with UNI
+              <ArrowRight
+                size={16}
+                className="transition-transform group-hover:translate-x-1"
+              />
+            </Link>
+          </div>
         </section>
 
-        <section className="mt-10 rounded-[22px] border border-slate-200 bg-white p-6 shadow-sm md:p-8">
-
+        {/* Footer Message */}
+        <section className="mt-10 rounded-xl border border-slate-200 bg-white p-6 shadow-sm md:p-7">
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-
             <div className="flex items-start gap-4">
-
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-green-50 text-green-700">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-green-50 text-green-700">
                 <CheckCircle2 size={21} />
               </div>
 
               <div>
-
                 <h3 className="text-lg font-bold text-[#06264A]">
-                  You're on the right path.
+                  Keep moving forward
                 </h3>
 
                 <p className="mt-1 max-w-2xl text-sm leading-6 text-slate-500">
-                  Keep learning, exploring and building practical experience.
-                  Your next step does not need to be perfect — it just needs
-                  to move you forward.
+                  Continue exploring your options, developing useful skills
+                  and gaining practical experience.
                 </p>
-
               </div>
-
             </div>
 
             <Link
               to="/Classifications"
-              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl border border-[#155A96] px-5 py-3 text-sm font-semibold text-[#155A96] transition-all hover:bg-blue-50"
+              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg border border-[#155A96] px-5 py-3 text-sm font-semibold text-[#155A96] transition hover:bg-blue-50"
             >
               Plan Your Next Move
-
               <ArrowRight size={16} />
             </Link>
-
           </div>
         </section>
 
-
         <div className="mt-8 flex items-center justify-center gap-2 pb-6 text-xs text-slate-400">
           <Clock3 size={13} />
-          UNI Life Guide · Your academic and career companion
+          UNI Life Guide · Student Dashboard
         </div>
-
       </main>
     </div>
   );
 };
 
 export default Dashboard;
-
