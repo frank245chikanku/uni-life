@@ -4,13 +4,13 @@ import {
   CheckCircle2,
   GraduationCap,
   HeartPulse,
-  Lightbulb,
+  Lightbulb,  
   Sparkles,
   Target,
   Users,
 } from "lucide-react";
-
-const careers = [
+       
+const careers = [   
   {
     title: "Business Administration",
     category: "Business & Management",

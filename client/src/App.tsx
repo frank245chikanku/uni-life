@@ -214,9 +214,16 @@ const App: React.FC = () => {
       <Route path="/query" element={<RootLayout><Query /></RootLayout>} />
       <Route path="/query/send" element={<RootLayout><SendQuery /></RootLayout>} />
 
-
-      <Route path="/programs" element={<RootLayout><Programs /></RootLayout>} />
       <Route
+  path="programs"
+  element={
+    <RootLayout>
+      <Programs />
+    </RootLayout>
+  }
+/>
+
+<Route
   path="/admin/signin"
   element={
     <RootLayout>
@@ -224,6 +231,7 @@ const App: React.FC = () => {
     </RootLayout>
   }
 />
+
 
 <Route
   path="/admin/queries"
